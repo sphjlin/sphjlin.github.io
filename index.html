@@ -11,6 +11,7 @@
             padding: 0;
             background-color: #f9f9f9;
             color: #333;
+            overflow: hidden; /* Prevents scrollbar when animation is added */
         }
 
         header {
@@ -48,20 +49,54 @@
         .gallery img:hover {
             transform: scale(1.05);
         }
-    </style>
-</head>
 
+        /* Animated lines */
+        .lines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .line {
+            position: absolute;
+            width: 1
+00px;
+height: 1px;
+background-color: rgba(255, 255, 255, 0.5);
+animation: animate 5s linear infinite;
+}
+    @keyframes animate {
+        0% {
+            transform: translateY(0) rotate(0deg);
+        }
+
+        100% {
+            transform: translateY(-100vh) rotate(360deg);
+        }
+    }
+</style>
+</head>
 <body>
     <header>
         <h1>UX Design Portfolio</h1>
         <p>Welcome to my portfolio showcasing my journey into UX Design!</p>
     </header>
+<div class="gallery">
+    <img src="poster1.jpg" alt="Poster for Event 1">
+    <img src="poster2.jpg" alt="Poster for Event 2">
+    <!-- Add more images as needed -->
+</div>
 
-    <div class="gallery">
-        <img src="poster1.jpg" alt="Poster for Event 1">
-        <img src="poster2.jpg" alt="Poster for Event 2">
-        <!-- Add more images as needed -->
-    </div>
+<!-- Animated lines -->
+<div class="lines">
+    <div class="line" style="background-color: rgba(255, 0, 0, 0.5); top: 10%;"></div>
+    <div class="line" style="background-color: rgba(0, 255, 0, 0.5); top: 30%;"></div>
+    <div class="line" style="background-color: rgba(0, 0, 255, 0.5); top: 50%;"></div>
+    <div class="line" style="background-color: rgba(255, 255, 0, 0.5); top: 70%;"></div>
+</div>
 </body>
-
 </html>
