@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*Skip to main*/
+.skip{
+    position: absolute;
+    top: -50px;
+    background-color: white;
+    font-family: "Montserrat", sans-serif;
+    color: #00274C;
+    overflow: hidden;
+}
+.skip:focus {
+    top: 20px;
+    overflow: visible;
+}
+/*Overall text setting*/
+body {
+    background-color: #edecec;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 1fr;
+    background-color: #00274C;
+    align-items: center;
+    padding: 1rem;
+}
+header img {
+    min-width: 30px;
+    max-width: 70px;
+    grid-column: 1;
+    justify-self: left;
+}
+header a {
+    color: white;
+    transition: color 0.3s; /* smooth transition */
+    padding: 5px 5px;
+    border-radius: 5px;
+}
+header a:hover, a:focus {
+    color: #FFCB05;
+    text-decoration: underline;
+}
+
+nav{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+}
+nav ul {
+	display: contents;
+	list-style-type: none;
+}
+nav ul li {
+	text-align: center;
+    font-family: "Montserrat", sans-serif;
+	font-size: 0.85rem;
+    text-transform: uppercase;
+}
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav ul li a:hover {
+    color: white;
+    text-decoration: underline;
+}
+nav ul li.active a {
+    color: #FFCB05;
+    border-radius: 0%;
+    border-bottom:#FFCB05 2px solid;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2% 5%;
+}
+
+h1 {
+    grid-column: 1 / span 2; /* Align with navigation column */
+    grid-row: 2; /* Second row for the title */
+    text-align: center;
+    color: #FFCB05;
+    font-size: 2rem;
+    margin: 20px 0; /* Adequate spacing above and below */
+    font-family: "Montserrat", sans-serif; /* Consistency in font */
+	font-weight: bolder;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 1.5rem;
+    line-height: 1.6rem;
+    font-family: "Montserrat", sans-serif;
+    color: #00274C;
+    font-weight: bolder;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #FFCB05;
+    margin-bottom: 10px;
+}
+
+
+h3 {
+    line-height: 1.6rem;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2rem;
+    color: #00274C;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+h3 a {
+    color: #00274C;
+    background-color: #FFCB05;
+    transition: color 0.3s; /* smooth transition */
+    padding: 5px;
+    border-radius: 5px;
+}
+h3 a:hover, a:focus {
+    color: #006bcf;
+    text-decoration: underline;
+}
+
+section {
+	margin: 10px
+}
+
+strong {
+    font-weight: bold; /* Explicitly sets the font weight to bold */
+}
+
+img {
+	width: 100%;
+    max-width: 700px;
+	margin: 20px auto 0px auto;
+	border: 5px solid #00274C;
+    object-fit: cover;
+}
+#index-pics{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+    justify-items: center;
+}
+#cew-pics{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+    justify-items: center;
+}
+
+figcaption {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 0.7rem;
+    color: #00274C;
+}
+p {
+	font-size: 1.05rem;
+    line-height: 1.6rem;
+    color: #131516;
+    font-family: "IBM Plex Sans", sans-serif;
+}
+ul {
+    line-height: 1.6rem;
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+
+footer{
+    background-color: #00274C;
+    color: white;
+    padding: 1.2rem;
+    text-align: center;
+}
+footer p{
+    color: white;
+}
+footer a {
+    color: #FFCB05;
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 800px) {
+    #index-pics{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 1rem;
+        justify-items: center;
+    }
+    #cew-pics{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        gap: 1rem;
+        justify-items: center;
+    }
+    h3 {
+        line-height: 2rem;
+    }
+}
