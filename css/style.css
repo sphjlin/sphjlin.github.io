@@ -427,8 +427,7 @@ ul {
     padding:8%;
     background-color: #FDF0E6;
     border-radius: 10px;
-    border-left: 3px solid #F08E80;
-    border-right: 3px solid #F08E80;
+    border: 3px solid #F08E80;
     text-align: center;
 }
 
