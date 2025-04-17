@@ -23,5 +23,3 @@ It includes three main pages:
 
 ## How to View
 You can open `index.html` in a web browser to view the homepage and navigate the full site.
-
----
