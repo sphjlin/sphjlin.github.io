@@ -1,1 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.jpg">
+    <link rel="stylesheet" href="css/html5reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Sophia Lin | About Me</title>
+</head>
+<body>
+    <a class = "skip" href = "#main">Skip to Main Content</a>
+    <nav>
+        <ul>
+            <li><a href="index.html"><img src="images/logo.png" alt="Sophia's Logo"></a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li class="active"><a href="about.html">About Me</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>About Me</h1>
+        <p>Behind every design is a story — here’s mine.</p>
+    </header>
+    <main>
+        <section class="about-section">
+            <img id="meImg"src="images/myPic3.jpg" alt="">
+            <p>
+                <strong>Hi, I’m Sophia Lin</strong>
+                 — a UX Research & Design student at the University of Michigan. My work is rooted in empathy, curiosity, and craft.
+                I love making digital experiences feel thoughtful, intuitive, and just a little magical.
+            <br>
+                I care deeply about accessibility, emerging technologies, and how we design for complexity without losing clarity. I’ve explored everything from AI-assisted workflows to immersive XR storytelling — and I’m always learning something new.
+            <br>>
+                I’m also a visual storyteller, a tea drinker, and someone who finds joy in quiet design decisions that make users feel seen.
+                Thanks for stopping by 🧡
+            <br><br>
+            <a class="prettybutton" href="downloads/SophiaLin_Resume.pdf" download>Download My Resume</a>
+            <br>
+        </p>
+        </section>
+
+        <section class="timeline-section">
+            <h2>My Journey</h2>
+            <ul class="timeline">
+                <li><strong>2025</strong> — Master’s student in UX Research & Design, University of Michigan 🎓</li>
+                <li><strong>2023</strong> — Graduated from University of Pittsburgh (Computer Science) 🎉</li>
+                <li><strong>2018-2022</strong> — UX Projects, Graphic Design Work, Freelance Exploration 🎨</li>
+                <li><strong>Childhood</strong> — Grew up between the U.S. and Shanghai, always curious 🌏</li>
+            </ul>
+        </section>
+
+        <section class="subscribe">
+            <h2>Subscribe for Updates</h2>
+            <form id="subscribeForm"
+                action="https://formspree.io/f/xyzeaqld"
+                method="POST">
+                <label class="form-group">First Name
+                    <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                </label>
+                <label class="form-group">Last Name
+                    <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                </label>
+                    <label class="form-group full-width">Email
+                    <input type="email" id="email" name="email" placeholder="Email (required)" required>
+                </label>
+                <br>
+                <button class="prettybutton" id="subscribe_button" type="submit">Subscribe</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="images/footer.png" alt="Sophia's Footer Logo">
+        </div>
+        <p id="info">Ann Arbor, MI
+            <br>(412) 515-6366
+            <br><a href="mailto:sphjlin@umich.edu">sphjlin@umich.edu</a></p>
+        <p id="copyright">&copy; Copyrights <span id="year"></span> by Sophia Lin <br> All rights reserved</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
 

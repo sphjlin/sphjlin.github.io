@@ -2,36 +2,90 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sophia Lin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.jpg">
+    <link rel="stylesheet" href="css/html5reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Sophia Lin | Home</title>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Website</h1>
-        <p>Hello! I'm Sophia Lin, a UX Research & Design Master's student at the University of Michigan.</p>
-    </header>
-
+    <a class = "skip" href = "#main">Skip to Main Content</a>
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html"><img src="images/logo.png" alt="Sophia's Logo"></a></li>
+            <li class="active"><a href="index.html">Home</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="about.html">About Me</a></li>
         </ul>
     </nav>
+    <header>
+        <h1 id="home_title">Hey, I'm Sophia</h1>
+        <img id="my_picture1" src="images/myPic4.jpg" alt="Sophia Lin balancing a pencil on her upper lip while sketching at an easel, showcasing playful creativity.">
+        <p id="home_p">A UX Research & Design student passionate about building thoughtful, human-centered digital experiences.
+            <br><br>
+            <a class = "prettybutton" id="linkedIn" href="https://www.linkedin.com/in/sphjlin" target="_blank">View my LinkedIn</a>
+        </p>
+    </header>
 
-    <main>
+    <main id="main">
         <section>
-            <h2>Quick Intro</h2>
-            <p>I love designing thoughtful user experiences, exploring tech with purpose, and sipping on a good milk tea.</p>
+            <div id="my_picture2">
+            <img src="images/myPic1.jpg" alt="Sophia Lin standing at the center of a sparkler circle, highlighting human-centered design.">
+            <figcaption>Placing humans at the center — the core of thoughtful design.</figcaption>
+            </div>
+            <div class="intro-text">
+                <h2>Human-Centered Design</h2>
+                <p>I focus on crafting intuitive interfaces that make technology feel personal and accessible. Every pixel, word, and flow matters in the experience I build.</p>
+            </div>
+            <div class="intro-text">
+                <h2>Curious Explorer</h2>
+                <p>From UX to XR to accessibility, I’m always exploring new ways design can support real human needs—and make tech more welcoming to everyone.</p>
+            </div>
         </section>
 
-        <section>
-            <h2>Explore More</h2>
-            <p>Check out my <a href="portfolio.html">portfolio</a> to see what I’ve been working on, or head to <a href="about.html">about me</a> to learn more about my journey.</p>
+        <section class="services">
+            <h2>Services</h2>
+            <div class="service-item">
+                <h3>UX Research</h3>
+                <p>Conducting user interviews, usability tests, and journey mapping to ground designs in real insights.</p>
+            </div>
+            <div class="service-item">
+                <h3>Interaction & Visual Design</h3>
+                <p>Building intuitive interfaces, wireframes, and visual systems that tell clear and engaging stories.</p>
+            </div>
+            <div class="service-item">
+                <h3>Emerging Tech Exploration</h3>
+                <p>Exploring AI, XR, and accessibility tools to imagine the next frontier of human-centered digital spaces.</p>
+            </div>
+        </section>
+
+        <section class="middle-image">
+            <img src="images/myPic2.jpg" alt="">
+        </section>
+
+        <section class="double-text-section">
+            <div class="double-text">
+                <h2>Graphic Design Projects</h2>
+                <p>Designed mugs, event posters, brochures, and YouTube branding for community and nonprofit events. Each piece carried a playful but intentional message.</p>
+                <img src="images/MugDesign.png" alt="">
+            </div>
+            <div class="double-text">
+                <h2>Collaborations & Freelance</h2>
+                <p>Worked with organizations like Ambassador for Christ, Inc. to create illustrations for Christmas productions, blending storytelling with visual warmth.</p>
+                <img src="images/ChristmasShow.jpeg" alt="">
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Sophia Lin</p>
+        <div class="footer-logo">
+            <img src="images/footer.png" alt="Sophia's Footer Logo">
+        </div>
+        <p id="info">Ann Arbor, MI
+            <br>(412) 515-6366
+            <br><a href="mailto:sphjlin@umich.edu">sphjlin@umich.edu</a></p>
+        <p id="copyright">&copy; Copyrights <span id="year"></span> by Sophia Lin <br> All rights reserved</p>
     </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>
