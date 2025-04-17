@@ -1,7 +1,8 @@
 # Sophia Lin - Personal Portfolio Website
 
-This is my personal portfolio website！✨
+This is my personal portfolio website! ✨  
 (Created as the final SI 539 - WN2025 project at the University of Michigan)
+
 
 ## Overview
 The site is fully hand-coded using:
