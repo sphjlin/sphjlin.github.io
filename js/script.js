@@ -1,3 +1,9 @@
+// This file contains the JavaScript code for the client project
+document.getElementById("year").innerHTML = new Date().getFullYear();
+// this javascript code is from Codex world:https://www.codexworld.com/how-to/get-current-year-to-display-dynamic-year-in-copyright-using-javascript/
+
+
+
 // Change button color when clicked
 document.getElementById('linkedIn').addEventListener('click', function() {
     this.style.backgroundColor = '#FFCB05';
@@ -21,5 +27,4 @@ document.getElementById('subscribeForm').addEventListener('submit', function(eve
     this.reset();
 });
 
-// Update copyright year automatically
-document.getElementById('year').textContent = new Date().getFullYear();
+
