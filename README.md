@@ -14,6 +14,7 @@ It includes three main pages:
 - **Home**: Introduction and services overview
 - **Portfolio**: Selected projects and case studies
 - **About Me**: Personal journey and resume download
+A custom 404 error page (404.html) is also included, just in case a visitor tries to access a broken or missing link.
 
 ## Key Features
 - Responsive design for mobile, tablet, and desktop
