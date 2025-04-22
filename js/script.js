@@ -5,9 +5,12 @@ document.getElementById("year").innerHTML = new Date().getFullYear();
 
 
 // Change button color when clicked
-document.getElementById('linkedIn').addEventListener('click', function() {
-    this.style.backgroundColor = '#FFCB05';
-    this.style.color = '#000000';
+const buttons = document.querySelectorAll('.prettybutton');
+buttons.forEach(function(button) {
+    button.addEventListener('click', function() {
+        this.style.backgroundColor = '#FFCB05';
+        this.style.color = '#000000';
+    });
 });
 
 // Handle the subscribe form submission

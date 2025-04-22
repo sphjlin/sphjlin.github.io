@@ -1,23 +1,22 @@
+/* ---------------------------------------------------
+    Import Google Fonts
+--------------------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Pompiere&display=swap');
-/*Skip to main*/
-.skip{
-    position: absolute;
-    top: -50px;
-    left: 10px;
-    background-color: white;
-    font-family: "IBM Plex Sans", sans-serif;
-    color: #00274C;
-    overflow: hidden;
-}
-.skip:focus {
-    top: 15px;
-    overflow: visible;
-}
-/*Overall text setting*/
+
+/* main{
+color: #F08E80;dark pink
+color:#ffd0c9;; medium pink
+color:#FDF0E6; light pink
+color:#000000; black
+color:#FFFFFF;  white
+color: #edecec; background
+} */
+
+
+/* ---------------------------------------------------
+    Global Base Styles
+--------------------------------------------------- */
 body {
     background-color: #edecec;
     font-family: "IBM Plex Sans", sans-serif;
@@ -25,6 +24,33 @@ body {
     margin: 0;
     padding: 0;
 }
+a{
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.3s; /* smooth transition */
+}
+a:hover, a:focus {
+    color: #F08E80;
+    text-decoration: underline;
+}
+/*Skip to main*/
+.skip{
+    position: absolute;
+    top: -50px;
+    left: 10px;
+    background-color: white;
+    font-family: "IBM Plex Sans", sans-serif;
+    color: #0B0D63;
+    overflow: hidden;
+}
+.skip:focus {
+    top: 15px;
+    overflow: visible;
+}
+
+/* ---------------------------------------------------
+    Header and Navigation
+--------------------------------------------------- */
 header {
     display: grid;
     grid-template-columns: auto;;
@@ -35,7 +61,6 @@ header {
     padding:30px;
     border: 1px solid #0B0D63;
 }
-
 header a {
     color: #0B0D63;
     transition: color 0.3s; /* smooth transition */
@@ -43,10 +68,6 @@ header a {
     border-radius: 5px;
 }
 
-a:hover, a:focus {
-    color: #F08E80;
-    text-decoration: underline;
-}
 
 nav{
     background-color: #FFFFFF;
@@ -83,11 +104,11 @@ nav ul li a {
 nav ul li.active a {
     background-color: #F08E80;
     color: #FFFFFF;
-    padding: 10px 30px;
+    padding: 10px 10px;
     border-radius: 10px;
 }
 nav ul li.active a:hover {
-    background-color: #feada1;
+    background-color: #ffd0c9;
     color: #FFFFFF;
 }
 /* other ones */
@@ -107,7 +128,6 @@ a:hover{
     color:#F08E80;
     text-decoration: underline;
 }
-
 
 main {
     background-color: #FFFFFF;
@@ -143,7 +163,7 @@ h2 {
     font-size: 1.8rem;
     line-height: 1.7rem;
     font-family: "Pompiere", sans-serif;
-    color: #0B0D63;
+    color: #000000;
     font-weight: bolder;
     text-transform: uppercase;
     padding-top: 20px;
@@ -160,12 +180,12 @@ h3 {
     padding-bottom: 10px;
     font-family: "Pompiere", sans-serif;
     font-size: 1.2rem;
-    color: #00274C;
+    color: #0B0D63;
     font-weight: bolder;
     text-transform: uppercase;
 }
 h3 a {
-    color: #00274C;
+    color: #0B0D63;
     background-color: #F08E80;
     transition: color 0.3s; /* smooth transition */
     padding: 5px;
@@ -194,20 +214,6 @@ img {
     display: block;
 }
 
-#index-pics{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 1rem;
-    justify-items: center;
-}
-#cew-pics{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 1rem;
-    justify-items: center;
-}
 
 #church-pics figure{
     align-items: end;
@@ -217,14 +223,15 @@ figcaption {
     margin-bottom: 5px;
     text-align: center;
     font-size: 0.7rem;
-    color: #0B0D63;
+    color: #000000;
 }
 p {
-	font-size: 1.05rem;
+    font-size: 1.05rem;
     line-height: 1.6rem;
     color: #000000;
     font-family: "IBM Plex Sans", sans-serif;
 }
+
 ul {
     line-height: 1.6rem;
     list-style-type: disc;
@@ -244,66 +251,123 @@ ul {
 #home_p{
     grid-row: 3;
 }
+.intro-text h2{
+    border-bottom: 0px;
+}
+/* ---------------------------------------------------
+    Special Components (buttons, cards, forms)
+--------------------------------------------------- */
+/* Buttons */
 .prettybutton{
-    padding: 8px 25%;
+    padding: 8px 20%;
     border-radius: 30px;
     background-color: #F08E80;
     color:#000000;
     text-decoration: none;
-    border: 0.3px solid #0B0D63;
+    border: 0.3px solid #000000;
     font-size: 0.9rem;
 }
 .prettybutton:hover{
-    background-color: #feada1;
+    background-color: #ffd0c9;
     color: black;
 }
 
-.intro-text h2{
-    border-bottom: 0px;
-}
 
+/* Service Section */
 .services{
     display:grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    background-color: #0B0D63;
+    background-color: #FDF0E6;
     padding: 10px 0px;
 }
-
 .services h2{
     grid-column: 1;;
     grid-row: 1;
-    color:white;
+    color:000000;
     text-align: center;
     padding-bottom: 15px;
-    /* border-bottom: 0px; */
+    margin-bottom: 15px;
 }
-
 .services div{
-    display:grid;
+    display: grid;
     grid-template-columns: 3fr 7fr;
     align-items: center;
-    border-bottom: 1px solid #FDF0E6;
-    margin:0px 30px;
-    padding: 10px 0px;
+    border-bottom: 1px solid #ffd0c9;
+    padding: 10px 30px;
 }
 .services div:last-child{
     border-bottom: none;
 }
-
 .services h3{
     grid-column: 1;
     grid-row: auto;
-    color:white;
+    color:#000000;
     text-align: center;
     padding: 10px;
 }
 .services p{
     grid-column: 2;
     grid-row: auto;
-    color:white;
+    color:#000000;
     text-align: center;
     padding: 10px;
+}
+
+/* Subscribe Form */
+.subscribe {
+    border-top: #000000 1px solid;
+    display: block;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+.subscribe h2 {
+    color:#000000;
+    border-bottom: none;
+}
+#subscribeForm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    background-color: #ffd0c9;
+    font-family: "Pompiere", sans-serif;
+    color: #000000;
+    font-size: 1.2rem;
+    border: 1px solid #F08E80;
+    padding: 2rem;
+    border-radius: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    grid-column: span 1;
+}
+.form-group label {
+    padding: 5px;
+}
+.form-group input {
+    font-family: "IBM Plex Sans", sans-serif;
+    box-sizing: border-box;
+    align-items: left;
+    width: 100%;
+    padding: 0.6rem;
+    border: none;
+    border-radius: 2rem;
+    background-color: #FDF0E6;
+}
+.form-group:last-child {
+    grid-column: span 2; /* Make the second input full width */
+}
+.form-group.full-width {
+    grid-column: span 2;
+}
+#subscribe_button {
+    grid-column: span 2;
+    background-color:#F08E80;
 }
 
 .middle-image img{
@@ -348,74 +412,10 @@ ul {
 
 .double-text img {
     object-fit: cover;
-    max-height: 300px;
-    height: auto;
+    max-width: 300px;
+    max-height: 350px;
     margin:10px 0px 0px 0px;
 }
-
-
-/* Subscribe */
-.subscribe {
-    border-top: #000000 1px solid;
-    display: block;
-    text-align: center;
-    padding: 2rem 1rem;
-}
-
-.subscribe h2 {
-    color:#000000;
-    border-bottom: none;
-}
-
-#subscribeForm {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    align-items: center;
-    background-color: #0B0D63;
-    font-family: "Pompiere", sans-serif;
-    color: #ffffff;
-    padding: 2rem;
-    border-radius: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-    grid-column: span 1;
-}
-
-.form-group label {
-    padding: 5px;
-}
-
-.form-group input {
-    font-family: "IBM Plex Sans", sans-serif;
-    box-sizing: border-box;
-    align-items: left;
-    width: 100%;
-    padding: 0.6rem;
-    border: none;
-    border-radius: 2rem;
-    background-color: #FDF0E6;
-}
-
-.form-group:last-child {
-    grid-column: span 2; /* Make the second input full width */
-}
-
-.form-group.full-width {
-    grid-column: span 2;
-}
-
-#subscribe_button {
-    grid-column: span 2;
-}
-
 
 .portfolio-grid{
     display: grid;
@@ -492,9 +492,36 @@ ul {
     display: grid;
     grid-template-columns: 1fr;
 }
+/* 404 Page*/
+.error404 {
+    margin: 0;
+    padding: 0;
+    background-color: #edecec;
+    font-family: "IBM Plex Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
 
+.error-code {
+    font-size: 6rem;
+    color: #F08E80;
+    font-family: "Pompiere", sans-serif;
+    margin: 0;
+}
 
+.error-message {
+    font-size: 1.2rem;
+    color: #000000;
+    margin: 10px 0 30px 0;
+}
 
+/* ---------------------------------------------------
+    Footer
+--------------------------------------------------- */
 footer{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -531,55 +558,58 @@ footer a {
     text-decoration: underline;
 }
 
-/* @media only screen and (min-width: 600px) {
-
-} */
+/* ---------------------------------------------------
+    Media Queries (Desktop Enhancements)
+--------------------------------------------------- */
 @media screen and (min-width: 768px) {
+    /* Navigation active button bigger */
+    nav ul li.active a {
+        padding: 10px 30px;
+    }
+
+    /* Section layout: two columns */
     section {
         display: grid;
-        background-color: #FFFFFF;
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
-        row-gap: 0rem;
     }
+    
+    /* Home page */
     #home_title{
         grid-column: 1;
         grid-row: 1;
         font-size: 3rem;
         text-align: center;
     }
-    #my_picture1{
-        object-fit: cover;
-        max-height: 300px;
-        max-width: 400px;
-        grid-column: 2;
-        grid-row: 1 / span 2;
-        justify-self: center;
-        border:0px;
-        border-radius: 10px;
-    }
     #home_p{
         grid-column: 1;
         grid-row: 2;
     }
-    
-    #my_picture2{
+
+    #my_picture1, #my_picture2{
         object-fit: cover;
-        max-height: 100%;
-        grid-column: 1;
+        max-height: 300px;
+        max-width: 400px;
         grid-row: 1 / span 2;
         justify-self: center;
         border:0px;
         border-radius: 10px;
     }
-    
+    #my_picture1{
+        grid-column: 2;
+    }
+    #my_picture2{
+        grid-column: 1;
+    }
+
     .intro-text{
         grid-column: 2;
     }
 
+    /* Small screen: horizontal layout */
+    /* Large screen: vertical layout */
     .services{
-        display:grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
         grid-template-rows: auto;
         padding: 20px 0px;
         gap:5px;
@@ -587,31 +617,28 @@ footer a {
     .services h2{
         grid-column: 1 / span 3;
         grid-row: 1;
-        color:white;
         text-align: center;
         /* border-bottom: 0px; */
     }
-
     .services div{
-        display: grid;
         grid-template-columns: auto;
-        grid-template-rows: 1fr 2fr;
-        color:white;
+        border-right: 1px solid #ffd0c9;
         text-align: center;
         border-bottom: none;
+        padding: 0px 30px
+    }
+    .services div:last-child{
+        border-right: none;
     }
 
     .services h3{
         grid-column: 1;
         grid-row: 1;
-        color:white;
         text-align: center;
-        padding: 10px;
     }
     .services p{
         grid-column: 1;
         grid-row: 2;
-        color:white;
         text-align: center;
         padding: 10px;
     }
