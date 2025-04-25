@@ -424,7 +424,7 @@ ul {
     justify-items: center;
 }
 .project-card{
-    padding:8%;
+    padding: 2% 8% 4% 8%;
     background-color: #FDF0E6;
     border-radius: 10px;
     border: 3px solid #F08E80;
@@ -437,6 +437,7 @@ ul {
     grid-template-rows: 1fr 1fr;
     gap: 1rem;
     justify-items: center; 
+    padding: 0px;
 }
 #church-pics img{
     object-fit: cover;
