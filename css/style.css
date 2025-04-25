@@ -270,6 +270,7 @@ ul {
 .prettybutton:hover{
     background-color: #ffd0c9;
     color: black;
+    cursor: pointer;
 }
 
 
