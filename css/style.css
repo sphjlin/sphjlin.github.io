@@ -103,13 +103,13 @@ nav ul li a {
 /* for the active one */
 nav ul li.active a {
     background-color: #F08E80;
-    color: #FFFFFF;
+    color: #000000;
     padding: 10px 10px;
     border-radius: 10px;
 }
 nav ul li.active a:hover {
     background-color: #ffd0c9;
-    color: #FFFFFF;
+    color: #000000;
 }
 /* other ones */
 nav ul li a:hover {
@@ -437,7 +437,6 @@ ul {
     grid-template-rows: 1fr 1fr;
     gap: 1rem;
     justify-items: center; 
-    padding: 0px;
 }
 #church-pics img{
     object-fit: cover;
@@ -497,7 +496,7 @@ ul {
 .error404 {
     margin: 0;
     padding: 0;
-    background-color: #edecec;
+    background-color: #FDF0E6;
     font-family: "IBM Plex Sans", sans-serif;
     display: flex;
     flex-direction: column;
@@ -505,6 +504,15 @@ ul {
     justify-content: center;
     height: 100vh;
     text-align: center;
+}
+
+.error404 h1 {
+    color: #000000;
+    font-size: 10rem;
+}
+
+.error404 main {
+    background-color: transparent;
 }
 
 .error-code {
@@ -554,7 +562,6 @@ footer ul {
     grid-column: 4;
 }
 footer a {
-    color: #F08E80;
     font-weight: bold;
     text-decoration: underline;
 }
@@ -661,6 +668,7 @@ footer a {
         background-color: transparent;
         gap: 1rem;
         justify-items: center;
+        padding: 0px;
     }
     #church-pics img{
         object-fit: cover;
