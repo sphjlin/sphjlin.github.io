@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sophia Lin — Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- 必须在 CDN 之前声明配置 -->
+  <script>
+    tailwind = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { light: '#5F61F2', dark: '#A5B4FC' },
+          },
+        },
+      },
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .dark .dark\:bg-\[\#0D0D0D\] { background-color: #0D0D0D !important; }
+      .dark .dark\:text-white { color: white !important; }
+      .dark .dark\:text-\[\#A5B4FC\] { color: #A5B4FC !important; }
+      .dark .dark\:text-gray-300 { color: #d1d5db !important; }
+      .dark .dark\:text-gray-400 { color: #9ca3af !important; }
+      .dark .dark\:border-white\/10 { border-color: rgba(255, 255, 255, 0.1) !important; }
+      .text-\[\#5F61F2\] { color: #5F61F2 !important; }
+    }
+    /* Force light mode colors */
+    html:not(.dark) body { background-color: white !important; color: #1f2937 !important; }
+    html:not(.dark) header { background-color: white !important; }
+    html:not(.dark) .text-black { color: #111827 !important; }
+    html:not(.dark) .text-gray-600 { color: #4b5563 !important; }
+    html:not(.dark) .text-gray-500 { color: #6b7280 !important; }
+    /* Force dark mode colors */
+    html.dark body { background-color: #0D0D0D !important; color: white !important; }
+    html.dark header { background-color: #0D0D0D !important; }
+    /* Text selection colors */
+    ::selection {
+      background-color: #5F61F2;
+      color: white;
+    }
+    html.dark ::selection {
+      background-color: #A5B4FC;
+      color: #0D0D0D;
+    }
+  </style>
+
+  <link rel="stylesheet" href="css/custom.css?v=9" />
+</head>
+
+<body class="bg-white dark:bg-[#0D0D0D] text-black dark:text-white font-[Inter]">
+<header id="nav" class="fixed top-0 left-0 w-full z-50 bg-white dark:bg-[#0D0D0D]">
+  <div class="max-w-6xl mx-auto flex justify-between items-center py-5 px-6">
+    <a href="index.html" class="font-semibold text-xl text-black dark:text-white">
+      <span class="md:hidden">SL</span>
+      <span class="hidden md:inline">Sophia Lin</span>
+    </a>
+    <nav class="flex gap-6 text-sm">
+      <a href="index.html" id="nav-home" class="navlink">Home</a>
+      <a href="about.html" id="nav-about" class="navlink">About</a>
+      <a href="projects.html" id="nav-projects" class="navlink">Projects</a>
+      <a href="contact.html" id="nav-contact" class="navlink">Contact</a>
+    </nav>
+    <button id="themeToggle" aria-label="Toggle theme" title="Toggle light / dark mode">◐</button>
+  </div>
+</header>
+<main class="pt-40 pb-8">
+  <!-- Hero Section -->
+  <section class="max-w-6xl mx-auto px-6 mb-32">
+    <p class="text-base md:text-lg text-gray-500 dark:text-gray-400 mb-6 flex items-center gap-2">
+      <svg class="wave-hand" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"/>
+        <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"/>
+        <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"/>
+        <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/>
+      </svg>
+      <span>Hi, I'm Sophia</span>
+    </p>
+    <h1 class="hero-title text-6xl md:text-7xl mb-12 max-w-4xl">
+      Designing <span class="hero-highlight">intuitive,<br/>
+      meaningful experiences</span><br/>
+      for everyone.
+    </h1>
+    <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl ml-auto mb-8">
+      I bridge design thinking and technical precision to create accessible experiences that make technology easier for everyone.
+    </p>
+    <div class="flex gap-6 items-center flex-wrap">
+      <a href="https://www.linkedin.com/in/sphjlin" target="_blank" class="hero-social-link text-sm text-gray-600 dark:text-gray-300">LINKEDIN ↗</a>
+      <a href="https://github.com/sphjlin" target="_blank" class="hero-social-link text-sm text-gray-600 dark:text-gray-300">GITHUB ↗</a>
+      <a href="mailto:sphjlin1203@gmail.com" class="hero-social-link text-sm text-gray-600 dark:text-gray-300">EMAIL ↗</a>
+      <a href="about.html" class="btn-primary ml-auto">Know me better</a>
+    </div>
+  </section>
+
+  <!-- Scrolling Skills Bar -->
+  <section class="overflow-hidden py-8 border-t border-b border-gray-200 dark:border-gray-800 mb-20">
+    <div class="scroll-container">
+      <div class="scroll-content">
+        <span class="scroll-item">UX Research</span>
+        <span class="scroll-divider">✦</span>
+        <span class="scroll-item">UI Design</span>
+        <span class="scroll-divider">✦</span>
+        <span class="scroll-item">User Testing</span>
+        <span class="scroll-divider">✦</span>
+        <span class="scroll-item">Prototyping</span>
+        <span class="scroll-divider">✦</span>
+        <span class="scroll-item">Accessibility</span>
+        <span class="scroll-divider">✦</span>
+        <!-- Duplicate for seamless loop -->
+        <span class="scroll-item">UX Research</span>
+        <span class="scroll-divider">✦</span>
+        <span class="scroll-item">UI Design</span>
+        <span class="scroll-divider">✦</span>
+        <span class="scroll-item">User Testing</span>
+        <span class="scroll-divider">✦</span>
+        <span class="scroll-item">Prototyping</span>
+        <span class="scroll-divider">✦</span>
+        <span class="scroll-item">Accessibility</span>
+        <span class="scroll-divider">✦</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section class="max-w-6xl mx-auto px-6 mb-20 text-center">
+    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-4">✦ ABOUT ME</p>
+    <div class="text-xl md:text-2xl font-medium max-w-4xl mx-auto reveal-text" data-text="I'm Sophia Lin, a UX Research & Design student at the University of Michigan, combining design thinking with a computer science foundation to create inclusive digital experiences. My work centers on accessibility, usability, and emerging technologies — always focused on making tech feel intuitive and human.">
+    </div>
+  </section>
+
+  <!-- Selected Projects Section -->
+  <section class="max-w-6xl mx-auto px-6 mb-32">
+    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-4">✦ MY WORK</p>
+    <h2 class="text-4xl font-bold mb-4">Selected Projects</h2>
+    <p class="text-gray-600 dark:text-gray-300 mb-12">Here's a curated selection showcasing my expertise and the achieved results.</p>
+
+    <div class="projects-grid">
+      <!-- Project Card 1 -->
+      <div class="project-card">
+        <div class="project-card-image">
+          <img src="assets/p1.png" alt="ReFine">
+        </div>
+        <div class="project-card-content">
+          <h3 class="project-card-title">ReFine</h3>
+          <div class="project-card-meta">
+            <p class="project-card-type">UX Research & Design</p>
+            <p class="project-card-year">2024</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 2 -->
+      <div class="project-card">
+        <div class="project-card-image">
+          <img src="assets/p1.jpg" alt="Design System">
+        </div>
+        <div class="project-card-content">
+          <h3 class="project-card-title">Design System</h3>
+          <div class="project-card-meta">
+            <p class="project-card-type">UI/UX Design</p>
+            <p class="project-card-year">2024</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 3 -->
+      <div class="project-card">
+        <div class="project-card-image">
+          <img src="assets/p1.jpg" alt="User Research">
+        </div>
+        <div class="project-card-content">
+          <h3 class="project-card-title">User Research</h3>
+          <div class="project-card-meta">
+            <p class="project-card-type">Research & Analysis</p>
+            <p class="project-card-year">2024</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 4 -->
+      <div class="project-card">
+        <div class="project-card-image">
+          <img src="assets/p1.jpg" alt="Mobile App">
+        </div>
+        <div class="project-card-content">
+          <h3 class="project-card-title">Mobile App</h3>
+          <div class="project-card-meta">
+            <p class="project-card-type">UX/UI Design</p>
+            <p class="project-card-year">2024</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <a href="projects.html" class="btn-outline">View All Projects</a>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer-section">
+    <div class="max-w-3xl mx-auto px-6 pt-12 pb-2 text-center">
+      <!-- Heading -->
+      <h2 class="footer-heading">Let's connect.</h2>
+
+      <!-- Subtext -->
+      <p class="footer-subtext">
+        Let's connect over design, ideas, or a friendly hello.
+      </p>
+
+      <!-- Email -->
+      <a href="mailto:sphjlin1203@gmail.com" class="footer-email">
+        sphjlin1203@gmail.com
+      </a>
+
+      <!-- Social Icons -->
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/sphjlin" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="LinkedIn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+
+        <a href="https://github.com/sphjlin" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="GitHub">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+
+        <a href="mailto:sphjlin1203@gmail.com" class="footer-icon" aria-label="Email">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Copyright -->
+      <p class="footer-copyright">
+        © <span id="year"></span> Sophia Lin
+      </p>
+    </div>
+  </footer>
+</main>
+<script src="js/main.js"></script>
+</body></html>
