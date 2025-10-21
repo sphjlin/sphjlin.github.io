@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Sophia Lin</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { light: '#5F61F2', dark: '#A5B4FC' },
+          },
+        },
+      },
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .dark .dark\:bg-\[\#0D0D0D\] { background-color: #0D0D0D !important; }
+      .dark .dark\:text-white { color: white !important; }
+      .dark .dark\:text-\[\#A5B4FC\] { color: #A5B4FC !important; }
+      .dark .dark\:text-gray-300 { color: #d1d5db !important; }
+      .dark .dark\:text-gray-400 { color: #9ca3af !important; }
+      .dark .dark\:border-white\/10 { border-color: rgba(255, 255, 255, 0.1) !important; }
+    }
+    /* Force light mode colors */
+    html:not(.dark) body { background-color: white !important; color: #374151 !important; }
+    html:not(.dark) header { background-color: white !important; }
+    html:not(.dark) .text-black { color: #1f2937 !important; }
+    /* Force dark mode colors */
+    html.dark body { background-color: #0D0D0D !important; color: white !important; }
+    html.dark header { background-color: #0D0D0D !important; }
+    /* Text selection colors */
+    ::selection {
+      background-color: #5F61F2;
+      color: white;
+    }
+    html.dark ::selection {
+      background-color: #A5B4FC;
+      color: #0D0D0D;
+    }
+  </style>
+
+  <link rel="stylesheet" href="css/custom.css?v=9">
+</head>
+
+<body class="bg-white dark:bg-[#0D0D0D] text-black dark:text-white font-[Inter]">
+<header id="nav" class="fixed top-0 left-0 w-full z-50 bg-white dark:bg-[#0D0D0D]">
+  <div class="max-w-6xl mx-auto flex justify-between items-center py-5 px-6">
+    <a href="index.html" class="font-semibold text-xl text-black dark:text-white">
+      <span class="md:hidden">SL</span>
+      <span class="hidden md:inline">Sophia Lin</span>
+    </a>
+    <nav class="flex gap-6 text-sm">
+      <a href="index.html" id="nav-home" class="navlink">Home</a>
+      <a href="about.html" id="nav-about" class="navlink">About</a>
+      <a href="projects.html" id="nav-projects" class="navlink">Projects</a>
+      <a href="contact.html" id="nav-contact" class="navlink">Contact</a>
+    </nav>
+    <button id="themeToggle" aria-label="Toggle theme" title="Toggle light / dark mode">◐</button>
+  </div>
+</header>
+
+<main class="pt-32 pb-8 max-w-4xl mx-auto px-6 space-y-16">
+  <div>
+    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-4">✦ GET IN TOUCH</p>
+    <h1 class="text-4xl font-extrabold mb-8">Let's Connect</h1>
+  </div>
+
+  <form id="contact-form" action="https://formspree.io/f/mwprjqkw" method="POST" class="grid gap-4">
+    <input type="text" name="name" placeholder="Your Name" class="input" autocomplete="name" required>
+    <input type="email" name="email" placeholder="Email" class="input" autocomplete="email" required>
+    <textarea rows="4" name="message" placeholder="Message" class="input" autocomplete="off" required></textarea>
+    <button type="submit" class="btn-primary w-fit">Send</button>
+    <p id="form-status" class="text-sm mt-2"></p>
+  </form>
+
+  <h2 class="text-2xl font-bold mt-12 mb-4">FAQ</h2>
+  <details class="faq">
+    <summary>Are you currently open to new collaborations?</summary>
+    <p>Yes — always open to meaningful design projects.</p>
+  </details>
+
+  <!-- Footer Section -->
+  <footer class="footer-section">
+    <div class="max-w-3xl mx-auto px-6 pt-12 pb-2 text-center">
+      <!-- Heading -->
+      <h2 class="footer-heading">Let's connect.</h2>
+
+      <!-- Subtext -->
+      <p class="footer-subtext">
+        Let's connect over design, ideas, or a friendly hello.
+      </p>
+
+      <!-- Email -->
+      <a href="mailto:sphjlin1203@gmail.com" class="footer-email">
+        sphjlin1203@gmail.com
+      </a>
+
+      <!-- Social Icons -->
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/sphjlin" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="LinkedIn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+
+        <a href="https://github.com/sphjlin" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="GitHub">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+
+        <a href="mailto:sphjlin1203@gmail.com" class="footer-icon" aria-label="Email">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Copyright -->
+      <p class="footer-copyright">
+        © <span id="year"></span> Sophia Lin
+      </p>
+    </div>
+  </footer>
+</main>
+
+<script src="js/main.js"></script>
+
+<script>
+  var form = document.getElementById("contact-form");
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    var status = document.getElementById("form-status");
+    var button = event.target.querySelector('button[type="submit"]');
+    var originalButtonText = button.textContent;
+
+    // Show loading state
+    button.textContent = "Sending...";
+    button.disabled = true;
+    status.innerHTML = "";
+
+    var data = new FormData(event.target);
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: {
+          'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        status.innerHTML = "Thanks for your message! I'll get back to you soon.";
+        status.className = "form-status-success text-sm";
+        form.reset();
+        button.textContent = originalButtonText;
+        button.disabled = false;
+      } else {
+        response.json().then(data => {
+          if (Object.hasOwn(data, 'errors')) {
+            status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+          } else {
+            status.innerHTML = "Oops! There was a problem submitting your form";
+          }
+          status.className = "form-status-error text-sm";
+          button.textContent = originalButtonText;
+          button.disabled = false;
+        })
+      }
+    }).catch(error => {
+      status.innerHTML = "Oops! There was a problem submitting your form";
+      status.className = "form-status-error text-sm";
+      button.textContent = originalButtonText;
+      button.disabled = false;
+    });
+  }
+  form.addEventListener("submit", handleSubmit)
+</script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Sophia Lin</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { light: '#5F61F2', dark: '#A5B4FC' },
+          },
+        },
+      },
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .dark .dark\:bg-\[\#0D0D0D\] { background-color: #0D0D0D !important; }
+      .dark .dark\:text-white { color: white !important; }
+      .dark .dark\:text-\[\#A5B4FC\] { color: #A5B4FC !important; }
+      .dark .dark\:text-gray-300 { color: #d1d5db !important; }
+      .dark .dark\:text-gray-400 { color: #9ca3af !important; }
+      .dark .dark\:border-white\/10 { border-color: rgba(255, 255, 255, 0.1) !important; }
+    }
+    /* Force light mode colors */
+    html:not(.dark) body { background-color: white !important; color: #1f2937 !important; }
+    html:not(.dark) header { background-color: white !important; }
+    html:not(.dark) .text-black { color: #111827 !important; }
+    html:not(.dark) .text-gray-600 { color: #4b5563 !important; }
+    html:not(.dark) .text-gray-500 { color: #6b7280 !important; }
+    html:not(.dark) .text-gray-700 { color: #374151 !important; }
+    /* Force dark mode colors */
+    html.dark body { background-color: #0D0D0D !important; color: white !important; }
+    html.dark header { background-color: #0D0D0D !important; }
+    /* Text selection colors */
+    ::selection {
+      background-color: #5F61F2;
+      color: white;
+    }
+    html.dark ::selection {
+      background-color: #A5B4FC;
+      color: #0D0D0D;
+    }
+  </style>
+
+  <link rel="stylesheet" href="css/custom.css?v=9" />
+</head>
+
+<body class="bg-white dark:bg-[#0D0D0D] text-black dark:text-white font-[Inter]">
+<header id="nav" class="fixed top-0 left-0 w-full z-50 bg-white dark:bg-[#0D0D0D]">
+  <div class="max-w-6xl mx-auto flex justify-between items-center py-5 px-6">
+    <a href="index.html" class="font-semibold text-xl text-black dark:text-white">
+      <span class="md:hidden">SL</span>
+      <span class="hidden md:inline">Sophia Lin</span>
+    </a>
+    <nav class="flex gap-6 text-sm">
+      <a href="index.html" id="nav-home" class="navlink">Home</a>
+      <a href="about.html" id="nav-about" class="navlink">About</a>
+      <a href="projects.html" id="nav-projects" class="navlink">Projects</a>
+      <a href="contact.html" id="nav-contact" class="navlink">Contact</a>
+    </nav>
+    <button id="themeToggle" aria-label="Toggle theme" title="Toggle light / dark mode">◐</button>
+  </div>
+</header>
+
+<main class="pt-40 pb-8">
+  <!-- Hero Section -->
+  <section class="max-w-6xl mx-auto px-6 mb-20">
+    <!-- Hero Image -->
+    <figure class="mb-16">
+      <img src="assets/sophia-round2.jpg" alt="Sophia Lin" class="w-full rounded-2xl shadow-2xl object-cover" style="max-height: 400px; object-position: center 35%;">
+      <figcaption class="mt-4 text-sm text-gray-500 dark:text-gray-400 italic text-center">
+        Framing design through a human lens — literally.
+      </figcaption>
+    </figure>
+
+    <!-- Content -->
+    <div class="max-w-4xl mx-auto space-y-6">
+      <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-4 text-center">✦ ABOUT ME</p>
+      <h1 class="text-4xl md:text-5xl font-bold mb-8 text-center">Hi! I'm Sophia.</h1>
+
+      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-center">
+        I'm a product designer with a background in <span class="about-highlight">computer science</span> and a current master's student in <span class="about-highlight">UX Research & Design</span> at the University of Michigan.
+      </p>
+
+      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-center">
+        My work explores how technology can be both <span class="about-highlight">intuitive and inclusive</span>, empowering people to interact with digital products effortlessly.
+      </p>
+
+      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-center">
+        I've always been fascinated by how <span class="about-highlight">thoughtful design can bridge human intention and system logic</span>.
+      </p>
+
+      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-center">
+        With my experience in <span class="about-highlight">interaction design</span>, <span class="about-highlight">accessibility</span>, and <span class="about-highlight">AR/VR prototyping</span>, I focus on creating experiences that are both <span class="about-highlight">technically sound and emotionally resonant</span>.
+      </p>
+
+      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-center">
+        <span class="about-highlight">What kind of designer do I want to be?</span>
+        One who designs with empathy and precision — crafting digital experiences that feel simple, human, and meaningful.
+      </p>
+
+      <!-- Resume Button -->
+      <div class="pt-4 text-center">
+        <a href="assets/Sophia_Lin_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex items-center gap-2">
+          View Resume
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 7h10v10"></path>
+            <path d="M7 17 17 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="max-w-6xl mx-auto px-6 mb-32">
+    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-4 text-center">✦ TOOLKIT</p>
+    <h2 class="text-3xl font-bold mb-8 text-center">Skills & Tools</h2>
+
+    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <!-- Design -->
+      <div class="skill-category">
+        <h3 class="skill-category-title">Design</h3>
+        <ul class="skill-list">
+          <li>Figma</li>
+          <li>Adobe XD</li>
+          <li>Sketch</li>
+          <li>Prototyping</li>
+          <li>Wireframing</li>
+        </ul>
+      </div>
+
+      <!-- Research -->
+      <div class="skill-category">
+        <h3 class="skill-category-title">Research</h3>
+        <ul class="skill-list">
+          <li>User Interviews</li>
+          <li>Usability Testing</li>
+          <li>A/B Testing</li>
+          <li>Surveys</li>
+          <li>Personas</li>
+        </ul>
+      </div>
+
+      <!-- Development -->
+      <div class="skill-category">
+        <h3 class="skill-category-title">Development</h3>
+        <ul class="skill-list">
+          <li>HTML/CSS</li>
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>Python</li>
+          <li>AR/VR (Unity)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section class="max-w-4xl mx-auto px-6 mb-32">
+    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-4 text-center">✦ JOURNEY</p>
+    <h2 class="text-3xl font-bold mb-12 text-center">My Path in Design & Tech</h2>
+
+    <div class="timeline">
+      <!-- Timeline Item 1 -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2024 - Present</span>
+          <h3 class="timeline-title">University of Michigan</h3>
+          <p class="timeline-role">Master of Science in UX Research & Design</p>
+          <p class="timeline-description">Focusing on human-computer interaction, accessibility, and emerging technologies.</p>
+        </div>
+      </div>
+
+      <!-- Timeline Item 2 -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2023 - 2024</span>
+          <h3 class="timeline-title">UX Designer</h3>
+          <p class="timeline-role">Company Name</p>
+          <p class="timeline-description">Led design projects focused on accessibility and user-centered design principles.</p>
+        </div>
+      </div>
+
+      <!-- Timeline Item 3 -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2017 - 2021</span>
+          <h3 class="timeline-title">University of Pittsburgh</h3>
+          <p class="timeline-role">Bachelor of Science in Computer Science</p>
+          <p class="timeline-description">Built foundation in programming, data structures, and software development.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer-section">
+    <div class="max-w-3xl mx-auto px-6 pt-12 pb-2 text-center">
+      <!-- Heading -->
+      <h2 class="footer-heading">Let's connect.</h2>
+
+      <!-- Subtext -->
+      <p class="footer-subtext">
+        Let's connect over design, ideas, or a friendly hello.
+      </p>
+
+      <!-- Email -->
+      <a href="mailto:sphjlin1203@gmail.com" class="footer-email">
+        sphjlin1203@gmail.com
+      </a>
+
+      <!-- Social Icons -->
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/sphjlin" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="LinkedIn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+
+        <a href="https://github.com/sphjlin" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="GitHub">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+
+        <a href="mailto:sphjlin1203@gmail.com" class="footer-icon" aria-label="Email">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Copyright -->
+      <p class="footer-copyright">
+        © <span id="year"></span> Sophia Lin
+      </p>
+    </div>
+  </footer>
+</main>
+
+<script src="js/main.js"></script>
+</body>
+</html>
