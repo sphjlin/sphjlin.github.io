@@ -4,7 +4,7 @@ A clean, minimal portfolio website showcasing my UX research and design work.
 
 ## 🌐 Live Site
 
-[View Portfolio](https://your-username.github.io/sophia-lin-portfolio)
+[View Portfolio](https://sphjlin.github.io/)
 
 ## ✨ Features
 
