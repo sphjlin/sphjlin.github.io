@@ -51,34 +51,6 @@ sophia-lin-portfolio/
 └── assets/             # Images and resume
 ```
 
-## 🚀 Getting Started
-
-### Local Development
-
-1. Clone the repository:
-```bash
-git clone https://github.com/your-username/sophia-lin-portfolio.git
-cd sophia-lin-portfolio
-```
-
-2. Open `index.html` in your browser or use a local server:
-```bash
-# Using Python
-python -m http.server 8000
-
-# Using Node.js
-npx serve
-```
-
-3. Navigate to `http://localhost:8000`
-
-### Deployment
-
-This site can be deployed to:
-- **GitHub Pages** - Free hosting for static sites
-- **Netlify** - Drag and drop deployment
-- **Vercel** - Zero-config deployment
-
 ## ♿ Accessibility
 
 - WCAG 2.1 AA compliant color contrast ratios
