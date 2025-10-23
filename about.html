@@ -39,6 +39,7 @@
     html:not(.dark) .text-gray-600 { color: #4b5563 !important; }
     html:not(.dark) .text-gray-500 { color: #6b7280 !important; }
     html:not(.dark) .text-gray-700 { color: #374151 !important; }
+    html:not(.dark) .text-\[\#5F61F2\] { color: #5F61F2 !important; }
     /* Force dark mode colors */
     html.dark body { background-color: #0D0D0D !important; color: white !important; }
     html.dark header { background-color: #0D0D0D !important; }
@@ -56,14 +57,14 @@
   <link rel="stylesheet" href="css/custom.css?v=9" />
 </head>
 
-<body class="bg-white dark:bg-[#0D0D0D] text-black dark:text-white font-[Inter]">
+<body class="bg-white dark:bg-[#0D0D0D] text-black dark:text-white" style="font-family: 'Plus Jakarta Sans', sans-serif;">
 <header id="nav" class="fixed top-0 left-0 w-full z-50 bg-white dark:bg-[#0D0D0D]">
   <div class="max-w-6xl mx-auto flex justify-between items-center py-5 px-6">
     <a href="index.html" class="font-semibold text-xl text-black dark:text-white">
       <span class="md:hidden">SL</span>
       <span class="hidden md:inline">Sophia Lin</span>
     </a>
-    <nav class="flex gap-6 text-sm">
+    <nav class="flex gap-3 md:gap-6 text-sm">
       <a href="index.html" id="nav-home" class="navlink">Home</a>
       <a href="about.html" id="nav-about" class="navlink">About</a>
       <a href="projects.html" id="nav-projects" class="navlink">Projects</a>
@@ -78,7 +79,7 @@
   <section class="max-w-6xl mx-auto px-6 mb-20">
     <!-- Hero Image -->
     <figure class="mb-16">
-      <img src="assets/sophia-round2.jpg" alt="Sophia Lin" class="w-full rounded-2xl shadow-2xl object-cover" style="max-height: 400px; object-position: center 35%;">
+      <img src="assets/sophia-round2.jpg" alt="Sophia Lin" class="about-hero-image w-full rounded-2xl shadow-2xl object-cover" style="max-height: 400px; object-position: center 35%;">
       <figcaption class="mt-4 text-sm text-gray-500 dark:text-gray-400 italic text-center">
         Framing design through a human lens — literally.
       </figcaption>
@@ -129,39 +130,39 @@
     <h2 class="text-3xl font-bold mb-8 text-center">Skills & Tools</h2>
 
     <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-      <!-- Design -->
+      <!-- Design & Prototyping -->
       <div class="skill-category">
-        <h3 class="skill-category-title">Design</h3>
+        <h3 class="skill-category-title">Design & Prototyping</h3>
         <ul class="skill-list">
           <li>Figma</li>
-          <li>Adobe XD</li>
-          <li>Sketch</li>
-          <li>Prototyping</li>
           <li>Wireframing</li>
+          <li>Prototyping</li>
+          <li>Visual Design</li>
+          <li>Creative Storytelling <span class="skill-subtext">(Procreate, DaVinci Resolve)</span></li>
         </ul>
       </div>
 
-      <!-- Research -->
+      <!-- UX Research -->
       <div class="skill-category">
-        <h3 class="skill-category-title">Research</h3>
+        <h3 class="skill-category-title">UX Research</h3>
         <ul class="skill-list">
           <li>User Interviews</li>
           <li>Usability Testing</li>
-          <li>A/B Testing</li>
-          <li>Surveys</li>
-          <li>Personas</li>
+          <li>Journey Mapping</li>
+          <li>Affinity Mapping</li>
+          <li>Heuristic Evaluation</li>
         </ul>
       </div>
 
-      <!-- Development -->
+      <!-- Technical Skills -->
       <div class="skill-category">
-        <h3 class="skill-category-title">Development</h3>
+        <h3 class="skill-category-title">Technical Skills</h3>
         <ul class="skill-list">
-          <li>HTML/CSS</li>
-          <li>JavaScript</li>
-          <li>React</li>
-          <li>Python</li>
+          <li>HTML / CSS / JS</li>
+          <li>React (basic)</li>
           <li>AR/VR (Unity)</li>
+          <li>Python / Java / SQL</li>
+          <li>AI-assisted Coding <span class="skill-subtext">(Vibe Coding, Copilot)</span></li>
         </ul>
       </div>
     </div>

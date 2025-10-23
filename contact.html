@@ -37,6 +37,7 @@
     html:not(.dark) body { background-color: white !important; color: #374151 !important; }
     html:not(.dark) header { background-color: white !important; }
     html:not(.dark) .text-black { color: #1f2937 !important; }
+    html:not(.dark) .text-\[\#5F61F2\] { color: #5F61F2 !important; }
     /* Force dark mode colors */
     html.dark body { background-color: #0D0D0D !important; color: white !important; }
     html.dark header { background-color: #0D0D0D !important; }
@@ -54,14 +55,14 @@
   <link rel="stylesheet" href="css/custom.css?v=9">
 </head>
 
-<body class="bg-white dark:bg-[#0D0D0D] text-black dark:text-white font-[Inter]">
+<body class="bg-white dark:bg-[#0D0D0D] text-black dark:text-white" style="font-family: 'Plus Jakarta Sans', sans-serif;">
 <header id="nav" class="fixed top-0 left-0 w-full z-50 bg-white dark:bg-[#0D0D0D]">
   <div class="max-w-6xl mx-auto flex justify-between items-center py-5 px-6">
     <a href="index.html" class="font-semibold text-xl text-black dark:text-white">
       <span class="md:hidden">SL</span>
       <span class="hidden md:inline">Sophia Lin</span>
     </a>
-    <nav class="flex gap-6 text-sm">
+    <nav class="flex gap-3 md:gap-6 text-sm">
       <a href="index.html" id="nav-home" class="navlink">Home</a>
       <a href="about.html" id="nav-about" class="navlink">About</a>
       <a href="projects.html" id="nav-projects" class="navlink">Projects</a>
@@ -85,11 +86,38 @@
     <p id="form-status" class="text-sm mt-2"></p>
   </form>
 
-  <h2 class="text-2xl font-bold mt-12 mb-4">FAQ</h2>
-  <details class="faq">
-    <summary>Are you currently open to new collaborations?</summary>
-    <p>Yes — always open to meaningful design projects.</p>
-  </details>
+  <section class="mt-24 mb-16">
+    <div class="grid md:grid-cols-[280px_1fr] gap-12 items-start">
+      <!-- Left: Title -->
+      <div class="md:sticky md:top-32">
+        <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-4">✦ FAQ</p>
+        <h2 class="text-4xl md:text-5xl font-bold leading-tight">Have Questions?</h2>
+      </div>
+
+      <!-- Right: FAQ Items -->
+      <div class="space-y-3">
+        <details class="faq">
+          <summary>Are you open to new opportunities?</summary>
+          <p>Yes. I'm actively seeking Product Design internships and I'm open to early-career full-time roles that fit my skills and values. I'm based in Ann Arbor and comfortable with remote, hybrid, or relocation.</p>
+        </details>
+
+        <details class="faq">
+          <summary>What's your design process?</summary>
+          <p>Start with the problem and people → do just-enough research → shape ideas in wireframes → prototype and test → iterate with evidence → handoff with clear specs. I balance user needs, business goals, and technical constraints.</p>
+        </details>
+
+        <details class="faq">
+          <summary>What strengths do you bring?</summary>
+          <p>I'm a designer with a CS background who can move from research to shipped UI. I'm comfortable with Figma + design systems, care about accessibility, and can prototype with code when needed. I keep docs tidy and decisions traceable.</p>
+        </details>
+
+        <details class="faq">
+          <summary>How do you like to work with teams?</summary>
+          <p>With honesty and curiosity. I like when people bring their perspectives to the table, and I do my best to listen, connect the dots, and help us move forward together.</p>
+        </details>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer Section -->
   <footer class="footer-section">
