@@ -34,7 +34,7 @@
       .dark .dark\:border-white\/10 { border-color: rgba(255, 255, 255, 0.1) !important; }
     }
     /* Force light mode colors */
-    html:not(.dark) body { background-color: white !important; color: #374151 !important; }
+    html:not(.dark) body { background-color: #f9fafb !important; color: #374151 !important; }
     html:not(.dark) header { background-color: white !important; }
     html:not(.dark) .text-black { color: #1f2937 !important; }
     html:not(.dark) .text-\[\#5F61F2\] { color: #5F61F2 !important; }
@@ -72,13 +72,14 @@
   </div>
 </header>
 
-<main class="pt-32 pb-8 max-w-4xl mx-auto px-6 space-y-16">
-  <div>
-    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-4">✦ GET IN TOUCH</p>
-    <h1 class="text-4xl font-extrabold mb-8">Let's Connect</h1>
-  </div>
+<main class="pt-40 pb-8">
+  <section class="max-w-6xl mx-auto px-6 space-y-16">
+    <div>
+      <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-4">✦ GET IN TOUCH</p>
+      <h1 class="text-4xl font-extrabold mb-8">Let's Connect</h1>
+    </div>
 
-  <form id="contact-form" action="https://formspree.io/f/mwprjqkw" method="POST" class="grid gap-4">
+    <form id="contact-form" action="https://formspree.io/f/mwprjqkw" method="POST" class="grid gap-4">
     <input type="text" name="name" placeholder="Your Name" class="input" autocomplete="name" required>
     <input type="email" name="email" placeholder="Email" class="input" autocomplete="email" required>
     <textarea rows="4" name="message" placeholder="Message" class="input" autocomplete="off" required></textarea>
@@ -86,7 +87,7 @@
     <p id="form-status" class="text-sm mt-2"></p>
   </form>
 
-  <section class="mt-24 mb-16">
+  <section class="mt-24 mb-32">
     <div class="grid md:grid-cols-[280px_1fr] gap-12 items-start">
       <!-- Left: Title -->
       <div class="md:sticky md:top-32">
@@ -95,7 +96,7 @@
       </div>
 
       <!-- Right: FAQ Items -->
-      <div class="space-y-3">
+      <div class="space-y-3 mb-12">
         <details class="faq">
           <summary>Are you open to new opportunities?</summary>
           <p>Yes. I'm actively seeking Product Design internships and I'm open to early-career full-time roles that fit my skills and values. I'm based in Ann Arbor and comfortable with remote, hybrid, or relocation.</p>
@@ -117,6 +118,7 @@
         </details>
       </div>
     </div>
+  </section>
   </section>
 
   <!-- Footer Section -->

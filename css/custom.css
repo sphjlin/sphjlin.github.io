@@ -120,8 +120,8 @@ html.dark .hero-social-link:hover{
   overflow:hidden;
   transition:transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   cursor:pointer;
-  border:2px solid transparent;
-  background-color:#f9fafb;
+  border:1px solid #e5e7eb;
+  background-color:white;
 }
 .dark .project-card{
   background-color:#1f1f1f !important;
@@ -585,9 +585,10 @@ body, header, main, footer, .btn-primary, .btn-outline, .input, .card, .faq, .na
 
 /* Skills Section */
 .skill-category{
-  background-color:#f9fafb;
+  background-color:white;
   border-radius:1rem;
   padding:2rem;
+  border:1px solid #e5e7eb;
 }
 .dark .skill-category{
   background-color:#1f1f1f;
@@ -683,9 +684,10 @@ body, header, main, footer, .btn-primary, .btn-outline, .input, .card, .faq, .na
 }
 
 .timeline-content{
-  background-color:#f9fafb;
+  background-color:white;
   border-radius:0.75rem;
   padding:1.5rem;
+  border:1px solid #e5e7eb;
 }
 .dark .timeline-content{
   background-color:#1f1f1f;
