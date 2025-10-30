@@ -40,15 +40,20 @@ A clean, minimal portfolio website showcasing my UX research and design work.
 
 ```
 sophia-lin-portfolio/
-├── index.html          # Home page
-├── about.html          # About page with skills & timeline
-├── projects.html       # Projects showcase
-├── contact.html        # Contact form
+├── index.html          # Landing page introducing portfolio overview
+├── about.html          # About page with bio, skills, and experience timeline
+├── projects.html       # Main projects gallery linking to case studies
+├── contact.html        # Contact page with Formspree integration
 ├── css/
-│   └── custom.css      # Custom styles
+│   └── custom.css      # Custom styling overrides and animations
 ├── js/
-│   └── main.js         # Interactive features
-└── assets/             # Images and resume
+│   └── main.js         # Theme toggle and interactive scripts
+├── assets/             # Static assets (images, icons, resume)
+└── projects/           # Individual project case study pages
+    ├── refine.html          # ReFine – productivity app project
+    ├── class-catalyst.html  # Class Catalyst – UX research collaboration
+    ├── sceneo.html          # Sceneo – theater discovery concept
+    └── rural-access.html    # Rural Access – accessibility redesign project
 ```
 
 ## 🚀 Getting Started
