@@ -319,17 +319,20 @@ body, header, main, footer, .btn-primary, .btn-outline, .input, .card, .faq, .na
 }
 
 /* Logo hover effect */
-#nav a[href="index.html"].font-semibold{
+#nav a[href="index.html"].font-semibold,
+#nav a[href="../index.html"].font-semibold{
   transition:color 0.2s ease, transform 0.2s ease;
   display:inline-flex;
   align-items:center;
   justify-content:center;
 }
-#nav a[href="index.html"].font-semibold:hover{
+#nav a[href="index.html"].font-semibold:hover,
+#nav a[href="../index.html"].font-semibold:hover{
   color:#5F61F2 !important;
   transform:scale(1.1);
 }
-.dark #nav a[href="index.html"].font-semibold:hover{
+.dark #nav a[href="index.html"].font-semibold:hover,
+.dark #nav a[href="../index.html"].font-semibold:hover{
   color:#A5B4FC !important;
 }
 
