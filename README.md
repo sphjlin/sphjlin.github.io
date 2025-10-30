@@ -56,33 +56,6 @@ sophia-lin-portfolio/
     └── rural-access.html    # Rural Access – accessibility redesign project
 ```
 
-## 🚀 Getting Started
-
-### Local Development
-
-1. Clone the repository:
-```bash
-git clone https://github.com/your-username/sophia-lin-portfolio.git
-cd sophia-lin-portfolio
-```
-
-2. Open `index.html` in your browser or use a local server:
-```bash
-# Using Python
-python -m http.server 8000
-
-# Using Node.js
-npx serve
-```
-
-3. Navigate to `http://localhost:8000`
-
-### Deployment
-
-This site can be deployed to:
-- **GitHub Pages** - Free hosting for static sites
-- **Netlify** - Drag and drop deployment
-- **Vercel** - Zero-config deployment
 
 ## ♿ Accessibility
 
@@ -90,26 +63,19 @@ This site can be deployed to:
 - Semantic HTML5 elements
 - ARIA labels for interactive elements
 - Keyboard navigation support
-- `prefers-reduced-motion` media query support
-- Alt text for all images
+- `prefers-reduced-motion` support
+- Descriptive alt text for images
 
-## 📱 Browser Support
+## 🌍 Browser Compatibility
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
+- Latest versions of Chrome, Firefox, Safari, and Edge.
 
 ## 👤 Author
 
 **Sophia Lin**
-- Email: sphjlin1203@gmail.com
-- LinkedIn: [linkedin.com/in/sphjlin](https://www.linkedin.com/in/sphjlin)
-- GitHub: [github.com/sphjlin](https://github.com/sphjlin)
+- 📧: sphjlin1203@gmail.com
+- 🔗: [linkedin.com/in/sphjlin](https://www.linkedin.com/in/sphjlin)
+- 💻: [github.com/sphjlin](https://github.com/sphjlin)
 
 ---
 
