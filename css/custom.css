@@ -564,6 +564,12 @@ body, header, main, footer, .btn-primary, .btn-outline, .input, .card, .faq, .na
   line-height:1.4;
   color:#6b7280;
   margin-bottom:0.25rem;
+  justify-content:center;
+}
+@media (min-width: 768px) {
+  .footer-subtext{
+    justify-content:flex-start;
+  }
 }
 .dark .footer-subtext{
   color:#d1d5db;
@@ -834,6 +840,190 @@ body, header, main, footer, .btn-primary, .btn-outline, .input, .card, .faq, .na
 }
 .dark .about-hero-image{
   filter:brightness(0.7);
+}
+
+/* Featured Projects - Large cards for homepage */
+.featured-grid{
+  display:grid;
+  gap:2rem;
+  margin-bottom:4rem;
+}
+@media (min-width: 768px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+    gap:3rem;
+  }
+}
+
+.featured-card{
+  border-radius:1.5rem;
+  overflow:hidden;
+  transition:transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor:pointer;
+  border:1px solid #e5e7eb;
+  background-color:white;
+  box-shadow:0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  display:grid;
+  grid-template-columns:1fr;
+}
+@media (min-width: 768px) {
+  .featured-card {
+    grid-template-columns: 1fr 1fr;
+    gap:2rem;
+  }
+}
+.dark .featured-card{
+  background-color:#1f1f1f !important;
+  border:1px solid #333333;
+  box-shadow:0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+.featured-card:hover{
+  transform:translateY(-4px);
+  border-color:#5F61F2;
+  box-shadow:0 0 0 4px rgba(95, 97, 242, 0.1), 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+.dark .featured-card:hover{
+  border-color:#A5B4FC;
+  box-shadow:0 0 0 4px rgba(165, 180, 252, 0.15), 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.featured-card-image{
+  aspect-ratio:4/3;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2rem;
+}
+@media (min-width: 768px) {
+  .featured-card-image {
+    aspect-ratio:unset;
+  }
+}
+.featured-card-image img{
+  border-radius:1rem;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.featured-card-content{
+  padding:2rem;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.featured-card-title{
+  font-size:2rem;
+  font-weight:700;
+  margin-bottom:1rem;
+  color:#111827;
+}
+.dark .featured-card-title{
+  color:#ffffff;
+}
+.featured-card-description{
+  font-size:1rem;
+  color:#6b7280;
+  margin-bottom:1.5rem;
+  line-height:1.6;
+}
+.dark .featured-card-description{
+  color:#d1d5db;
+}
+
+/* Project Tags */
+.project-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:0.5rem;
+  margin-top:1rem;
+}
+.project-tag{
+  font-size:0.75rem;
+  padding:0.25rem 0.75rem;
+  border-radius:9999px;
+  font-weight:500;
+  white-space:nowrap;
+}
+/* Primary tag - matches filter categories */
+.tag-primary{
+  background-color:#5F61F2;
+  color:white;
+}
+.dark .tag-primary{
+  background-color:#A5B4FC;
+  color:#0D0D0D;
+}
+/* Secondary tag - project type */
+.tag-secondary{
+  background-color:#e0e7ff;
+  color:#5F61F2;
+  border:1px solid #c7d2fe;
+}
+.dark .tag-secondary{
+  background-color:rgba(165, 180, 252, 0.15);
+  color:#A5B4FC;
+  border:1px solid rgba(165, 180, 252, 0.3);
+}
+/* Context tag - background info */
+.tag-context{
+  background-color:#f3f4f6;
+  color:#6b7280;
+  border:1px solid #e5e7eb;
+}
+.dark .tag-context{
+  background-color:rgba(255, 255, 255, 0.05);
+  color:#9ca3af;
+  border:1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Filter Buttons */
+.filter-container{
+  display:flex;
+  flex-wrap:wrap;
+  gap:0.75rem;
+  margin-bottom:2rem;
+  justify-content:center;
+}
+@media (min-width: 768px) {
+  .filter-container {
+    justify-content:flex-start;
+  }
+}
+.filter-btn{
+  padding:0.5rem 1.25rem;
+  border-radius:9999px;
+  font-size:0.875rem;
+  font-weight:500;
+  border:1px solid #e5e7eb;
+  background-color:white;
+  color:#6b7280;
+  cursor:pointer;
+  transition:all 0.2s ease;
+}
+.dark .filter-btn{
+  background-color:#1f1f1f;
+  border-color:#333333;
+  color:#9ca3af;
+}
+.filter-btn:hover{
+  border-color:#5F61F2;
+  color:#5F61F2;
+  transform:translateY(-1px);
+}
+.dark .filter-btn:hover{
+  border-color:#A5B4FC;
+  color:#A5B4FC;
+}
+.filter-btn.active{
+  background-color:#5F61F2;
+  border-color:#5F61F2;
+  color:white;
+}
+.dark .filter-btn.active{
+  background-color:#A5B4FC;
+  border-color:#A5B4FC;
+  color:#0D0D0D;
 }
 
 /* Reduced motion preferences for accessibility */

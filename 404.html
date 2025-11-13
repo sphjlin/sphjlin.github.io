@@ -39,6 +39,7 @@
     html:not(.dark) .text-black { color: #111827 !important; }
     html:not(.dark) .text-gray-600 { color: #4b5563 !important; }
     html:not(.dark) .text-gray-500 { color: #6b7280 !important; }
+    html:not(.dark) .text-\[\#5F61F2\] { color: #5F61F2 !important; }
     /* Force dark mode colors */
     html.dark body { background-color: #0D0D0D !important; color: white !important; }
     html.dark header { background-color: #0D0D0D !important; }
@@ -53,7 +54,7 @@
     }
   </style>
 
-  <link rel="stylesheet" href="css/custom.css?v=9">
+  <link rel="stylesheet" href="css/custom.css?v=10">
 </head>
 
 <body class="bg-white dark:bg-[#0D0D0D] text-black dark:text-white" style="font-family: 'Plus Jakarta Sans', sans-serif;">
@@ -82,7 +83,7 @@
 
     <!-- Error Message -->
     <div class="mb-8">
-      <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-4">✦ OOPS</p>
+      <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] font-semibold mb-4">✦ OOPS</p>
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Page Not Found</h2>
       <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
         The page you're looking for seems to have wandered off. Let's get you back on track.
@@ -104,8 +105,15 @@
     <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
       <!-- Left: Message and Email -->
       <div class="text-center md:text-left">
-        <p class="footer-subtext">
-          Let's connect over design, ideas, or a friendly hello.
+        <p class="footer-subtext flex items-center gap-2">
+          <span>Let's connect over design, ideas, or a friendly hello</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0">
+            <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+            <line x1="6" y1="1" x2="6" y2="4"></line>
+            <line x1="10" y1="1" x2="10" y2="4"></line>
+            <line x1="14" y1="1" x2="14" y2="4"></line>
+          </svg>
         </p>
         <a href="mailto:sphjlin1203@gmail.com" class="footer-email">
           sphjlin1203@gmail.com
