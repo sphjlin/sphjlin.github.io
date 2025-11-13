@@ -20,7 +20,16 @@ toggle.addEventListener('click', () => {
 });
 
 const p=location.pathname.split('/').pop();if(p.includes('about'))document.getElementById('nav-about').classList.add('active');else if(p.includes('projects'))document.getElementById('nav-projects').classList.add('active');else if(p.includes('contact'))document.getElementById('nav-contact').classList.add('active');else document.getElementById('nav-home').classList.add('active');
-const nav=document.getElementById('nav');window.addEventListener('scroll',()=>{if(window.scrollY>60){nav.classList.add('backdrop-blur-md','bg-opacity-70','shadow-lg');}else{nav.classList.remove('backdrop-blur-md','bg-opacity-70','shadow-lg');}});
+
+// Navbar scroll effect - change background from gray to white
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{
+  if(window.scrollY>50){
+    nav.classList.add('scrolled');
+  }else{
+    nav.classList.remove('scrolled');
+  }
+});
 
 // Intersection Observer for fade-in animations
 const fadeInSections = document.querySelectorAll('.fade-in-section');
@@ -147,3 +156,72 @@ window.addEventListener('scroll', () => {
 
 // Initial check
 revealCharactersOnScroll();
+
+// FAQ accordion effect - close others when one opens
+const faqItems = document.querySelectorAll('.faq');
+faqItems.forEach(item => {
+  item.addEventListener('toggle', () => {
+    if (item.open) {
+      // Close all other FAQ items when this one opens
+      faqItems.forEach(otherItem => {
+        if (otherItem !== item && otherItem.open) {
+          otherItem.open = false;
+        }
+      });
+    }
+  });
+});
+
+// Project filter functionality
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+if (filterBtns.length > 0 && projectCards.length > 0) {
+  // Function to filter projects
+  function filterProjects(filterValue) {
+    // Update active button
+    filterBtns.forEach(b => b.classList.remove('active'));
+    const activeBtn = document.querySelector(`[data-filter="${filterValue}"]`);
+    if (activeBtn) activeBtn.classList.add('active');
+
+    // Filter projects with smooth animation
+    projectCards.forEach(card => {
+      const category = card.getAttribute('data-category');
+
+      if (filterValue === 'all' || category === filterValue) {
+        card.style.display = '';
+        // Fade in animation
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+          card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, 10);
+      } else {
+        // Fade out animation
+        card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+          card.style.display = 'none';
+        }, 300);
+      }
+    });
+  }
+
+  // Check URL parameter on page load
+  const urlParams = new URLSearchParams(window.location.search);
+  const filterParam = urlParams.get('filter');
+  if (filterParam) {
+    filterProjects(filterParam);
+  }
+
+  // Add click event listeners
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filterValue = btn.getAttribute('data-filter');
+      filterProjects(filterValue);
+    });
+  });
+}

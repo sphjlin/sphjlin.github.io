@@ -33,12 +33,13 @@
       .dark .dark\:border-white\/10 { border-color: rgba(255, 255, 255, 0.1) !important; }
     }
     /* Force light mode colors */
-    html:not(.dark) body { background-color: white !important; color: #1f2937 !important; }
+    html:not(.dark) body { background-color: #f9fafb !important; color: #1f2937 !important; }
     html:not(.dark) header { background-color: white !important; }
     html:not(.dark) .text-black { color: #111827 !important; }
     html:not(.dark) .text-gray-600 { color: #4b5563 !important; }
     html:not(.dark) .text-gray-500 { color: #6b7280 !important; }
     html:not(.dark) .text-gray-700 { color: #374151 !important; }
+    html:not(.dark) .text-\[\#5F61F2\] { color: #5F61F2 !important; }
     /* Force dark mode colors */
     html.dark body { background-color: #0D0D0D !important; color: white !important; }
     html.dark header { background-color: #0D0D0D !important; }
@@ -56,14 +57,14 @@
   <link rel="stylesheet" href="css/custom.css?v=9" />
 </head>
 
-<body class="bg-white dark:bg-[#0D0D0D] text-black dark:text-white font-[Inter]">
+<body class="bg-white dark:bg-[#0D0D0D] text-black dark:text-white" style="font-family: 'Plus Jakarta Sans', sans-serif;">
 <header id="nav" class="fixed top-0 left-0 w-full z-50 bg-white dark:bg-[#0D0D0D]">
   <div class="max-w-6xl mx-auto flex justify-between items-center py-5 px-6">
     <a href="index.html" class="font-semibold text-xl text-black dark:text-white">
       <span class="md:hidden">SL</span>
       <span class="hidden md:inline">Sophia Lin</span>
     </a>
-    <nav class="flex gap-6 text-sm">
+    <nav class="flex gap-3 md:gap-6 text-sm">
       <a href="index.html" id="nav-home" class="navlink">Home</a>
       <a href="about.html" id="nav-about" class="navlink">About</a>
       <a href="projects.html" id="nav-projects" class="navlink">Projects</a>
@@ -78,7 +79,7 @@
   <section class="max-w-6xl mx-auto px-6 mb-20">
     <!-- Hero Image -->
     <figure class="mb-16">
-      <img src="assets/sophia-round2.jpg" alt="Sophia Lin" class="w-full rounded-2xl shadow-2xl object-cover" style="max-height: 400px; object-position: center 35%;">
+      <img src="assets/sophia-round.jpg" alt="Sophia Lin" class="about-hero-image w-full rounded-2xl shadow-2xl object-cover" style="max-height: 400px; object-position: center 35%;">
       <figcaption class="mt-4 text-sm text-gray-500 dark:text-gray-400 italic text-center">
         Framing design through a human lens — literally.
       </figcaption>
@@ -89,23 +90,23 @@
       <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-4 text-center">✦ ABOUT ME</p>
       <h1 class="text-4xl md:text-5xl font-bold mb-8 text-center">Hi! I'm Sophia.</h1>
 
-      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-center">
+      <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed text-center">
         I'm a product designer with a background in <span class="about-highlight">computer science</span> and a current master's student in <span class="about-highlight">UX Research & Design</span> at the University of Michigan.
       </p>
 
-      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-center">
+      <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed text-center">
         My work explores how technology can be both <span class="about-highlight">intuitive and inclusive</span>, empowering people to interact with digital products effortlessly.
       </p>
 
-      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-center">
+      <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed text-center">
         I've always been fascinated by how <span class="about-highlight">thoughtful design can bridge human intention and system logic</span>.
       </p>
 
-      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-center">
+      <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed text-center">
         With my experience in <span class="about-highlight">interaction design</span>, <span class="about-highlight">accessibility</span>, and <span class="about-highlight">AR/VR prototyping</span>, I focus on creating experiences that are both <span class="about-highlight">technically sound and emotionally resonant</span>.
       </p>
 
-      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-center">
+      <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed text-center">
         <span class="about-highlight">What kind of designer do I want to be?</span>
         One who designs with empathy and precision — crafting digital experiences that feel simple, human, and meaningful.
       </p>
@@ -129,39 +130,39 @@
     <h2 class="text-3xl font-bold mb-8 text-center">Skills & Tools</h2>
 
     <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-      <!-- Design -->
+      <!-- Design & Prototyping -->
       <div class="skill-category">
-        <h3 class="skill-category-title">Design</h3>
+        <h3 class="skill-category-title">Design & Prototyping</h3>
         <ul class="skill-list">
           <li>Figma</li>
-          <li>Adobe XD</li>
-          <li>Sketch</li>
-          <li>Prototyping</li>
           <li>Wireframing</li>
+          <li>Prototyping</li>
+          <li>Visual Design</li>
+          <li>Creative Storytelling <span class="skill-subtext">(Procreate, DaVinci Resolve)</span></li>
         </ul>
       </div>
 
-      <!-- Research -->
+      <!-- UX Research -->
       <div class="skill-category">
-        <h3 class="skill-category-title">Research</h3>
+        <h3 class="skill-category-title">UX Research</h3>
         <ul class="skill-list">
           <li>User Interviews</li>
           <li>Usability Testing</li>
-          <li>A/B Testing</li>
-          <li>Surveys</li>
-          <li>Personas</li>
+          <li>Journey Mapping</li>
+          <li>Affinity Mapping</li>
+          <li>Heuristic Evaluation</li>
         </ul>
       </div>
 
-      <!-- Development -->
+      <!-- Technical Skills -->
       <div class="skill-category">
-        <h3 class="skill-category-title">Development</h3>
+        <h3 class="skill-category-title">Technical Skills</h3>
         <ul class="skill-list">
-          <li>HTML/CSS</li>
-          <li>JavaScript</li>
-          <li>React</li>
-          <li>Python</li>
+          <li>HTML / CSS / JS</li>
+          <li>React (basic)</li>
           <li>AR/VR (Unity)</li>
+          <li>Python / Java / SQL</li>
+          <li>AI-assisted Coding <span class="skill-subtext">(Vibe Coding, Copilot)</span></li>
         </ul>
       </div>
     </div>
@@ -188,10 +189,10 @@
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-content">
-          <span class="timeline-date">2023 - 2024</span>
-          <h3 class="timeline-title">UX Designer</h3>
-          <p class="timeline-role">Company Name</p>
-          <p class="timeline-description">Led design projects focused on accessibility and user-centered design principles.</p>
+          <span class="timeline-date">Aug 2021 - Aug 2024</span>
+          <h3 class="timeline-title">Freelance UX & Graphic Design</h3>
+          <p class="timeline-role">Pittsburgh, PA</p>
+          <p class="timeline-description">Designed 25+ event posters and templates for 200 participants, enhancing engagement through social media graphics. Collaborated on illustrations and managed digital content for community organizations.</p>
         </div>
       </div>
 
@@ -202,59 +203,146 @@
           <span class="timeline-date">2017 - 2021</span>
           <h3 class="timeline-title">University of Pittsburgh</h3>
           <p class="timeline-role">Bachelor of Science in Computer Science</p>
-          <p class="timeline-description">Built foundation in programming, data structures, and software development.</p>
+          <p class="timeline-description">Built foundation in programming, data structures, and software development. Studied abroad in Japan, exploring Japanese culture and design perspectives.</p>
+        </div>
+      </div>
+
+      <!-- Timeline Item 4 -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">Jul 2017 - Aug 2017</span>
+          <h3 class="timeline-title">Cybozu IT Shanghai Inc.</h3>
+          <p class="timeline-role">System Consulting Department Intern · Shanghai, China</p>
+          <p class="timeline-description">Tested plugins for the low-code platform Kintone and translated documentation between Chinese and English. Achieved a tenfold increase in visitors to the Kintone Developer Program webpage.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer Section -->
-  <footer class="footer-section">
-    <div class="max-w-3xl mx-auto px-6 pt-12 pb-2 text-center">
-      <!-- Heading -->
-      <h2 class="footer-heading">Let's connect.</h2>
+  <!-- Writing & Thoughts Section -->
+  <section class="max-w-4xl mx-auto px-6 mb-32">
+    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-4 text-center">✦ WRITING & THOUGHTS</p>
+    <h2 class="text-3xl font-bold mb-6 text-center">Exploring Design & AI</h2>
+    <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 text-center max-w-2xl mx-auto">
+      Beyond hands-on design work, I enjoy writing about the intersection of AI and UX, exploring how emerging technologies can enhance — not replace — human-centered design.
+    </p>
 
-      <!-- Subtext -->
-      <p class="footer-subtext">
-        Let's connect over design, ideas, or a friendly hello.
-      </p>
-
-      <!-- Email -->
-      <a href="mailto:sphjlin1203@gmail.com" class="footer-email">
-        sphjlin1203@gmail.com
+    <div class="grid md:grid-cols-2 gap-6">
+      <!-- Article 1 -->
+      <a href="https://medium.com/@sphjlin1203/5-ai-principles-for-effective-ux-design" target="_blank" rel="noopener noreferrer" class="card p-6 hover:scale-105 transition-all">
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#5F61F2] dark:text-[#A5B4FC]">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="12" y1="18" x2="12" y2="12"></line>
+              <line x1="9" y1="15" x2="15" y2="15"></line>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">5 AI Principles for Effective UX Design</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Exploring how AI can be thoughtfully integrated into design practice while maintaining human-centered values.</p>
+            <div class="flex gap-2">
+              <span class="project-tag tag-secondary">AI & UX</span>
+              <span class="project-tag tag-context">Medium</span>
+            </div>
+          </div>
+        </div>
       </a>
 
-      <!-- Social Icons -->
-      <div class="footer-social">
-        <a href="https://www.linkedin.com/in/sphjlin" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="LinkedIn">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-            <rect x="2" y="9" width="4" height="12"></rect>
-            <circle cx="4" cy="4" r="2"></circle>
-          </svg>
-        </a>
+      <!-- Article 2 -->
+      <a href="https://medium.com/@sphjlin1203/when-ai-joined-my-design-process" target="_blank" rel="noopener noreferrer" class="card p-6 hover:scale-105 transition-all">
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#5F61F2] dark:text-[#A5B4FC]">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">When AI Joined My Design Process</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">A personal reflection on integrating AI tools into my design workflow and what I learned along the way.</p>
+            <div class="flex gap-2">
+              <span class="project-tag tag-secondary">AI Workflow</span>
+              <span class="project-tag tag-context">Medium</span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
 
-        <a href="https://github.com/sphjlin" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="GitHub">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-          </svg>
-        </a>
+    <div class="text-center mt-8">
+      <a href="projects.html?filter=writing" class="text-[#5F61F2] dark:text-[#A5B4FC] hover:underline inline-flex items-center gap-2">
+        View all writing in Projects
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+  </section>
+</main>
 
-        <a href="mailto:sphjlin1203@gmail.com" class="footer-icon" aria-label="Email">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-            <polyline points="22,6 12,13 2,6"></polyline>
+<!-- Footer Section -->
+<footer class="footer-section">
+  <div class="max-w-6xl mx-auto px-6 py-4">
+    <!-- Main footer content -->
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <!-- Left: Message and Email -->
+      <div class="text-center md:text-left">
+        <p class="footer-subtext flex items-center gap-2">
+          <span>Let's connect over design, ideas, or a friendly hello</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0">
+            <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+            <line x1="6" y1="1" x2="6" y2="4"></line>
+            <line x1="10" y1="1" x2="10" y2="4"></line>
+            <line x1="14" y1="1" x2="14" y2="4"></line>
           </svg>
+        </p>
+        <a href="mailto:sphjlin1203@gmail.com" class="footer-email">
+          sphjlin1203@gmail.com
         </a>
       </div>
 
-      <!-- Copyright -->
-      <p class="footer-copyright">
-        © <span id="year"></span> Sophia Lin
-      </p>
+      <!-- Right: Social Icons and Copyright -->
+      <div class="flex flex-col sm:flex-row items-center gap-4">
+        <div class="flex gap-2.5">
+          <a href="https://www.linkedin.com/in/sphjlin" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="LinkedIn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+
+          <a href="https://github.com/sphjlin" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="GitHub">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+          </a>
+
+          <a href="mailto:sphjlin1203@gmail.com" class="footer-icon" aria-label="Email">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <div class="footer-divider hidden sm:block"></div>
+
+        <p class="footer-copyright">
+          © <span id="year"></span> Sophia Lin
+        </p>
+      </div>
     </div>
-  </footer>
-</main>
+  </div>
+</footer>
 
 <script src="js/main.js"></script>
 </body>

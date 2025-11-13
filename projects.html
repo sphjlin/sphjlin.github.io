@@ -34,12 +34,13 @@
       .dark .dark\:border-white\/10 { border-color: rgba(255, 255, 255, 0.1) !important; }
     }
     /* Force light mode colors */
-    html:not(.dark) body { background-color: white !important; color: #1f2937 !important; }
+    html:not(.dark) body { background-color: #f9fafb !important; color: #1f2937 !important; }
     html:not(.dark) header { background-color: white !important; }
     html:not(.dark) .text-black { color: #111827 !important; }
     html:not(.dark) .text-gray-600 { color: #4b5563 !important; }
     html:not(.dark) .text-gray-500 { color: #6b7280 !important; }
     html:not(.dark) .text-gray-700 { color: #374151 !important; }
+    html:not(.dark) .text-\[\#5F61F2\] { color: #5F61F2 !important; }
     /* Force dark mode colors */
     html.dark body { background-color: #0D0D0D !important; color: white !important; }
     html.dark header { background-color: #0D0D0D !important; }
@@ -57,14 +58,14 @@
   <link rel="stylesheet" href="css/custom.css?v=9">
 </head>
 
-<body class="bg-white dark:bg-[#0D0D0D] text-black dark:text-white font-[Inter]">
+<body class="bg-white dark:bg-[#0D0D0D] text-black dark:text-white" style="font-family: 'Plus Jakarta Sans', sans-serif;">
 <header id="nav" class="fixed top-0 left-0 w-full z-50 bg-white dark:bg-[#0D0D0D]">
   <div class="max-w-6xl mx-auto flex justify-between items-center py-5 px-6">
     <a href="index.html" class="font-semibold text-xl text-black dark:text-white">
       <span class="md:hidden">SL</span>
       <span class="hidden md:inline">Sophia Lin</span>
     </a>
-    <nav class="flex gap-6 text-sm">
+    <nav class="flex gap-3 md:gap-6 text-sm">
       <a href="index.html" id="nav-home" class="navlink">Home</a>
       <a href="about.html" id="nav-about" class="navlink">About</a>
       <a href="projects.html" id="nav-projects" class="navlink">Projects</a>
@@ -78,114 +79,191 @@
   <section class="max-w-6xl mx-auto px-6">
     <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-4">✦ MY WORK</p>
     <h1 class="text-4xl md:text-5xl font-bold mb-4">Projects</h1>
-    <p class="text-gray-600 dark:text-gray-300 mb-12">A collection of my design work and case studies.</p>
+    <p class="text-gray-600 dark:text-gray-300 mb-8">A collection of my design, research, and writing work.</p>
+
+    <!-- Filter Buttons -->
+    <div class="filter-container">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="design">UX/UI Design</button>
+      <button class="filter-btn" data-filter="research">UX Research</button>
+      <button class="filter-btn" data-filter="writing">Writing</button>
+    </div>
 
     <div class="projects-grid">
-      <!-- Project Card 1 -->
-      <div class="project-card">
+      <!-- CalmER -->
+      <a href="projects/calmer.html" class="project-card" data-category="design">
+        <div class="project-card-image">
+          <img src="assets/calmer.jpg" alt="CalmER">
+        </div>
+        <div class="project-card-content">
+          <h3 class="project-card-title">CalmER</h3>
+          <p class="project-card-type">Health Tech ER Companion</p>
+          <div class="project-tags">
+            <span class="project-tag tag-primary">UX/UI Design</span>
+            <span class="project-tag tag-secondary">Health Tech</span>
+            <span class="project-tag tag-secondary">AI Integration</span>
+            <span class="project-tag tag-context">Competition</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Class Catalyst -->
+      <a href="projects/class-catalyst.html" class="project-card" data-category="research">
+        <div class="project-card-image">
+          <img src="assets/p1.jpg" alt="Class Catalyst">
+        </div>
+        <div class="project-card-content">
+          <h3 class="project-card-title">Class Catalyst</h3>
+          <p class="project-card-type">K-12 SEL Platform</p>
+          <div class="project-tags">
+            <span class="project-tag tag-primary">UX Research</span>
+            <span class="project-tag tag-secondary">Education</span>
+            <span class="project-tag tag-context">Client Project</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- ReFine -->
+      <a href="projects/refine.html" class="project-card" data-category="design">
         <div class="project-card-image">
           <img src="assets/p1.png" alt="ReFine">
         </div>
         <div class="project-card-content">
           <h3 class="project-card-title">ReFine</h3>
-          <div class="project-card-meta">
-            <p class="project-card-type">UX Research & Design</p>
-            <p class="project-card-year">2024</p>
+          <p class="project-card-type">Peer-to-peer Clothing Rental Platform</p>
+          <div class="project-tags">
+            <span class="project-tag tag-primary">UX/UI Design</span>
+            <span class="project-tag tag-secondary">Product Strategy</span>
+            <span class="project-tag tag-secondary">Sustainability</span>
+            <span class="project-tag tag-context">Class Project</span>
           </div>
         </div>
-      </div>
-
-      <!-- Project Card 2 -->
-      <div class="project-card">
-        <div class="project-card-image">
-          <img src="assets/p1.jpg" alt="Virtual Kathy">
-        </div>
-        <div class="project-card-content">
-          <h3 class="project-card-title">Design System</h3>
-          <div class="project-card-meta">
-            <p class="project-card-type">UI/UX Design</p>
-            <p class="project-card-year">2024</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project Card 3 -->
-      <div class="project-card">
-        <div class="project-card-image">
-          <img src="assets/p1.jpg" alt="Virtual Kathy">
-        </div>
-        <div class="project-card-content">
-          <h3 class="project-card-title">User Research</h3>
-          <div class="project-card-meta">
-            <p class="project-card-type">Research & Analysis</p>
-            <p class="project-card-year">2024</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project Card 4 -->
-      <div class="project-card">
-        <div class="project-card-image">
-          <img src="assets/p1.jpg" alt="Virtual Kathy">
-        </div>
-        <div class="project-card-content">
-          <h3 class="project-card-title">Mobile App</h3>
-          <div class="project-card-meta">
-            <p class="project-card-type">UX/UI Design</p>
-            <p class="project-card-year">2024</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer Section -->
-  <footer class="footer-section">
-    <div class="max-w-3xl mx-auto px-6 pt-12 pb-2 text-center">
-      <!-- Heading -->
-      <h2 class="footer-heading">Let's connect.</h2>
-
-      <!-- Subtext -->
-      <p class="footer-subtext">
-        Let's connect over design, ideas, or a friendly hello.
-      </p>
-
-      <!-- Email -->
-      <a href="mailto:sphjlin1203@gmail.com" class="footer-email">
-        sphjlin1203@gmail.com
       </a>
 
-      <!-- Social Icons -->
-      <div class="footer-social">
-        <a href="https://www.linkedin.com/in/sphjlin" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="LinkedIn">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-            <rect x="2" y="9" width="4" height="12"></rect>
-            <circle cx="4" cy="4" r="2"></circle>
-          </svg>
-        </a>
+      <!-- Sceneo -->
+      <a href="projects/sceneo.html" class="project-card" data-category="design">
+        <div class="project-card-image">
+          <img src="assets/p1.jpg" alt="Sceneo">
+        </div>
+        <div class="project-card-content">
+          <h3 class="project-card-title">Sceneo</h3>
+          <p class="project-card-type">Social Ticketing App</p>
+          <div class="project-tags">
+            <span class="project-tag tag-primary">UX/UI Design</span>
+            <span class="project-tag tag-secondary">Mobile App</span>
+            <span class="project-tag tag-context">Student Project</span>
+          </div>
+        </div>
+      </a>
 
-        <a href="https://github.com/sphjlin" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="GitHub">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-          </svg>
-        </a>
+      <!-- Rural Access -->
+      <a href="projects/rural-access.html" class="project-card" data-category="research">
+        <div class="project-card-image">
+          <img src="assets/p1.jpg" alt="Digital Access for Rural Students">
+        </div>
+        <div class="project-card-content">
+          <h3 class="project-card-title">Digital Access for Rural Students</h3>
+          <p class="project-card-type">Research + Communications Design</p>
+          <div class="project-tags">
+            <span class="project-tag tag-primary">UX Research</span>
+            <span class="project-tag tag-secondary">Accessibility</span>
+            <span class="project-tag tag-secondary">Older Adults</span>
+            <span class="project-tag tag-context">NTCA Partnership</span>
+          </div>
+        </div>
+      </a>
 
-        <a href="mailto:sphjlin1203@gmail.com" class="footer-icon" aria-label="Email">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-            <polyline points="22,6 12,13 2,6"></polyline>
+      <!-- Medium Article 1 -->
+      <a href="https://medium.com/@sphjlin/5-ai-principles-for-effective-ux-design-994634eb41e4" target="_blank" rel="noopener noreferrer" class="project-card" data-category="writing">
+        <div class="project-card-image">
+          <img src="assets/writing-ai-principles.jpg" alt="5 AI Principles for Effective UX Design">
+        </div>
+        <div class="project-card-content">
+          <h3 class="project-card-title">5 AI Principles for Effective UX Design</h3>
+          <p class="project-card-type">Exploring AI integration in design practice</p>
+          <div class="project-tags">
+            <span class="project-tag tag-primary">Writing</span>
+            <span class="project-tag tag-secondary">AI & UX</span>
+            <span class="project-tag tag-context">Medium</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Medium Article 2 -->
+      <a href="https://medium.com/p/a3907b4d66e2#5ca8-a8f51ba645a5" target="_blank" rel="noopener noreferrer" class="project-card" data-category="writing">
+        <div class="project-card-image">
+          <img src="assets/writing-ai-workflow.jpg" alt="When AI Joined My Design Process">
+        </div>
+        <div class="project-card-content">
+          <h3 class="project-card-title">When AI Joined My Design Process</h3>
+          <p class="project-card-type">Personal reflection on AI-assisted design</p>
+          <div class="project-tags">
+            <span class="project-tag tag-primary">Writing</span>
+            <span class="project-tag tag-secondary">AI Workflow</span>
+            <span class="project-tag tag-context">Medium</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+</main>
+
+<!-- Footer Section -->
+<footer class="footer-section">
+  <div class="max-w-6xl mx-auto px-6 py-4">
+    <!-- Main footer content -->
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <!-- Left: Message and Email -->
+      <div class="text-center md:text-left">
+        <p class="footer-subtext flex items-center gap-2">
+          <span>Let's connect over design, ideas, or a friendly hello</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0">
+            <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+            <line x1="6" y1="1" x2="6" y2="4"></line>
+            <line x1="10" y1="1" x2="10" y2="4"></line>
+            <line x1="14" y1="1" x2="14" y2="4"></line>
           </svg>
+        </p>
+        <a href="mailto:sphjlin1203@gmail.com" class="footer-email">
+          sphjlin1203@gmail.com
         </a>
       </div>
 
-      <!-- Copyright -->
-      <p class="footer-copyright">
-        © <span id="year"></span> Sophia Lin
-      </p>
+      <!-- Right: Social Icons and Copyright -->
+      <div class="flex flex-col sm:flex-row items-center gap-4">
+        <div class="flex gap-2.5">
+          <a href="https://www.linkedin.com/in/sphjlin" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="LinkedIn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+
+          <a href="https://github.com/sphjlin" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="GitHub">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+          </a>
+
+          <a href="mailto:sphjlin1203@gmail.com" class="footer-icon" aria-label="Email">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <div class="footer-divider hidden sm:block"></div>
+
+        <p class="footer-copyright">
+          © <span id="year"></span> Sophia Lin
+        </p>
+      </div>
     </div>
-  </footer>
-</main>
+  </div>
+</footer>
 
 <script src="js/main.js"></script>
 </body>
