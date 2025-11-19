@@ -27,10 +27,15 @@
   <style type="text/tailwindcss">
     @layer utilities {
       .dark .dark\:bg-\[\#0D0D0D\] { background-color: #0D0D0D !important; }
+      .dark .dark\:bg-\[\#1a1a1a\] { background-color: #1a1a1a !important; }
+      .dark .dark\:bg-\[\#A5B4FC\] { background-color: #A5B4FC !important; }
       .dark .dark\:text-white { color: white !important; }
+      .dark .dark\:text-\[\#0D0D0D\] { color: #0D0D0D !important; }
       .dark .dark\:text-\[\#A5B4FC\] { color: #A5B4FC !important; }
       .dark .dark\:text-gray-300 { color: #d1d5db !important; }
       .dark .dark\:text-gray-400 { color: #9ca3af !important; }
+      .dark .dark\:border-\[\#A5B4FC\] { border-color: #A5B4FC !important; }
+      .dark .dark\:border-gray-800 { border-color: #1f2937 !important; }
       .dark .dark\:border-white\/10 { border-color: rgba(255, 255, 255, 0.1) !important; }
     }
     /* Force light mode colors */
@@ -39,6 +44,8 @@
     html:not(.dark) h1, html:not(.dark) h2, html:not(.dark) h3, html:not(.dark) h4, html:not(.dark) h5 { color: black !important; }
     html:not(.dark) .text-black { color: #111827 !important; }
     html:not(.dark) strong { color: #5F61F2 !important; font-weight: 600 !important; }
+    /* Exception: white strong text in purple box */
+    html:not(.dark) .bg-\[\#5F61F2\] strong { color: white !important; }
     html:not(.dark) .text-gray-600 { color: #4b5563 !important; }
     html:not(.dark) .text-gray-500 { color: #6b7280 !important; }
     html:not(.dark) .text-\[\#5F61F2\] { color: #5F61F2 !important; }
@@ -50,9 +57,14 @@
     html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5 { color: white !important; }
     html.dark .text-gray-600 { color: #d1d5db !important; }
     html.dark .text-gray-300 { color: #d1d5db !important; }
-    html.dark strong, html.dark strong.dark\:text-white { color: #A5B4FC !important; font-weight: 600 !important; }
+    html.dark strong { color: #A5B4FC !important; font-weight: 600 !important; }
+    /* Exception: dark strong text in light purple box */
+    html.dark .dark\:bg-\[\#A5B4FC\] strong { color: #0D0D0D !important; }
     html.dark .text-\[\#5F61F2\] { color: #A5B4FC !important; }
     html.dark .dark\:text-\[\#A5B4FC\] { color: #A5B4FC !important; }
+    /* SVG stroke colors */
+    .stroke-white { stroke: white !important; }
+    html.dark .dark\:stroke-\[\#0D0D0D\] { stroke: #0D0D0D !important; }
     /* Text selection colors */
     ::selection { background-color: #5F61F2; color: white; }
     html.dark ::selection { background-color: #A5B4FC; color: #0D0D0D; }
@@ -86,12 +98,11 @@
     </div>
 
     <h1 class="text-5xl md:text-6xl font-bold mb-6">CalmER</h1>
-    <p class="text-2xl text-gray-600 dark:text-gray-300 mb-8">A calming companion app for emergency room patients, reducing anxiety through information transparency and personalized support.</p>
+    <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">A calming companion app for emergency room patients, reducing anxiety through information transparency and personalized support.</p>
 
     <div class="project-tags mb-12">
       <span class="project-tag tag-primary">UX/UI Design</span>
       <span class="project-tag tag-secondary">Health Tech</span>
-      <span class="project-tag tag-secondary">AI Integration</span>
       <span class="project-tag tag-context">Competition</span>
     </div>
 
@@ -133,7 +144,7 @@
   </section>
 
   <!-- Problem Section -->
-  <section class="max-w-4xl mx-auto px-6 mb-20">
+  <section class="max-w-5xl mx-auto px-6 mb-20">
     <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl p-8 md:p-12">
       <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-4">✦ UNDERSTANDING THE PROBLEM</p>
       <h2 class="text-3xl md:text-4xl font-bold mb-8">Long ER waits are emotionally harmful and operationally inefficient</h2>
@@ -237,7 +248,7 @@
   </section>
 
   <!-- Experience Principles Section -->
-  <section class="max-w-4xl mx-auto px-6 mb-20">
+  <section class="max-w-5xl mx-auto px-6 mb-20">
     <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl p-8 md:p-12">
       <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-4">✦ EXPERIENCE PRINCIPLES</p>
       <h2 class="text-3xl md:text-4xl font-bold mb-8">The 3C Framework: Clarity, Calmness, Connection</h2>
@@ -363,7 +374,7 @@
       <!-- Feature 1 -->
       <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl p-8">
         <div class="w-12 h-12 bg-[#5F61F2] dark:bg-[#A5B4FC] rounded-xl flex items-center justify-center mb-6">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="stroke-white dark:stroke-[#0D0D0D]" stroke-width="2">
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
           </svg>
         </div>
@@ -379,7 +390,7 @@
       <!-- Feature 2 -->
       <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl p-8">
         <div class="w-12 h-12 bg-[#5F61F2] dark:bg-[#A5B4FC] rounded-xl flex items-center justify-center mb-6">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="stroke-white dark:stroke-[#0D0D0D]" stroke-width="2">
             <circle cx="12" cy="12" r="10"></circle>
             <polyline points="12 6 12 12 16 14"></polyline>
           </svg>
@@ -396,7 +407,7 @@
       <!-- Feature 3 -->
       <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl p-8">
         <div class="w-12 h-12 bg-[#5F61F2] dark:bg-[#A5B4FC] rounded-xl flex items-center justify-center mb-6">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="stroke-white dark:stroke-[#0D0D0D]" stroke-width="2">
             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
             <circle cx="9" cy="7" r="4"></circle>
             <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
@@ -415,7 +426,7 @@
       <!-- Feature 4 -->
       <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl p-8">
         <div class="w-12 h-12 bg-[#5F61F2] dark:bg-[#A5B4FC] rounded-xl flex items-center justify-center mb-6">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="stroke-white dark:stroke-[#0D0D0D]" stroke-width="2">
             <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
             <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
           </svg>
@@ -650,7 +661,7 @@
         "Technology should support people during vulnerable moments when reassurance matters more than features."
       </p>
       <p class="text-base opacity-90">
-        CalmER demonstrates that by combining <strong>transparency (clarity)</strong>, <strong>emotional support (calmness)</strong>, and <strong>family connection</strong>, we can make emergency care not just efficient, but emotionally humane.
+        CalmER demonstrates that by combining <strong class="text-white dark:text-[#0D0D0D]">transparency (clarity)</strong>, <strong class="text-white dark:text-[#0D0D0D]">emotional support (calmness)</strong>, and <strong class="text-white dark:text-[#0D0D0D]">family connection</strong>, we can make emergency care not just efficient, but emotionally humane.
       </p>
     </div>
   </section>
