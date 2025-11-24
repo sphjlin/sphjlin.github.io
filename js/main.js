@@ -19,7 +19,13 @@ toggle.addEventListener('click', () => {
   toggle.textContent = isDark ? '◑' : '◐';
 });
 
-const p=location.pathname.split('/').pop();if(p.includes('about'))document.getElementById('nav-about').classList.add('active');else if(p.includes('projects'))document.getElementById('nav-projects').classList.add('active');else if(p.includes('contact'))document.getElementById('nav-contact').classList.add('active');else document.getElementById('nav-home').classList.add('active');
+const p=location.pathname.split('/').pop();
+// Check if we're in a project detail page (projects/ subfolder)
+const isProjectPage = location.pathname.includes('/projects/') && p !== 'projects.html';
+if(p.includes('about'))document.getElementById('nav-about').classList.add('active');
+else if(p.includes('projects') && !isProjectPage)document.getElementById('nav-projects').classList.add('active');
+else if(p.includes('contact'))document.getElementById('nav-contact').classList.add('active');
+else if(p === 'index.html' || p === '' || location.pathname === '/')document.getElementById('nav-home').classList.add('active');
 
 // Navbar scroll effect - change background from gray to white
 const nav=document.getElementById('nav');

@@ -845,13 +845,13 @@ body, header, main, footer, .btn-primary, .btn-outline, .input, .card, .faq, .na
 /* Featured Projects - Large cards for homepage */
 .featured-grid{
   display:grid;
-  gap:2rem;
+  gap:1.5rem;
   margin-bottom:4rem;
 }
 @media (min-width: 768px) {
   .featured-grid {
     grid-template-columns: 1fr;
-    gap:3rem;
+    gap:2rem;
   }
 }
 
@@ -865,11 +865,14 @@ body, header, main, footer, .btn-primary, .btn-outline, .input, .card, .faq, .na
   box-shadow:0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
   display:grid;
   grid-template-columns:1fr;
+  height:100%;
+  align-items:center;
 }
 @media (min-width: 768px) {
   .featured-card {
     grid-template-columns: 1fr 1fr;
-    gap:2rem;
+    gap:1.5rem;
+    min-height: 320px;
   }
 }
 .dark .featured-card{
@@ -893,10 +896,13 @@ body, header, main, footer, .btn-primary, .btn-outline, .input, .card, .faq, .na
   align-items:center;
   justify-content:center;
   padding:2rem;
+  max-height:350px;
 }
 @media (min-width: 768px) {
   .featured-card-image {
     aspect-ratio:unset;
+    max-height:none;
+    align-self:center;
   }
 }
 .featured-card-image img{
@@ -904,6 +910,7 @@ body, header, main, footer, .btn-primary, .btn-outline, .input, .card, .faq, .na
   width:100%;
   height:100%;
   object-fit:contain;
+  max-height:100%;
 }
 
 .featured-card-content{
@@ -926,6 +933,11 @@ body, header, main, footer, .btn-primary, .btn-outline, .input, .card, .faq, .na
   color:#6b7280;
   margin-bottom:1.5rem;
   line-height:1.6;
+  min-height:4.8rem;
+  display:-webkit-box;
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
 }
 .dark .featured-card-description{
   color:#d1d5db;
@@ -1053,4 +1065,37 @@ body, header, main, footer, .btn-primary, .btn-outline, .input, .card, .faq, .na
   html {
     scroll-behavior: auto !important;
   }
+}
+
+/* Recommended Badge */
+.recommended-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: linear-gradient(135deg, #5F61F2 0%, #7C7EF5 100%);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(95, 97, 242, 0.3);
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  transition: transform 0.2s ease;
+}
+
+.dark .recommended-badge {
+  background: linear-gradient(135deg, #A5B4FC 0%, #B8C5FC 100%);
+  color: #0D0D0D;
+  box-shadow: 0 2px 8px rgba(165, 180, 252, 0.4);
+}
+
+.featured-card:hover .recommended-badge,
+.project-card:hover .recommended-badge {
+  transform: scale(1.05);
+}
+
+.project-card-image,
+.featured-card-image {
+  position: relative;
 }

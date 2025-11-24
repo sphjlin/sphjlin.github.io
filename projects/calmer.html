@@ -44,7 +44,10 @@
     html:not(.dark) h1, html:not(.dark) h2, html:not(.dark) h3, html:not(.dark) h4, html:not(.dark) h5 { color: black !important; }
     html:not(.dark) .text-black { color: #111827 !important; }
     html:not(.dark) strong { color: #5F61F2 !important; font-weight: 600 !important; }
-    /* Exception: white strong text in purple box */
+    /* Exception: white text in purple box */
+    html:not(.dark) .bg-\[\#5F61F2\] .text-white,
+    html:not(.dark) .bg-\[\#5F61F2\].text-white,
+    html:not(.dark) .bg-\[\#5F61F2\] p,
     html:not(.dark) .bg-\[\#5F61F2\] strong { color: white !important; }
     html:not(.dark) .text-gray-600 { color: #4b5563 !important; }
     html:not(.dark) .text-gray-500 { color: #6b7280 !important; }
@@ -656,12 +659,12 @@
       </div>
     </div>
 
-    <div class="bg-[#5F61F2] dark:bg-[#A5B4FC] rounded-2xl p-8 text-white dark:text-[#0D0D0D]">
-      <p class="text-xl font-semibold mb-4">
+    <div class="bg-gray-50 dark:bg-[#1a1a1a] border-l-4 border-[#5F61F2] dark:border-[#A5B4FC] rounded-r-xl p-8 pl-10">
+      <p class="text-xl font-semibold mb-4 text-black dark:text-white italic">
         "Technology should support people during vulnerable moments when reassurance matters more than features."
       </p>
-      <p class="text-base opacity-90">
-        CalmER demonstrates that by combining <strong class="text-white dark:text-[#0D0D0D]">transparency (clarity)</strong>, <strong class="text-white dark:text-[#0D0D0D]">emotional support (calmness)</strong>, and <strong class="text-white dark:text-[#0D0D0D]">family connection</strong>, we can make emergency care not just efficient, but emotionally humane.
+      <p class="text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+        CalmER demonstrates that by combining <strong>transparency (clarity)</strong>, <strong>emotional support (calmness)</strong>, and <strong>family connection</strong>, we can make emergency care not just efficient, but emotionally humane.
       </p>
     </div>
   </section>
