@@ -201,7 +201,7 @@ html.dark .hero-social-link:hover{
 }
 
 .project-card-image{
-  aspect-ratio:16/9;
+  aspect-ratio:4/3;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -213,10 +213,14 @@ html.dark .hero-social-link:hover{
   height:100%;
   object-fit:cover;
   box-shadow:0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transition:filter 0.3s ease;
+}
+.dark .project-card-image img{
+  filter:brightness(0.7);
 }
 
 .project-card-content{
-  padding:1.5rem;
+  padding:1rem 1.5rem 1.5rem 1.5rem;
 }
 .project-card-title{
   font-size:1.5rem;
@@ -911,6 +915,10 @@ body, header, main, footer, .btn-primary, .btn-outline, .input, .card, .faq, .na
   height:100%;
   object-fit:contain;
   max-height:100%;
+  transition:filter 0.3s ease;
+}
+.dark .featured-card-image img{
+  filter:brightness(0.7);
 }
 
 .featured-card-content{
