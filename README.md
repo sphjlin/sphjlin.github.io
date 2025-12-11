@@ -50,10 +50,10 @@ sophia-lin-portfolio/
 │   └── main.js         # Theme toggle and interactive scripts
 ├── assets/             # Static assets (images, icons, resume)
 └── projects/           # Individual project case study pages
-    ├── refine.html          # ReFine – productivity app project
-    ├── class-catalyst.html  # Class Catalyst – UX research collaboration
-    ├── sceneo.html          # Sceneo – theater discovery concept
-    └── rural-access.html    # Rural Access – accessibility redesign project
+    ├── refine.html          # ReFine – peer-to-peer clothing rental platform
+    ├── class-catalyst.html  # Class Catalyst – K-12 SEL platform research (academic partner)
+    ├── sceneo.html          # Sceneo – social ticketing app concept
+    └── rural-access.html    # Digital Access for Rural Students – research & communications (academic partner)
 ```
 
 
