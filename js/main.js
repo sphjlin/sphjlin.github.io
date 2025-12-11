@@ -153,12 +153,10 @@ function revealCharactersOnScroll() {
 // Initialize character wrapping
 wrapCharacters();
 
-// Add scroll listener for reveal animation
-let scrollTimeout;
+// Add scroll listener for reveal animation - real-time update
 window.addEventListener('scroll', () => {
-  clearTimeout(scrollTimeout);
-  scrollTimeout = setTimeout(revealCharactersOnScroll, 10);
-});
+  revealCharactersOnScroll();
+}, { passive: true });
 
 // Initial check
 revealCharactersOnScroll();
