@@ -229,3 +229,50 @@ if (filterBtns.length > 0 && projectCards.length > 0) {
     });
   });
 }
+
+// TOC scroll highlighting for project pages
+const tocLinks = document.querySelectorAll('.toc-link');
+if (tocLinks.length > 0) {
+  const observerOptions = {
+    rootMargin: '-20% 0px -75% 0px',
+    threshold: 0
+  };
+
+  const tocObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Remove active class from all links
+        tocLinks.forEach(link => link.classList.remove('active'));
+
+        // Add active class to corresponding link
+        const id = entry.target.getAttribute('id');
+        const activeLink = document.querySelector(`.toc-link[href="#${id}"]`);
+        if (activeLink) {
+          activeLink.classList.add('active');
+        }
+      }
+    });
+  }, observerOptions);
+
+  // Observe all sections and headings with IDs
+  document.querySelectorAll('section[id], h2[id]').forEach(element => {
+    tocObserver.observe(element);
+  });
+
+  // Smooth scroll for TOC links
+  tocLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        const offset = 100; // Account for fixed header
+        const targetPosition = targetSection.offsetTop - offset;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+}

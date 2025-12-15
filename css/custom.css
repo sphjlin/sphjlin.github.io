@@ -1107,3 +1107,39 @@ body, header, main, footer, .btn-primary, .btn-outline, .input, .card, .faq, .na
 .featured-card-image {
   position: relative;
 }
+
+/* Table of Contents Sidebar */
+.toc-link{
+  display:block;
+  padding:0.5rem 0.75rem;
+  font-size:0.875rem;
+  color:#6b7280;
+  border-left:2px solid transparent;
+  transition:all 0.2s ease;
+  text-decoration:none;
+}
+.dark .toc-link{
+  color:#9ca3af;
+}
+.toc-link:hover{
+  color:#5F61F2;
+  border-left-color:#5F61F2;
+  background-color:rgba(95, 97, 242, 0.05);
+  padding-left:1rem;
+}
+.dark .toc-link:hover{
+  color:#A5B4FC;
+  border-left-color:#A5B4FC;
+  background-color:rgba(165, 180, 252, 0.05);
+}
+.toc-link.active{
+  color:#5F61F2;
+  font-weight:600;
+  border-left-color:#5F61F2;
+  background-color:rgba(95, 97, 242, 0.08);
+}
+.dark .toc-link.active{
+  color:#A5B4FC;
+  border-left-color:#A5B4FC;
+  background-color:rgba(165, 180, 252, 0.08);
+}

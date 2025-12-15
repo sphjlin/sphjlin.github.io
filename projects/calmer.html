@@ -94,8 +94,26 @@
 </header>
 
 <main class="pt-40 pb-16">
+  <div class="flex gap-8 max-w-7xl mx-auto px-6">
+    <!-- Sticky Table of Contents (Desktop only) -->
+    <aside class="hidden lg:block w-64 flex-shrink-0">
+      <nav class="sticky top-24 space-y-2">
+        <p class="text-sm font-bold text-gray-900 dark:text-white mb-3">Contents</p>
+        <a href="#overview" class="toc-link">Overview</a>
+        <a href="#problem" class="toc-link">The Problem</a>
+        <a href="#research" class="toc-link">Research Insights</a>
+        <a href="#framework" class="toc-link">3C Framework</a>
+        <a href="#design-system" class="toc-link">Design System</a>
+        <a href="#features" class="toc-link">Key Features</a>
+        <a href="#impact" class="toc-link">Impact</a>
+        <a href="#reflection" class="toc-link">Reflection</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="flex-1 min-w-0">
   <!-- Hero Section -->
-  <section class="max-w-6xl mx-auto px-6 mb-20">
+  <section class="max-w-6xl mx-auto mb-20">
     <div class="mb-8">
          <a href="../projects.html" class="text-sm text-gray-600 dark:text-gray-400 hover:text-[#5F61F2] dark:hover:text-[#A5B4FC] transition-colors inline-block mb-6">← BACK TO PROJECTS</a>
     </div>
@@ -136,7 +154,7 @@
   </section>
 
   <!-- Overview Section -->
-  <section class="max-w-4xl mx-auto px-6 mb-20">
+  <section id="overview" class="max-w-4xl mx-auto px-6 mb-20">
     <h2 class="text-3xl font-bold mb-6">Overview</h2>
     <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
       CalmER is a mobile companion app designed to support older adults during long and stressful ER waits. By combining <strong>real-time hospital system integration, AI-powered emotional support, and instant family connection</strong>, CalmER transforms waiting from an anxious experience into one that feels safer, clearer, and more human.
@@ -147,7 +165,7 @@
   </section>
 
   <!-- Problem Section -->
-  <section class="max-w-5xl mx-auto px-6 mb-20">
+  <section id="problem" class="max-w-5xl mx-auto px-6 mb-20">
     <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl p-8 md:p-12">
       <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-4">✦ UNDERSTANDING THE PROBLEM</p>
       <h2 class="text-3xl md:text-4xl font-bold mb-8">Long ER waits are emotionally harmful and operationally inefficient</h2>
@@ -223,7 +241,7 @@
   </section>
 
   <!-- Research Insights Section -->
-  <section class="max-w-4xl mx-auto px-6 mb-20">
+  <section id="research" class="max-w-4xl mx-auto px-6 mb-20">
     <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-4">✦ RESEARCH INSIGHTS</p>
     <h2 class="text-3xl font-bold mb-8">What We Learned From Users</h2>
 
@@ -251,7 +269,7 @@
   </section>
 
   <!-- Experience Principles Section -->
-  <section class="max-w-5xl mx-auto px-6 mb-20">
+  <section id="framework" class="max-w-5xl mx-auto px-6 mb-20">
     <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl p-8 md:p-12">
       <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-4">✦ EXPERIENCE PRINCIPLES</p>
       <h2 class="text-3xl md:text-4xl font-bold mb-8">The 3C Framework: Clarity, Calmness, Connection</h2>
@@ -297,7 +315,7 @@
   </section>
 
   <!-- Design System Section -->
-  <section class="max-w-4xl mx-auto px-6 mb-20">
+  <section id="design-system" class="max-w-4xl mx-auto px-6 mb-20">
     <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-4">✦ DESIGN SYSTEM</p>
     <h2 class="text-3xl font-bold mb-8">Building for Emotional Safety and Accessibility</h2>
 
@@ -365,7 +383,7 @@
   </section>
 
   <!-- Solution Section -->
-  <section class="max-w-4xl mx-auto px-6 mb-20">
+  <section id="features" class="max-w-4xl mx-auto px-6 mb-20">
     <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-4">✦ THE SOLUTION</p>
     <h2 class="text-3xl md:text-4xl font-bold mb-6">To make every emergency room not only efficient, but emotionally humane</h2>
     <p class="text-lg text-gray-600 dark:text-gray-300 mb-12 max-w-3xl">
@@ -583,7 +601,7 @@
   </section>
 
   <!-- Impact Section -->
-  <section class="max-w-4xl mx-auto px-6 mb-20">
+  <section id="impact" class="max-w-4xl mx-auto px-6 mb-20">
     <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-4">✦ IMPACT</p>
     <h2 class="text-3xl md:text-4xl font-bold mb-8">Creating Value for All Stakeholders</h2>
 
@@ -670,7 +688,7 @@
   </section>
 
   <!-- Reflection Section -->
-  <section class="max-w-4xl mx-auto px-6 mb-20">
+  <section id="reflection" class="max-w-4xl mx-auto px-6 mb-20">
     <h2 class="text-3xl font-bold mb-6">Reflection</h2>
     <div class="space-y-6 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
       <p>
@@ -712,11 +730,15 @@
     </div>
   </section>
 
+    </div><!-- End Main Content -->
+  </div><!-- End Flex Container -->
+
   <!-- Project Navigation -->
-  <section class="max-w-4xl mx-auto px-6 mt-20">
-    <div class="flex justify-between items-center">
-      <a href="../projects.html" class="btn-outline">← All Projects</a>
-      <a href="class-catalyst.html" class="btn-outline">Next Project: Class Catalyst →</a>
+  <section class="max-w-4xl mx-auto px-6 mt-20 mb-8">
+    <div class="flex flex-col md:flex-row justify-between items-stretch md:items-center gap-3">
+      <a href="rural-access.html" class="btn-outline text-center md:text-left">← Digital Access</a>
+      <a href="../projects.html" class="btn-outline text-center">All Projects</a>
+      <a href="refine.html" class="btn-outline text-center md:text-right">ReFine →</a>
     </div>
   </section>
 </main>
