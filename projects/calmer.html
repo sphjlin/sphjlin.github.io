@@ -49,6 +49,9 @@
     html:not(.dark) .bg-\[\#5F61F2\].text-white,
     html:not(.dark) .bg-\[\#5F61F2\] p,
     html:not(.dark) .bg-\[\#5F61F2\] strong { color: white !important; }
+    /* Prototype button text colors */
+    html:not(.dark) a.bg-\[\#5F61F2\].text-white { color: white !important; }
+    html.dark a.dark\:bg-\[\#A5B4FC\].dark\:text-\[\#0D0D0D\] { color: #0D0D0D !important; }
     html:not(.dark) .text-gray-600 { color: #4b5563 !important; }
     html:not(.dark) .text-gray-500 { color: #6b7280 !important; }
     html:not(.dark) .text-\[\#5F61F2\] { color: #5F61F2 !important; }
@@ -587,16 +590,28 @@
       </div>
     </div>
 
-    <!-- Figma Prototype Link -->
-    <div class="mt-12 text-center">
-      <a href="https://www.figma.com/proto/56lsCbgRCUS93PyLUA0nVx/TJteam22?page-id=38%3A382&node-id=109-567&viewport=-1485%2C343%2C0.16&t=lvJZ7u4zOnjhXc9U-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=132%3A2186&show-proto-sidebar=1" target="_blank" class="btn-primary inline-flex items-center gap-2">
-        View Interactive Prototype
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-          <polyline points="15 3 21 3 21 9"></polyline>
-          <line x1="10" y1="14" x2="21" y2="3"></line>
-        </svg>
-      </a>
+    <!-- Prototype CTA -->
+    <div class="mt-12 p-8 bg-gradient-to-r from-[#5F61F2]/10 to-[#A5B4FC]/10 dark:from-[#5F61F2]/20 dark:to-[#A5B4FC]/20 rounded-2xl border border-[#5F61F2]/20 dark:border-[#A5B4FC]/20">
+      <div class="flex flex-col items-center text-center gap-4">
+        <div class="flex items-center gap-3">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#5F61F2] dark:text-[#A5B4FC]">
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+          </svg>
+          <h3 class="text-2xl font-bold text-black dark:text-white">Try the Interactive Prototype</h3>
+        </div>
+        <p class="text-gray-600 dark:text-gray-300 max-w-2xl">
+          Experience the full emergency response flow in Figma
+        </p>
+        <a href="https://www.figma.com/proto/56lsCbgRCUS93PyLUA0nVx/TJteam22?page-id=38%3A382&node-id=109-567&viewport=-1485%2C343%2C0.16&t=lvJZ7u4zOnjhXc9U-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=132%3A2186&show-proto-sidebar=1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-8 py-4 bg-[#5F61F2] dark:bg-[#A5B4FC] text-white dark:text-[#0D0D0D] rounded-xl font-semibold text-lg hover:scale-105 hover:shadow-xl transition-all duration-300">
+          View Prototype
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>
+      </div>
     </div>
   </section>
 
