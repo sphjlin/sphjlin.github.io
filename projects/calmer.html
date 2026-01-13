@@ -103,6 +103,7 @@
       <nav class="sticky top-24 space-y-2">
         <p class="text-sm font-bold text-gray-900 dark:text-white mb-3">Contents</p>
         <a href="#overview" class="toc-link">Overview</a>
+        <a href="#challenge" class="toc-link">Design Challenge</a>
         <a href="#problem" class="toc-link">The Problem</a>
         <a href="#research" class="toc-link">Research Insights</a>
         <a href="#framework" class="toc-link">3C Framework</a>
@@ -165,6 +166,44 @@
     <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
       This project was created during the Michigan Tech Innovation Jam, where our team explored how digital tools can make emergency care more emotionally humane — especially for vulnerable populations like older adults who often wait alone.
     </p>
+  </section>
+
+  <!-- Design Challenge Section -->
+  <section id="challenge" class="max-w-4xl mx-auto px-6 mb-20">
+    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-4">✦ DESIGN CHALLENGE</p>
+    <h2 class="text-3xl font-bold mb-6">Balancing Empathy with Operational Reality</h2>
+
+    <div class="space-y-6 text-lg text-gray-600 dark:text-gray-300">
+      <p>
+        Emergency rooms operate under strict constraints that shape every design decision:
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-xl p-6">
+          <h3 class="text-lg font-bold mb-3 text-black dark:text-white">What We Can't Control</h3>
+          <ul class="space-y-2">
+            <li>• Medical timelines are unpredictable</li>
+            <li>• Staff attention is limited</li>
+            <li>• Precise ETAs create false expectations</li>
+            <li>• AI cannot provide medical advice</li>
+          </ul>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-xl p-6">
+          <h3 class="text-lg font-bold mb-3 text-black dark:text-white">What We Can Design For</h3>
+          <ul class="space-y-2">
+            <li>• Stage-based progress instead of countdowns</li>
+            <li>• AI as interpreter, not authority</li>
+            <li>• Proactive reassurance vs. reactive updates</li>
+            <li>• Connection without adding staff burden</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>
+        <strong>Core insight:</strong> We're not designing to shorten wait times — we're designing to reduce the emotional cost of waiting through clarity, calmness, and connection.
+      </p>
+    </div>
   </section>
 
   <!-- Problem Section -->
@@ -709,6 +748,27 @@
       <p>
         This project fundamentally changed how I think about designing for vulnerable populations. I learned that <strong>emotional design isn't decoration — it's a functional requirement</strong> when your users are scared, confused, or in pain.
       </p>
+
+      <p>
+        Three product decisions that shaped CalmER:
+      </p>
+
+      <div class="space-y-4 mb-6">
+        <div class="border-l-4 border-[#5F61F2] dark:border-[#A5B4FC] pl-6">
+          <p class="font-semibold mb-1">Stage-based timeline instead of countdown</p>
+          <p class="text-base">We tested showing "estimated wait: 2 hours" vs "You're in: Triage Complete → Lab Results Pending". The second reduced anxiety by replacing unpredictable time with predictable process.</p>
+        </div>
+
+        <div class="border-l-4 border-[#5F61F2] dark:border-[#A5B4FC] pl-6">
+          <p class="font-semibold mb-1">AI as companion, not doctor</p>
+          <p class="text-base">We deliberately positioned the AI as emotional support, not medical advisor. Its role is to normalize waiting and explain terms, not diagnose — maintaining trust while avoiding risk.</p>
+        </div>
+
+        <div class="border-l-4 border-[#5F61F2] dark:border-[#A5B4FC] pl-6">
+          <p class="font-semibold mb-1">One-tap family connection</p>
+          <p class="text-base">Instead of building messaging or status dashboards, we prioritized video calling. Research showed that seeing a familiar face had more impact than any amount of text updates.</p>
+        </div>
+      </div>
 
       <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-xl p-6">
         <h3 class="text-xl font-bold mb-4">Key Learnings</h3>
