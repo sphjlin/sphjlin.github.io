@@ -276,3 +276,33 @@ if (tocLinks.length > 0) {
     });
   });
 }
+
+/* Custom Cursor Effect */
+(function() {
+  // Skip on touch devices
+  if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return;
+
+  // Create cursor element
+  const cursor = document.createElement('div');
+  cursor.className = 'cursor-dot';
+  document.body.appendChild(cursor);
+  document.body.classList.add('custom-cursor');
+
+  // Track mouse movement - update position directly for responsiveness
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  });
+
+  // Hover effect on interactive elements
+  const interactiveElements = 'a, button, .project-card, .featured-card, .faq, .filter-btn, .btn-primary, .btn-outline, input, textarea';
+
+  document.querySelectorAll(interactiveElements).forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
+  });
+
+  // Hide cursor when leaving window
+  document.addEventListener('mouseleave', () => cursor.style.opacity = '0');
+  document.addEventListener('mouseenter', () => cursor.style.opacity = '1');
+})();

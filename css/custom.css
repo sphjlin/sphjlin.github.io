@@ -1155,3 +1155,86 @@ body, header, main, footer, .btn-primary, .btn-outline, .input, .card, .faq, .na
   border-left-color:#A5B4FC;
   background-color:rgba(165, 180, 252, 0.08);
 }
+
+/* Custom Cursor */
+.cursor-dot{
+  position:fixed;
+  width:10px;
+  height:10px;
+  background-color:#5F61F2;
+  border-radius:50%;
+  pointer-events:none;
+  z-index:9999;
+  transition:transform 0.15s ease-out;
+  transform:translate(-50%, -50%);
+}
+.dark .cursor-dot{
+  background-color:#A5B4FC;
+}
+/* Hover: pulse ripple effect */
+.cursor-dot.cursor-hover{
+  transform:translate(-50%, -50%) scale(1.2);
+}
+.cursor-dot.cursor-hover::before{
+  content:'';
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  border:2px solid #5F61F2;
+  transform:translate(-50%, -50%);
+  animation:cursorRipple 1s ease-out infinite;
+}
+.dark .cursor-dot.cursor-hover::before{
+  border-color:#A5B4FC;
+}
+@keyframes cursorRipple{
+  0%{
+    width:100%;
+    height:100%;
+    opacity:1;
+  }
+  100%{
+    width:300%;
+    height:300%;
+    opacity:0;
+  }
+}
+/* Hide system cursor */
+body.custom-cursor{
+  cursor:none;
+}
+body.custom-cursor a,
+body.custom-cursor button,
+body.custom-cursor .project-card,
+body.custom-cursor .featured-card,
+body.custom-cursor .faq,
+body.custom-cursor .filter-btn,
+body.custom-cursor input,
+body.custom-cursor textarea{
+  cursor:none;
+}
+@media (hover: none) and (pointer: coarse){
+  .cursor-dot{
+    display:none !important;
+  }
+  body.custom-cursor,
+  body.custom-cursor a,
+  body.custom-cursor button,
+  body.custom-cursor input,
+  body.custom-cursor textarea{
+    cursor:auto;
+  }
+}
+@media (prefers-reduced-motion: reduce){
+  .cursor-dot{
+    display:none !important;
+  }
+  body.custom-cursor,
+  body.custom-cursor a,
+  body.custom-cursor button{
+    cursor:auto;
+  }
+}
