@@ -442,12 +442,92 @@ body, header, main, footer, .btn-primary, .btn-outline, .input, .card, .faq, .na
   border-radius:0.5rem;
   transition:background-color 0.2s ease, color 0.2s ease;
 }
-/* Reduce navigation spacing on mobile */
-@media (max-width: 767px) {
-  .navlink {
-    padding:0.5rem 0.4rem;
-    font-size:0.813rem;
-  }
+/* Mobile Hamburger Menu */
+.hamburger{
+  width:40px;
+  height:40px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:5px;
+  background:transparent;
+  border:none;
+  cursor:pointer;
+  padding:8px;
+  border-radius:8px;
+  transition:background-color 0.2s ease;
+}
+.hamburger:hover{
+  background-color:rgba(0,0,0,0.05);
+}
+.dark .hamburger:hover{
+  background-color:rgba(255,255,255,0.1);
+}
+.hamburger-line{
+  width:20px;
+  height:2px;
+  background-color:#111827;
+  border-radius:2px;
+  transition:all 0.3s ease;
+}
+.dark .hamburger-line{
+  background-color:#ffffff;
+}
+/* Hamburger animation to X */
+.hamburger.active .hamburger-line:nth-child(1){
+  transform:translateY(7px) rotate(45deg);
+}
+.hamburger.active .hamburger-line:nth-child(2){
+  opacity:0;
+}
+.hamburger.active .hamburger-line:nth-child(3){
+  transform:translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile Menu Dropdown */
+.mobile-menu{
+  display:none;
+  flex-direction:column;
+  background-color:#f9fafb;
+  border-top:1px solid #e5e7eb;
+  padding:1rem 1.5rem 1.5rem;
+  gap:0.5rem;
+}
+.dark .mobile-menu{
+  background-color:#0D0D0D;
+  border-top-color:#333333;
+}
+.mobile-menu.active{
+  display:flex;
+}
+.mobile-navlink{
+  padding:0.875rem 1rem;
+  font-size:1rem;
+  font-weight:500;
+  color:#374151;
+  border-radius:0.75rem;
+  transition:all 0.2s ease;
+  text-decoration:none;
+}
+.dark .mobile-navlink{
+  color:#d1d5db;
+}
+.mobile-navlink:hover{
+  background-color:rgba(95, 97, 242, 0.1);
+  color:#5F61F2;
+}
+.dark .mobile-navlink:hover{
+  background-color:rgba(165, 180, 252, 0.1);
+  color:#A5B4FC;
+}
+.mobile-navlink.active{
+  background-color:rgba(95, 97, 242, 0.1);
+  color:#5F61F2;
+}
+.dark .mobile-navlink.active{
+  background-color:rgba(165, 180, 252, 0.1);
+  color:#A5B4FC;
 }
 .navlink:hover, .navlink:focus{
   background-color:rgba(99, 102, 241, 0.15);

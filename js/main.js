@@ -22,10 +22,46 @@ toggle.addEventListener('click', () => {
 const p=location.pathname.split('/').pop();
 // Check if we're in a project detail page (projects/ subfolder)
 const isProjectPage = location.pathname.includes('/projects/') && p !== 'projects.html';
-if(p.includes('about'))document.getElementById('nav-about').classList.add('active');
-else if(p.includes('projects') && !isProjectPage)document.getElementById('nav-projects').classList.add('active');
-else if(p.includes('contact'))document.getElementById('nav-contact').classList.add('active');
-else if(p === 'index.html' || p === '' || location.pathname === '/')document.getElementById('nav-home').classList.add('active');
+if(p.includes('about'))document.getElementById('nav-about')?.classList.add('active');
+else if(p.includes('projects') && !isProjectPage)document.getElementById('nav-projects')?.classList.add('active');
+else if(p.includes('contact'))document.getElementById('nav-contact')?.classList.add('active');
+else if(p === 'index.html' || p === '' || location.pathname === '/')document.getElementById('nav-home')?.classList.add('active');
+
+// Mobile menu toggle
+const menuToggle = document.getElementById('menuToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+if (menuToggle && mobileMenu) {
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+  });
+
+  // Close menu when clicking a link
+  mobileMenu.querySelectorAll('.mobile-navlink').forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      mobileMenu.classList.remove('active');
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+      menuToggle.classList.remove('active');
+      mobileMenu.classList.remove('active');
+    }
+  });
+
+  // Highlight active mobile nav link
+  const mobileNavLinks = mobileMenu.querySelectorAll('.mobile-navlink');
+  mobileNavLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (p.includes('about') && href.includes('about')) link.classList.add('active');
+    else if (p.includes('projects') && !isProjectPage && href.includes('projects')) link.classList.add('active');
+    else if (p.includes('contact') && href.includes('contact')) link.classList.add('active');
+    else if ((p === 'index.html' || p === '' || location.pathname === '/') && href.includes('index')) link.classList.add('active');
+  });
+}
 
 // Navbar scroll effect - change background from gray to white
 const nav=document.getElementById('nav');

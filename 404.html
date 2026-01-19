@@ -64,14 +64,30 @@
       <span class="md:hidden">SL</span>
       <span class="hidden md:inline">Sophia Lin</span>
     </a>
-    <nav class="flex gap-3 md:gap-6 text-sm">
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex gap-6 text-sm">
       <a href="index.html" id="nav-home" class="navlink">Home</a>
       <a href="about.html" id="nav-about" class="navlink">About</a>
       <a href="projects.html" id="nav-projects" class="navlink">Projects</a>
       <a href="contact.html" id="nav-contact" class="navlink">Contact</a>
     </nav>
-    <button id="themeToggle" aria-label="Toggle theme" title="Toggle light / dark mode">◐</button>
+    <div class="flex items-center gap-3">
+      <button id="themeToggle" aria-label="Toggle theme" title="Toggle light / dark mode">◐</button>
+      <!-- Mobile Menu Button -->
+      <button id="menuToggle" class="md:hidden hamburger" aria-label="Toggle menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
   </div>
+  <!-- Mobile Navigation Menu -->
+  <nav id="mobileMenu" class="mobile-menu md:hidden">
+    <a href="index.html" class="mobile-navlink">Home</a>
+    <a href="about.html" class="mobile-navlink">About</a>
+    <a href="projects.html" class="mobile-navlink">Projects</a>
+    <a href="contact.html" class="mobile-navlink">Contact</a>
+  </nav>
 </header>
 
 <main class="pt-40 pb-8 min-h-screen flex items-center justify-center">
