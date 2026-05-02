@@ -31,6 +31,9 @@
     }
     /* Force light mode colors */
     html:not(.dark) body { background-color: #f9fafb !important; color: #1f2937 !important; }
+    html:not(.dark) .bg-gray-50 { background-color: #f9fafb !important; }
+    html:not(.dark) .bg-white { background-color: white !important; }
+    html:not(.dark) .bg-gray-100 { background-color: #f3f4f6 !important; }
     html:not(.dark) header { background-color: white !important; }
     html:not(.dark) h1, html:not(.dark) h2, html:not(.dark) h3, html:not(.dark) h4, html:not(.dark) h5 { color: black !important; }
     html:not(.dark) .text-black { color: #111827 !important; }
@@ -58,7 +61,7 @@
     }
   </style>
 
-  <link rel="stylesheet" href="../css/custom.css?v=9" />
+  <link rel="stylesheet" href="../css/custom.css?v=13" />
 </head>
 
 <body class="bg-white dark:bg-[#0D0D0D] text-black dark:text-white" style="font-family: 'Plus Jakarta Sans', sans-serif;">
@@ -148,6 +151,9 @@
     </figure>
 
     <h2 class="text-3xl font-bold mt-10 mb-4 text-black dark:text-white">Research Insights</h2>
+    <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+      We conducted a <strong>competitive analysis</strong> of Rent the Runway, Poshmark, and Depop to identify gaps in peer-to-peer rental trust mechanics, and ran <strong>informal interviews</strong> with potential renters and lenders in our university community to understand the core friction points. Findings were synthesized through affinity mapping.
+    </p>
     <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
       <li><strong>Trust & Transparency:</strong> Renters want clear information about size, condition, and delivery; sellers want control and reliable transactions.</li>
       <li><strong>Convenience:</strong> Users value simple listing and rental flows with minimal friction.</li>
@@ -184,7 +190,7 @@
     </div>
 
     <h2 class="text-3xl font-bold mt-10 mb-4 text-black dark:text-white">Iteration & Evaluation</h2>
-    <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">We conducted heuristic evaluations and usability tests to refine our prototype:</p>
+    <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">We applied Nielsen's heuristics to the prototype ourselves, then ran <strong>2 think-aloud usability sessions</strong> with student participants to observe friction points in the rental and listing flows:</p>
     <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
       <li>Added "undo" and confirmation pop-ups for key actions to prevent user errors.</li>
       <li>Improved visibility of filters and date selection feedback for better clarity.</li>

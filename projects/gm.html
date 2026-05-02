@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>In-Vehicle Infotainment System — Sophia Lin</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { light: '#5F61F2', dark: '#A5B4FC' },
+          },
+        },
+      },
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .dark .dark\:bg-\[\#0D0D0D\] { background-color: #0D0D0D !important; }
+      .dark .dark\:bg-\[\#1a1a1a\] { background-color: #1a1a1a !important; }
+      .dark .dark\:text-white { color: white !important; }
+      .dark .dark\:text-\[\#A5B4FC\] { color: #A5B4FC !important; }
+      .dark .dark\:text-gray-300 { color: #d1d5db !important; }
+      .dark .dark\:text-gray-400 { color: #9ca3af !important; }
+      .dark .dark\:border-white\/10 { border-color: rgba(255, 255, 255, 0.1) !important; }
+      .dark .dark\:border-gray-800 { border-color: #1f2937 !important; }
+    }
+    html:not(.dark) body { background-color: #f9fafb !important; color: #1f2937 !important; }
+    html:not(.dark) .bg-gray-50 { background-color: #f9fafb !important; }
+    html:not(.dark) .bg-white { background-color: white !important; }
+    html:not(.dark) .bg-gray-100 { background-color: #f3f4f6 !important; }
+    html:not(.dark) header { background-color: white !important; }
+    html:not(.dark) h1, html:not(.dark) h2, html:not(.dark) h3, html:not(.dark) h4, html:not(.dark) h5 { color: black !important; }
+    html:not(.dark) .text-black { color: #111827 !important; }
+    html:not(.dark) .text-gray-600 { color: #4b5563 !important; }
+    html:not(.dark) .text-gray-500 { color: #6b7280 !important; }
+    html:not(.dark) .text-\[\#5F61F2\] { color: #5F61F2 !important; }
+    html:not(.dark) .bg-white { background-color: white !important; }
+    html.dark body { background-color: #0D0D0D !important; color: white !important; }
+    html.dark header { background-color: #0D0D0D !important; }
+    html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5 { color: white !important; }
+    html.dark .text-gray-600 { color: #d1d5db !important; }
+    html.dark .text-\[\#5F61F2\] { color: #A5B4FC !important; }
+    ::selection { background-color: #5F61F2; color: white; }
+    html.dark ::selection { background-color: #A5B4FC; color: #0D0D0D; }
+
+    /* Lock overlay */
+    .lock-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    .lock-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      max-width: 380px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.2);
+    }
+
+    html.dark .lock-card {
+      background: #1a1a1a;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .lock-icon {
+      width: 52px;
+      height: 52px;
+      background: #f3f4f6;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+    }
+
+    html.dark .lock-icon {
+      background: #2a2a2a;
+    }
+
+    .lock-input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid #e5e7eb;
+      border-radius: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.95rem;
+      outline: none;
+      margin-top: 1.25rem;
+      background: white;
+      color: #111827;
+      transition: border-color 0.2s;
+    }
+
+    html.dark .lock-input {
+      background: #111;
+      border-color: #333;
+      color: white;
+    }
+
+    .lock-input:focus {
+      border-color: #5F61F2;
+    }
+
+    html.dark .lock-input:focus {
+      border-color: #A5B4FC;
+    }
+
+    .lock-input.error {
+      border-color: #ef4444;
+      animation: shake 0.35s ease;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-6px); }
+      75% { transform: translateX(6px); }
+    }
+
+    .lock-btn {
+      width: 100%;
+      margin-top: 0.75rem;
+      padding: 0.75rem 1rem;
+      background: #5F61F2;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.1s;
+    }
+
+    .lock-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+    .lock-btn:active { transform: translateY(0); }
+
+    html.dark .lock-btn {
+      background: #A5B4FC;
+      color: #0D0D0D;
+    }
+
+    .lock-error-msg {
+      font-size: 0.8rem;
+      color: #ef4444;
+      margin-top: 0.5rem;
+      min-height: 1.2em;
+    }
+
+    .lock-hint {
+      font-size: 0.78rem;
+      color: #9ca3af;
+      margin-top: 0.6rem;
+    }
+
+    /* Blurred preview content behind lock */
+    .preview-blurred {
+      filter: blur(18px);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* NDA badge */
+    .nda-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fde68a;
+      border-radius: 6px;
+      padding: 0.25rem 0.6rem;
+    }
+
+    html.dark .nda-badge {
+      background: rgba(251, 191, 36, 0.12);
+      color: #fbbf24;
+      border-color: rgba(251, 191, 36, 0.25);
+    }
+
+    /* Chip tags (reuse from projects page style) */
+    .chip {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: #ede9fe;
+      color: #5F61F2;
+    }
+
+    html.dark .chip {
+      background: rgba(165, 180, 252, 0.12);
+      color: #A5B4FC;
+    }
+
+    .chip-gray {
+      background: #f3f4f6;
+      color: #4b5563;
+    }
+
+    html.dark .chip-gray {
+      background: rgba(255,255,255,0.07);
+      color: #9ca3af;
+    }
+
+    /* Scroll fade animation */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Divider */
+    .section-divider {
+      border: none;
+      border-top: 1px solid #e5e7eb;
+      margin: 3rem 0;
+    }
+    html.dark .section-divider {
+      border-color: rgba(255,255,255,0.08);
+    }
+  </style>
+
+  <link rel="stylesheet" href="../css/custom.css?v=13">
+</head>
+
+<body class="bg-white dark:bg-[#0D0D0D] text-black dark:text-white" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+
+<!-- ─── NAV ─────────────────────────────────────────────────────── -->
+<header id="nav" class="fixed top-0 left-0 w-full z-50 bg-white dark:bg-[#0D0D0D]">
+  <div class="max-w-6xl mx-auto flex justify-between items-center py-5 px-6">
+    <a href="../index.html" class="font-semibold text-xl text-black dark:text-white">
+      <span class="md:hidden">SL</span>
+      <span class="hidden md:inline">Sophia Lin</span>
+    </a>
+    <nav class="hidden md:flex gap-6 text-sm">
+      <a href="../index.html" id="nav-home" class="navlink">Home</a>
+      <a href="../about.html" id="nav-about" class="navlink">About</a>
+      <a href="../projects.html" id="nav-projects" class="navlink">Projects</a>
+      <a href="../contact.html" id="nav-contact" class="navlink">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <button id="themeToggle" aria-label="Toggle theme" title="Toggle light / dark mode">◐</button>
+      <button id="menuToggle" class="md:hidden hamburger" aria-label="Toggle menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </div>
+  <nav id="mobileMenu" class="mobile-menu md:hidden">
+    <a href="../index.html" class="mobile-navlink">Home</a>
+    <a href="../about.html" class="mobile-navlink">About</a>
+    <a href="../projects.html" class="mobile-navlink">Projects</a>
+    <a href="../contact.html" class="mobile-navlink">Contact</a>
+  </nav>
+</header>
+
+<!-- ─── LOCK OVERLAY ────────────────────────────────────────────── -->
+<div id="lockOverlay" class="lock-overlay">
+  <div class="lock-card">
+    <div class="lock-icon">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5F61F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+      </svg>
+    </div>
+    <span class="nda-badge">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      NDA Protected
+    </span>
+    <h2 class="text-lg font-bold mt-3 mb-1 text-black dark:text-white">This project is password protected</h2>
+    <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+      This work was completed under a confidentiality agreement with General Motors.
+      Enter the password to view the full case study, or reach out to request access.
+    </p>
+    <input
+      id="passwordInput"
+      class="lock-input"
+      type="password"
+      placeholder="Enter password"
+      autocomplete="off"
+    />
+    <p id="errorMsg" class="lock-error-msg"></p>
+    <button class="lock-btn" id="unlockBtn">View Case Study</button>
+    <p class="lock-hint">
+      Don't have the password?
+      <a href="mailto:sphjlin1203@gmail.com" class="underline" style="color:#5F61F2">Request access</a>
+    </p>
+  </div>
+</div>
+
+<!-- ─── PAGE CONTENT (blurred until unlocked) ──────────────────── -->
+<div id="pageContent" class="preview-blurred">
+<main class="pt-40 pb-16">
+
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-6 mb-20">
+    <a href="../projects.html" class="inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 hover:text-[#5F61F2] dark:hover:text-[#A5B4FC] transition-colors mb-8">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      All Projects
+    </a>
+
+    <div class="flex flex-wrap items-center gap-2 mb-5">
+      <span class="nda-badge">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        NDA Protected · General Motors
+      </span>
+    </div>
+
+    <h1 class="text-5xl md:text-6xl font-bold mb-5 leading-tight">GMC Hummer EV<br/>IVI &amp; Companion App</h1>
+    <p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-8 max-w-3xl">
+      A semester-long industry engagement with General Motors — designing a unified in-vehicle infotainment system and companion mobile app for the GMC Hummer EV, with a focus on two original features: <strong class="font-semibold text-black dark:text-white">Oasis Mode</strong> and Guardian Mode.
+    </p>
+
+    <div class="flex flex-wrap gap-2 mb-10">
+      <span class="chip">Automotive UX</span>
+      <span class="chip">IVI / HMI</span>
+      <span class="chip">Systems Design</span>
+      <span class="chip-gray chip">Figma</span>
+      <span class="chip-gray chip">Team Project</span>
+      <span class="chip-gray chip">Industry Client</span>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-6 py-6 border-t border-b border-gray-200 dark:border-white/10">
+      <div>
+        <p class="text-xs text-gray-400 uppercase tracking-widest mb-1">Client</p>
+        <p class="font-semibold text-sm">General Motors</p>
+      </div>
+      <div>
+        <p class="text-xs text-gray-400 uppercase tracking-widest mb-1">Vehicle</p>
+        <p class="font-semibold text-sm">GMC Hummer EV</p>
+      </div>
+      <div>
+        <p class="text-xs text-gray-400 uppercase tracking-widest mb-1">Role</p>
+        <p class="font-semibold text-sm">UX Designer · Lead Visual</p>
+      </div>
+      <div>
+        <p class="text-xs text-gray-400 uppercase tracking-widest mb-1">Timeline</p>
+        <p class="font-semibold text-sm">Jan – Apr 2025</p>
+      </div>
+      <div>
+        <p class="text-xs text-gray-400 uppercase tracking-widest mb-1">Team</p>
+        <p class="font-semibold text-sm">5 designers</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NDA Notice -->
+  <section class="max-w-6xl mx-auto px-6 mb-20">
+    <div class="rounded-2xl p-6 flex gap-4 items-start" style="background: rgba(95,97,242,0.05); border: 1px solid rgba(95,97,242,0.14);">
+      <svg class="flex-shrink-0 mt-0.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5F61F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+        <span class="font-semibold text-[#5F61F2] dark:text-[#A5B4FC]">Confidentiality Notice —</span>
+        This project was completed under NDA with General Motors. Specific research findings and internal materials have been generalized. Full prototype and documentation available to verified recruiters upon request.
+      </p>
+    </div>
+  </section>
+
+  <hr class="section-divider max-w-6xl mx-auto px-6">
+
+  <!-- Overview -->
+  <section class="max-w-6xl mx-auto px-6 mb-20 fade-up">
+    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] font-semibold uppercase tracking-widest mb-3">Overview</p>
+    <h2 class="text-3xl font-bold mb-5">Treating the car as one connected system</h2>
+    <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+      Rather than designing each feature in isolation, we approached the Hummer EV as a <strong class="font-semibold text-black dark:text-white">system of systems</strong> — where the center display, driver cluster, and companion phone app share a consistent visual language and respond to each other contextually.
+    </p>
+    <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+      The team covered the full IVI scope: media, phone, navigation, vehicle controls, personalization, and driver cluster. I led the visual design direction across the project and was the primary Figma builder — establishing the component library, layout rules, and visual system the team built on top of.
+    </p>
+    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+      Beyond the core IVI, our team proposed two original features tailored to the Hummer EV's identity and its drivers' real needs: <strong class="font-semibold text-black dark:text-white">Oasis Mode</strong> (in-car wellness) and <strong class="font-semibold text-black dark:text-white">Guardian Mode</strong> (remote vehicle security). This case study focuses on Oasis Mode, which I co-led end-to-end.
+    </p>
+  </section>
+
+  <!-- Scope -->
+  <section class="max-w-6xl mx-auto px-6 mb-20 fade-up">
+    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] font-semibold uppercase tracking-widest mb-5">Design Scope</p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="rounded-xl p-5 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5">
+        <p class="font-semibold text-sm mb-1">Media &amp; Phone</p>
+        <p class="text-xs text-gray-500 dark:text-gray-400">Playback, queue, calls, contacts</p>
+      </div>
+      <div class="rounded-xl p-5 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5">
+        <p class="font-semibold text-sm mb-1">Navigation</p>
+        <p class="text-xs text-gray-500 dark:text-gray-400">Turn-by-turn, map states, routing</p>
+      </div>
+      <div class="rounded-xl p-5 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5">
+        <p class="font-semibold text-sm mb-1">Vehicle Controls</p>
+        <p class="text-xs text-gray-500 dark:text-gray-400">Wipers, mirrors, lights, cabin</p>
+      </div>
+      <div class="rounded-xl p-5 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5">
+        <p class="font-semibold text-sm mb-1">Driver Cluster</p>
+        <p class="text-xs text-gray-500 dark:text-gray-400">Speed, alerts, contextual widgets</p>
+      </div>
+      <div class="rounded-xl p-5 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5">
+        <p class="font-semibold text-sm mb-1">Personalization</p>
+        <p class="text-xs text-gray-500 dark:text-gray-400">Profiles, themes, drive modes</p>
+      </div>
+      <div class="rounded-xl p-5 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5">
+        <p class="font-semibold text-sm mb-1">Guardian Mode</p>
+        <p class="text-xs text-gray-500 dark:text-gray-400">Remote security, walk mode, sentry</p>
+      </div>
+      <div class="rounded-xl p-5 border col-span-2" style="background: rgba(95,97,242,0.06); border-color: rgba(95,97,242,0.2);">
+        <p class="font-semibold text-sm mb-1 text-[#5F61F2] dark:text-[#A5B4FC]">Oasis Mode — primary focus</p>
+        <p class="text-xs text-gray-500 dark:text-gray-400">In-car wellness: preset programs, seat massage, soundscape, lighting, health monitoring, recovery summary</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider max-w-6xl mx-auto px-6">
+
+  <!-- Process -->
+  <section class="max-w-6xl mx-auto px-6 mb-20 fade-up">
+    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] font-semibold uppercase tracking-widest mb-3">Process</p>
+    <h2 class="text-3xl font-bold mb-5">From driver context to full system</h2>
+    <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
+      We followed a double-diamond process with client review checkpoints throughout the semester. Competitive analysis covered Tesla, Rivian, and existing GM products. IA mapping ensured features shared consistent navigation patterns across the center display and driver cluster. We iterated from lo-fi flows to component-based hi-fi prototypes, presenting to GM design leads at each major milestone.
+    </p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-gray-100 dark:bg-white/8 rounded-xl overflow-hidden">
+      <div class="bg-white dark:bg-[#111] p-5">
+        <p class="text-xs font-bold uppercase tracking-widest text-[#5F61F2] dark:text-[#A5B4FC] mb-3">Discover</p>
+        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1.5">
+          <li>Competitive analysis</li>
+          <li>Driver context research</li>
+          <li>Client brief + constraints</li>
+        </ul>
+      </div>
+      <div class="bg-white dark:bg-[#111] p-5">
+        <p class="text-xs font-bold uppercase tracking-widest text-[#5F61F2] dark:text-[#A5B4FC] mb-3">Define</p>
+        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1.5">
+          <li>IA mapping</li>
+          <li>User flows</li>
+          <li>Design principles</li>
+        </ul>
+      </div>
+      <div class="bg-white dark:bg-[#111] p-5">
+        <p class="text-xs font-bold uppercase tracking-widest text-[#5F61F2] dark:text-[#A5B4FC] mb-3">Develop</p>
+        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1.5">
+          <li>Lo-fi wireframes</li>
+          <li>Component library</li>
+          <li>Visual system</li>
+        </ul>
+      </div>
+      <div class="bg-white dark:bg-[#111] p-5">
+        <p class="text-xs font-bold uppercase tracking-widest text-[#5F61F2] dark:text-[#A5B4FC] mb-3">Deliver</p>
+        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1.5">
+          <li>Hi-fi prototypes</li>
+          <li>Client presentation</li>
+          <li>Handoff specs</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider max-w-6xl mx-auto px-6">
+
+  <!-- Oasis Mode Deep Dive -->
+  <section class="max-w-6xl mx-auto px-6 mb-20 fade-up">
+    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] font-semibold uppercase tracking-widest mb-3">Feature Deep Dive</p>
+    <h2 class="text-3xl font-bold mb-2">Oasis Mode</h2>
+    <p class="text-lg text-gray-500 dark:text-gray-400 mb-10">Turning the Hummer EV into a personal recovery space</p>
+
+    <!-- Problem -->
+    <div class="rounded-2xl p-7 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5 mb-10">
+      <p class="text-xs font-bold uppercase tracking-widest text-[#5F61F2] dark:text-[#A5B4FC] mb-3">The Problem</p>
+      <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+        Long drives are physically and mentally taxing. But the moment a driver stops — after hours on the highway, a stressful near-miss, or while waiting at a charging station — the car offers nothing. You're sitting in a powerful vehicle with no way to actually recover.
+      </p>
+      <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+        We asked: <strong class="font-semibold text-black dark:text-white">what if the Hummer EV could actively help you decompress?</strong>
+      </p>
+    </div>
+
+    <!-- Three triggers -->
+    <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">Three moments that trigger Oasis Mode</p>
+    <div class="grid md:grid-cols-3 gap-4 mb-12">
+      <div class="rounded-xl p-5 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5">
+        <div class="w-8 h-8 rounded-lg bg-[#ede9fe] dark:bg-[rgba(165,180,252,0.12)] flex items-center justify-center mb-3">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5F61F2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <p class="font-semibold text-sm mb-1">Extended driving</p>
+        <p class="text-xs text-gray-500 dark:text-gray-400">Driver cluster detects fatigue from long drive time and surfaces a rest prompt. One tap opens Oasis Mode.</p>
+      </div>
+      <div class="rounded-xl p-5 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5">
+        <div class="w-8 h-8 rounded-lg bg-[#ede9fe] dark:bg-[rgba(165,180,252,0.12)] flex items-center justify-center mb-3">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5F61F2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <p class="font-semibold text-sm mb-1">Stressful incident</p>
+        <p class="text-xs text-gray-500 dark:text-gray-400">A sudden brake or near-miss triggers a gentle prompt to pull over and use Oasis Mode to reset.</p>
+      </div>
+      <div class="rounded-xl p-5 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5">
+        <div class="w-8 h-8 rounded-lg bg-[#ede9fe] dark:bg-[rgba(165,180,252,0.12)] flex items-center justify-center mb-3">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5F61F2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+        </div>
+        <p class="font-semibold text-sm mb-1">Charging stop</p>
+        <p class="text-xs text-gray-500 dark:text-gray-400">While the battery charges, Oasis Mode turns idle wait time into intentional recovery.</p>
+      </div>
+    </div>
+
+    <!-- How it works -->
+    <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">How it works — 3-step flow</p>
+    <div class="space-y-5 mb-12">
+      <div class="flex gap-4 items-start">
+        <div class="flex-shrink-0 w-7 h-7 rounded-full bg-[#5F61F2] dark:bg-[#A5B4FC] text-white dark:text-[#0D0D0D] flex items-center justify-center text-xs font-bold">1</div>
+        <div>
+          <p class="font-semibold text-sm mb-1">Choose your experience</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Three named presets with distinct intent — <em>Power Nap</em> (15 min, warming massage + gentle wake alert), <em>Deep Relax</em> (30 min, full body relaxation with calming soundscape for highway fatigue or post-stress), <em>Reflect</em> (mindful breathing to sharpen focus before something important). Or build a custom session.</p>
+        </div>
+      </div>
+      <div class="flex gap-4 items-start">
+        <div class="flex-shrink-0 w-7 h-7 rounded-full bg-[#5F61F2] dark:bg-[#A5B4FC] text-white dark:text-[#0D0D0D] flex items-center justify-center text-xs font-bold">2</div>
+        <div>
+          <p class="font-semibold text-sm mb-1">Customize: Ambiance · Comfort · Duration</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300"><strong class="font-medium">Ambiance</strong> — choose cabin lighting color and soundscape (Ocean Waves, Rainfall, etc.). <strong class="font-medium">Comfort</strong> — control seat massage via an interactive 3D seat rendering: tap the area you want to target rather than navigating abstract zone labels. <strong class="font-medium">Duration</strong> — set a timer or enable Health Monitor to track heart rate throughout the session.</p>
+        </div>
+      </div>
+      <div class="flex gap-4 items-start">
+        <div class="flex-shrink-0 w-7 h-7 rounded-full bg-[#5F61F2] dark:bg-[#A5B4FC] text-white dark:text-[#0D0D0D] flex items-center justify-center text-xs font-bold">3</div>
+        <div>
+          <p class="font-semibold text-sm mb-1">Session Complete — Recovery Summary</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">A summary screen shows heart rate before and after, drive score, and a readiness signal — giving the driver confirmation that the session did something before they get back on the road. The driver cluster syncs to reflect the updated recovery state.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Design decisions -->
+    <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-5">Key design decisions</p>
+    <div class="space-y-6">
+      <div class="flex gap-4">
+        <div class="flex-shrink-0 w-9 h-9 rounded-xl bg-[#ede9fe] dark:bg-[rgba(165,180,252,0.12)] flex items-center justify-center text-[#5F61F2] dark:text-[#A5B4FC] font-bold text-xs">01</div>
+        <div>
+          <p class="font-semibold text-sm mb-1">Preset-first, not customization-first</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">We initially considered leading with a full settings panel. But a fatigued driver doesn't want to make decisions — they want to start recovering now. Named presets with clear intent let you begin in one tap. Customization exists as a layer below, not the entry point. This decision came directly from thinking through the user's emotional state at the moment of activation.</p>
+        </div>
+      </div>
+      <div class="flex gap-4">
+        <div class="flex-shrink-0 w-9 h-9 rounded-xl bg-[#ede9fe] dark:bg-[rgba(165,180,252,0.12)] flex items-center justify-center text-[#5F61F2] dark:text-[#A5B4FC] font-bold text-xs">02</div>
+        <div>
+          <p class="font-semibold text-sm mb-1">3D seat visual instead of abstract zone sliders</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">For massage control, we used an interactive 3D rendering of the Hummer seat rather than sliders labeled "Zone 1/2/3." Tapping the seat directly maps to the body area you want targeted — more intuitive, and a stronger visual signature. We considered labeled diagrams too, but the 3D model made the spatial mapping immediate without any explanation.</p>
+        </div>
+      </div>
+      <div class="flex gap-4">
+        <div class="flex-shrink-0 w-9 h-9 rounded-xl bg-[#ede9fe] dark:bg-[rgba(165,180,252,0.12)] flex items-center justify-center text-[#5F61F2] dark:text-[#A5B4FC] font-bold text-xs">03</div>
+        <div>
+          <p class="font-semibold text-sm mb-1">Recovery summary closes the loop</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">Most wellness features just stop. We added a Session Complete screen showing heart rate delta and a drive-readiness signal. This closes the loop — the driver leaves with confirmation rather than uncertainty. It also builds trust in the feature over repeated use, turning a one-time novelty into a habit.</p>
+        </div>
+      </div>
+      <div class="flex gap-4">
+        <div class="flex-shrink-0 w-9 h-9 rounded-xl bg-[#ede9fe] dark:bg-[rgba(165,180,252,0.12)] flex items-center justify-center text-[#5F61F2] dark:text-[#A5B4FC] font-bold text-xs">04</div>
+        <div>
+          <p class="font-semibold text-sm mb-1">Cluster as the entry point, not just the display</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">Oasis Mode prompts surface in the driver cluster — where the driver is already looking — rather than on the center screen that requires a deliberate glance. The cluster and center display stay in sync throughout the session, so no information is siloed to one surface.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider max-w-6xl mx-auto px-6">
+
+  <!-- Guardian Mode brief -->
+  <section class="max-w-6xl mx-auto px-6 mb-20 fade-up">
+    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] font-semibold uppercase tracking-widest mb-3">Also Designed</p>
+    <h2 class="text-3xl font-bold mb-5">Guardian Mode</h2>
+    <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-7">
+      Guardian Mode is a companion phone app for when you're away from the vehicle — combining real-time monitoring with active deterrence. I conceived the idea and designed the majority of the screens across four security states:
+    </p>
+    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="rounded-xl p-4 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5">
+        <p class="font-semibold text-sm mb-1">Walk Mode</p>
+        <p class="text-xs text-gray-500 dark:text-gray-400">Lights the approach path, activates cameras, lets you scan surroundings before approaching the vehicle</p>
+      </div>
+      <div class="rounded-xl p-4 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5">
+        <p class="font-semibold text-sm mb-1">Sentry Mode</p>
+        <p class="text-xs text-gray-500 dark:text-gray-400">Passive monitoring — detects motion and alerts your phone with camera footage in real time</p>
+      </div>
+      <div class="rounded-xl p-4 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5">
+        <p class="font-semibold text-sm mb-1">Occupied Mode</p>
+        <p class="text-xs text-gray-500 dark:text-gray-400">For resting in a parked Hummer — monitors cabin temperature and outside activity</p>
+      </div>
+      <div class="rounded-xl p-4 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5">
+        <p class="font-semibold text-sm mb-1">Alert &amp; Response</p>
+        <p class="text-xs text-gray-500 dark:text-gray-400">Threat detected → live cameras → pulse exterior lights or call 911 directly from the app</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider max-w-6xl mx-auto px-6">
+
+  <!-- My Contributions -->
+  <section class="max-w-6xl mx-auto px-6 mb-20 fade-up">
+    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] font-semibold uppercase tracking-widest mb-3">My Contributions</p>
+    <h2 class="text-3xl font-bold mb-8">What I owned</h2>
+    <div class="grid md:grid-cols-2 gap-x-12 gap-y-6">
+      <div class="flex gap-3">
+        <div class="flex-shrink-0 w-1 self-stretch rounded-full bg-[#5F61F2] dark:bg-[#A5B4FC]"></div>
+        <div>
+          <p class="font-semibold text-sm mb-1">Lead visual designer &amp; Figma system owner</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Built the shared component library and layout rules that gave the full IVI system its visual consistency. I was the strongest Figma user on the team and the one others came to for system-level decisions.</p>
+        </div>
+      </div>
+      <div class="flex gap-3">
+        <div class="flex-shrink-0 w-1 self-stretch rounded-full bg-[#5F61F2] dark:bg-[#A5B4FC]"></div>
+        <div>
+          <p class="font-semibold text-sm mb-1">Oasis Mode — full design ownership</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Originated the concept, designed all flows (preset selection, customization tabs, active session, recovery summary), and the interactive 3D seat interaction model.</p>
+        </div>
+      </div>
+      <div class="flex gap-3">
+        <div class="flex-shrink-0 w-1 self-stretch rounded-full bg-[#5F61F2] dark:bg-[#A5B4FC]"></div>
+        <div>
+          <p class="font-semibold text-sm mb-1">Guardian Mode — concept + majority of screens</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Initiated the Guardian Mode concept and designed Walk Mode, Sentry Mode, Occupied Mode, threat alert flows, alert history, and settings.</p>
+        </div>
+      </div>
+      <div class="flex gap-3">
+        <div class="flex-shrink-0 w-1 self-stretch rounded-full bg-[#5F61F2] dark:bg-[#A5B4FC]"></div>
+        <div>
+          <p class="font-semibold text-sm mb-1">Vehicle controls &amp; driver cluster</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Designed all vehicle control screens (wipers, mirrors, headlights, cabin lighting) and defined the cluster's contextual widget hierarchy — including Oasis Mode integration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider max-w-6xl mx-auto px-6">
+
+  <!-- CTA -->
+  <section class="max-w-6xl mx-auto px-6 mb-8 fade-up">
+    <div class="rounded-2xl p-8 text-center" style="background: rgba(95,97,242,0.05); border: 1px solid rgba(95,97,242,0.12);">
+      <p class="text-2xl font-bold mb-3">Want to see the full prototype?</p>
+      <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6 max-w-md mx-auto">
+        Complete flows for Oasis Mode, Guardian Mode, and the core IVI system are available for verified recruiters. Reach out and I'll share access.
+      </p>
+      <a href="mailto:sphjlin1203@gmail.com?subject=GMC Hummer EV IVI — Case Study Request"
+         class="inline-block px-6 py-3 rounded-xl font-semibold text-white text-sm transition-all hover:opacity-90"
+         style="background: #5F61F2;">
+        Request Full Access
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="footer-section">
+  <div class="max-w-6xl mx-auto px-6 py-8">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+      <div class="text-center md:text-left">
+        <p class="footer-subtext">Let's connect over design, ideas, or a friendly hello</p>
+        <a href="mailto:sphjlin1203@gmail.com" class="footer-email">sphjlin1203@gmail.com</a>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center gap-4">
+        <div class="flex gap-2.5">
+          <a href="https://www.linkedin.com/in/sphjlin" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="LinkedIn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a href="mailto:sphjlin1203@gmail.com" class="footer-icon" aria-label="Email">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </a>
+        </div>
+        <p class="text-xs text-gray-400">© 2025 Sophia Lin</p>
+      </div>
+    </div>
+  </div>
+</footer>
+</div><!-- end #pageContent -->
+
+<!-- ─── SCRIPTS ──────────────────────────────────────────────────── -->
+<script>
+  // ── Theme toggle (same pattern as all other pages) ──
+  const html = document.documentElement;
+  const themeToggle = document.getElementById('themeToggle');
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    html.classList.add('dark');
+  }
+  themeToggle?.addEventListener('click', () => {
+    html.classList.toggle('dark');
+    localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+  });
+
+  // ── Mobile menu ──
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuToggle?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('active');
+    menuToggle?.classList.toggle('active');
+  });
+
+  // ── Password lock ──
+  const CORRECT = 'gm2025';
+  const overlay = document.getElementById('lockOverlay');
+  const content = document.getElementById('pageContent');
+  const input   = document.getElementById('passwordInput');
+  const btn     = document.getElementById('unlockBtn');
+  const errMsg  = document.getElementById('errorMsg');
+
+  function unlock() {
+    if (input.value === CORRECT) {
+      overlay.style.display = 'none';
+      content.classList.remove('preview-blurred');
+      sessionStorage.setItem('gm_unlocked', '1');
+    } else {
+      errMsg.textContent = 'Incorrect password. Try again.';
+      input.classList.add('error');
+      setTimeout(() => input.classList.remove('error'), 400);
+      input.value = '';
+      input.focus();
+    }
+  }
+
+  if (sessionStorage.getItem('gm_unlocked') === '1') {
+    overlay.style.display = 'none';
+    content.classList.remove('preview-blurred');
+  }
+
+  btn.addEventListener('click', unlock);
+  input.addEventListener('keydown', e => { if (e.key === 'Enter') unlock(); });
+
+  // ── Scroll fade-in ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

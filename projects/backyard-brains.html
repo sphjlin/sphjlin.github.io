@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Backyard Brains HHI — Sophia Lin</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { light: '#5F61F2', dark: '#A5B4FC' },
+          },
+        },
+      },
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .dark .dark\:bg-\[\#0D0D0D\] { background-color: #0D0D0D !important; }
+      .dark .dark\:bg-\[\#1a1a1a\] { background-color: #1a1a1a !important; }
+      .dark .dark\:text-white { color: white !important; }
+      .dark .dark\:text-\[\#A5B4FC\] { color: #A5B4FC !important; }
+      .dark .dark\:text-gray-300 { color: #d1d5db !important; }
+      .dark .dark\:text-gray-400 { color: #9ca3af !important; }
+      .dark .dark\:border-white\/10 { border-color: rgba(255, 255, 255, 0.1) !important; }
+      .dark .dark\:border-gray-800 { border-color: #1f2937 !important; }
+    }
+    html:not(.dark) body { background-color: #f9fafb !important; color: #1f2937 !important; }
+    html:not(.dark) .bg-gray-50 { background-color: #f9fafb !important; }
+    html:not(.dark) .bg-white { background-color: white !important; }
+    html:not(.dark) .bg-gray-100 { background-color: #f3f4f6 !important; }
+    html:not(.dark) header { background-color: white !important; }
+    html:not(.dark) h1, html:not(.dark) h2, html:not(.dark) h3, html:not(.dark) h4, html:not(.dark) h5 { color: black !important; }
+    html:not(.dark) .text-black { color: #111827 !important; }
+    html:not(.dark) strong { color: #5F61F2 !important; font-weight: 600 !important; }
+    html:not(.dark) .bg-\[\#5F61F2\] .text-white,
+    html:not(.dark) .bg-\[\#5F61F2\] p,
+    html:not(.dark) .bg-\[\#5F61F2\] strong { color: white !important; }
+    html:not(.dark) a.bg-\[\#5F61F2\].text-white { color: white !important; }
+    html:not(.dark) .text-gray-600 { color: #4b5563 !important; }
+    html:not(.dark) .text-gray-500 { color: #6b7280 !important; }
+    html:not(.dark) .text-\[\#5F61F2\] { color: #5F61F2 !important; }
+    html:not(.dark) .bg-white { background-color: white !important; }
+    html.dark body { background-color: #0D0D0D !important; color: white !important; }
+    html.dark header { background-color: #0D0D0D !important; }
+    html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5 { color: white !important; }
+    html.dark .text-gray-600 { color: #d1d5db !important; }
+    html.dark .text-gray-300 { color: #d1d5db !important; }
+    html.dark strong { color: #A5B4FC !important; font-weight: 600 !important; }
+    html.dark .text-\[\#5F61F2\] { color: #A5B4FC !important; }
+    html.dark .dark\:text-\[\#A5B4FC\] { color: #A5B4FC !important; }
+    ::selection { background-color: #5F61F2; color: white; }
+    html.dark ::selection { background-color: #A5B4FC; color: #0D0D0D; }
+
+    /* Accent color overrides — purple */
+    .accent { color: #5F61F2; }
+    html.dark .accent { color: #A5B4FC; }
+
+    /* HMW callout */
+    .hmw-block {
+      background: linear-gradient(135deg, #5F61F2 0%, #7C7EF5 100%);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      color: white;
+    }
+
+    /* Insight card */
+    .insight-card {
+      border-radius: 14px;
+      padding: 1.5rem;
+      background: #f5f3ff;
+      border: 1px solid #ede9fe;
+    }
+    html.dark .insight-card {
+      background: rgba(95, 97, 242, 0.07);
+      border-color: rgba(95, 97, 242, 0.18);
+    }
+
+    /* Phase timeline */
+    .phase-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #5F61F2;
+      background: #ede9fe;
+      border: 1px solid #c4b5fd;
+      border-radius: 6px;
+      padding: 2px 8px;
+      margin-bottom: 6px;
+    }
+    html.dark .phase-tag {
+      color: #A5B4FC;
+      background: rgba(95, 97, 242, 0.1);
+      border-color: rgba(165, 180, 252, 0.25);
+    }
+
+    /* Step number badge */
+    .step-num {
+      width: 2.2rem;
+      height: 2.2rem;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: #5F61F2;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+    html.dark .step-num { background: #A5B4FC; color: #0D0D0D; }
+
+    /* Section label */
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #5F61F2;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+    html.dark .section-label { color: #A5B4FC; }
+
+    /* Divider */
+    hr.bb-divider {
+      border: none;
+      border-top: 1px solid #e5e7eb;
+      margin: 3.5rem 0;
+    }
+    html.dark hr.bb-divider { border-color: rgba(255,255,255,0.08); }
+
+    /* Scroll fade */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* TOC sidebar */
+    .toc-link {
+      display: block;
+      font-size: 0.8rem;
+      color: #9ca3af;
+      padding: 0.3rem 0;
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+    .toc-link:hover, .toc-link.active { color: #5F61F2; }
+    html.dark .toc-link:hover, html.dark .toc-link.active { color: #A5B4FC; }
+  </style>
+
+  <link rel="stylesheet" href="../css/custom.css?v=13">
+</head>
+
+<body class="bg-white dark:bg-[#0D0D0D] text-black dark:text-white" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+
+<!-- ─── NAV ─────────────────────────────────────────────────────── -->
+<header id="nav" class="fixed top-0 left-0 w-full z-50 bg-white dark:bg-[#0D0D0D]">
+  <div class="max-w-6xl mx-auto flex justify-between items-center py-5 px-6">
+    <a href="../index.html" class="font-semibold text-xl text-black dark:text-white">
+      <span class="md:hidden">SL</span>
+      <span class="hidden md:inline">Sophia Lin</span>
+    </a>
+    <nav class="hidden md:flex gap-6 text-sm">
+      <a href="../index.html" id="nav-home" class="navlink">Home</a>
+      <a href="../about.html" id="nav-about" class="navlink">About</a>
+      <a href="../projects.html" id="nav-projects" class="navlink">Projects</a>
+      <a href="../contact.html" id="nav-contact" class="navlink">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <button id="themeToggle" aria-label="Toggle theme" title="Toggle light / dark mode">◐</button>
+      <button id="menuToggle" class="md:hidden hamburger" aria-label="Toggle menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </div>
+  <nav id="mobileMenu" class="mobile-menu md:hidden">
+    <a href="../index.html" class="mobile-navlink">Home</a>
+    <a href="../about.html" class="mobile-navlink">About</a>
+    <a href="../projects.html" class="mobile-navlink">Projects</a>
+    <a href="../contact.html" class="mobile-navlink">Contact</a>
+  </nav>
+</header>
+
+<!-- ─── MAIN ─────────────────────────────────────────────────────── -->
+<main class="pt-40 pb-16">
+
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-6 mb-20">
+    <div class="mb-8">
+      <a href="../projects.html" class="text-sm text-gray-600 dark:text-gray-400 hover:text-[#5F61F2] dark:hover:text-[#A5B4FC] transition-colors inline-block mb-6">← BACK TO PROJECTS</a>
+    </div>
+
+    <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">Backyard Brains <br class="hidden md:block"/>HHI Companion App</h1>
+    <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl">
+      Designing a multi-user mobile experience that transforms a single-person neuroscience kit into a collaborative, remote learning platform — from a message to a <em>sensation</em>.
+    </p>
+
+    <div class="project-tags mb-12">
+      <span class="project-tag tag-primary">UX Research</span>
+      <span class="project-tag tag-primary">UX/UI Design</span>
+      <span class="project-tag tag-secondary">Neuroscience EdTech</span>
+      <span class="project-tag tag-secondary">Mobile App</span>
+      <span class="project-tag tag-context">Capstone · Industry Client</span>
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-8 mb-12">
+      <div>
+        <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2">CLIENT</h3>
+        <p class="text-base">Backyard Brains</p>
+      </div>
+      <div>
+        <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2">TIMELINE</h3>
+        <p class="text-base">Feb – Apr 2026</p>
+      </div>
+      <div>
+        <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2">TEAM</h3>
+        <p class="text-base">Bruce L, Jeremy L, Sophia L, Daniel G, Lingfei Z</p>
+      </div>
+      <div>
+        <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2">TOOLS</h3>
+        <p class="text-base">Figma, Wizard of Oz, Usability Testing</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Body: TOC sidebar + content -->
+  <div class="flex gap-8 max-w-7xl mx-auto px-6">
+
+    <!-- Sticky TOC (desktop only) -->
+    <aside class="hidden lg:block w-64 flex-shrink-0">
+      <nav class="sticky top-24 space-y-2">
+        <p class="text-sm font-bold text-gray-900 dark:text-white mb-3">Contents</p>
+        <a href="#context" class="toc-link">Context &amp; Problem</a>
+        <a href="#process" class="toc-link">Process</a>
+        <a href="#insights" class="toc-link">Key Insights</a>
+        <a href="#design" class="toc-link">Design</a>
+        <a href="#outcome" class="toc-link">Outcome</a>
+        <a href="#reflection" class="toc-link">Reflection</a>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <div class="flex-1 min-w-0">
+
+      <!-- ── CONTEXT + PROBLEM ── -->
+      <section id="context" class="mb-16 fade-up">
+        <span class="section-label">Context &amp; Problem</span>
+        <h2 class="text-3xl font-bold mb-4">From a message to a sensation — remotely</h2>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-5">
+          Backyard Brains' Human-Human Interface (HHI) lets User A flex a muscle, sending an electrical signal that triggers an involuntary movement in User B's arm. The problem: it only works with both people in the same room. Remote learners — Backyard Brains' primary audience — are completely locked out.
+        </p>
+        <div class="hmw-block">
+          <p class="text-xs font-bold uppercase tracking-widest opacity-70 mb-3">HMW</p>
+          <p class="text-xl md:text-2xl font-bold leading-snug">
+            How might we enable students to collaboratively explore neuroscience tools in remote settings while ensuring safety and consent?
+          </p>
+        </div>
+      </section>
+
+      <hr class="bb-divider">
+
+      <!-- ── PROCESS ── -->
+      <section id="process" class="mb-16 fade-up">
+        <span class="section-label">Process</span>
+        <h2 class="text-3xl font-bold mb-4">Three phases, five methods</h2>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
+          2 stakeholder interviews · competitive analysis of 3 products · heuristic evaluation · Round 1 usability testing (6 participants, 4 sessions) · Wizard-of-Oz simulation (2 paired teams in separate rooms)
+        </p>
+        <div class="grid md:grid-cols-3 gap-6 relative">
+          <div class="hidden md:block absolute top-5 left-0 right-0 h-px bg-gray-200 dark:bg-white/10 z-0"></div>
+          <div class="relative z-10">
+            <div class="w-10 h-10 rounded-full bg-[#5F61F2] dark:bg-[#A5B4FC] flex items-center justify-center mb-3">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <p class="text-xs text-gray-400 uppercase tracking-widest mb-2">Feb — Understand</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300">Stakeholder interviews, competitive analysis, usability testing Round 1, heuristic evaluation</p>
+          </div>
+          <div class="relative z-10">
+            <div class="w-10 h-10 rounded-full bg-[#5F61F2] dark:bg-[#A5B4FC] flex items-center justify-center mb-3">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <p class="text-xs text-gray-400 uppercase tracking-widest mb-2">Mar — Explore</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300">Research synthesis, design requirements, <strong>Wizard of Oz simulation</strong> — testing remote pairing before any backend existed</p>
+          </div>
+          <div class="relative z-10">
+            <div class="w-10 h-10 rounded-full bg-[#5F61F2] dark:bg-[#A5B4FC] flex items-center justify-center mb-3">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <p class="text-xs text-gray-400 uppercase tracking-widest mb-2">Apr — Validate</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300">Med-fi → hi-fi prototyping, usability testing Round 2, client handoff</p>
+          </div>
+        </div>
+      </section>
+
+      <hr class="bb-divider">
+
+      <!-- ── KEY INSIGHTS ── -->
+      <section id="insights" class="mb-16 fade-up">
+        <span class="section-label">Key Insights</span>
+        <h2 class="text-3xl font-bold mb-4">What all five methods agreed on</h2>
+        <div class="space-y-4">
+          <div class="flex gap-4">
+            <div class="step-num">1</div>
+            <div>
+              <p class="font-semibold mb-0.5">Safety &amp; consent must come first</p>
+              <p class="text-sm text-gray-600 dark:text-gray-300">Activating a signal on someone else's body without visible consent feels wrong — even to the sender. Every stimulation must require explicit opt-in from the receiving user.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="step-num">2</div>
+            <div>
+              <p class="font-semibold mb-0.5">"Device vs. person" mental model is broken</p>
+              <p class="text-sm text-gray-600 dark:text-gray-300">Users couldn't tell if they were connecting to a device or a person. A visual onboarding diagram (SpikerBox → phone → internet → User B) resolved this immediately.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="step-num">3</div>
+            <div>
+              <p class="font-semibold mb-0.5">Feedback gaps cause retry loops</p>
+              <p class="text-sm text-gray-600 dark:text-gray-300">Without visible system state ("Is my partner connected? Did they feel it?"), users kept repeating actions. Status must be persistent and legible at all times.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="step-num">4</div>
+            <div>
+              <p class="font-semibold mb-0.5">Step-by-step beats dense instruction</p>
+              <p class="text-sm text-gray-600 dark:text-gray-300">Backyard Brains' audience skews neurodivergent. Breaking setup into single-action screens with clear completion indicators reduced drop-off significantly.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="bb-divider">
+
+      <!-- ── DESIGN ── -->
+      <section id="design" class="mb-16 fade-up">
+        <span class="section-label">Design Decisions</span>
+        <h2 class="text-3xl font-bold mb-6">Four decisions, each traced to research</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="flex gap-3 p-5 bg-gray-50 dark:bg-[#1a1a1a] rounded-xl border border-gray-100 dark:border-white/05">
+            <div class="flex-shrink-0 w-9 h-9 bg-[#5F61F2] dark:bg-[#A5B4FC] rounded-lg flex items-center justify-center text-white dark:text-[#0D0D0D] font-bold text-xs">01</div>
+            <div>
+              <p class="font-semibold text-sm mb-1">Consent-first model</p>
+              <p class="text-xs text-gray-600 dark:text-gray-300">Two-step opt-in before any signal is sent. Always the most prominent action — never skippable.</p>
+            </div>
+          </div>
+          <div class="flex gap-3 p-5 bg-gray-50 dark:bg-[#1a1a1a] rounded-xl border border-gray-100 dark:border-white/05">
+            <div class="flex-shrink-0 w-9 h-9 bg-[#5F61F2] dark:bg-[#A5B4FC] rounded-lg flex items-center justify-center text-white dark:text-[#0D0D0D] font-bold text-xs">02</div>
+            <div>
+              <p class="font-semibold text-sm mb-1">Visual system diagram in onboarding</p>
+              <p class="text-xs text-gray-600 dark:text-gray-300">Animated flow showing SpikerBox → phone → internet → User B's body. Fixed the broken mental model in testing.</p>
+            </div>
+          </div>
+          <div class="flex gap-3 p-5 bg-gray-50 dark:bg-[#1a1a1a] rounded-xl border border-gray-100 dark:border-white/05">
+            <div class="flex-shrink-0 w-9 h-9 bg-[#5F61F2] dark:bg-[#A5B4FC] rounded-lg flex items-center justify-center text-white dark:text-[#0D0D0D] font-bold text-xs">03</div>
+            <div>
+              <p class="font-semibold text-sm mb-1">Persistent connection status bar</p>
+              <p class="text-xs text-gray-600 dark:text-gray-300">Partner state, signal strength, and last-sent confirmation always visible. Directly eliminated the retry loops from Round 1.</p>
+            </div>
+          </div>
+          <div class="flex gap-3 p-5 bg-gray-50 dark:bg-[#1a1a1a] rounded-xl border border-gray-100 dark:border-white/05">
+            <div class="flex-shrink-0 w-9 h-9 bg-[#5F61F2] dark:bg-[#A5B4FC] rounded-lg flex items-center justify-center text-white dark:text-[#0D0D0D] font-bold text-xs">04</div>
+            <div>
+              <p class="font-semibold text-sm mb-1">Single-action screens</p>
+              <p class="text-xs text-gray-600 dark:text-gray-300">No screen requires more than one decision. Each step has a visible completion state before advancing.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="bb-divider">
+
+      <!-- ── OUTCOME ── -->
+      <section id="outcome" class="mb-16 fade-up">
+        <span class="section-label">Outcome</span>
+        <h2 class="text-3xl font-bold mb-4">Delivered to Backyard Brains</h2>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+          The final hi-fi prototype and full research report were handed off as a complete design specification. The client cited the consent model and onboarding diagram as the two highest-value contributions.
+        </p>
+        <div class="grid sm:grid-cols-4 gap-3">
+          <div class="rounded-xl p-4 text-center bg-[#f5f3ff] dark:bg-[rgba(95,97,242,0.07)] border border-[#ede9fe] dark:border-[rgba(95,97,242,0.18)]">
+            <p class="text-3xl font-bold text-[#5F61F2] dark:text-[#A5B4FC] mb-1">6</p>
+            <p class="text-xs text-gray-600 dark:text-gray-300">Usability test participants</p>
+          </div>
+          <div class="rounded-xl p-4 text-center bg-[#f5f3ff] dark:bg-[rgba(95,97,242,0.07)] border border-[#ede9fe] dark:border-[rgba(95,97,242,0.18)]">
+            <p class="text-3xl font-bold text-[#5F61F2] dark:text-[#A5B4FC] mb-1">2</p>
+            <p class="text-xs text-gray-600 dark:text-gray-300">Wizard-of-Oz simulation trials</p>
+          </div>
+          <div class="rounded-xl p-4 text-center bg-[#f5f3ff] dark:bg-[rgba(95,97,242,0.07)] border border-[#ede9fe] dark:border-[rgba(95,97,242,0.18)]">
+            <p class="text-3xl font-bold text-[#5F61F2] dark:text-[#A5B4FC] mb-1">4</p>
+            <p class="text-xs text-gray-600 dark:text-gray-300">Design requirements shipped</p>
+          </div>
+          <div class="rounded-xl p-4 text-center bg-[#f5f3ff] dark:bg-[rgba(95,97,242,0.07)] border border-[#ede9fe] dark:border-[rgba(95,97,242,0.18)]">
+            <p class="text-3xl font-bold text-[#5F61F2] dark:text-[#A5B4FC] mb-1">5</p>
+            <p class="text-xs text-gray-600 dark:text-gray-300">Research methods across 3 months</p>
+          </div>
+        </div>
+      </section>
+
+      <hr class="bb-divider">
+
+      <!-- ── REFLECTION ── -->
+      <section id="reflection" class="mb-20 fade-up">
+        <span class="section-label">Reflection</span>
+        <h2 class="text-3xl font-bold mb-4">What I learned</h2>
+        <div class="space-y-3">
+          <div class="border-l-4 border-[#5F61F2] dark:border-[#A5B4FC] pl-5">
+            <p class="font-semibold mb-0.5">Safety is a UX problem</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300">Trust doesn't emerge from a working product — it has to be designed. Consent flows and status feedback are load-bearing UX decisions with real safety implications.</p>
+          </div>
+          <div class="border-l-4 border-[#5F61F2] dark:border-[#A5B4FC] pl-5">
+            <p class="font-semibold mb-0.5">Wizard of Oz testing is underrated</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300">Simulating the experience before building the backend surfaced critical mental model issues when changes were still cheap.</p>
+          </div>
+          <div class="border-l-4 border-[#5F61F2] dark:border-[#A5B4FC] pl-5">
+            <p class="font-semibold mb-0.5">Designing for neurodivergent users helps everyone</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300">The step-by-step disclosure we added for ADHD-friendly design made the product clearer for all participant types.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Next project nav -->
+      <div class="flex justify-between items-center pt-8 border-t border-gray-200 dark:border-white/10 mb-8">
+        <a href="../projects.html" class="text-sm text-gray-500 dark:text-gray-400 hover:text-[#5F61F2] dark:hover:text-[#A5B4FC] transition-colors">← All Projects</a>
+        <a href="calmer.html" class="text-sm text-gray-500 dark:text-gray-400 hover:text-[#5F61F2] dark:hover:text-[#A5B4FC] transition-colors">Next: CalmER →</a>
+      </div>
+
+    </div><!-- end main content -->
+  </div><!-- end flex layout -->
+
+</main>
+
+<!-- Footer -->
+<footer class="footer-section">
+  <div class="max-w-6xl mx-auto px-6 py-8">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+      <div class="text-center md:text-left">
+        <p class="footer-subtext flex items-center gap-2">
+          <span>Let's connect over design, ideas, or a friendly hello</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0">
+            <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+            <line x1="6" y1="1" x2="6" y2="4"></line>
+            <line x1="10" y1="1" x2="10" y2="4"></line>
+            <line x1="14" y1="1" x2="14" y2="4"></line>
+          </svg>
+        </p>
+        <a href="mailto:sphjlin1203@gmail.com" class="footer-email">sphjlin1203@gmail.com</a>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center gap-4">
+        <div class="flex gap-2.5">
+          <a href="https://www.linkedin.com/in/sphjlin" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="LinkedIn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a href="mailto:sphjlin1203@gmail.com" class="footer-icon" aria-label="Email">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </a>
+        </div>
+        <div class="footer-divider hidden sm:block"></div>
+        <p class="footer-copyright">© 2025 Sophia Lin</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── Theme toggle ──
+  const html = document.documentElement;
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    html.classList.add('dark');
+  }
+  document.getElementById('themeToggle')?.addEventListener('click', () => {
+    html.classList.toggle('dark');
+    localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+  });
+
+  // ── Mobile menu ──
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuToggle?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('active');
+    menuToggle?.classList.toggle('active');
+  });
+
+  // ── Scroll fade-in ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // ── TOC active state ──
+  const sections = document.querySelectorAll('section[id]');
+  const tocLinks = document.querySelectorAll('.toc-link');
+  const tocObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        tocLinks.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`.toc-link[href="#${e.target.id}"]`);
+        active?.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(s => tocObserver.observe(s));
+</script>
+</body>
+</html>

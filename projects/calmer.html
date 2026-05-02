@@ -76,7 +76,7 @@
     html.dark ::selection { background-color: #A5B4FC; color: #0D0D0D; }
   </style>
 
-  <link rel="stylesheet" href="../css/custom.css?v=9">
+  <link rel="stylesheet" href="../css/custom.css?v=13">
 </head>
 
 <body class="bg-white dark:bg-[#0D0D0D] text-black dark:text-white" style="font-family: 'Plus Jakarta Sans', sans-serif;">
@@ -119,11 +119,8 @@
       <nav class="sticky top-24 space-y-2">
         <p class="text-sm font-bold text-gray-900 dark:text-white mb-3">Contents</p>
         <a href="#overview" class="toc-link">Overview</a>
-        <a href="#challenge" class="toc-link">Design Challenge</a>
-        <a href="#problem" class="toc-link">The Problem</a>
-        <a href="#research" class="toc-link">Research Insights</a>
+        <a href="#research" class="toc-link">Research</a>
         <a href="#framework" class="toc-link">3C Framework</a>
-        <a href="#design-system" class="toc-link">Design System</a>
         <a href="#features" class="toc-link">Key Features</a>
         <a href="#impact" class="toc-link">Impact</a>
         <a href="#reflection" class="toc-link">Reflection</a>
@@ -135,7 +132,7 @@
   <!-- Hero Section -->
   <section class="max-w-6xl mx-auto mb-20">
     <div class="mb-8">
-         <a href="../projects.html" class="text-sm text-gray-600 dark:text-gray-400 hover:text-[#5F61F2] dark:hover:text-[#A5B4FC] transition-colors inline-block mb-6">← BACK TO PROJECTS</a>
+      <a href="../projects.html" class="text-sm text-gray-600 dark:text-gray-400 hover:text-[#5F61F2] dark:hover:text-[#A5B4FC] transition-colors inline-block mb-6">← BACK TO PROJECTS</a>
     </div>
 
     <h1 class="text-5xl md:text-6xl font-bold mb-6">CalmER</h1>
@@ -144,10 +141,9 @@
     <div class="project-tags mb-12">
       <span class="project-tag tag-primary">UX/UI Design</span>
       <span class="project-tag tag-secondary">Health Tech</span>
-      <span class="project-tag tag-context">Competition</span>
+      <span class="project-tag tag-context">Innovation Jam · Health Track Top 3</span>
     </div>
 
-    <!-- Project Info Grid -->
     <div class="grid md:grid-cols-4 gap-8 mb-12 pb-12 border-b border-gray-200 dark:border-gray-800">
       <div>
         <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2">ROLE</h3>
@@ -167,658 +163,194 @@
       </div>
     </div>
 
-    <!-- Hero Image -->
     <div class="rounded-2xl overflow-hidden shadow-2xl mb-12">
       <img src="../assets/calmer-hero.jpg" alt="CalmER App Mockup" class="w-full">
     </div>
   </section>
 
-  <!-- Overview Section -->
-  <section id="overview" class="max-w-4xl mx-auto px-6 mb-20">
-    <h2 class="text-3xl font-bold mb-6">Overview</h2>
-    <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-      CalmER is a mobile companion app designed to support older adults during long and stressful ER waits. By combining <strong>real-time hospital system integration, AI-powered emotional support, and instant family connection</strong>, CalmER transforms waiting from an anxious experience into one that feels safer, clearer, and more human.
+  <!-- Overview + Problem -->
+  <section id="overview" class="max-w-4xl mx-auto px-6 mb-16">
+    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ OVERVIEW</p>
+    <h2 class="text-3xl font-bold mb-5">Designing for the emotional cost of waiting</h2>
+    <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+      CalmER is a mobile companion app for older adults during ER waits, built for the Michigan Tech Innovation Jam in 6 weeks. The average ER wait is <strong>6.5+ hours</strong> — for seniors who arrive alone, that time is filled with confusion, anxiety, and isolation. We weren't trying to shorten the wait. We were designing to reduce its emotional cost.
     </p>
-    <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-      This project was created during the Michigan Tech Innovation Jam, where our team explored how digital tools can make emergency care more emotionally humane — especially for vulnerable populations like older adults who often wait alone.
-    </p>
-  </section>
-
-  <!-- Design Challenge Section -->
-  <section id="challenge" class="max-w-4xl mx-auto px-6 mb-20">
-    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-4">✦ DESIGN CHALLENGE</p>
-    <h2 class="text-3xl font-bold mb-6">Balancing Empathy with Operational Reality</h2>
-
-    <div class="space-y-6 text-lg text-gray-600 dark:text-gray-300">
-      <p>
-        Emergency rooms operate under strict constraints that shape every design decision:
-      </p>
-
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-xl p-6">
-          <h3 class="text-lg font-bold mb-3 text-black dark:text-white">What We Can't Control</h3>
-          <ul class="space-y-2">
-            <li>• Medical timelines are unpredictable</li>
-            <li>• Staff attention is limited</li>
-            <li>• Precise ETAs create false expectations</li>
-            <li>• AI cannot provide medical advice</li>
-          </ul>
-        </div>
-
-        <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-xl p-6">
-          <h3 class="text-lg font-bold mb-3 text-black dark:text-white">What We Can Design For</h3>
-          <ul class="space-y-2">
-            <li>• Stage-based progress instead of countdowns</li>
-            <li>• AI as interpreter, not authority</li>
-            <li>• Proactive reassurance vs. reactive updates</li>
-            <li>• Connection without adding staff burden</li>
-          </ul>
-        </div>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-xl p-5">
+        <p class="font-semibold text-sm mb-2">The problem we focused on</p>
+        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1.5">
+          <li>• 33 million senior ER visits/year — often alone</li>
+          <li>• No clear updates → anxiety compounds over time</li>
+          <li>• "Left without being seen" rate doubled to 2.1%</li>
+          <li>• Staff too busy to provide reassurance</li>
+        </ul>
       </div>
-
-      <p>
-        <strong>Core insight:</strong> We're not designing to shorten wait times — we're designing to reduce the emotional cost of waiting through clarity, calmness, and connection.
-      </p>
+      <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-xl p-5">
+        <p class="font-semibold text-sm mb-2">Our design constraints</p>
+        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1.5">
+          <li>• Can't predict or control medical timelines</li>
+          <li>• AI cannot give medical advice</li>
+          <li>• Must not add burden to already-stretched staff</li>
+          <li>• Accessible for seniors with vision/motor impairments</li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <!-- Problem Section -->
-  <section id="problem" class="max-w-5xl mx-auto px-6 mb-20">
-    <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl p-8 md:p-12">
-      <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-4">✦ UNDERSTANDING THE PROBLEM</p>
-      <h2 class="text-3xl md:text-4xl font-bold mb-8">Long ER waits are emotionally harmful and operationally inefficient</h2>
+  <!-- Research -->
+  <section id="research" class="max-w-4xl mx-auto px-6 mb-16">
+    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ RESEARCH</p>
+    <h2 class="text-3xl font-bold mb-5">What shaped the design</h2>
+    <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+      Given the 6-week timeline, we combined secondary literature (ACEP data, hospital satisfaction studies), expert consultation with a team member's medical contacts, and competitive analysis of existing patient apps — synthesized via affinity mapping.
+    </p>
+    <div class="space-y-4">
+      <div class="border-l-4 border-[#5F61F2] dark:border-[#A5B4FC] pl-5">
+        <p class="font-semibold mb-1">Reassurance matters more than information</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">Older adults don't want a data dashboard — they need a gentle reminder they haven't been forgotten.</p>
+      </div>
+      <div class="border-l-4 border-[#5F61F2] dark:border-[#A5B4FC] pl-5">
+        <p class="font-semibold mb-1">Uncertainty is the real stressor, not the wait itself</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">Not knowing what's coming next creates more anxiety than the wait time. Transparency is therapeutic.</p>
+      </div>
+      <div class="border-l-4 border-[#5F61F2] dark:border-[#A5B4FC] pl-5">
+        <p class="font-semibold mb-1">Seeing a familiar face outperforms any status update</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">Family connection — even remote — significantly reduces isolation. This shaped our One-tap Family Link feature.</p>
+      </div>
+    </div>
+  </section>
 
-      <div class="grid md:grid-cols-2 gap-8">
+  <!-- 3C Framework -->
+  <section id="framework" class="max-w-4xl mx-auto px-6 mb-16">
+    <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl p-8">
+      <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ DESIGN FRAMEWORK</p>
+      <h2 class="text-2xl font-bold mb-6">The 3C Framework: Clarity · Calmness · Connection</h2>
+      <div class="grid md:grid-cols-3 gap-6">
         <div>
-          <h3 class="text-xl font-bold mb-4">Patient Pain Points</h3>
-          <ul class="space-y-3 text-gray-600 dark:text-gray-300">
-            <li class="flex gap-3">
-              <span class="text-[#5F61F2] dark:text-[#A5B4FC] flex-shrink-0">•</span>
-              <span>Average ER wait time: <strong>6.5+ hours</strong></span>
-            </li>
-            <li class="flex gap-3">
-              <span class="text-[#5F61F2] dark:text-[#A5B4FC] flex-shrink-0">•</span>
-              <span>Unclear medical updates and confusing environment</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="text-[#5F61F2] dark:text-[#A5B4FC] flex-shrink-0">•</span>
-              <span>High sensory overload (noise and lights)</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="text-[#5F61F2] dark:text-[#A5B4FC] flex-shrink-0">•</span>
-              <span>Anxiety from being alone and not knowing what's next</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="text-[#5F61F2] dark:text-[#A5B4FC] flex-shrink-0">•</span>
-              <span>Embarrassed to keep asking for help</span>
-            </li>
-          </ul>
+          <div class="w-10 h-10 bg-[#5F61F2] dark:bg-[#A5B4FC] rounded-lg flex items-center justify-center mb-3 text-white dark:text-[#0D0D0D] font-bold">1</div>
+          <p class="font-semibold mb-1">Clarity</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Stage-based progress instead of unpredictable countdowns. Clear language at every step.</p>
+          <p class="text-xs text-gray-400 italic mt-2">"When I know what's next, I feel less afraid."</p>
         </div>
         <div>
-          <h3 class="text-xl font-bold mb-4">Hospital Challenges</h3>
-          <ul class="space-y-3 text-gray-600 dark:text-gray-300">
-            <li class="flex gap-3">
-              <span class="text-[#5F61F2] dark:text-[#A5B4FC] flex-shrink-0">•</span>
-              <span><strong>33 million</strong> senior ER visits yearly (21% of all visits)</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="text-[#5F61F2] dark:text-[#A5B4FC] flex-shrink-0">•</span>
-              <span>"Left without being seen" rate nearly doubled to <strong>2.1%</strong></span>
-            </li>
-            <li class="flex gap-3">
-              <span class="text-[#5F61F2] dark:text-[#A5B4FC] flex-shrink-0">•</span>
-              <span>Frequent patient complaints and low satisfaction scores</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="text-[#5F61F2] dark:text-[#A5B4FC] flex-shrink-0">•</span>
-              <span>Staff burnout from constant anxiety-related calls</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="text-[#5F61F2] dark:text-[#A5B4FC] flex-shrink-0">•</span>
-              <span>Overnight stays increase mortality risk by ~40%</span>
-            </li>
-          </ul>
+          <div class="w-10 h-10 bg-[#5F61F2] dark:bg-[#A5B4FC] rounded-lg flex items-center justify-center mb-3 text-white dark:text-[#0D0D0D] font-bold">2</div>
+          <p class="font-semibold mb-1">Calmness</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Soft colors, breathing guides, and an AI companion that supports — not advises medically.</p>
+          <p class="text-xs text-gray-400 italic mt-2">"It feels like someone is there with me."</p>
         </div>
-      </div>
-
-      <div class="mt-12 grid md:grid-cols-2 gap-6">
-        <div class="p-6 bg-white dark:bg-[#0D0D0D] rounded-xl border border-gray-200 dark:border-gray-800">
-          <h3 class="text-lg font-bold mb-3">Meet Mary</h3>
-          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-            74-year-old retired teacher who visits the ER alone for sudden symptoms. She feels anxious, lonely, and disoriented in the confusing hospital environment. Nurses are busy, and she's unsure what's happening next or when she'll be seen.
-          </p>
-        </div>
-        <div class="p-6 bg-white dark:bg-[#0D0D0D] rounded-xl border border-gray-200 dark:border-gray-800">
-          <h3 class="text-lg font-bold mb-3">Meet David</h3>
-          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-            Son living 2 hours away who receives a call that his mother is in the ER. He's worried and frustrated because he can't be there and has no way to check on her status or provide comfort remotely.
-          </p>
+        <div>
+          <div class="w-10 h-10 bg-[#5F61F2] dark:bg-[#A5B4FC] rounded-lg flex items-center justify-center mb-3 text-white dark:text-[#0D0D0D] font-bold">3</div>
+          <p class="font-semibold mb-1">Connection</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">One-tap family video call. Real-time status updates for remote family members.</p>
+          <p class="text-xs text-gray-400 italic mt-2">"I can see my son's face. That helps more than anything."</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Research Insights Section -->
-  <section id="research" class="max-w-4xl mx-auto px-6 mb-20">
-    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-4">✦ RESEARCH INSIGHTS</p>
-    <h2 class="text-3xl font-bold mb-8">What We Learned From Users</h2>
-
-    <div class="space-y-6">
-      <div class="border-l-4 border-[#5F61F2] dark:border-[#A5B4FC] pl-6">
-        <h3 class="text-xl font-bold mb-2">Seniors want reassurance more than information</h3>
-        <p class="text-gray-600 dark:text-gray-300">User interviews revealed that older adults often feel embarrassed to repeatedly ask staff for updates. They need gentle reminders that they haven't been forgotten.</p>
-      </div>
-
-      <div class="border-l-4 border-[#5F61F2] dark:border-[#A5B4FC] pl-6">
-        <h3 class="text-xl font-bold mb-2">Uncertainty amplifies anxiety</h3>
-        <p class="text-gray-600 dark:text-gray-300">Not knowing what's happening next or why they're waiting creates more stress than the wait itself. Transparency is therapeutic.</p>
-      </div>
-
-      <div class="border-l-4 border-[#5F61F2] dark:border-[#A5B4FC] pl-6">
-        <h3 class="text-xl font-bold mb-2">Family connection is critical for emotional safety</h3>
-        <p class="text-gray-600 dark:text-gray-300">Many seniors arrive alone. Being able to see and hear a familiar voice — even briefly — significantly reduces feelings of isolation and fear.</p>
-      </div>
-
-      <div class="border-l-4 border-[#5F61F2] dark:border-[#A5B4FC] pl-6">
-        <h3 class="text-xl font-bold mb-2">Accessibility isn't optional</h3>
-        <p class="text-gray-600 dark:text-gray-300">Large fonts, simple navigation, and voice interaction are essential. Visual and cognitive impairments are common in this age group.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experience Principles Section -->
-  <section id="framework" class="max-w-5xl mx-auto px-6 mb-20">
-    <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl p-8 md:p-12">
-      <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-4">✦ EXPERIENCE PRINCIPLES</p>
-      <h2 class="text-3xl md:text-4xl font-bold mb-8">The 3C Framework: Clarity, Calmness, Connection</h2>
-      <p class="text-lg text-gray-600 dark:text-gray-300 mb-10">
-        Every design decision in CalmER is guided by these three interconnected principles.
-      </p>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white dark:bg-[#0D0D0D] rounded-xl p-6">
-          <div class="w-12 h-12 bg-[#5F61F2] dark:bg-[#A5B4FC] rounded-xl flex items-center justify-center mb-4 text-white dark:text-[#0D0D0D] font-bold text-xl">1</div>
-          <h3 class="text-xl font-bold mb-3">Clarity</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">
-            Transparent information reduces uncertainty. Clear language, visible progress, and predictable interactions help seniors understand what's happening.
-          </p>
-          <p class="text-sm text-gray-500 dark:text-gray-400 italic">
-            "When I know what's next, I feel less afraid."
-          </p>
+  <!-- Features -->
+  <section id="features" class="max-w-4xl mx-auto px-6 mb-16">
+    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ KEY FEATURES</p>
+    <h2 class="text-3xl font-bold mb-6">Four features, one goal: make waiting feel human</h2>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="flex gap-4 p-5 bg-gray-50 dark:bg-[#1a1a1a] rounded-xl">
+        <div class="flex-shrink-0 w-9 h-9 bg-[#5F61F2] dark:bg-[#A5B4FC] rounded-lg flex items-center justify-center">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="stroke-white dark:stroke-[#0D0D0D]" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
         </div>
-
-        <div class="bg-white dark:bg-[#0D0D0D] rounded-xl p-6">
-          <div class="w-12 h-12 bg-[#5F61F2] dark:bg-[#A5B4FC] rounded-xl flex items-center justify-center mb-4 text-white dark:text-[#0D0D0D] font-bold text-xl">2</div>
-          <h3 class="text-xl font-bold mb-3">Calmness</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">
-            Visual rhythm, soft colors, breathing guides, and gentle AI interactions create an emotional environment that counteracts ER stress.
-          </p>
-          <p class="text-sm text-gray-500 dark:text-gray-400 italic">
-            "It feels like someone is there with me."
-          </p>
-        </div>
-
-        <div class="bg-white dark:bg-[#0D0D0D] rounded-xl p-6">
-          <div class="w-12 h-12 bg-[#5F61F2] dark:bg-[#A5B4FC] rounded-xl flex items-center justify-center mb-4 text-white dark:text-[#0D0D0D] font-bold text-xl">3</div>
-          <h3 class="text-xl font-bold mb-3">Connection</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">
-            Instant family video calls, empathetic AI, and access to social workers ensure no patient feels forgotten or alone.
-          </p>
-          <p class="text-sm text-gray-500 dark:text-gray-400 italic">
-            "I can see my son's face. That helps more than anything."
-          </p>
+        <div>
+          <p class="font-semibold mb-1 text-sm">AI Emotional Companion</p>
+          <p class="text-xs text-gray-600 dark:text-gray-300">Calming conversations, breathing guides, medical term explanations — voice or text.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Design System Section -->
-  <section id="design-system" class="max-w-4xl mx-auto px-6 mb-20">
-    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-4">✦ DESIGN SYSTEM</p>
-    <h2 class="text-3xl font-bold mb-8">Building for Emotional Safety and Accessibility</h2>
-
-    <div class="space-y-8">
-      <div>
-        <h3 class="text-xl font-bold mb-4">Typography & Hierarchy</h3>
-        <p class="text-gray-600 dark:text-gray-300 mb-4">
-          Font sizes range from <strong>16px to 28px</strong> to ensure readability for older adults with vision impairments. Clear heading hierarchy and generous line spacing reduce cognitive load.
-        </p>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-bold mb-4">Color & Emotion</h3>
-        <p class="text-gray-600 dark:text-gray-300 mb-4">
-          We chose a <strong>soft blue palette</strong> to evoke calmness and trust. Blue is associated with safety and medical care, while avoiding overly bright or saturated colors that can feel alarming in a healthcare context.
-        </p>
-        <div class="flex gap-4 mt-4">
-          <div class="flex-1">
-            <div class="w-full h-16 rounded-lg bg-[#3BAAFF]"></div>
-            <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Primary Blue</p>
-          </div>
-          <div class="flex-1">
-            <div class="w-full h-16 rounded-lg bg-[#B0EEF1]"></div>
-            <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Light Blue</p>
-          </div>
-          <div class="flex-1">
-            <div class="w-full h-16 rounded-lg bg-[#F8B1A0]"></div>
-            <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Coral Tint</p>
-          </div>
+      <div class="flex gap-4 p-5 bg-gray-50 dark:bg-[#1a1a1a] rounded-xl">
+        <div class="flex-shrink-0 w-9 h-9 bg-[#5F61F2] dark:bg-[#A5B4FC] rounded-lg flex items-center justify-center">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="stroke-white dark:stroke-[#0D0D0D]" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        </div>
+        <div>
+          <p class="font-semibold mb-1 text-sm">Smart Hospital Sync</p>
+          <p class="text-xs text-gray-600 dark:text-gray-300">Live triage updates, stage-based timeline, simple language explanations of what's next.</p>
         </div>
       </div>
-
-      <div>
-        <h3 class="text-xl font-bold mb-4">Accessibility Checklist</h3>
-        <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-xl p-6">
-          <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-            <li class="flex items-start gap-2">
-              <span class="text-[#5F61F2] dark:text-[#A5B4FC]">✓</span>
-              <span><strong>WCAG AA compliant</strong> color contrast (4.5:1 minimum)</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-[#5F61F2] dark:text-[#A5B4FC]">✓</span>
-              <span><strong>Touch targets</strong> minimum 44x44px for easy tapping</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-[#5F61F2] dark:text-[#A5B4FC]">✓</span>
-              <span><strong>Voice interaction</strong> for hands-free use</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-[#5F61F2] dark:text-[#A5B4FC]">✓</span>
-              <span><strong>Screen reader support</strong> with semantic HTML and ARIA labels</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-[#5F61F2] dark:text-[#A5B4FC]">✓</span>
-              <span><strong>Clear visual feedback</strong> for all interactive elements</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-[#5F61F2] dark:text-[#A5B4FC]">✓</span>
-              <span><strong>Simple navigation</strong> with no more than 3 taps to any feature</span>
-            </li>
-          </ul>
+      <div class="flex gap-4 p-5 bg-gray-50 dark:bg-[#1a1a1a] rounded-xl">
+        <div class="flex-shrink-0 w-9 h-9 bg-[#5F61F2] dark:bg-[#A5B4FC] rounded-lg flex items-center justify-center">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="stroke-white dark:stroke-[#0D0D0D]" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        </div>
+        <div>
+          <p class="font-semibold mb-1 text-sm">Instant Family Link</p>
+          <p class="text-xs text-gray-600 dark:text-gray-300">One-tap video call + automatic status sharing so remote family stays informed.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Solution Section -->
-  <section id="features" class="max-w-4xl mx-auto px-6 mb-20">
-    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-4">✦ THE SOLUTION</p>
-    <h2 class="text-3xl md:text-4xl font-bold mb-6">To make every emergency room not only efficient, but emotionally humane</h2>
-    <p class="text-lg text-gray-600 dark:text-gray-300 mb-12 max-w-3xl">
-      CalmER provides three core values: <strong>Real-Time Transparency & Guidance</strong>, <strong>Reduce Anxiety & Provide Emotional Support</strong>, and <strong>Seamless Family Connection</strong>.
-    </p>
-
-    <!-- Features Grid -->
-    <div class="grid md:grid-cols-2 gap-8">
-      <!-- Feature 1 -->
-      <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl p-8">
-        <div class="w-12 h-12 bg-[#5F61F2] dark:bg-[#A5B4FC] rounded-xl flex items-center justify-center mb-6">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="stroke-white dark:stroke-[#0D0D0D]" stroke-width="2">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-          </svg>
+      <div class="flex gap-4 p-5 bg-gray-50 dark:bg-[#1a1a1a] rounded-xl">
+        <div class="flex-shrink-0 w-9 h-9 bg-[#5F61F2] dark:bg-[#A5B4FC] rounded-lg flex items-center justify-center">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="stroke-white dark:stroke-[#0D0D0D]" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
         </div>
-        <h3 class="text-2xl font-bold mb-4">AI-Powered Emotional Companion</h3>
-        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-          <li>• AI trained with medical and psychological knowledge</li>
-          <li>• Calming and human-like conversations</li>
-          <li>• Emotional support during long and stressful waits</li>
-          <li>• Voice and text interaction options</li>
-        </ul>
-      </div>
-
-      <!-- Feature 2 -->
-      <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl p-8">
-        <div class="w-12 h-12 bg-[#5F61F2] dark:bg-[#A5B4FC] rounded-xl flex items-center justify-center mb-6">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="stroke-white dark:stroke-[#0D0D0D]" stroke-width="2">
-            <circle cx="12" cy="12" r="10"></circle>
-            <polyline points="12 6 12 12 16 14"></polyline>
-          </svg>
-        </div>
-        <h3 class="text-2xl font-bold mb-4">Smart Hospital Sync & Report Assistant</h3>
-        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-          <li>• Integrates with hospital systems</li>
-          <li>• Live updates on triage and test results</li>
-          <li>• Explains medical terms in simple language</li>
-          <li>• Transparent ER timeline and wait estimates</li>
-        </ul>
-      </div>
-
-      <!-- Feature 3 -->
-      <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl p-8">
-        <div class="w-12 h-12 bg-[#5F61F2] dark:bg-[#A5B4FC] rounded-xl flex items-center justify-center mb-6">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="stroke-white dark:stroke-[#0D0D0D]" stroke-width="2">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-          </svg>
-        </div>
-        <h3 class="text-2xl font-bold mb-4">Instant Family Link</h3>
-        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-          <li>• Instant voice/video calls between patients and family</li>
-          <li>• Real-time status updates for family members</li>
-          <li>• Keeping loved ones connected throughout care</li>
-          <li>• Peace of mind for remote family members</li>
-        </ul>
-      </div>
-
-      <!-- Feature 4 -->
-      <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl p-8">
-        <div class="w-12 h-12 bg-[#5F61F2] dark:bg-[#A5B4FC] rounded-xl flex items-center justify-center mb-6">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="stroke-white dark:stroke-[#0D0D0D]" stroke-width="2">
-            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-          </svg>
-        </div>
-        <h3 class="text-2xl font-bold mb-4">Resource Hub</h3>
-        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-          <li>• Direct access to breathing guide and mindfulness tools</li>
-          <li>• ER knowledge and social worker information</li>
-          <li>• Local community and support resources</li>
-          <li>• Turn waiting into a grounding experience</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Key Screens Section -->
-  <section class="max-w-4xl mx-auto px-6 mb-20">
-    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-4">✦ KEY SCREENS</p>
-    <h2 class="text-3xl md:text-4xl font-bold mb-12">Design Highlights</h2>
-
-    <div class="space-y-16">
-      <!-- Home Page -->
-      <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl p-8 md:p-10">
-        <h3 class="text-2xl font-bold mb-4">Home Page: Clarity = Calmness</h3>
-        <p class="text-gray-600 dark:text-gray-300 mb-6">Transform the chaotic ER entry into a guided, human-centered experience.</p>
-
-        <div class="grid md:grid-cols-2 gap-6 mb-8">
-          <div>
-            <h4 class="font-bold mb-2">Design Goals</h4>
-            <ul class="space-y-1 text-sm text-gray-600 dark:text-gray-300">
-              <li>• Reduce uncertainty about wait times</li>
-              <li>• Provide immediate emotional reassurance</li>
-              <li>• Clearly show what happens next</li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="font-bold mb-2">Core Elements</h4>
-            <ul class="space-y-1 text-sm text-gray-600 dark:text-gray-300">
-              <li>• Check-in confirmation message</li>
-              <li>• Transparent ER timeline with progress</li>
-              <li>• Quick access to AI companion and family call</li>
-              <li>• Local hospital resource links</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="bg-white dark:bg-[#0D0D0D] rounded-xl p-6 flex items-center justify-center">
-          <img src="../assets/calmer-home.jpg" alt="CalmER Home Screen" class="max-h-96 rounded-lg shadow-lg">
-        </div>
-      </div>
-
-      <!-- AI Chatbot -->
-      <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl p-8 md:p-10">
-        <h3 class="text-2xl font-bold mb-4">AI Companion: Empathy = Calmness</h3>
-        <p class="text-gray-600 dark:text-gray-300 mb-6">A compassionate, low-friction interaction designed for emotional support.</p>
-
-        <div class="grid md:grid-cols-2 gap-6 mb-8">
-          <div>
-            <h4 class="font-bold mb-2">Design Goals</h4>
-            <ul class="space-y-1 text-sm text-gray-600 dark:text-gray-300">
-              <li>• Provide emotional support without judgment</li>
-              <li>• Offer distraction and calming techniques</li>
-              <li>• Explain medical terms in simple language</li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="font-bold mb-2">Core Elements</h4>
-            <ul class="space-y-1 text-sm text-gray-600 dark:text-gray-300">
-              <li>• Voice and text interaction options</li>
-              <li>• Day/night adaptive color mode</li>
-              <li>• Emotional sensing and empathetic responses</li>
-              <li>• Direct access to breathing guide</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="bg-white dark:bg-[#0D0D0D] rounded-xl p-6 flex items-center justify-center">
-          <img src="../assets/calmer-ai.jpg" alt="CalmER AI Chatbot" class="max-h-96 rounded-lg shadow-lg">
-        </div>
-      </div>
-
-      <!-- Family Call -->
-      <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl p-8 md:p-10">
-        <h3 class="text-2xl font-bold mb-4">Family Call: Connection = Comfort</h3>
-        <p class="text-gray-600 dark:text-gray-300 mb-6">Instant family connection that reduces isolation and provides emotional safety.</p>
-
-        <div class="grid md:grid-cols-2 gap-6 mb-8">
-          <div>
-            <h4 class="font-bold mb-2">Design Goals</h4>
-            <ul class="space-y-1 text-sm text-gray-600 dark:text-gray-300">
-              <li>• Reduce feelings of isolation</li>
-              <li>• Allow family to provide emotional support</li>
-              <li>• Keep loved ones informed in real-time</li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="font-bold mb-2">Core Elements</h4>
-            <ul class="space-y-1 text-sm text-gray-600 dark:text-gray-300">
-              <li>• One-tap voice/video calling</li>
-              <li>• Live wait-time display for family members</li>
-              <li>• Large, accessible call controls</li>
-              <li>• Status updates shared automatically</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="bg-white dark:bg-[#0D0D0D] rounded-xl p-6 flex items-center justify-center">
-          <img src="../assets/calmer-family.jpg" alt="CalmER Family Call" class="max-h-96 rounded-lg shadow-lg">
-        </div>
-      </div>
-
-      <!-- Resource Hub -->
-      <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl p-8 md:p-10">
-        <h3 class="text-2xl font-bold mb-4">Resource Hub & Settings</h3>
-        <p class="text-gray-600 dark:text-gray-300 mb-6">Empowering patients with information, support resources, and personalization options.</p>
-
-        <div class="grid md:grid-cols-2 gap-6">
-          <div>
-            <h4 class="font-bold mb-2">Resource Hub</h4>
-            <ul class="space-y-1 text-sm text-gray-600 dark:text-gray-300">
-              <li>• Breathing exercises and mindfulness guides</li>
-              <li>• ER knowledge and FAQs</li>
-              <li>• Social worker contact information</li>
-              <li>• Local community support resources</li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="font-bold mb-2">Settings</h4>
-            <ul class="space-y-1 text-sm text-gray-600 dark:text-gray-300">
-              <li>• Dark mode toggle for nighttime comfort</li>
-              <li>• Text size adjustment (16-28px)</li>
-              <li>• Voice interaction preferences</li>
-              <li>• Emergency contact management</li>
-            </ul>
-          </div>
+        <div>
+          <p class="font-semibold mb-1 text-sm">Resource Hub</p>
+          <p class="text-xs text-gray-600 dark:text-gray-300">Breathing exercises, ER FAQs, social worker access — turning wait time into grounding time.</p>
         </div>
       </div>
     </div>
 
     <!-- Prototype CTA -->
-    <div class="mt-12 p-8 bg-gradient-to-r from-[#5F61F2]/10 to-[#A5B4FC]/10 dark:from-[#5F61F2]/20 dark:to-[#A5B4FC]/20 rounded-2xl border border-[#5F61F2]/20 dark:border-[#A5B4FC]/20">
-      <div class="flex flex-col items-center text-center gap-4">
-        <div class="flex items-center gap-3">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#5F61F2] dark:text-[#A5B4FC]">
-            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-            <line x1="12" y1="18" x2="12.01" y2="18"></line>
-          </svg>
-          <h3 class="text-2xl font-bold text-black dark:text-white">Try the Interactive Prototype</h3>
-        </div>
-        <p class="text-gray-600 dark:text-gray-300 max-w-2xl">
-          Experience the full emergency response flow in Figma
-        </p>
-        <a href="https://www.figma.com/proto/56lsCbgRCUS93PyLUA0nVx/TJteam22?page-id=38%3A382&node-id=109-567&viewport=-1485%2C343%2C0.16&t=lvJZ7u4zOnjhXc9U-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=132%3A2186&show-proto-sidebar=1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-8 py-4 bg-[#5F61F2] dark:bg-[#A5B4FC] text-white dark:text-[#0D0D0D] rounded-xl font-semibold text-lg hover:scale-105 hover:shadow-xl transition-all duration-300">
-          View Prototype
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-            <polyline points="15 3 21 3 21 9"></polyline>
-            <line x1="10" y1="14" x2="21" y2="3"></line>
-          </svg>
-        </a>
+    <div class="mt-8 p-6 bg-gradient-to-r from-[#5F61F2]/10 to-[#A5B4FC]/10 dark:from-[#5F61F2]/20 dark:to-[#A5B4FC]/20 rounded-2xl border border-[#5F61F2]/20 dark:border-[#A5B4FC]/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <p class="font-semibold mb-1">Try the Interactive Prototype</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">Full emergency response flow in Figma</p>
       </div>
+      <a href="https://www.figma.com/proto/56lsCbgRCUS93PyLUA0nVx/TJteam22?page-id=38%3A382&node-id=109-567&viewport=-1485%2C343%2C0.16&t=lvJZ7u4zOnjhXc9U-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=132%3A2186&show-proto-sidebar=1" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-[#5F61F2] dark:bg-[#A5B4FC] text-white dark:text-[#0D0D0D] rounded-xl font-semibold text-sm hover:opacity-90 transition-opacity">
+        View Prototype
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+      </a>
     </div>
   </section>
 
-  <!-- Impact Section -->
-  <section id="impact" class="max-w-4xl mx-auto px-6 mb-20">
-    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-4">✦ IMPACT</p>
-    <h2 class="text-3xl md:text-4xl font-bold mb-8">Creating Value for All Stakeholders</h2>
-
-    <p class="text-lg text-gray-600 dark:text-gray-300 mb-10 max-w-3xl">
-      CalmER addresses a systemic problem affecting <strong>33 million seniors annually</strong> by transforming ER waiting from a source of anxiety into an experience that feels safer, clearer, and more human.
+  <!-- Impact -->
+  <section id="impact" class="max-w-4xl mx-auto px-6 mb-16">
+    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ IMPACT</p>
+    <h2 class="text-3xl font-bold mb-5">Health Track Top 3 — Innovation Jam</h2>
+    <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+      CalmER was recognised as a Top 3 project in the Health track at the Michigan Tech Innovation Jam. The judges highlighted the emotional design approach — specifically the 3C framework and the decision to prioritise video calling over text updates — as standout contributions.
     </p>
-
-    <div class="grid md:grid-cols-3 gap-6 mb-10">
-      <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-xl p-6">
-        <h3 class="text-lg font-bold mb-4">For Patients</h3>
-        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-          <li class="flex gap-2">
-            <span class="text-[#5F61F2] dark:text-[#A5B4FC]">✓</span>
-            <span>Reduced anxiety through transparency and AI companionship</span>
-          </li>
-          <li class="flex gap-2">
-            <span class="text-[#5F61F2] dark:text-[#A5B4FC]">✓</span>
-            <span>Stay connected to family despite physical distance</span>
-          </li>
-          <li class="flex gap-2">
-            <span class="text-[#5F61F2] dark:text-[#A5B4FC]">✓</span>
-            <span>Better understanding of medical process and wait times</span>
-          </li>
-          <li class="flex gap-2">
-            <span class="text-[#5F61F2] dark:text-[#A5B4FC]">✓</span>
-            <span>Feel remembered and cared for during long waits</span>
-          </li>
-        </ul>
+    <div class="grid md:grid-cols-3 gap-4">
+      <div class="rounded-xl p-5 text-center" style="background:rgba(95,97,242,0.07);border:1px solid rgba(95,97,242,0.15);">
+        <p class="text-3xl font-bold text-[#5F61F2] dark:text-[#A5B4FC] mb-1">33M</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">Senior ER visits/year addressed by CalmER's design</p>
       </div>
-
-      <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-xl p-6">
-        <h3 class="text-lg font-bold mb-4">For Family Members</h3>
-        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-          <li class="flex gap-2">
-            <span class="text-[#5F61F2] dark:text-[#A5B4FC]">✓</span>
-            <span>Real-time updates on loved one's status</span>
-          </li>
-          <li class="flex gap-2">
-            <span class="text-[#5F61F2] dark:text-[#A5B4FC]">✓</span>
-            <span>Provide emotional support remotely via video call</span>
-          </li>
-          <li class="flex gap-2">
-            <span class="text-[#5F61F2] dark:text-[#A5B4FC]">✓</span>
-            <span>Peace of mind when unable to be physically present</span>
-          </li>
-          <li class="flex gap-2">
-            <span class="text-[#5F61F2] dark:text-[#A5B4FC]">✓</span>
-            <span>Better informed for care decisions</span>
-          </li>
-        </ul>
+      <div class="rounded-xl p-5 text-center" style="background:rgba(95,97,242,0.07);border:1px solid rgba(95,97,242,0.15);">
+        <p class="text-3xl font-bold text-[#5F61F2] dark:text-[#A5B4FC] mb-1">6 wks</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">From problem to hi-fi prototype in a competition sprint</p>
       </div>
-
-      <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-xl p-6">
-        <h3 class="text-lg font-bold mb-4">For Hospitals</h3>
-        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-          <li class="flex gap-2">
-            <span class="text-[#5F61F2] dark:text-[#A5B4FC]">✓</span>
-            <span>Reduced staff burden from repeated questions</span>
-          </li>
-          <li class="flex gap-2">
-            <span class="text-[#5F61F2] dark:text-[#A5B4FC]">✓</span>
-            <span>Improved patient satisfaction scores</span>
-          </li>
-          <li class="flex gap-2">
-            <span class="text-[#5F61F2] dark:text-[#A5B4FC]">✓</span>
-            <span>Lower "left without being seen" rates</span>
-          </li>
-          <li class="flex gap-2">
-            <span class="text-[#5F61F2] dark:text-[#A5B4FC]">✓</span>
-            <span>Decreased staff burnout and emotional fatigue</span>
-          </li>
-        </ul>
+      <div class="rounded-xl p-5 text-center" style="background:rgba(95,97,242,0.07);border:1px solid rgba(95,97,242,0.15);">
+        <p class="text-3xl font-bold text-[#5F61F2] dark:text-[#A5B4FC] mb-1">Top 3</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">Health Track, Michigan Tech Innovation Jam</p>
       </div>
-    </div>
-
-    <div class="bg-gray-50 dark:bg-[#1a1a1a] border-l-4 border-[#5F61F2] dark:border-[#A5B4FC] rounded-r-xl p-8 pl-10">
-      <p class="text-xl font-semibold mb-4 text-black dark:text-white italic">
-        "Technology should support people during vulnerable moments when reassurance matters more than features."
-      </p>
-      <p class="text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-        CalmER demonstrates that by combining <strong>transparency (clarity)</strong>, <strong>emotional support (calmness)</strong>, and <strong>family connection</strong>, we can make emergency care not just efficient, but emotionally humane.
-      </p>
     </div>
   </section>
 
-  <!-- Reflection Section -->
+  <!-- Reflection -->
   <section id="reflection" class="max-w-4xl mx-auto px-6 mb-20">
-    <h2 class="text-3xl font-bold mb-6">Reflection</h2>
-    <div class="space-y-6 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-      <p>
-        This project fundamentally changed how I think about designing for vulnerable populations. I learned that <strong>emotional design isn't decoration — it's a functional requirement</strong> when your users are scared, confused, or in pain.
-      </p>
-
-      <p>
-        Three product decisions that shaped CalmER:
-      </p>
-
-      <div class="space-y-4 mb-6">
-        <div class="border-l-4 border-[#5F61F2] dark:border-[#A5B4FC] pl-6">
-          <p class="font-semibold mb-1">Stage-based timeline instead of countdown</p>
-          <p class="text-base">We tested showing "estimated wait: 2 hours" vs "You're in: Triage Complete → Lab Results Pending". The second reduced anxiety by replacing unpredictable time with predictable process.</p>
-        </div>
-
-        <div class="border-l-4 border-[#5F61F2] dark:border-[#A5B4FC] pl-6">
-          <p class="font-semibold mb-1">AI as companion, not doctor</p>
-          <p class="text-base">We deliberately positioned the AI as emotional support, not medical advisor. Its role is to normalize waiting and explain terms, not diagnose — maintaining trust while avoiding risk.</p>
-        </div>
-
-        <div class="border-l-4 border-[#5F61F2] dark:border-[#A5B4FC] pl-6">
-          <p class="font-semibold mb-1">One-tap family connection</p>
-          <p class="text-base">Instead of building messaging or status dashboards, we prioritized video calling. Research showed that seeing a familiar face had more impact than any amount of text updates.</p>
-        </div>
+    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ REFLECTION</p>
+    <h2 class="text-3xl font-bold mb-5">What I learned</h2>
+    <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+      This project changed how I think about emotional design — it's not decoration, it's a functional requirement when users are scared or in pain. Three decisions stood out:
+    </p>
+    <div class="space-y-4 mb-6">
+      <div class="border-l-4 border-[#5F61F2] dark:border-[#A5B4FC] pl-5">
+        <p class="font-semibold mb-1">Stage-based timeline over countdown</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">"Triage Complete → Lab Results Pending" reduces anxiety more than "est. 2 hours" — predictable process beats unpredictable time.</p>
       </div>
-
-      <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-xl p-6">
-        <h3 class="text-xl font-bold mb-4">Key Learnings</h3>
-        <div class="space-y-4">
-          <div>
-            <p class="font-semibold mb-1">Clarity creates calmness</p>
-            <p class="text-base">Every design decision — from font size to color choice to interaction pattern — either reduces or amplifies anxiety. Transparency about wait times and clear visual hierarchy aren't "nice to have" features; they're therapeutic interventions.</p>
-          </div>
-
-          <div>
-            <p class="font-semibold mb-1">Accessibility is empathy made tangible</p>
-            <p class="text-base">Large touch targets, voice interaction, and WCAG compliance aren't checkboxes. They're how we show respect for people with vision impairments, motor challenges, and cognitive load during crisis moments.</p>
-          </div>
-
-          <div>
-            <p class="font-semibold mb-1">AI accelerates, humans decide</p>
-            <p class="text-base">ChatGPT helped me explore faster, but deciding what feels safe vs. overwhelming for a 74-year-old in the ER required human empathy. The 3C framework (Clarity, Calmness, Connection) became my north star for filtering AI suggestions.</p>
-          </div>
-
-          <div>
-            <p class="font-semibold mb-1">Reassurance matters more than features</p>
-            <p class="text-base">Seniors don't need more information — they need to feel remembered, safe, and connected. Simple features like "You haven't been forgotten" messages or one-tap family calls have disproportionate emotional impact.</p>
-          </div>
-        </div>
+      <div class="border-l-4 border-[#5F61F2] dark:border-[#A5B4FC] pl-5">
+        <p class="font-semibold mb-1">AI as companion, not doctor</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">Positioning the AI as emotional support rather than medical advisor maintained user trust while keeping us within safe, honest boundaries.</p>
       </div>
-
-      <p>
-        If I could continue this project, I would conduct <strong>usability testing with actual seniors in ER waiting rooms</strong> and work with hospitals to pilot the AI companion with real-time system integration. The biggest design challenge ahead would be ensuring the AI tone remains empathetic and culturally appropriate across diverse patient populations.
-      </p>
-
-      <p>
-        CalmER taught me that <strong>great UX for vulnerable users requires going beyond usability into humanity</strong> — designing not just for tasks, but for dignity, comfort, and emotional safety.
-      </p>
+      <div class="border-l-4 border-[#5F61F2] dark:border-[#A5B4FC] pl-5">
+        <p class="font-semibold mb-1">Video over messaging</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">Seeing a familiar face has disproportionate emotional impact compared to text updates — so we built one-tap video instead of a status dashboard.</p>
+      </div>
     </div>
+    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+      Next step: usability testing with actual seniors in ER waiting rooms, and piloting the AI companion with real hospital system integration.
+    </p>
   </section>
 
     </div><!-- End Main Content -->

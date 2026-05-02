@@ -321,6 +321,7 @@ if (tocLinks.length > 0) {
   // Create cursor element
   const cursor = document.createElement('div');
   cursor.className = 'cursor-dot';
+  cursor.innerHTML = '<svg width="20" height="22" viewBox="0 0 20 22" xmlns="http://www.w3.org/2000/svg"><path class="cursor-fill" d="M2 1 L19 9.5 L11.5 12 L9 20 Z"/></svg>';
   document.body.appendChild(cursor);
   document.body.classList.add('custom-cursor');
 
