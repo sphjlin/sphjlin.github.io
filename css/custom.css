@@ -1263,8 +1263,8 @@ body, header, main, footer, .btn-primary, .btn-outline, .input, .card, .faq, .na
 /* Table of Contents Sidebar */
 .toc-link{
   display:block;
-  padding:0.5rem 0.75rem;
-  font-size:0.875rem;
+  padding:0.4rem 1rem;
+  font-size:0.8rem;
   color:#6b7280;
   border-left:2px solid transparent;
   transition:all 0.2s ease;

@@ -360,9 +360,11 @@ if (tocLinks.length > 0) {
 
     // General links
     if (el.matches('a[href]') || el.closest('a[href]')) {
-      const href = (el.matches('a') ? el : el.closest('a')).getAttribute('href') || '';
+      const a = el.matches('a') ? el : el.closest('a');
+      const href = a.getAttribute('href') || '';
       if (href.startsWith('mailto:')) return 'Email me';
       if (href.startsWith('http') || href.startsWith('//')) return 'Open ↗';
+      if (href.startsWith('#')) return ''; // anchor / TOC links — no label
       return 'View';
     }
     return '';
