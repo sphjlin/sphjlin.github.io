@@ -321,9 +321,11 @@ if (tocLinks.length > 0) {
   // Create cursor element
   const cursor = document.createElement('div');
   cursor.className = 'cursor-dot';
-  cursor.innerHTML = '<svg width="20" height="22" viewBox="0 0 20 22" xmlns="http://www.w3.org/2000/svg"><path class="cursor-fill" d="M2 1 L19 9.5 L11.5 12 L9 20 Z"/></svg>';
+  cursor.innerHTML = '<svg width="20" height="22" viewBox="0 0 20 22" xmlns="http://www.w3.org/2000/svg"><path class="cursor-fill" d="M2 1 L19 9.5 L11.5 12 L9 20 Z"/></svg><span class="cursor-label"></span>';
   document.body.appendChild(cursor);
   document.body.classList.add('custom-cursor');
+
+  const label = cursor.querySelector('.cursor-label');
 
   // Track mouse movement - update position directly for responsiveness
   document.addEventListener('mousemove', (e) => {
@@ -331,12 +333,53 @@ if (tocLinks.length > 0) {
     cursor.style.top = e.clientY + 'px';
   });
 
+  // Nav link labels by id
+  const navLabels = {
+    'nav-home':     '← Back home',
+    'nav-about':    'Who am I?',
+    'nav-projects': 'My work',
+    'nav-contact':  'Say hi ✦',
+  };
+
+  // Determine label text based on element type
+  function getLabelText(el) {
+    // Project cards
+    if (el.closest('.project-card') || el.closest('.featured-card')) return 'View Project';
+
+    // Theme toggle — show what it will switch TO
+    if (el.id === 'themeToggle' || el.closest('#themeToggle')) {
+      return document.documentElement.classList.contains('dark')
+        ? 'Switch to light mode'
+        : 'Switch to dark mode';
+    }
+
+    // Nav links by id
+    for (const [id, text] of Object.entries(navLabels)) {
+      if (el.id === id || el.closest('#' + id)) return text;
+    }
+
+    // General links
+    if (el.matches('a[href]') || el.closest('a[href]')) {
+      const href = (el.matches('a') ? el : el.closest('a')).getAttribute('href') || '';
+      if (href.startsWith('mailto:')) return 'Email me';
+      if (href.startsWith('http') || href.startsWith('//')) return 'Open ↗';
+      return 'View';
+    }
+    return '';
+  }
+
   // Hover effect on interactive elements
   const interactiveElements = 'a, button, .project-card, .featured-card, .faq, .filter-btn, .btn-primary, .btn-outline, input, textarea';
 
   document.querySelectorAll(interactiveElements).forEach(el => {
-    el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
-    el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
+    el.addEventListener('mouseenter', () => {
+      const text = getLabelText(el);
+      label.textContent = text;
+      if (text) cursor.classList.add('cursor-hover');
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.classList.remove('cursor-hover');
+    });
   });
 
   // Hide cursor when leaving window
