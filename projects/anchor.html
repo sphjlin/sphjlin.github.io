@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anchor — Sophia Lin</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { light: '#5F61F2', dark: '#A5B4FC' },
+          },
+        },
+      },
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .dark .dark\:bg-\[\#0D0D0D\] { background-color: #0D0D0D !important; }
+      .dark .dark\:bg-\[\#1a1a1a\] { background-color: #1a1a1a !important; }
+      .dark .dark\:bg-\[\#A5B4FC\] { background-color: #A5B4FC !important; }
+      .dark .dark\:text-white { color: white !important; }
+      .dark .dark\:text-\[\#0D0D0D\] { color: #0D0D0D !important; }
+      .dark .dark\:text-\[\#A5B4FC\] { color: #A5B4FC !important; }
+      .dark .dark\:text-gray-300 { color: #d1d5db !important; }
+      .dark .dark\:text-gray-400 { color: #9ca3af !important; }
+      .dark .dark\:border-gray-800 { border-color: #1f2937 !important; }
+      .dark .dark\:border-white\/10 { border-color: rgba(255, 255, 255, 0.1) !important; }
+    }
+    :root {
+      --brand: #5F61F2;
+      --brand-dark: #A5B4FC;
+      --brand-bg: rgba(95, 97, 242, 0.08);
+      --brand-border: rgba(95, 97, 242, 0.2);
+    }
+    /* Force light mode colors */
+    html:not(.dark) body { background-color: #f9fafb !important; color: #1f2937 !important; }
+    html:not(.dark) header { background-color: white !important; }
+    html:not(.dark) h1, html:not(.dark) h2, html:not(.dark) h3, html:not(.dark) h4, html:not(.dark) h5 { color: black !important; }
+    html:not(.dark) .text-black { color: #111827 !important; }
+    html:not(.dark) strong { color: #5F61F2 !important; font-weight: 600 !important; }
+    html:not(.dark) .text-gray-600 { color: #4b5563 !important; }
+    html:not(.dark) .text-gray-500 { color: #6b7280 !important; }
+    html:not(.dark) .bg-gray-50 { background-color: #f9fafb !important; }
+    html:not(.dark) .bg-white { background-color: white !important; }
+    html:not(.dark) .bg-gray-100 { background-color: #f3f4f6 !important; }
+    html:not(.dark) .text-\[\#5F61F2\] { color: #5F61F2 !important; }
+    /* Force dark mode colors */
+    html.dark body { background-color: #0D0D0D !important; color: white !important; }
+    html.dark header { background-color: #0D0D0D !important; }
+    html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5 { color: white !important; }
+    html.dark .text-gray-600 { color: #d1d5db !important; }
+    html.dark .text-gray-300 { color: #d1d5db !important; }
+    html.dark strong { color: #A5B4FC !important; font-weight: 600 !important; }
+    html.dark .text-\[\#5F61F2\] { color: #A5B4FC !important; }
+    /* Brand utility classes */
+    .text-anchor { color: var(--brand) !important; }
+    html.dark .text-anchor { color: var(--brand-dark) !important; }
+    .border-anchor { border-color: var(--brand) !important; }
+    html.dark .border-anchor { border-color: var(--brand-dark) !important; }
+    .bg-anchor { background-color: var(--brand) !important; }
+    /* Text selection colors */
+    ::selection { background-color: #5F61F2; color: white; }
+    html.dark ::selection { background-color: #A5B4FC; color: #0D0D0D; }
+  </style>
+
+  <link rel="stylesheet" href="../css/custom.css?v=13">
+</head>
+
+<body class="bg-white dark:bg-[#0D0D0D] text-black dark:text-white" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+<header id="nav" class="fixed top-0 left-0 w-full z-50 bg-white dark:bg-[#0D0D0D]">
+  <div class="max-w-6xl mx-auto flex justify-between items-center py-5 px-6">
+    <a href="../index.html" class="font-semibold text-xl text-black dark:text-white">
+      <span class="md:hidden">SL</span>
+      <span class="hidden md:inline">Sophia Lin</span>
+    </a>
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex gap-6 text-sm">
+      <a href="../index.html" id="nav-home" class="navlink">Home</a>
+      <a href="../about.html" id="nav-about" class="navlink">About</a>
+      <a href="../projects.html" id="nav-projects" class="navlink">Projects</a>
+      <a href="../contact.html" id="nav-contact" class="navlink">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <button id="themeToggle" aria-label="Toggle theme" title="Toggle light / dark mode">◐</button>
+      <!-- Mobile Menu Button -->
+      <button id="menuToggle" class="md:hidden hamburger" aria-label="Toggle menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile Navigation Menu -->
+  <nav id="mobileMenu" class="mobile-menu md:hidden">
+    <a href="../index.html" class="mobile-navlink">Home</a>
+    <a href="../about.html" class="mobile-navlink">About</a>
+    <a href="../projects.html" class="mobile-navlink">Projects</a>
+    <a href="../contact.html" class="mobile-navlink">Contact</a>
+  </nav>
+</header>
+
+<main class="pt-40 pb-16">
+  <div class="flex gap-8 max-w-7xl mx-auto px-6">
+    <!-- Sticky Table of Contents (Desktop only) -->
+    <aside class="hidden lg:block w-64 flex-shrink-0">
+      <nav class="sticky top-24 space-y-2">
+        <p class="text-sm font-bold text-gray-900 dark:text-white mb-3">Contents</p>
+        <a href="#situation" class="toc-link">Situation</a>
+        <a href="#task" class="toc-link">Task</a>
+        <a href="#research" class="toc-link">Research</a>
+        <a href="#actions" class="toc-link">Design Decisions</a>
+        <a href="#results" class="toc-link">Results</a>
+        <a href="#reflection" class="toc-link">Reflection</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="flex-1 min-w-0">
+
+      <!-- Hero Section -->
+      <section class="max-w-6xl mx-auto px-6 mb-20">
+        <div class="mb-8">
+          <a href="../projects.html" class="text-sm text-gray-600 dark:text-gray-400 hover:text-[#5F61F2] dark:hover:text-[#A5B4FC] transition-colors inline-block mb-6">← BACK TO PROJECTS</a>
+        </div>
+
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">Anchor</h1>
+        <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">An ADHD-focused productivity app that helps users pick up where they left off — breaking tasks into steps, building momentum, and reducing the paralysis of a blank to-do list.</p>
+
+        <div class="project-tags mb-12">
+          <span class="project-tag tag-primary">UX/UI Design</span>
+          <span class="project-tag tag-secondary">Mobile App</span>
+          <span class="project-tag tag-secondary">ADHD</span>
+          <span class="project-tag tag-context">Solo Project</span>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-8 mb-12 pb-12 border-b border-gray-200 dark:border-gray-800">
+          <div>
+            <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2">ROLE</h3>
+            <p class="text-base">Solo UX/UI Designer</p>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2">TIMELINE</h3>
+            <p class="text-base">8 weeks</p>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2">TOOLS</h3>
+            <p class="text-base">Figma</p>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2">PLATFORM</h3>
+            <p class="text-base">iOS Mobile</p>
+          </div>
+        </div>
+
+        <!-- TODO: hero image — add when ready
+        <figure class="rounded-2xl overflow-hidden mb-12">
+          <img src="../assets/anchor_hero.png" alt="Anchor app — pick up where you left off" class="w-full">
+        </figure>
+        -->
+      </section>
+
+      <!-- TL;DR STAR Card -->
+      <section class="max-w-4xl mx-auto px-6 mb-16">
+        <div class="rounded-2xl p-8" style="background:var(--brand-bg);border:1px solid var(--brand-border);">
+          <p class="text-sm font-bold text-anchor mb-4">TL;DR — AT A GLANCE</p>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mb-1 uppercase tracking-wider">Situation</p>
+              <p class="text-sm text-gray-600 dark:text-gray-300">People with ADHD struggle to re-engage with tasks after interruptions — the mental load of figuring out "where was I?" is often enough to abandon the task entirely.</p>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mb-1 uppercase tracking-wider">Task</p>
+              <p class="text-sm text-gray-600 dark:text-gray-300">Design an ADHD-friendly productivity app that reduces task initiation friction and helps users build sustainable momentum.</p>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mb-1 uppercase tracking-wider">Actions</p>
+              <p class="text-sm text-gray-600 dark:text-gray-300">Designed AI-powered task breakdown, a "Where You Left Off" re-entry screen, momentum tracking, and a Quick Capture feature — all built around reducing cognitive load.</p>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mb-1 uppercase tracking-wider">Results</p>
+              <p class="text-sm text-gray-600 dark:text-gray-300">Hi-fi prototype with full task management flow, component library, and key ADHD-aware interactions validated through self-testing and peer feedback.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Situation -->
+      <section id="situation" class="max-w-4xl mx-auto px-6 mb-16">
+        <p class="text-sm text-anchor mb-3">✦ SITUATION</p>
+        <h2 class="text-3xl font-bold mb-5">The ADHD productivity gap</h2>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+          Most productivity apps are designed for neurotypical users — long task lists, streaks, timers. For people with ADHD, these systems become another source of guilt. The real problem isn't motivation: it's <strong>task initiation</strong> and <strong>re-entry after interruption</strong>.
+        </p>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-xl p-5">
+            <p class="font-semibold text-sm mb-2">What existing tools get wrong</p>
+            <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1.5">
+              <li>• Blank to-do lists cause decision paralysis</li>
+              <li>• Streaks create anxiety when broken</li>
+              <li>• No concept of "where I left off"</li>
+              <li>• Overwhelming notifications at the wrong times</li>
+            </ul>
+          </div>
+          <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-xl p-5">
+            <p class="font-semibold text-sm mb-2">What ADHD users actually need</p>
+            <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1.5">
+              <li>• Immediate context when reopening the app</li>
+              <li>• Tasks broken into actionable micro-steps</li>
+              <li>• Gentle momentum cues, not guilt-based streaks</li>
+              <li>• Low-friction capture before the thought disappears</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Task -->
+      <section id="task" class="max-w-4xl mx-auto px-6 mb-16">
+        <p class="text-sm text-anchor mb-3">✦ TASK</p>
+        <h2 class="text-3xl font-bold mb-5">Design goal: lower every barrier to starting</h2>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+          The core design challenge was to build a system that meets users <em>where they are</em> — not where they wish they were. That meant designing around the ADHD experience: hyperfocus windows, mid-task abandonment, and the shame spiral of forgotten tasks.
+        </p>
+        <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl p-6">
+          <p class="font-semibold mb-4">Design principles I committed to</p>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="text-center">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center mx-auto mb-2 bg-anchor">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              </div>
+              <p class="font-semibold text-sm mb-1">Reduce friction</p>
+              <p class="text-xs text-gray-600 dark:text-gray-300">Every extra tap is a reason to give up. Defaults should be smart.</p>
+            </div>
+            <div class="text-center">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center mx-auto mb-2 bg-anchor">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              </div>
+              <p class="font-semibold text-sm mb-1">Honour time</p>
+              <p class="text-xs text-gray-600 dark:text-gray-300">Show users where they are in their day — not just what's left undone.</p>
+            </div>
+            <div class="text-center">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center mx-auto mb-2 bg-anchor">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <p class="font-semibold text-sm mb-1">Celebrate small wins</p>
+              <p class="text-xs text-gray-600 dark:text-gray-300">Momentum is built through tiny victories — make them visible.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Research -->
+      <section id="research" class="max-w-4xl mx-auto px-6 mb-16">
+        <p class="text-sm text-anchor mb-3">✦ RESEARCH</p>
+        <h2 class="text-3xl font-bold mb-5">Understanding the ADHD productivity loop</h2>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+          I conducted secondary research into ADHD executive function literature and audited five popular productivity apps (Todoist, Notion, Things 3, Structured, Goblin Tools) through the lens of ADHD usability. I also gathered informal feedback from peers with ADHD diagnoses.
+        </p>
+        <div class="space-y-4">
+          <div class="border-l-4 border-anchor pl-5">
+            <p class="font-semibold mb-1">Task initiation is the hardest part — not the task itself</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300">People with ADHD often know exactly what to do. The barrier is starting. A re-entry screen that answers "what should I do right now?" cuts through the paralysis immediately.</p>
+          </div>
+          <div class="border-l-4 border-anchor pl-5">
+            <p class="font-semibold mb-1">Vague tasks lead to abandonment</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300">"Work on presentation" is paralyzing. "Find 3 reference images" is actionable. AI step breakdown converts vague intentions into manageable actions.</p>
+          </div>
+          <div class="border-l-4 border-anchor pl-5">
+            <p class="font-semibold mb-1">Shame from missed tasks compounds avoidance</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300">Existing apps surface undone tasks prominently. Anchor's approach: celebrate what was done, gently surface what's next — not what failed.</p>
+          </div>
+          <div class="border-l-4 border-anchor pl-5">
+            <p class="font-semibold mb-1">Quick Capture is essential — thoughts evaporate</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300">ADHD working memory is limited. A one-tap "save this thought" that works without leaving the current context prevents the frustration of forgotten intentions.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Actions / Design Decisions -->
+      <section id="actions" class="max-w-4xl mx-auto px-6 mb-16">
+        <p class="text-sm text-anchor mb-3">✦ DESIGN DECISIONS</p>
+        <h2 class="text-3xl font-bold mb-6">Five features built around ADHD behaviour</h2>
+
+        <!-- Feature 1 -->
+        <div class="mb-6 p-6 bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center bg-anchor">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div class="flex-1">
+              <p class="font-bold mb-1">Where You Left Off — Re-entry screen</p>
+              <p class="text-sm text-gray-600 dark:text-gray-300 mb-3">The home screen opens to exactly one thing: the task you were last working on, with your last action remembered and your next step ready. No scanning a long list, no decision fatigue.</p>
+              <p class="text-xs font-semibold text-anchor uppercase tracking-wide">Design decision:</p>
+              <p class="text-xs text-gray-600 dark:text-gray-300 mt-1">Rather than showing a full dashboard on open, Anchor asks one question: "Ready to continue?" This single-question framing reduces the cold-start problem ADHD users face every session.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="mb-6 p-6 bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center bg-anchor">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+            </div>
+            <div class="flex-1">
+              <p class="font-bold mb-1">AI Task Breakdown</p>
+              <p class="text-sm text-gray-600 dark:text-gray-300 mb-3">Type a vague task — "prepare for interview" — and Anchor breaks it into concrete, sequenced micro-steps. Users can accept, edit, or skip steps. No task is too big to start.</p>
+              <p class="text-xs font-semibold text-anchor uppercase tracking-wide">Design decision:</p>
+              <p class="text-xs text-gray-600 dark:text-gray-300 mt-1">Steps are presented one at a time during execution, not as a checklist upfront. Seeing "Step 2 of 6" feels manageable; seeing all 6 at once can trigger avoidance.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="mb-6 p-6 bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center bg-anchor">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div class="flex-1">
+              <p class="font-bold mb-1">Momentum Tracker</p>
+              <p class="text-sm text-gray-600 dark:text-gray-300 mb-3">Instead of streaks (which punish gaps), Anchor shows "Returns × Days × Done" as a Momentum score. Coming back after a break doesn't reset progress — it adds to it.</p>
+              <p class="text-xs font-semibold text-anchor uppercase tracking-wide">Design decision:</p>
+              <p class="text-xs text-gray-600 dark:text-gray-300 mt-1">Streak systems alienate ADHD users whose consistency is naturally variable. Momentum reframes the metric: consistency over time matters more than perfection every day.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="mb-6 p-6 bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center bg-anchor">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </div>
+            <div class="flex-1">
+              <p class="font-bold mb-1">Quick Capture</p>
+              <p class="text-sm text-gray-600 dark:text-gray-300 mb-3">A floating "+" button saves thoughts, tasks, or ideas instantly without navigating away from current work. Captured items sit in an inbox to be processed later — during a calmer moment.</p>
+              <p class="text-xs font-semibold text-anchor uppercase tracking-wide">Design decision:</p>
+              <p class="text-xs text-gray-600 dark:text-gray-300 mt-1">Separating capture from organisation reduces the "I need to figure out where this goes before I can save it" friction. Capture now, sort later.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="mb-6 p-6 bg-gray-50 dark:bg-[#1a1a1a] rounded-2xl">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center bg-anchor">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <div class="flex-1">
+              <p class="font-bold mb-1">Focus Session + Anchor Task</p>
+              <p class="text-sm text-gray-600 dark:text-gray-300 mb-3">Users commit to one "Anchor Task" per focus session — a single intention that grounds the work period. After the session, Anchor logs what was completed and surfaces the next natural step.</p>
+              <p class="text-xs font-semibold text-anchor uppercase tracking-wide">Design decision:</p>
+              <p class="text-xs text-gray-600 dark:text-gray-300 mt-1">Choice overload kills execution for ADHD brains. Single-task focus sessions force prioritisation at the session level, not the list level.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Component Library note -->
+        <div class="mt-8 p-5 rounded-xl" style="background:var(--brand-bg);border:1px solid var(--brand-border);">
+          <p class="font-semibold text-sm mb-1">Component library built alongside the design</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">I designed a full Figma component library — buttons (primary, secondary, tertiary, link) across 4 sizes × 5 states, navigation bars, task cards, modals, and calendar components — ensuring consistent ADHD-friendly affordances throughout.</p>
+        </div>
+
+        <figure class="my-8">
+          <img src="../assets/anchor_buttons.png" alt="Anchor button component library — 4 sizes × 5 states" class="w-full rounded-xl shadow-sm">
+          <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 text-center italic">Button system: primary, secondary, tertiary, and link styles across 4 sizes × 5 interaction states</figcaption>
+        </figure>
+
+        <figure class="my-8">
+          <img src="../assets/anchor_components.png" alt="Anchor UI component library — task cards, navigation, calendar, momentum tracker" class="w-full rounded-xl shadow-sm">
+          <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 text-center italic">Core components: task cards, navigation bar states, momentum tracker, calendar, and step breakdown</figcaption>
+        </figure>
+      </section>
+
+      <!-- Results -->
+      <section id="results" class="max-w-4xl mx-auto px-6 mb-16">
+        <p class="text-sm text-anchor mb-3">✦ RESULTS</p>
+        <h2 class="text-3xl font-bold mb-5">A hi-fi prototype that thinks like an ADHD user</h2>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+          The final prototype covers the full task lifecycle — from Quick Capture through breakdown, focus session, completion, and re-entry. All key interactions are designed to reduce the points where ADHD users typically disengage.
+        </p>
+        <div class="grid md:grid-cols-3 gap-4 mb-8">
+          <div class="rounded-xl p-5 text-center" style="background:var(--brand-bg);border:1px solid var(--brand-border);">
+            <p class="text-3xl font-bold text-anchor mb-1">5</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300">Core screens designed with full component coverage</p>
+          </div>
+          <div class="rounded-xl p-5 text-center" style="background:var(--brand-bg);border:1px solid var(--brand-border);">
+            <p class="text-3xl font-bold text-anchor mb-1">1</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300">Principle guiding every screen: lower the barrier to starting</p>
+          </div>
+          <div class="rounded-xl p-5 text-center" style="background:var(--brand-bg);border:1px solid var(--brand-border);">
+            <p class="text-3xl font-bold text-anchor mb-1">Solo</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300">End-to-end: research, IA, wireframes, hi-fi, component library</p>
+          </div>
+        </div>
+
+        <figure class="my-8">
+          <img src="../assets/anchor_light-mode.png" alt="Anchor light mode — Home, Progress, Focus, Profile screens" class="w-full rounded-xl shadow-sm">
+          <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 text-center italic">Home, Progress, Focus, and Profile screens</figcaption>
+        </figure>
+
+        <figure class="my-8">
+          <img src="../assets/anchor_dark-mode.png" alt="Anchor dark mode" class="w-full rounded-xl shadow-sm">
+          <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 text-center italic">Dark mode variant</figcaption>
+        </figure>
+
+        <!-- Prototype CTA -->
+        <div class="p-6 bg-gradient-to-r rounded-2xl border flex flex-col sm:flex-row items-center justify-between gap-4" style="background:var(--brand-bg);border-color:var(--brand-border);">
+          <div>
+            <p class="font-semibold mb-1">View the Figma Prototype</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300">Full task flow — from capture to completion</p>
+          </div>
+          <a href="https://www.figma.com/proto/placeholder-anchor" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm hover:opacity-90 transition-opacity bg-anchor text-white">
+            View Prototype
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+        </div>
+      </section>
+
+      <!-- Reflection -->
+      <section id="reflection" class="max-w-4xl mx-auto px-6 mb-20">
+        <p class="text-sm text-anchor mb-3">✦ REFLECTION</p>
+        <h2 class="text-3xl font-bold mb-5">What I learned designing for ADHD</h2>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+          Anchor was my first solo project from scratch — no brief, no client, no team. That constraint pushed me to be more intentional about every decision, because there was no one else to validate it.
+        </p>
+        <div class="space-y-4 mb-6">
+          <div class="border-l-4 border-anchor pl-5">
+            <p class="font-semibold mb-1">Accessibility as a design constraint, not an afterthought</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300">Designing for ADHD forced me to confront how most productivity apps are implicitly designed for neurotypical users. Cognitive accessibility should be a first-class concern in every product I work on.</p>
+          </div>
+          <div class="border-l-4 border-anchor pl-5">
+            <p class="font-semibold mb-1">System design matters as much as UI design</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300">The component library wasn't just polish — it was how I kept 50+ screens consistent. Building it early meant later decisions were faster and the product felt coherent, not cobbled together.</p>
+          </div>
+          <div class="border-l-4 border-anchor pl-5">
+            <p class="font-semibold mb-1">What I'd do differently</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300">I'd prioritise usability testing earlier and with actual ADHD users, not just inferences from secondary research. The AI breakdown feature especially needs real validation — what granularity of steps is helpful vs. overwhelming?</p>
+          </div>
+        </div>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+          Anchor is a project I continue to iterate on. Next phase: recruiting ADHD participants for moderated usability sessions and testing the re-entry screen against a standard to-do list baseline.
+        </p>
+      </section>
+
+    </div><!-- End Main Content -->
+  </div><!-- End Flex Container -->
+
+  <!-- Project Navigation -->
+  <section class="max-w-4xl mx-auto px-6 mt-20 mb-8">
+    <div class="flex flex-col md:flex-row justify-between items-stretch md:items-center gap-3">
+      <a href="sceneo.html" class="btn-outline text-center md:text-left">← Sceneo</a>
+      <a href="../projects.html" class="btn-outline text-center">All Projects</a>
+      <a href="../projects.html" class="btn-outline text-center md:text-right">All Projects →</a>
+    </div>
+  </section>
+</main>
+
+<!-- Footer Section -->
+<footer class="footer-section">
+  <div class="max-w-6xl mx-auto px-6 py-8">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+      <div class="text-center md:text-left">
+        <p class="footer-subtext flex items-center gap-2">
+          <span>Let's connect over design, ideas, or a friendly hello</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+            <line x1="6" y1="1" x2="6" y2="4"></line>
+            <line x1="10" y1="1" x2="10" y2="4"></line>
+            <line x1="14" y1="1" x2="14" y2="4"></line>
+          </svg>
+        </p>
+        <a href="mailto:sphjlin1203@gmail.com" class="footer-email">sphjlin1203@gmail.com</a>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center gap-4">
+        <div class="flex gap-2.5">
+          <a href="https://www.linkedin.com/in/sphjlin" target="_blank" class="footer-icon" aria-label="LinkedIn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a href="https://github.com/sphjlin" target="_blank" class="footer-icon" aria-label="GitHub">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+          </a>
+          <a href="mailto:sphjlin1203@gmail.com" class="footer-icon" aria-label="Email">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </a>
+        </div>
+        <div class="footer-divider hidden sm:block"></div>
+        <p class="footer-copyright">© <span id="year"></span> Sophia Lin</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
