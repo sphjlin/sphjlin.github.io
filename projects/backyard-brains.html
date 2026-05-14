@@ -230,6 +230,31 @@
         <p class="text-base">Figma, Wizard of Oz, Usability Testing</p>
       </div>
     </div>
+
+    <!-- Opening story -->
+    <div class="opening-story mb-10">
+      <p class="opening-story-text">Priya, a college sophomore, opens the app for her first remote neuroscience experiment. She follows the setup instructions, attaches the electrodes to her arm, and waits to connect. The screen says "Waiting for connection." Two minutes pass. She isn't sure if she's connecting to a device or to another person — or whether that person can already see her data. There's no confirmation, no consent screen, no signal that anything is working. She quietly closes the app. The experiment never starts.</p>
+      <p class="opening-story-hmw">How might we enable students to collaboratively explore neuroscience tools remotely while ensuring safety and informed consent at every step?</p>
+    </div>
+
+    <!-- Outcome preview — show result first so recruiters know what we built -->
+    <div class="rounded-2xl p-6 mb-4" style="background:rgba(95,97,242,0.05);border:1px solid rgba(95,97,242,0.15);">
+      <p class="text-xs font-bold uppercase tracking-widest text-[#5F61F2] dark:text-[#A5B4FC] mb-4">What we delivered</p>
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div>
+          <p class="text-2xl font-bold mb-1">Hi-fi prototype</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Full remote HHI flow — consent, pairing, session, feedback — handed off to Backyard Brains as a complete design spec.</p>
+        </div>
+        <div>
+          <p class="text-2xl font-bold mb-1">Consent-first model</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Two-step opt-in before any signal is sent — cited by the client as one of the two highest-value contributions, alongside the visual onboarding diagram.</p>
+        </div>
+        <div>
+          <p class="text-2xl font-bold mb-1">5 methods · 2 rounds of testing</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Stakeholder interviews, competitive analysis, heuristic evaluation, and usability testing on the SpikerBox — then Wizard of Oz simulation and a second usability round (7 participants) on our prototype.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Body: TOC sidebar + content -->
@@ -251,9 +276,34 @@
     <!-- Main content -->
     <div class="flex-1 min-w-0">
 
+      <!-- TL;DR STAR Card -->
+      <section class="mb-16 fade-up">
+        <div class="rounded-2xl p-8" style="background:rgba(95,97,242,0.04);border:1px solid rgba(95,97,242,0.12);">
+          <p class="text-sm font-bold text-[#5F61F2] dark:text-[#A5B4FC] mb-4">TL;DR — AT A GLANCE</p>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mb-1 uppercase tracking-wider">Situation</p>
+              <p class="text-sm text-gray-600 dark:text-gray-300">Backyard Brains' HHI system only worked in-person — remote students were locked out. Initial testing revealed critical gaps: unclear consent, no mental model for device vs. person connection, and insufficient system feedback.</p>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mb-1 uppercase tracking-wider">Task</p>
+              <p class="text-sm text-gray-600 dark:text-gray-300">Conduct end-to-end UX research and contribute design feedback to transform the single-user HHI kit into a safe, collaborative remote experience.</p>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mb-1 uppercase tracking-wider">Actions</p>
+              <p class="text-sm text-gray-600 dark:text-gray-300">Phase 1 — stakeholder interviews, competitive analysis, heuristic evaluation, and usability testing on the existing SpikerBox. Phase 2 — Wizard of Oz simulation and usability testing Round 2 (7 participants) on our prototype. Synthesized through affinity mapping. Contributed design critique throughout visual iteration.</p>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mb-1 uppercase tracking-wider">Results</p>
+              <p class="text-sm text-gray-600 dark:text-gray-300">Hi-fi prototype with session-based roles, consent-first onboarding, real-time status feedback, and an emergency stop. Client cited the consent model as the highest-value contribution from the project.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- ── CONTEXT + PROBLEM ── -->
       <section id="context" class="mb-16 fade-up">
-        <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ CONTEXT & PROBLEM</p>
+        <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ SITUATION</p>
         <h2 class="text-3xl font-bold mb-5">From a message to a sensation — remotely</h2>
         <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-5">
           Backyard Brains' Human-Human Interface (HHI) lets User A flex a muscle, sending an electrical signal that triggers an involuntary movement in User B's arm. The problem: it only works with both people in the same room. Remote learners — Backyard Brains' primary audience — are completely locked out.
@@ -273,7 +323,7 @@
         <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ PROCESS</p>
         <h2 class="text-3xl font-bold mb-5">Three phases, five methods</h2>
         <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
-          2 stakeholder interviews · competitive analysis of 3 products · heuristic evaluation · Round 1 usability testing (6 participants, 4 sessions) · Wizard-of-Oz simulation (2 paired teams in separate rooms)
+          The first phase focused on the existing SpikerBox product — understanding what was broken before designing anything new. The second phase tested our own prototype using Wizard of Oz simulation. The third validated the hi-fi with a second usability round.
         </p>
         <div class="grid md:grid-cols-3 gap-6 relative">
           <div class="hidden md:block absolute top-5 left-0 right-0 h-px bg-gray-200 dark:bg-white/10 z-0"></div>
@@ -282,7 +332,7 @@
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
             <p class="text-xs text-gray-400 uppercase tracking-widest mb-2">Feb — Understand</p>
-            <p class="text-sm text-gray-600 dark:text-gray-300">Stakeholder interviews, competitive analysis, usability testing Round 1, heuristic evaluation</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300">Stakeholder interviews, competitive analysis, heuristic evaluation, and usability testing Round 1 — all on the existing SpikerBox to understand what was broken before building anything new</p>
           </div>
           <div class="relative z-10">
             <div class="w-10 h-10 rounded-full bg-[#5F61F2] dark:bg-[#A5B4FC] flex items-center justify-center mb-3">
@@ -296,7 +346,7 @@
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
             <p class="text-xs text-gray-400 uppercase tracking-widest mb-2">Apr — Validate</p>
-            <p class="text-sm text-gray-600 dark:text-gray-300">Med-fi → hi-fi prototyping, usability testing Round 2, client handoff</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300">Med-fi → hi-fi prototyping, usability testing Round 2 (7 participants) on the prototype + SpikerBox, client handoff</p>
           </div>
         </div>
       </section>
@@ -375,6 +425,21 @@
             </div>
           </div>
         </div>
+
+        <!-- Before / After -->
+        <div class="mt-10">
+          <p class="font-semibold text-sm mb-4 text-gray-500 dark:text-gray-400 uppercase tracking-wider">Before → After: Role selection screen</p>
+          <div class="grid md:grid-cols-2 gap-6">
+            <figure>
+              <img src="../assets/backyard-brains_role-select_before.png" alt="Backyard Brains role selection — before" class="w-full rounded-xl shadow-sm">
+              <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-2 text-center italic">Before — participants in a shared lobby with no clear role context</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/backyard-brains_role-select_after.png" alt="Backyard Brains role selection — after" class="w-full rounded-xl shadow-sm">
+              <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-2 text-center italic">After — explicit Controller / Minion cards with role descriptions and consent built in</figcaption>
+            </figure>
+          </div>
+        </div>
       </section>
 
       <hr class="bb-divider">
@@ -384,12 +449,12 @@
         <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ OUTCOME</p>
         <h2 class="text-3xl font-bold mb-5">Delivered to Backyard Brains</h2>
         <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-          The final hi-fi prototype and full research report were handed off as a complete design specification. The client cited the consent model and onboarding diagram as the two highest-value contributions.
+          The final hi-fi prototype and full research report were handed off as a complete design specification. The client cited the consent-first model and the visual onboarding diagram as the two highest-value contributions.
         </p>
         <div class="grid sm:grid-cols-4 gap-3">
           <div class="rounded-xl p-4 text-center bg-[#f5f3ff] dark:bg-[rgba(95,97,242,0.07)] border border-[#ede9fe] dark:border-[rgba(95,97,242,0.18)]">
-            <p class="text-3xl font-bold text-[#5F61F2] dark:text-[#A5B4FC] mb-1">6</p>
-            <p class="text-xs text-gray-600 dark:text-gray-300">Usability test participants</p>
+            <p class="text-3xl font-bold text-[#5F61F2] dark:text-[#A5B4FC] mb-1">7</p>
+            <p class="text-xs text-gray-600 dark:text-gray-300">Participants in Round 2 usability testing</p>
           </div>
           <div class="rounded-xl p-4 text-center bg-[#f5f3ff] dark:bg-[rgba(95,97,242,0.07)] border border-[#ede9fe] dark:border-[rgba(95,97,242,0.18)]">
             <p class="text-3xl font-bold text-[#5F61F2] dark:text-[#A5B4FC] mb-1">2</p>
@@ -463,6 +528,11 @@
               <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
               <rect x="2" y="9" width="4" height="12"></rect>
               <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a href="https://github.com/sphjlin" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="GitHub">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
             </svg>
           </a>
           <a href="mailto:sphjlin1203@gmail.com" class="footer-icon" aria-label="Email">

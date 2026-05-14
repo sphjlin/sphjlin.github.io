@@ -1296,6 +1296,37 @@ body, header, main, footer, .btn-primary, .btn-outline, .input, .card, .faq, .na
   background-color:rgba(165, 180, 252, 0.08);
 }
 
+/* Opening Story Block */
+.opening-story {
+  border-left: 3px solid #5F61F2;
+  padding: 1.25rem 1.5rem;
+  background: rgba(95, 97, 242, 0.04);
+  border-radius: 0 12px 12px 0;
+}
+.dark .opening-story {
+  border-left-color: #A5B4FC;
+  background: rgba(165, 180, 252, 0.06);
+}
+.opening-story-text {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #374151;
+  font-style: italic;
+  margin-bottom: 0.75rem;
+}
+.dark .opening-story-text {
+  color: #d1d5db;
+}
+.opening-story-hmw {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #5F61F2;
+  margin-bottom: 0;
+}
+.dark .opening-story-hmw {
+  color: #A5B4FC;
+}
+
 /* Custom Cursor */
 .cursor-dot{
   position:fixed;
@@ -1394,4 +1425,47 @@ body.custom-cursor textarea{
   body.custom-cursor button{
     cursor:auto;
   }
+}
+/* ── Project page body text readability ─────────────────────────── */
+
+/* Main paragraphs — bump to text-base (16px) + loose line height */
+.flex-1.min-w-0 p.text-gray-600,
+.flex-1.min-w-0 p.text-gray-300,
+main p.text-gray-600,
+main p.text-gray-300 {
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+/* Card / feature body text inside gray boxes — text-sm → 0.9375rem */
+.flex-1.min-w-0 .bg-gray-50 p.text-sm,
+.flex-1.min-w-0 .bg-gray-50 p.text-xs,
+main .bg-gray-50 p.text-sm,
+main .bg-gray-50 p.text-xs,
+main .dark\:bg-\[#1a1a1a\] p.text-sm,
+main .dark\:bg-\[#1a1a1a\] p.text-xs {
+  font-size: 0.9375rem;
+  line-height: 1.75;
+}
+
+/* Insight / quote callouts (border-l blocks) */
+main .border-l-4 p.text-sm,
+main .border-l-4 p.text-gray-600,
+main .border-l-4 p.text-gray-300 {
+  font-size: 0.9375rem;
+  line-height: 1.8;
+}
+
+/* List items in project pages */
+main ul.text-gray-600 li,
+main ul.text-gray-300 li,
+main ol.text-gray-600 li,
+main ol.text-gray-300 li {
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+/* Slightly more breathing room between sections */
+main section {
+  margin-bottom: 5rem;
 }

@@ -156,7 +156,7 @@
       </div>
       <div>
         <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2">TEAM</h3>
-        <p class="text-base">6 members (PM, Designer, Analyst, Engineer)</p>
+        <p class="text-base">6 members (PM, 2 UX Designers, Analyst, Tech, Generalist)</p>
       </div>
       <div>
         <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2">TOOLS</h3>
@@ -164,28 +164,72 @@
       </div>
     </div>
 
-    <!-- TODO: hero image (calmer-hero.jpg) — add when ready
-    <div class="rounded-2xl overflow-hidden shadow-2xl mb-12">
-      <img src="../assets/calmer-hero.jpg" alt="CalmER App Mockup" class="w-full">
+    <!-- Opening story -->
+    <div class="opening-story mb-10">
+      <p class="opening-story-text">An older woman comes to the ER alone. A nurse takes her vitals and tells her to take a seat. An hour passes. Then another. No updates, no indication of where she is in the queue, no one to ask without feeling like a burden. Eventually she decides it's probably not that serious — and quietly heads home. The wait itself wasn't the problem. Not knowing was.</p>
+      <p class="opening-story-hmw">How might we help older adults feel informed and cared for during long ER waits — not just physically, but emotionally?</p>
     </div>
-    -->
+
+  </section>
+
+  <!-- TL;DR STAR Card -->
+  <section class="max-w-4xl mx-auto px-6 mb-16">
+    <div class="rounded-2xl p-8" style="background:rgba(95,97,242,0.04);border:1px solid rgba(95,97,242,0.12);">
+      <p class="text-sm font-bold text-[#5F61F2] dark:text-[#A5B4FC] mb-4">TL;DR — AT A GLANCE</p>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mb-1 uppercase tracking-wider">Situation</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Seniors in ER waiting rooms face 6+ hour waits with no updates — the uncertainty compounds anxiety more than the wait itself. 33 million seniors visit ERs each year, often alone.</p>
+        </div>
+        <div>
+          <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mb-1 uppercase tracking-wider">Task</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">As one of two designers on a 6-person team, build the design system and co-design key UI screens for a mobile companion app targeting older adults in ER settings.</p>
+        </div>
+        <div>
+          <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mb-1 uppercase tracking-wider">Actions</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Built the Figma design system (components, colour, typography, accessibility specs). Co-designed screens around a 3C framework — Clarity, Calmness, Connection. Participated in research synthesis and ideation with the team.</p>
+        </div>
+        <div>
+          <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mb-1 uppercase tracking-wider">Results</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Top 3 finish in the Michigan Tech Innovation Jam Health Track. The design system enabled consistent handoff across a team that included non-designers.</p>
+        </div>
+      </div>
+    </div>
+
+    <figure class="mt-8">
+      <img src="../assets/CalmER_home.png" alt="CalmER Home Dashboard" class="w-full max-w-md mx-auto block rounded-xl shadow-sm">
+      <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 text-center italic">Home dashboard — patient vitals, triage stage, estimated wait, and test status at a glance</figcaption>
+    </figure>
   </section>
 
   <!-- Overview + Problem -->
   <section id="overview" class="max-w-4xl mx-auto px-6 mb-16">
-    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ OVERVIEW</p>
+    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ SITUATION</p>
     <h2 class="text-3xl font-bold mb-5">Designing for the emotional cost of waiting</h2>
     <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-      CalmER is a mobile companion app for older adults during ER waits, built for the Michigan Tech Innovation Jam in 6 weeks. The average ER wait is <strong>6.5+ hours</strong> — for seniors who arrive alone, that time is filled with confusion, anxiety, and isolation. We weren't trying to shorten the wait. We were designing to reduce its emotional cost.
+      CalmER is a mobile companion app for older adults during ER waits, built for the Michigan Tech Innovation Jam in 6 weeks. The average ER wait is <strong>6.5+ hours</strong> — for seniors who arrive alone, that time is filled with confusion, anxiety, and isolation. We weren't trying to shorten the wait. We were designing to reduce its emotional cost. And we designed for more than one user: the patient sitting alone in the waiting room, and the family member far away who can't get any updates.
     </p>
+    <!-- Persona -->
+    <div class="rounded-2xl p-6 mb-6" style="background:rgba(95,97,242,0.04);border:1px solid rgba(95,97,242,0.12);">
+      <p class="text-xs font-bold uppercase tracking-widest text-[#5F61F2] dark:text-[#A5B4FC] mb-3">Meet Mary</p>
+      <div class="flex flex-col sm:flex-row gap-5 items-start">
+        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[#5F61F2] dark:bg-[#A5B4FC] flex items-center justify-center text-white dark:text-[#0D0D0D] font-bold text-lg">M</div>
+        <div>
+          <p class="font-semibold mb-1">Mary, 74 — Retired schoolteacher</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">She came to the ER alone for sudden dizziness. She doesn't know what's happening, how long she'll wait, or who to ask. The nurses are busy. Her son David is in another city. She keeps looking at the clock.</p>
+          <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mt-2 italic">"I just want to know someone is taking care of me."</p>
+        </div>
+      </div>
+    </div>
+
     <div class="grid md:grid-cols-2 gap-4">
       <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-xl p-5">
         <p class="font-semibold text-sm mb-2">The problem we focused on</p>
         <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1.5">
-          <li>• 33 million senior ER visits/year — often alone</li>
-          <li>• No clear updates → anxiety compounds over time</li>
-          <li>• "Left without being seen" rate doubled to 2.1%</li>
-          <li>• Staff too busy to provide reassurance</li>
+          <li>• 33 million senior ER visits/year — 21% of all ER visits</li>
+          <li>• "Left without being seen" rate nearly doubled: 1.1% → 2.1%; seniors are 13% of those cases</li>
+          <li>• Seniors waiting 8+ hours doubled from 12% to 20% (2017–2024)</li>
+          <li>• Overnight stays increase in-hospital mortality risk by ~40%</li>
         </ul>
       </div>
       <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-xl p-5">
@@ -263,6 +307,7 @@
         <div>
           <p class="font-semibold mb-1 text-sm">AI Emotional Companion</p>
           <p class="text-xs text-gray-600 dark:text-gray-300">Calming conversations, breathing guides, medical term explanations — voice or text.</p>
+          <p class="text-xs text-[#5F61F2] dark:text-[#A5B4FC] mt-2 italic">Empathy = Calmness</p>
         </div>
       </div>
       <div class="flex gap-4 p-5 bg-gray-50 dark:bg-[#1a1a1a] rounded-xl">
@@ -272,8 +317,18 @@
         <div>
           <p class="font-semibold mb-1 text-sm">Smart Hospital Sync</p>
           <p class="text-xs text-gray-600 dark:text-gray-300">Live triage updates, stage-based timeline, simple language explanations of what's next.</p>
+          <p class="text-xs text-[#5F61F2] dark:text-[#A5B4FC] mt-2 italic">Clarity = Calmness</p>
         </div>
       </div>
+    </div>
+
+    <!-- Feature screens -->
+    <figure class="my-8">
+      <img src="../assets/CalmER_AI.png" alt="CalmER AI Companion — voice and text emotional support" class="w-full rounded-xl shadow-sm">
+      <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 text-center italic">AI Companion — voice detection, breathing guide, and empathetic text conversation</figcaption>
+    </figure>
+
+    <div class="grid md:grid-cols-2 gap-4 mt-4">
       <div class="flex gap-4 p-5 bg-gray-50 dark:bg-[#1a1a1a] rounded-xl">
         <div class="flex-shrink-0 w-9 h-9 bg-[#5F61F2] dark:bg-[#A5B4FC] rounded-lg flex items-center justify-center">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="stroke-white dark:stroke-[#0D0D0D]" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
@@ -281,6 +336,7 @@
         <div>
           <p class="font-semibold mb-1 text-sm">Instant Family Link</p>
           <p class="text-xs text-gray-600 dark:text-gray-300">One-tap video call + automatic status sharing so remote family stays informed.</p>
+          <p class="text-xs text-[#5F61F2] dark:text-[#A5B4FC] mt-2 italic">Connection = Comfort</p>
         </div>
       </div>
       <div class="flex gap-4 p-5 bg-gray-50 dark:bg-[#1a1a1a] rounded-xl">
@@ -290,6 +346,7 @@
         <div>
           <p class="font-semibold mb-1 text-sm">Resource Hub</p>
           <p class="text-xs text-gray-600 dark:text-gray-300">Breathing exercises, ER FAQs, social worker access — turning wait time into grounding time.</p>
+          <p class="text-xs text-[#5F61F2] dark:text-[#A5B4FC] mt-2 italic">Support = Stability</p>
         </div>
       </div>
     </div>
@@ -307,9 +364,22 @@
     </div>
   </section>
 
+  <!-- Design System -->
+  <section class="max-w-4xl mx-auto px-6 mb-16">
+    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ ACTIONS — DESIGN SYSTEM</p>
+    <h2 class="text-3xl font-bold mb-5">Building the visual foundation</h2>
+    <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+      I built the Figma component library from scratch — colour tokens, typography scale, button states, navigation bars, and list items — with accessibility-first decisions throughout. Large tap targets, high-contrast text, and minimal cognitive load were built in from the start, not added later.
+    </p>
+    <figure class="my-6">
+      <img src="../assets/CalmER_components.png" alt="CalmER design system — components, colour palette, typography" class="w-full rounded-xl shadow-sm">
+      <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 text-center italic">Design system: colour palette, typography, buttons, navigation, and list components</figcaption>
+    </figure>
+  </section>
+
   <!-- Impact -->
   <section id="impact" class="max-w-4xl mx-auto px-6 mb-16">
-    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ IMPACT</p>
+    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ RESULTS</p>
     <h2 class="text-3xl font-bold mb-5">Health Track Top 3 — Innovation Jam</h2>
     <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
       CalmER was recognised as a Top 3 project in the Health track at the Michigan Tech Innovation Jam. The judges highlighted the emotional design approach — specifically the 3C framework and the decision to prioritise video calling over text updates — as standout contributions.
