@@ -1,6 +1,6 @@
 # Sophia Lin - UX Portfolio
 
-A clean, minimal portfolio website showcasing my UX research and design work.
+A clean, minimal portfolio website showcasing my UX research and design work. Built and maintained as a University of Michigan UMSI graduate.
 
 ## 🌐 Live Site
 
@@ -50,9 +50,13 @@ sophia-lin-portfolio/
 │   └── main.js         # Theme toggle and interactive scripts
 ├── assets/             # Static assets (images, icons, resume)
 └── projects/           # Individual project case study pages
+    ├── calmer.html          # CalmER – health tech ER companion app (Innovation Jam top 3)
+    ├── gm.html              # GMC Truck HMI – automotive IVI system (General Motors industry client)
+    ├── backyard-brains.html # Backyard Brains HHI – neuroscience EdTech mobile app (industry client)
+    ├── anchor.html          # Anchor – ADHD productivity mobile app
     ├── refine.html          # ReFine – peer-to-peer clothing rental platform
     ├── class-catalyst.html  # Class Catalyst – K-12 SEL platform research (academic partner)
-    ├── sceneo.html          # Sceneo – social ticketing app concept
+    ├── sceneo.html          # Sceneo – social ticketing app
     └── rural-access.html    # Digital Access for Rural Students – research & communications (academic partner)
 ```
 
@@ -72,7 +76,7 @@ sophia-lin-portfolio/
 
 ## 👤 Author
 
-**Sophia Lin**
+**Sophia Lin** — UX Designer & Researcher, University of Michigan UMSI graduate
 - 📧: sphjlin1203@gmail.com
 - 🔗: [linkedin.com/in/sphjlin](https://www.linkedin.com/in/sphjlin)
 - 💻: [github.com/sphjlin](https://github.com/sphjlin)
