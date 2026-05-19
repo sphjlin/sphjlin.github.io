@@ -726,7 +726,7 @@ body, header, main, footer, .btn-primary, .btn-outline, .input, .card, .faq, .na
 }
 
 .footer-copyright{
-  font-size:0.75rem;
+  font-size:0.875rem;
   color:#9ca3af;
   margin:0;
 }
@@ -1051,7 +1051,7 @@ body, header, main, footer, .btn-primary, .btn-outline, .input, .card, .faq, .na
   margin-top:1rem;
 }
 .project-tag{
-  font-size:0.75rem;
+  font-size:0.8125rem;
   padding:0.25rem 0.75rem;
   border-radius:9999px;
   font-weight:500;
@@ -1179,7 +1179,7 @@ body, header, main, footer, .btn-primary, .btn-outline, .input, .card, .faq, .na
   color: white;
   padding: 6px 12px;
   border-radius: 20px;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   box-shadow: 0 2px 8px rgba(95, 97, 242, 0.3);
   z-index: 10;
@@ -1210,7 +1210,7 @@ body, header, main, footer, .btn-primary, .btn-outline, .input, .card, .faq, .na
   border: 1px solid #fde68a;
   padding: 5px 10px;
   border-radius: 20px;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
   z-index: 10;
   transition: transform 0.2s ease;
@@ -1244,7 +1244,7 @@ body, header, main, footer, .btn-primary, .btn-outline, .input, .card, .faq, .na
 
 .gm-card-placeholder span {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1368,7 +1368,7 @@ body, header, main, footer, .btn-primary, .btn-outline, .input, .card, .faq, .na
   background:#5F61F2;
   color:white;
   font-family:'Plus Jakarta Sans', sans-serif;
-  font-size:11px;
+  font-size:13px;
   font-weight:600;
   letter-spacing:0.02em;
   white-space:nowrap;
