@@ -349,8 +349,8 @@ if (tocLinks.length > 0) {
     // Theme toggle — show what it will switch TO
     if (el.id === 'themeToggle' || el.closest('#themeToggle')) {
       return document.documentElement.classList.contains('dark')
-        ? 'Switch to light mode'
-        : 'Switch to dark mode';
+        ? 'Light mode'
+        : 'Dark mode';
     }
 
     // Nav links by id
