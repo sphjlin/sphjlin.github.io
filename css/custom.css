@@ -240,9 +240,19 @@ html.dark .hero-social-link:hover{
   }
 }
 .project-card-title{
-  font-size:1.5rem;
+  font-size:1.1rem;
   font-weight:700;
+  margin-bottom:0.25rem;
+  line-height:1.3;
+}
+.project-card-body{
+  font-size:0.875rem;
+  color:#6b7280;
+  line-height:1.55;
   margin-bottom:0.75rem;
+}
+.dark .project-card-body{
+  color:#9ca3af;
 }
 .project-card-meta{
   display:flex;
@@ -250,10 +260,14 @@ html.dark .hero-social-link:hover{
   align-items:flex-end;
 }
 .project-card-type{
-  color:#6b7280;
+  font-size:0.8125rem;
+  font-weight:500;
+  color:#5F61F2;
+  letter-spacing:0.03em;
+  margin-bottom:0.6rem;
 }
 .dark .project-card-type{
-  color:#d1d5db;
+  color:#A5B4FC;
 }
 .project-card-year{
   font-size:0.875rem;
@@ -1025,7 +1039,7 @@ body, header, main, footer, .btn-primary, .btn-outline, .input, .card, .faq, .na
   justify-content:center;
 }
 .featured-card-title{
-  font-size:2rem;
+  font-size:1.5rem;
   font-weight:700;
   margin-bottom:1rem;
   color:#111827;
