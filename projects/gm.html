@@ -217,12 +217,6 @@
       </div>
     </div>
 
-    <!-- Opening story -->
-    <div class="opening-story mt-8 mb-2">
-      <p class="opening-story-text">Jordan pulls into the driveway after a five-hour drive up north. He's been looking forward to this weekend at the lake house for weeks. But as he kills the engine, his shoulders are still tight, his eyes still on the road even when it's gone. He sits in the dark cab for a moment — not ready to go inside, not sure how to shift gears mentally. The truck got him here. But it didn't help him arrive.</p>
-      <p class="opening-story-hmw">How might we design the in-vehicle experience so that the moment you stop driving, the truck actively helps you decompress?</p>
-    </div>
-
     <!-- NDA Notice -->
     <div class="rounded-2xl p-6 mt-8" style="background: rgba(251,191,36,0.06); border: 1px solid rgba(251,191,36,0.25);">
       <div class="flex gap-3 items-start">
@@ -235,14 +229,6 @@
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- Mockup — shown immediately so recruiters see the final output first -->
-  <section class="max-w-6xl mx-auto px-6 mb-20 fade-up">
-    <figure>
-      <img src="../assets/gm_mockup.png" alt="GMC Truck HMI — Driver and Center Cluster Mockup" class="w-full rounded-2xl shadow-2xl">
-      <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 text-center italic">GMC Truck HMI — driver cluster and center display mockup</figcaption>
-    </figure>
   </section>
 
   <!-- TL;DR STAR Card -->
@@ -270,6 +256,14 @@
     </div>
   </section>
 
+  <!-- Mockup -->
+  <section class="max-w-6xl mx-auto px-6 mb-20 fade-up">
+    <figure>
+      <img src="../assets/gm_mockup.png" alt="GMC Truck HMI — Driver and Center Cluster Mockup" class="w-full rounded-2xl shadow-2xl">
+      <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 text-center italic">GMC Truck HMI — driver cluster and center display mockup</figcaption>
+    </figure>
+  </section>
+
   <hr class="section-divider max-w-6xl mx-auto px-6">
 
   <!-- Overview -->
@@ -277,13 +271,10 @@
     <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ SITUATION — OVERVIEW</p>
     <h2 class="text-3xl font-bold mb-5">Treating the car as one connected system</h2>
     <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-      Rather than designing each feature in isolation, we approached the Hummer EV as a <strong>system of systems</strong> — where the center display, driver cluster, and companion phone app share a consistent visual language and respond to each other contextually.
-    </p>
-    <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-      The team covered the full IVI scope: media, phone, navigation, vehicle controls, and driver cluster. I led the visual design direction across the project and was the primary Figma builder — establishing the component library, layout rules, and visual system the team built on top of.
+      The team covered the full IVI scope: media, phone, navigation, vehicle controls, and driver cluster. I led the visual design direction and was the primary Figma builder — establishing the component library, layout rules, and visual system everyone built on top of.
     </p>
     <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-      Beyond the core HMI, our team proposed two original features: <strong>Oasis Mode</strong> (in-car wellness) and <strong>Guardian Mode</strong> (remote vehicle security). This case study focuses on Oasis Mode, which I led end-to-end.
+      Beyond the core HMI, we proposed two original features: <strong>Oasis Mode</strong> (in-car wellness, my primary focus) and <strong>Guardian Mode</strong> (vehicle security, which I pivoted from an in-car screen to a companion phone app after identifying a use case mismatch).
     </p>
   </section>
 
@@ -491,13 +482,6 @@
           <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">Most wellness features just stop. We added a Session Complete screen showing heart rate delta and a drive-readiness signal. This closes the loop — the driver leaves with confirmation rather than uncertainty. It also builds trust in the feature over repeated use, turning a one-time novelty into a habit.</p>
         </div>
       </div>
-      <div class="flex gap-4">
-        <div class="flex-shrink-0 w-9 h-9 rounded-xl bg-[#ede9fe] dark:bg-[rgba(165,180,252,0.12)] flex items-center justify-center text-[#5F61F2] dark:text-[#A5B4FC] font-bold text-xs">04</div>
-        <div>
-          <p class="font-semibold text-sm mb-1">Cluster as the entry point, not just the display</p>
-          <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">Oasis Mode prompts surface in the driver cluster — where the driver is already looking — rather than on the center screen that requires a deliberate glance. The cluster and center display stay in sync throughout the session, so no information is siloed to one surface.</p>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -507,30 +491,21 @@
   <section class="max-w-6xl mx-auto px-6 mb-20 fade-up">
     <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ ALSO DESIGNED</p>
     <h2 class="text-3xl font-bold mb-2">Guardian Mode</h2>
-    <p class="text-base text-gray-500 dark:text-gray-400 mb-5">Companion phone app · secondary focus</p>
-    <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-      Our research found that women rank personal safety as their top unmet need in vehicle design — and the anxiety peaks not while driving, but when parked alone in an unfamiliar or low-lit location. Guardian Mode was designed for that moment: the walk from the car to the door, and the time spent away from it. It started as an HMI feature, but we realised the core use case is fundamentally a phone problem, not a dashboard problem. Moving it to a companion app made the experience more natural: the controls live where you already are when you need them.
-    </p>
-    <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-7">
-      I conceived the idea and designed the majority of the screens, covering four security states:
-    </p>
-    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
-      <div class="rounded-xl p-4 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5">
-        <p class="font-semibold text-sm mb-1">Walk Mode</p>
-        <p class="text-sm text-gray-500 dark:text-gray-400">Lights the approach path, activates cameras, lets you scan surroundings before approaching the vehicle</p>
-      </div>
-      <div class="rounded-xl p-4 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5">
-        <p class="font-semibold text-sm mb-1">Sentry Mode</p>
-        <p class="text-sm text-gray-500 dark:text-gray-400">Passive monitoring — detects motion and alerts your phone with camera footage in real time</p>
-      </div>
-      <div class="rounded-xl p-4 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5">
-        <p class="font-semibold text-sm mb-1">Occupied Mode</p>
-        <p class="text-sm text-gray-500 dark:text-gray-400">For resting in a parked Hummer — monitors cabin temperature and outside activity</p>
-      </div>
-      <div class="rounded-xl p-4 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5">
-        <p class="font-semibold text-sm mb-1">Alert &amp; Response</p>
-        <p class="text-sm text-gray-500 dark:text-gray-400">Threat detected → live cameras → pulse exterior lights or call 911 directly from the app</p>
-      </div>
+    <p class="text-base text-gray-500 dark:text-gray-400 mb-6">Companion phone app · secondary focus</p>
+
+    <div class="rounded-2xl p-7 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5 mb-8">
+      <p class="text-xs font-bold uppercase tracking-widest text-[#5F61F2] dark:text-[#A5B4FC] mb-3">Key pivot: mobile-first, not car-first</p>
+      <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+        Guardian Mode began as an in-car HMI feature, but the core safety moment happened <em>before</em> the driver re-entered the vehicle. I shifted the experience to a companion app so users could scan surroundings, receive alerts, view camera footage, and take action before approaching the car.
+      </p>
+    </div>
+
+    <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">Designed states</p>
+    <div class="flex flex-wrap gap-2">
+      <span class="chip-gray chip">Walk Mode</span>
+      <span class="chip-gray chip">Sentry Mode</span>
+      <span class="chip-gray chip">Occupied Mode</span>
+      <span class="chip-gray chip">Alert &amp; Response</span>
     </div>
   </section>
 
@@ -558,8 +533,8 @@
       <div class="flex gap-3">
         <div class="flex-shrink-0 w-1 self-stretch rounded-full bg-[#5F61F2] dark:bg-[#A5B4FC]"></div>
         <div>
-          <p class="font-semibold text-sm mb-1">Guardian Mode — concept origin</p>
-          <p class="text-sm text-gray-600 dark:text-gray-300">Initiated the Guardian Mode concept, identifying personal safety while parked alone as the key unmet need from our research.</p>
+          <p class="font-semibold text-sm mb-1">Guardian Mode — concept &amp; mobile pivot</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Originated the Guardian Mode concept from research and designed the majority of screens. Identified the use case mismatch early — the core safety moment happens before re-entering the car — and pivoted from in-car HMI to a companion phone app.</p>
         </div>
       </div>
       <div class="flex gap-3">

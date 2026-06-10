@@ -44,3 +44,6 @@ build/
 
 # Other
 *.cache
+
+# Local working files — not for deployment
+temp large file/
