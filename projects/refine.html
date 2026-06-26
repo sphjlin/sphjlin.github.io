@@ -141,19 +141,27 @@
     </div>
   </section>
 
-  <!-- Content Section -->
-  <section class="max-w-4xl mx-auto px-6">
+  <!-- Content Layout: TOC + Content -->
+  <div class="flex gap-8 max-w-7xl mx-auto px-6">
+
+    <!-- Sticky TOC (desktop only) -->
+    <aside class="hidden lg:block w-64 flex-shrink-0">
+      <nav class="sticky top-24 space-y-2">
+        <p class="text-sm font-bold text-gray-900 dark:text-white mb-3">Contents</p>
+        <a href="#situation" class="toc-link">Situation</a>
+        <a href="#task" class="toc-link">Task</a>
+        <a href="#actions" class="toc-link">Process</a>
+        <a href="#results" class="toc-link">Results</a>
+        <a href="#reflection" class="toc-link">Reflection</a>
+      </nav>
+    </aside>
+
+    <div class="flex-1 min-w-0">
 
     <hr class="my-10 border-gray-300 dark:border-gray-700">
 
-    <!-- TL;DR STAR Card -->
-    <div class="rounded-2xl p-8 mb-16" style="background:rgba(95,97,242,0.04);border:1px solid rgba(95,97,242,0.12);">
-      <p class="text-sm font-bold text-[#5F61F2] dark:text-[#A5B4FC] mb-3">TL;DR — AT A GLANCE</p>
-      <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">Peer rental fails because existing apps optimize for one side. I designed ReFine to work for both lenders and renters — iterated from sketches to hi-fi through three feedback rounds, with trust signals, dual ratings, and in-app messaging that competing platforms handle separately.</p>
-    </div>
-
     <!-- Situation -->
-    <div class="mb-16">
+    <section id="situation" class="mb-16">
       <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ SITUATION</p>
       <h2 class="text-3xl font-bold mb-5 text-black dark:text-white">The trust gap in peer rental</h2>
       <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
@@ -179,10 +187,10 @@
           </ul>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- Task -->
-    <div class="mb-16">
+    <section id="task" class="mb-16">
       <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ TASK</p>
       <h2 class="text-3xl font-bold mb-5 text-black dark:text-white">Design for both sides of the exchange</h2>
       <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
@@ -205,10 +213,10 @@
           <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 text-center italic">Seller-side flows (create listing, selling) and community interaction flow</figcaption>
         </figure>
       </div>
-    </div>
+    </section>
 
     <!-- Actions -->
-    <div class="mb-16">
+    <section id="actions" class="mb-16">
       <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ ACTIONS</p>
       <h2 class="text-3xl font-bold mb-6 text-black dark:text-white">Research → sketches → hi-fi, in three rounds</h2>
 
@@ -236,10 +244,10 @@
         <img src="../assets/refine_hifi.png" alt="ReFine hi-fi prototype" class="w-full rounded-xl shadow-sm">
         <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 text-center italic">Hi-fi prototype — refined trust signals, verified profiles, and dual-sided flows</figcaption>
       </figure>
-    </div>
+    </section>
 
     <!-- Results -->
-    <div class="mb-16">
+    <section id="results" class="mb-16">
       <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ RESULTS</p>
       <h2 class="text-3xl font-bold mb-5 text-black dark:text-white">A marketplace built on mutual accountability</h2>
       <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
@@ -248,18 +256,41 @@
       <div class="grid md:grid-cols-3 gap-4 mb-8">
         <div class="p-5 rounded-xl bg-gray-50 dark:bg-[#1a1a1a]">
           <p class="font-semibold text-sm mb-2">Verified profiles</p>
-          <p class="text-xs text-gray-600 dark:text-gray-300">University email verification links listings to real people — reducing anonymity-driven risk on both sides.</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">University email verification links listings to real people — reducing anonymity-driven risk on both sides.</p>
         </div>
         <div class="p-5 rounded-xl bg-gray-50 dark:bg-[#1a1a1a]">
           <p class="font-semibold text-sm mb-2">Dual rating system</p>
-          <p class="text-xs text-gray-600 dark:text-gray-300">Renters and lenders each rate the transaction. Public ratings create accountability without a formal dispute system.</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Renters and lenders each rate the transaction. Public ratings create accountability without a formal dispute system.</p>
         </div>
         <div class="p-5 rounded-xl bg-gray-50 dark:bg-[#1a1a1a]">
           <p class="font-semibold text-sm mb-2">In-app messaging</p>
-          <p class="text-xs text-gray-600 dark:text-gray-300">Pre-rental chat lets renters ask about fit or condition — and lets lenders screen requests before approving.</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Pre-rental chat lets renters ask about fit or condition — and lets lenders screen requests before approving.</p>
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Reflection -->
+    <section id="reflection" class="mb-16">
+      <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ REFLECTION</p>
+      <h2 class="text-3xl font-bold mb-5 text-black dark:text-white">What designing for trust taught me</h2>
+      <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+        ReFine was one of the first projects where I felt the weight of designing for <em>both sides</em> of a transaction simultaneously. Most consumer apps I'd studied optimised for one user type — ReFine couldn't.
+      </p>
+      <div class="space-y-4 mb-6">
+        <div class="border-l-4 border-[#5F61F2] pl-5">
+          <p class="font-semibold mb-1">Trust is a system problem, not a feature</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">I initially tried to solve trust with a single "verified badge." Research quickly showed that trust in a rental context is cumulative — it requires verified identity, transaction history, clear dispute resolution, and in-app communication all working together. No single feature was enough. The insight shifted how I think about designing for any two-sided marketplace.</p>
+        </div>
+        <div class="border-l-4 border-[#5F61F2] pl-5">
+          <p class="font-semibold mb-1">Designing for lenders changed the renter experience</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">The most unexpected discovery: when lenders felt more in control (approval flows, blocking, detailed condition requirements), renters trusted the listings more. The features that served lenders directly improved renter confidence. That feedback loop wasn't in my original model — I had to discover it through iteration.</p>
+        </div>
+        <div class="border-l-4 border-[#5F61F2] pl-5">
+          <p class="font-semibold mb-1">If I had more time</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">I'd want to run moderated usability tests with real lenders — someone trying to list an actual piece of clothing — to see where the listing flow breaks down. I also never tested the dispute resolution path, which was designed but not user-validated. That's the highest-stakes flow in the whole product and the one I have the least confidence in.</p>
+        </div>
+      </div>
+    </section>
 
     <!-- Prototype CTA -->
     <div class="mt-8 p-8 bg-gradient-to-r from-[#5F61F2]/10 to-[#A5B4FC]/10 dark:from-[#5F61F2]/20 dark:to-[#A5B4FC]/20 rounded-2xl border border-[#5F61F2]/20 dark:border-[#A5B4FC]/20">
@@ -285,7 +316,9 @@
         </a>
       </div>
     </div>
-  </section>
+
+    </div><!-- end flex-1 content -->
+  </div><!-- end flex layout -->
 
   <!-- Project Navigation -->
   <section class="max-w-6xl mx-auto px-6 mt-20 mb-8">

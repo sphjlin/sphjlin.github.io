@@ -231,14 +231,6 @@
     </div>
   </section>
 
-  <!-- TL;DR STAR Card -->
-  <section class="max-w-4xl mx-auto px-6 mb-12 fade-up">
-    <div class="rounded-2xl p-8" style="background:rgba(95,97,242,0.04);border:1px solid rgba(95,97,242,0.12);">
-      <p class="text-sm font-bold text-[#5F61F2] dark:text-[#A5B4FC] mb-3">TL;DR — AT A GLANCE</p>
-      <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">GM client project: I owned the visual language and Figma component system for a next-gen GMC truck HMI, and led Guardian Mode — a personal safety feature I pivoted from in-car screen to phone app after catching a use case mismatch early in design critique.</p>
-    </div>
-  </section>
-
   <!-- Mockup -->
   <section class="max-w-6xl mx-auto px-6 mb-20 fade-up">
     <figure>
@@ -249,8 +241,27 @@
 
   <hr class="section-divider max-w-6xl mx-auto px-6">
 
+  <!-- Main content with TOC sidebar -->
+  <div class="flex gap-8 max-w-7xl mx-auto px-6">
+
+    <!-- Sticky TOC (desktop only) -->
+    <aside class="hidden lg:block w-64 flex-shrink-0">
+      <nav class="sticky top-24 space-y-2">
+        <p class="text-sm font-bold text-gray-900 dark:text-white mb-3">Contents</p>
+        <a href="#overview" class="toc-link">Overview</a>
+        <a href="#scope" class="toc-link">Design Scope</a>
+        <a href="#process" class="toc-link">Process</a>
+        <a href="#oasis" class="toc-link">Oasis Mode</a>
+        <a href="#guardian" class="toc-link">Guardian Mode</a>
+        <a href="#contributions" class="toc-link">Contributions</a>
+        <a href="#reflection" class="toc-link">Reflection</a>
+      </nav>
+    </aside>
+
+    <div class="flex-1 min-w-0">
+
   <!-- Overview -->
-  <section class="max-w-6xl mx-auto px-6 mb-20 fade-up">
+  <section id="overview" class="mb-20 fade-up">
     <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ SITUATION — OVERVIEW</p>
     <h2 class="text-3xl font-bold mb-5">Treating the car as one connected system</h2>
     <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
@@ -262,7 +273,7 @@
   </section>
 
   <!-- Scope -->
-  <section class="max-w-6xl mx-auto px-6 mb-20 fade-up">
+  <section id="scope" class="mb-20 fade-up">
     <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ DESIGN SCOPE</p>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
       <div class="rounded-xl p-5 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5">
@@ -301,7 +312,7 @@
   <hr class="section-divider max-w-6xl mx-auto px-6">
 
   <!-- Process -->
-  <section class="max-w-6xl mx-auto px-6 mb-20 fade-up">
+  <section id="process" class="mb-20 fade-up">
     <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ ACTIONS — PROCESS</p>
     <h2 class="text-3xl font-bold mb-5">From driver context to full system</h2>
     <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
@@ -361,7 +372,7 @@
   <hr class="section-divider max-w-6xl mx-auto px-6">
 
   <!-- Oasis Mode Deep Dive -->
-  <section class="max-w-6xl mx-auto px-6 mb-20 fade-up">
+  <section id="oasis" class="mb-20 fade-up">
     <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ RESULTS — FEATURE DEEP DIVE</p>
     <h2 class="text-3xl font-bold mb-2">Oasis Mode</h2>
     <p class="text-lg text-gray-500 dark:text-gray-400 mb-10">Turning the Hummer EV into a personal recovery space</p>
@@ -471,7 +482,7 @@
   <hr class="section-divider max-w-6xl mx-auto px-6">
 
   <!-- Guardian Mode brief -->
-  <section class="max-w-6xl mx-auto px-6 mb-20 fade-up">
+  <section id="guardian" class="mb-20 fade-up">
     <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ ALSO DESIGNED</p>
     <h2 class="text-3xl font-bold mb-2">Guardian Mode</h2>
     <p class="text-base text-gray-500 dark:text-gray-400 mb-6">Companion phone app · secondary focus</p>
@@ -495,7 +506,7 @@
   <hr class="section-divider max-w-6xl mx-auto px-6">
 
   <!-- My Contributions -->
-  <section class="max-w-6xl mx-auto px-6 mb-20 fade-up">
+  <section id="contributions" class="mb-20 fade-up">
     <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ MY CONTRIBUTIONS</p>
     <h2 class="text-3xl font-bold mb-8">What I owned</h2>
     <div class="grid md:grid-cols-2 gap-x-12 gap-y-6">
@@ -529,6 +540,43 @@
       </div>
     </div>
   </section>
+
+  <hr class="section-divider max-w-6xl mx-auto px-6">
+
+  <!-- Reflection -->
+  <section id="reflection" class="mb-20 fade-up">
+    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ REFLECTION</p>
+    <h2 class="text-3xl font-bold mb-5">What designing for a real client taught me</h2>
+    <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
+      The GM engagement was the first time I'd designed under a real client constraint — not just a class brief, but actual NDA terms, scheduled milestone reviews, and a team that would present to GM design leads. That pressure changed how I made decisions.
+    </p>
+    <div class="space-y-6">
+      <div class="flex gap-4">
+        <div class="flex-shrink-0 w-9 h-9 rounded-xl bg-[#ede9fe] dark:bg-[rgba(165,180,252,0.12)] flex items-center justify-center text-[#5F61F2] dark:text-[#A5B4FC] font-bold text-xs">01</div>
+        <div>
+          <p class="font-semibold text-sm mb-1">The use case matters more than the medium</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">The Guardian Mode pivot was the most important design decision I made in this project. The original brief assumed security features belonged in the HMI — but thinking through the actual safety scenario made it obvious: if someone feels unsafe approaching their vehicle, their phone is what they reach for, not an in-car screen they can't access yet. Catching that mismatch early saved a full round of rework and became a stronger concept for the client presentation.</p>
+        </div>
+      </div>
+      <div class="flex gap-4">
+        <div class="flex-shrink-0 w-9 h-9 rounded-xl bg-[#ede9fe] dark:bg-[rgba(165,180,252,0.12)] flex items-center justify-center text-[#5F61F2] dark:text-[#A5B4FC] font-bold text-xs">02</div>
+        <div>
+          <p class="font-semibold text-sm mb-1">A component system is a communication tool</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">Building the shared Figma component library early wasn't just an efficiency decision — it was how the team stayed aligned across a system with 40+ screens. When someone asked "should this button be primary or secondary?", the answer was already in the library. I came out of this project with a much clearer view of when a component system pays off versus when it adds overhead for smaller projects.</p>
+        </div>
+      </div>
+      <div class="flex gap-4">
+        <div class="flex-shrink-0 w-9 h-9 rounded-xl bg-[#ede9fe] dark:bg-[rgba(165,180,252,0.12)] flex items-center justify-center text-[#5F61F2] dark:text-[#A5B4FC] font-bold text-xs">03</div>
+        <div>
+          <p class="font-semibold text-sm mb-1">If I had more time</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">I'd want to test Oasis Mode's preset structure with actual drivers — particularly the naming and ordering of presets, and whether the recovery summary screen lands as useful or as data overload. The 3D seat interaction model is the feature I'm most proud of conceptually, but it also needs the most real-world validation: does tapping a physical rendering feel intuitive in a car context, or does it require more visual explanation?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    </div><!-- end flex-1 content -->
+  </div><!-- end flex layout -->
 
   <hr class="section-divider max-w-6xl mx-auto px-6">
 

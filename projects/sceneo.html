@@ -141,19 +141,28 @@
   </section>
 
   <!-- Content Section -->
-  <section class="max-w-4xl mx-auto px-6">
+  <div class="flex gap-8 max-w-7xl mx-auto px-6">
+
+    <!-- Sticky TOC (desktop only) -->
+    <aside class="hidden lg:block w-64 flex-shrink-0">
+      <nav class="sticky top-24 space-y-2">
+        <p class="text-sm font-bold text-gray-900 dark:text-white mb-3">Contents</p>
+        <a href="#situation" class="toc-link">Situation</a>
+        <a href="#research" class="toc-link">Research</a>
+        <a href="#competitive" class="toc-link">Competitive Analysis</a>
+        <a href="#actions" class="toc-link">Process</a>
+        <a href="#results" class="toc-link">Reflection</a>
+      </nav>
+    </aside>
+
+    <div class="flex-1 min-w-0">
 
     <hr class="my-10 border-gray-300 dark:border-gray-700">
 
-    <!-- TL;DR STAR Card -->
-    <div class="rounded-2xl p-8 mb-16" style="background:rgba(95,97,242,0.04);border:1px solid rgba(95,97,242,0.12);">
-      <p class="text-sm font-bold text-[#5F61F2] dark:text-[#A5B4FC] mb-3">TL;DR — AT A GLANCE</p>
-      <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">Theater plans fall through because discovery, seating, friend coordination, and cost splitting live across four different apps. I designed Sceneo solo — from 3 user interviews through hi-fi — to unify all of it, building exactly the features interviewees said were missing.</p>
-    </div>
-
     <!-- Situation -->
-    <div class="mb-16">
+    <section id="situation" class="mb-16">
       <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ SITUATION</p>
+
       <h2 class="text-3xl font-bold mb-5 text-black dark:text-white">Too much friction between "I want to go" and "I have tickets"</h2>
       <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
         Students who enjoy live theater face a surprisingly fragmented planning experience. Listings are on one site, seat previews on another, friend recommendations in a group chat, and ticket splitting requires switching to a payment app. The result: decision fatigue, dropped conversations, and plans that never materialise.
@@ -180,17 +189,80 @@
       </div>
     </div>
 
-    <!-- Task -->
-    <div class="mb-16">
+    <!-- Research -->
+    <section id="research" class="mb-16">
       <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ TASK</p>
       <h2 class="text-3xl font-bold mb-5 text-black dark:text-white">Make going to a show feel as easy as going to a movie</h2>
-      <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+      <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
         I conducted <strong>3 semi-structured interviews</strong> with student theatergoers — asking about their process for finding shows, choosing seats, and coordinating with friends. I also drew on my own experience as a regular musical attendee to pressure-test findings. Themes were synthesized into two personas and a user journey map that tracked emotions from discovery through post-show.
       </p>
+
+      <!-- Research quotes -->
+      <div class="space-y-4 mb-8">
+        <div class="rounded-xl p-5" style="background:rgba(95,97,242,0.04);border-left:3px solid #5F61F2;">
+          <p class="text-sm text-gray-600 dark:text-gray-300 italic mb-2">"I usually end up on three different websites before I can even figure out which shows are happening this week. By the time I've compared them, I'm too tired to actually buy."</p>
+          <p class="text-xs text-gray-400 dark:text-gray-500">— Interviewee, 21, frequent theatergoer</p>
+        </div>
+        <div class="rounded-xl p-5" style="background:rgba(95,97,242,0.04);border-left:3px solid #5F61F2;">
+          <p class="text-sm text-gray-600 dark:text-gray-300 italic mb-2">"Splitting the tickets is always awkward. Someone pays for everyone and then we're chasing them on Venmo for a week. It kills the vibe."</p>
+          <p class="text-xs text-gray-400 dark:text-gray-500">— Interviewee, 22, goes to shows in groups of 4–5</p>
+        </div>
+        <div class="rounded-xl p-5" style="background:rgba(95,97,242,0.04);border-left:3px solid #5F61F2;">
+          <p class="text-sm text-gray-600 dark:text-gray-300 italic mb-2">"I genuinely cannot tell if a seat is good until I'm sitting in it. I've been disappointed too many times to buy anything above row M without a seat view."</p>
+          <p class="text-xs text-gray-400 dark:text-gray-500">— Interviewee, 20, attends 2–3 shows per semester</p>
+        </div>
+      </div>
+
+      <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Key themes from research</p>
+      <div class="grid md:grid-cols-3 gap-3">
+        <div class="rounded-xl p-4 bg-gray-50 dark:bg-[#1a1a1a] text-center">
+          <p class="text-2xl font-bold text-[#5F61F2] dark:text-[#A5B4FC]">3/3</p>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 leading-tight">used multiple platforms to find and compare shows</p>
+        </div>
+        <div class="rounded-xl p-4 bg-gray-50 dark:bg-[#1a1a1a] text-center">
+          <p class="text-2xl font-bold text-[#5F61F2] dark:text-[#A5B4FC]">#1</p>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 leading-tight">friction point: seat quality unknown before purchase</p>
+        </div>
+        <div class="rounded-xl p-4 bg-gray-50 dark:bg-[#1a1a1a] text-center">
+          <p class="text-2xl font-bold text-[#5F61F2] dark:text-[#A5B4FC]">100%</p>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 leading-tight">coordinated via group chats — no shared decision layer</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Competitive Analysis -->
+    <section id="competitive" class="mb-16">
+      <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ COMPETITIVE ANALYSIS</p>
+      <h2 class="text-3xl font-bold mb-5 text-black dark:text-white">What existing platforms get right — and wrong</h2>
+      <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+        I audited the three most-used platforms among interviewees: TodayTix, StubHub, and Goldstar. Each covers part of the experience but none integrates social coordination or built-in cost splitting.
+      </p>
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="rounded-xl p-5 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5">
+          <p class="font-semibold text-sm mb-1">TodayTix</p>
+          <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] font-semibold mb-2">Strong: last-minute discovery, clean UI</p>
+          <p class="text-sm text-gray-500 dark:text-gray-400">Weak: no seat preview, no social layer, no splitting</p>
+        </div>
+        <div class="rounded-xl p-5 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5">
+          <p class="font-semibold text-sm mb-1">StubHub</p>
+          <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] font-semibold mb-2">Strong: wide inventory, seat maps</p>
+          <p class="text-sm text-gray-500 dark:text-gray-400">Weak: overwhelming interface, resale pricing confusing, no friend features</p>
+        </div>
+        <div class="rounded-xl p-5 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5">
+          <p class="font-semibold text-sm mb-1">Goldstar</p>
+          <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] font-semibold mb-2">Strong: discounted student tickets</p>
+          <p class="text-sm text-gray-500 dark:text-gray-400">Weak: dated UX, no social discovery, no group coordination</p>
+        </div>
+      </div>
+      <div class="mt-4 rounded-xl p-4" style="background:rgba(95,97,242,0.04);border:1px solid rgba(95,97,242,0.12);">
+        <p class="text-sm text-gray-600 dark:text-gray-300"><strong class="text-[#5F61F2] dark:text-[#A5B4FC]">The gap:</strong> No existing platform combines discovery, social coordination, visual seat preview, and cost splitting. Users currently switch between 3–4 tools to complete one booking.</p>
+      </div>
     </div>
 
+    </section>
+
     <!-- Actions -->
-    <div class="mb-16">
+    <section id="actions" class="mb-16">
       <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ ACTIONS</p>
       <h2 class="text-3xl font-bold mb-6 text-black dark:text-white">Lo-fi to hi-fi through three rounds of feedback</h2>
 
@@ -218,8 +290,9 @@
         <img src="../assets/sceneo_hifi.png" alt="Sceneo hi-fi prototype" class="w-full rounded-xl shadow-sm">
         <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 text-center italic">Hi-fi prototype — unified listings, visual seat preview, friend recommendations, and ticket splitting</figcaption>
       </figure>
-    </div>
+    </section>
 
+    <section id="results" class="mb-16">
     <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ RESULTS</p>
     <h2 class="text-3xl font-bold mb-5 text-black dark:text-white">Outcome & Reflection</h2>
 
@@ -248,13 +321,27 @@
       </div>
     </div>
 
-    <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-      After revisiting the PRD, I simplified the "friends reaction" feature, improved Venmo-style cost sharing, and made the seat preview load faster. These changes made the app feel smoother and more realistic for student use.
+    <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+      After revisiting the PRD, I simplified the "friends reaction" feature, improved Venmo-style cost splitting, and refined the seat preview interaction. These changes made the app feel smoother and more realistic for actual student use cases.
     </p>
-    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-      I learned that even entertainment apps rely heavily on trust and clarity. Simple visual fixes—like better spacing and seat previews—can remove a lot of user stress. Feedback helped me see the gaps in hierarchy and consistency, and user research showed me how social planning plays a big role in students' decisions.
-    </p>
-  </section>
+
+    <div class="space-y-4 mb-8">
+      <div class="border-l-4 border-[#5F61F2] pl-5">
+        <p class="font-semibold mb-1">Social features need structure, not just a feed</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">Early versions of the friend activity feed were too open-ended — it wasn't clear what a "reaction" to a show meant or how it drove decisions. I narrowed the feature to friend-attended shows and explicit recommendations, which made the social layer feel purposeful rather than decorative.</p>
+      </div>
+      <div class="border-l-4 border-[#5F61F2] pl-5">
+        <p class="font-semibold mb-1">Hierarchy is the design problem, not decoration</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">The three feedback rounds all circled back to the same issue: users couldn't scan quickly enough. Most of my iteration time was spent on information hierarchy — deciding what to show first, what to hide behind a tap, and what could be cut entirely. Visual polish came last and mostly took care of itself once hierarchy was right.</p>
+      </div>
+      <div class="border-l-4 border-[#5F61F2] pl-5">
+        <p class="font-semibold mb-1">If I had more time</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">I'd want to run usability testing on the group-booking flow specifically — coordinating multiple ticket holders is the most complex interaction in the app, and I have lower confidence in that flow than in the browsing and seat selection experiences. I'd also explore integrating with Apple Wallet or Eventbrite's API rather than building ticket management from scratch.</p>
+      </div>
+    </section>
+
+    </div><!-- end flex-1 content -->
+  </div><!-- end flex layout -->
 
   <!-- Project Navigation -->
   <section class="max-w-6xl mx-auto px-6 mt-20 mb-8">

@@ -140,32 +140,38 @@
     </div>
   </section>
 
-  <!-- Content -->
-  <section class="max-w-4xl mx-auto px-6">
+  <!-- Content Layout: TOC + Content -->
+  <div class="flex gap-8 max-w-7xl mx-auto px-6">
 
-    <hr class="my-10 border-gray-300 dark:border-gray-700">
+    <!-- Sticky TOC (desktop only) -->
+    <aside class="hidden lg:block w-64 flex-shrink-0">
+      <nav class="sticky top-24 space-y-2">
+        <p class="text-sm font-bold text-gray-900 dark:text-white mb-3">Contents</p>
+        <a href="#situation" class="toc-link">Situation</a>
+        <a href="#research" class="toc-link">Research Process</a>
+        <a href="#insights" class="toc-link">Key Insights</a>
+        <a href="#recommendations" class="toc-link">Recommendations</a>
+        <a href="#impact" class="toc-link">Impact</a>
+      </nav>
+    </aside>
 
-    <!-- TL;DR STAR Card -->
-    <div class="rounded-2xl p-8 mb-10" style="background:rgba(95,97,242,0.04);border:1px solid rgba(95,97,242,0.12);">
-      <p class="text-sm font-bold text-[#5F61F2] dark:text-[#A5B4FC] mb-3">TL;DR — AT A GLANCE</p>
-      <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">K–12 SEL platform Class Catalyst had thousands of users but no evidence of where it was failing teachers. I ran a 5-method research evaluation (interviews, survey, competitive analysis, heuristic eval, usability testing) and delivered four prioritized design recommendations directly to their product team.</p>
-    </div>
+    <div class="flex-1 min-w-0">
 
     <hr class="my-10 border-gray-300 dark:border-gray-700">
 
     <!-- Overview -->
-    <div class="mb-10">
+    <section id="situation" class="mb-10">
       <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ SITUATION</p>
       <h2 class="text-3xl font-bold mb-4 text-black dark:text-white">Evaluating a K–12 SEL platform used by thousands of teachers</h2>
       <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
         Class Catalyst is a social-emotional learning platform that helps K–12 teachers run emotional check-ins, monitor student well-being, and track engagement over time. Through a course-based industry partnership, our 4-person team was paired directly with Class Catalyst as a real client — conducting a full UX research evaluation and delivering prioritized, actionable recommendations to their product team.
       </p>
-    </div>
+    </section>
 
     <hr class="my-10 border-gray-300 dark:border-gray-700">
 
     <!-- Research Process -->
-    <div class="mb-10">
+    <section id="research" class="mb-10">
       <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ ACTIONS — RESEARCH PROCESS</p>
       <h2 class="text-3xl font-bold mb-6 text-black dark:text-white">Five methods, one converging picture</h2>
       <div class="space-y-5">
@@ -205,12 +211,12 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <hr class="my-10 border-gray-300 dark:border-gray-700">
 
     <!-- Key Insights -->
-    <div class="mb-10">
+    <section id="insights" class="mb-10">
       <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ ACTIONS — KEY INSIGHTS</p>
       <h2 class="text-3xl font-bold mb-6 text-black dark:text-white">What teachers actually need</h2>
       <div class="grid md:grid-cols-2 gap-4">
@@ -231,12 +237,12 @@
           <p class="text-sm text-gray-600 dark:text-gray-300">Teachers think: Class → Student → This week. The current IA forced multiple detours to reach individual student data during active class periods.</p>
         </div>
       </div>
-    </div>
+    </section>
 
     <hr class="my-10 border-gray-300 dark:border-gray-700">
 
     <!-- Recommendations -->
-    <div class="mb-10">
+    <section id="recommendations" class="mb-10">
       <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ RESULTS — RECOMMENDATIONS</p>
       <h2 class="text-3xl font-bold mb-6 text-black dark:text-white">What we delivered to the product team</h2>
       <div class="space-y-4">
@@ -269,12 +275,12 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <hr class="my-10 border-gray-300 dark:border-gray-700">
 
     <!-- Impact & Reflection -->
-    <div class="mb-10">
+    <section id="impact" class="mb-10">
       <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ RESULTS — IMPACT</p>
       <h2 class="text-3xl font-bold mb-5 text-black dark:text-white">Formal research handoff to Class Catalyst</h2>
       <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
@@ -283,23 +289,24 @@
       <div class="grid grid-cols-3 gap-4 mb-8">
         <div class="rounded-xl p-4 text-center" style="background:rgba(95,97,242,0.07);border:1px solid rgba(95,97,242,0.15);">
           <p class="text-2xl font-bold text-[#5F61F2] dark:text-[#A5B4FC] mb-1">5</p>
-          <p class="text-xs text-gray-600 dark:text-gray-300">Research methods</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Research methods</p>
         </div>
         <div class="rounded-xl p-4 text-center" style="background:rgba(95,97,242,0.07);border:1px solid rgba(95,97,242,0.15);">
           <p class="text-2xl font-bold text-[#5F61F2] dark:text-[#A5B4FC] mb-1">12</p>
-          <p class="text-xs text-gray-600 dark:text-gray-300">Participants across all methods</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Participants across all methods</p>
         </div>
         <div class="rounded-xl p-4 text-center" style="background:rgba(95,97,242,0.07);border:1px solid rgba(95,97,242,0.15);">
           <p class="text-2xl font-bold text-[#5F61F2] dark:text-[#A5B4FC] mb-1">4</p>
-          <p class="text-xs text-gray-600 dark:text-gray-300">Prioritized recommendations delivered</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Prioritized recommendations delivered</p>
         </div>
       </div>
       <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
         This project reinforced that research value comes from the handoff — findings that don't reach the right people in a usable format don't change anything. Synthesizing across five methods also taught me when to trust qualitative signals over quantitative ones, and how to frame trade-offs for a product team rather than just listing problems.
       </p>
-    </div>
+    </section>
 
-  </section>
+    </div><!-- end flex-1 content -->
+  </div><!-- end flex layout -->
 
     <!-- Project Navigation -->
   <section class="max-w-6xl mx-auto px-6 mt-20 mb-8">
