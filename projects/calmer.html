@@ -51,10 +51,15 @@
     html:not(.dark) .bg-\[\#5F61F2\] p,
     html:not(.dark) .bg-\[\#5F61F2\] strong { color: white !important; }
     /* Prototype button text colors */
-    html:not(.dark) a.bg-\[\#5F61F2\].text-white { color: white !important; }
-    html.dark a.dark\:bg-\[\#A5B4FC\].dark\:text-\[\#0D0D0D\] { color: #0D0D0D !important; }
+    html:not(.dark) a.bg-\[\#5F61F2\] { color: white !important; }
+    html:not(.dark) a.bg-\[\#5F61F2\] svg { stroke: white !important; }
+    html.dark a.dark\:bg-\[\#A5B4FC\] { color: #0D0D0D !important; }
+    /* Prototype button inline style dark mode override */
+    html.dark a[style*="background-color:#5F61F2"] { background-color: #A5B4FC !important; color: #0D0D0D !important; }
+    html:not(.dark) .text-gray-900 { color: #111827 !important; }
     html:not(.dark) .text-gray-600 { color: #4b5563 !important; }
     html:not(.dark) .text-gray-500 { color: #6b7280 !important; }
+    html:not(.dark) .text-gray-400 { color: #9ca3af !important; }
     html:not(.dark) .text-\[\#5F61F2\] { color: #5F61F2 !important; }
     html:not(.dark) .bg-gray-50 { background-color: #f9fafb !important; }
     html:not(.dark) .bg-white { background-color: white !important; }
@@ -69,6 +74,8 @@
     html.dark .dark\:bg-\[\#A5B4FC\] strong { color: #0D0D0D !important; }
     html.dark .text-\[\#5F61F2\] { color: #A5B4FC !important; }
     html.dark .dark\:text-\[\#A5B4FC\] { color: #A5B4FC !important; }
+    /* Research rows: Constraint column dark mode background */
+    html.dark div[style="background-color:#f3f4f6"] { background-color: #161616 !important; }
     /* SVG stroke colors */
     .stroke-white { stroke: white !important; }
     html.dark .dark\:stroke-\[\#0D0D0D\] { stroke: #0D0D0D !important; }
@@ -121,8 +128,10 @@
         <p class="text-sm font-bold text-gray-900 dark:text-white mb-3">Contents</p>
         <a href="#overview" class="toc-link">Overview</a>
         <a href="#research" class="toc-link">Research</a>
+        <a href="#competitive" class="toc-link">Competitive Analysis</a>
         <a href="#framework" class="toc-link">3C Framework</a>
         <a href="#features" class="toc-link">Key Features</a>
+        <a href="#design-system" class="toc-link">Design System</a>
         <a href="#impact" class="toc-link">Impact</a>
         <a href="#reflection" class="toc-link">Reflection</a>
       </nav>
@@ -167,39 +176,36 @@
     <!-- Opening story -->
     <div class="opening-story mb-10">
       <p class="opening-story-text">An older woman comes to the ER alone. A nurse takes her vitals and tells her to take a seat. An hour passes. Then another. No updates, no indication of where she is in the queue, no one to ask without feeling like a burden. Eventually she decides it's probably not that serious — and quietly heads home. The wait itself wasn't the problem. Not knowing was.</p>
-      <p class="opening-story-hmw">How might we help older adults feel informed and cared for during long ER waits — not just physically, but emotionally?</p>
     </div>
+
+    <p class="opening-story-hmw mb-0">How might we help older adults feel informed and cared for during long ER waits — not just physically, but emotionally?</p>
 
   </section>
 
   <!-- TL;DR STAR Card -->
   <section class="max-w-4xl mx-auto px-6 mb-16">
     <div class="rounded-2xl p-8" style="background:rgba(95,97,242,0.04);border:1px solid rgba(95,97,242,0.12);">
-      <p class="text-sm font-bold text-[#5F61F2] dark:text-[#A5B4FC] mb-4">TL;DR — AT A GLANCE</p>
-      <div class="grid md:grid-cols-2 gap-6">
+      <p class="text-sm font-bold text-[#5F61F2] dark:text-[#A5B4FC] mb-5">TL;DR — AT A GLANCE</p>
+      <div class="grid md:grid-cols-2 gap-x-8 gap-y-4">
         <div>
           <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mb-1 uppercase tracking-wider">Situation</p>
-          <p class="text-sm text-gray-600 dark:text-gray-300">Seniors in ER waiting rooms face 6+ hour waits with no updates — the uncertainty compounds anxiety more than the wait itself. 33 million seniors visit ERs each year, often alone.</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Seniors wait 6+ hours in ERs alone with no updates — the uncertainty causes more anxiety than the wait itself.</p>
         </div>
         <div>
           <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mb-1 uppercase tracking-wider">Task</p>
-          <p class="text-sm text-gray-600 dark:text-gray-300">As one of two designers on a 6-person team, build the design system and co-design key UI screens for a mobile companion app targeting older adults in ER settings.</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">As one of two designers on a 6-person Innovation Jam team, build the design system and co-design key screens for a senior-focused ER companion app.</p>
         </div>
         <div>
           <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mb-1 uppercase tracking-wider">Actions</p>
-          <p class="text-sm text-gray-600 dark:text-gray-300">Built the Figma design system (components, colour, typography, accessibility specs). Co-designed screens around a 3C framework — Clarity, Calmness, Connection. Participated in research synthesis and ideation with the team.</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Built the Figma component library from scratch; co-designed screens around the 3C framework (Clarity, Calmness, Connection).</p>
         </div>
         <div>
           <p class="text-xs font-bold text-gray-500 dark:text-gray-400 mb-1 uppercase tracking-wider">Results</p>
-          <p class="text-sm text-gray-600 dark:text-gray-300">Top 3 finish in the Michigan Tech Innovation Jam Health Track. The design system enabled consistent handoff across a team that included non-designers.</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300"><strong>Top 3 finish, Health Track</strong> — judges highlighted the 3C framework and video-over-text decision as standout contributions.</p>
         </div>
       </div>
     </div>
 
-    <figure class="mt-8">
-      <img src="../assets/calmer_home.png" alt="CalmER Home Dashboard" class="w-full max-w-md mx-auto block rounded-xl shadow-sm">
-      <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 text-center italic">Home dashboard — patient vitals, triage stage, estimated wait, and test status at a glance</figcaption>
-    </figure>
   </section>
 
   <!-- Overview + Problem -->
@@ -229,48 +235,187 @@
       </figcaption>
     </figure>
 
-    <div class="grid md:grid-cols-2 gap-4">
-      <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-xl p-5">
-        <p class="font-semibold text-sm mb-2">The problem we focused on</p>
-        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1.5">
-          <li>• 33 million senior ER visits/year — 21% of all ER visits</li>
-          <li>• "Left without being seen" rate nearly doubled: 1.1% → 2.1%; seniors are 13% of those cases</li>
-          <li>• Seniors waiting 8+ hours doubled from 12% to 20% (2017–2024)</li>
-          <li>• Overnight stays increase in-hospital mortality risk by ~40%</li>
-        </ul>
-      </div>
-      <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-xl p-5">
-        <p class="font-semibold text-sm mb-2">Our design constraints</p>
-        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1.5">
-          <li>• Can't predict or control medical timelines</li>
-          <li>• AI cannot give medical advice</li>
-          <li>• Must not add burden to already-stretched staff</li>
-          <li>• Accessible for seniors with vision/motor impairments</li>
-        </ul>
-      </div>
-    </div>
   </section>
 
   <!-- Research -->
   <section id="research" class="max-w-4xl mx-auto px-6 mb-16">
-    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ RESEARCH</p>
-    <h2 class="text-3xl font-bold mb-5">What shaped the design</h2>
+    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ RESEARCH → DECISION</p>
+    <h2 class="text-3xl font-bold mb-5">From insight to design</h2>
     <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-      Given the 6-week timeline, we combined secondary literature (ACEP data, hospital satisfaction studies), expert consultation with a team member's medical contacts, and competitive analysis of existing patient apps — synthesized via affinity mapping.
+      We ran an 8-person survey alongside secondary research (ACEP data, hospital satisfaction studies, expert consultation) — synthesized via affinity mapping.
     </p>
-    <div class="space-y-4">
-      <div class="border-l-4 border-[#5F61F2] dark:border-[#A5B4FC] pl-5">
-        <p class="font-semibold mb-1">Reassurance matters more than information</p>
-        <p class="text-sm text-gray-600 dark:text-gray-300">Older adults don't want a data dashboard — they need a gentle reminder they haven't been forgotten.</p>
+
+    <!-- Survey stat cards -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
+      <div class="rounded-xl p-4 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5 text-center">
+        <p class="text-2xl font-bold text-[#5F61F2] dark:text-[#A5B4FC]">7/8</p>
+        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-tight">open to AI support during ER wait</p>
       </div>
-      <div class="border-l-4 border-[#5F61F2] dark:border-[#A5B4FC] pl-5">
-        <p class="font-semibold mb-1">Uncertainty is the real stressor, not the wait itself</p>
-        <p class="text-sm text-gray-600 dark:text-gray-300">Not knowing what's coming next creates more anxiety than the wait time. Transparency is therapeutic.</p>
+      <div class="rounded-xl p-4 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5 text-center">
+        <p class="text-2xl font-bold text-[#5F61F2] dark:text-[#A5B4FC]">6/8</p>
+        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-tight">said info clarity was "rarely" or "never" sufficient</p>
       </div>
-      <div class="border-l-4 border-[#5F61F2] dark:border-[#A5B4FC] pl-5">
-        <p class="font-semibold mb-1">Seeing a familiar face outperforms any status update</p>
-        <p class="text-sm text-gray-600 dark:text-gray-300">Family connection — even remote — significantly reduces isolation. This shaped our One-tap Family Link feature.</p>
+      <div class="rounded-xl p-4 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5 text-center">
+        <p class="text-2xl font-bold text-[#5F61F2] dark:text-[#A5B4FC]">5/8</p>
+        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-tight">waited 1–3+ hrs with no meaningful updates</p>
       </div>
+      <div class="rounded-xl p-4 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5 text-center">
+        <p class="text-2xl font-bold text-[#5F61F2] dark:text-[#A5B4FC]">#1</p>
+        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-tight">desired feature: voice reassurance + progress updates</p>
+      </div>
+    </div>
+
+    <div class="space-y-4 mb-12">
+      <!-- Row 1 -->
+      <div class="rounded-xl overflow-hidden border border-gray-100 dark:border-white/5">
+        <div class="grid md:grid-cols-3">
+          <div class="p-5 bg-gray-50 dark:bg-[#1a1a1a]">
+            <p class="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-2">What we saw</p>
+            <p class="text-sm font-semibold text-gray-900 dark:text-white mb-1">Uncertainty hurts more than the wait</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400" style="line-height:1.5">Seniors waiting 8+ hrs doubled 12%→20% (2017–2024). LWBS rate nearly doubled to 2.1%.</p>
+          </div>
+          <div class="p-5 dark:bg-[#161616] border-t md:border-t-0 md:border-l border-gray-100 dark:border-white/5" style="background-color:#f3f4f6">
+            <p class="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-2">Constraint</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400" style="line-height:1.5">We can't predict or control medical timelines — promising exact wait times would be dishonest and raise expectations we can't meet.</p>
+          </div>
+          <div class="p-5 border-t md:border-t-0 md:border-l border-gray-100 dark:border-white/5" style="background:rgba(95,97,242,0.04)">
+            <p class="text-xs font-bold uppercase tracking-widest text-[#5F61F2] dark:text-[#A5B4FC] mb-2">Decision</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300 leading-snug" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.875rem;color:#4b5563;line-height:1.5">Stage-based timeline — "Triage Complete → Lab Pending" — instead of a countdown timer. Process clarity replaces time pressure.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="rounded-xl overflow-hidden border border-gray-100 dark:border-white/5">
+        <div class="grid md:grid-cols-3">
+          <div class="p-5 bg-gray-50 dark:bg-[#1a1a1a]">
+            <p class="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-2">What we saw</p>
+            <p class="text-sm font-semibold text-gray-900 dark:text-white mb-1">Seniors need reassurance, not raw data</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400" style="line-height:1.5">33M senior ER visits/year. Overnight stays raise mortality risk ~40%. Raw vitals without context added anxiety.</p>
+          </div>
+          <div class="p-5 dark:bg-[#161616] border-t md:border-t-0 md:border-l border-gray-100 dark:border-white/5" style="background-color:#f3f4f6">
+            <p class="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-2">Constraint</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400" style="line-height:1.5">AI cannot give medical advice. We needed to provide comfort without crossing into diagnosis or clinical guidance.</p>
+          </div>
+          <div class="p-5 border-t md:border-t-0 md:border-l border-gray-100 dark:border-white/5" style="background:rgba(95,97,242,0.04)">
+            <p class="text-xs font-bold uppercase tracking-widest text-[#5F61F2] dark:text-[#A5B4FC] mb-2">Decision</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300 leading-snug" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.875rem;color:#4b5563;line-height:1.5">AI companion positioned as emotional support only — calming conversations, breathing guides, plain-language stage explanations. Never medical advice.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="rounded-xl overflow-hidden border border-gray-100 dark:border-white/5">
+        <div class="grid md:grid-cols-3">
+          <div class="p-5 bg-gray-50 dark:bg-[#1a1a1a]">
+            <p class="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-2">What we saw</p>
+            <p class="text-sm font-semibold text-gray-900 dark:text-white mb-1">A familiar face beats any notification</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400" style="line-height:1.5">Family presence — even remote — is one of the most effective anxiety reducers in medical settings.</p>
+          </div>
+          <div class="p-5 dark:bg-[#161616] border-t md:border-t-0 md:border-l border-gray-100 dark:border-white/5" style="background-color:#f3f4f6">
+            <p class="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-2">Constraint</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400" style="line-height:1.5">Can't add burden to already-stretched staff. The family connection had to be patient-initiated and fully self-serve.</p>
+          </div>
+          <div class="p-5 border-t md:border-t-0 md:border-l border-gray-100 dark:border-white/5" style="background:rgba(95,97,242,0.04)">
+            <p class="text-xs font-bold uppercase tracking-widest text-[#5F61F2] dark:text-[#A5B4FC] mb-2">Decision</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300 leading-snug" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.875rem;color:#4b5563;line-height:1.5">One-tap video call over a status dashboard. David sees triage progress through Dynamic Island during the call — presence and information in one interaction.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 4 -->
+      <div class="rounded-xl overflow-hidden border border-gray-100 dark:border-white/5">
+        <div class="grid md:grid-cols-3">
+          <div class="p-5 bg-gray-50 dark:bg-[#1a1a1a]">
+            <p class="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-2">What we saw</p>
+            <p class="text-sm font-semibold text-gray-900 dark:text-white mb-1">Older adults have real usability barriers</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400" style="line-height:1.5">Vision decline, motor impairment, and low trust in AI are all common in the 65+ population.</p>
+          </div>
+          <div class="p-5 dark:bg-[#161616] border-t md:border-t-0 md:border-l border-gray-100 dark:border-white/5" style="background-color:#f3f4f6">
+            <p class="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-2">Constraint</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400" style="line-height:1.5">Must be accessible for seniors with vision and motor impairments — accessibility couldn't be a layer added at the end.</p>
+          </div>
+          <div class="p-5 border-t md:border-t-0 md:border-l border-gray-100 dark:border-white/5" style="background:rgba(95,97,242,0.04)">
+            <p class="text-xs font-bold uppercase tracking-widest text-[#5F61F2] dark:text-[#A5B4FC] mb-2">Decision</p>
+            <p class="text-sm text-gray-600 dark:text-gray-300 leading-snug" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.875rem;color:#4b5563;line-height:1.5">Voice input, multiple-choice prompts instead of open text, 14–28px type scale, adjustable font size in Settings, and blue as primary colour (research-backed trust signal for older adults).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Competitive Analysis -->
+    <div id="competitive" class="mb-2">
+      <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ COMPETITIVE ANALYSIS</p>
+      <h3 class="text-xl font-bold mb-3">Where existing tools fall short</h3>
+      <p class="text-gray-600 dark:text-gray-300 mb-6 text-sm leading-relaxed">
+        We mapped five existing products against CalmER's core features. Every competitor addresses one piece — queue visibility, family updates, or emotional support — but none closes the loop across all three. That gap is exactly what CalmER targets.
+      </p>
+
+      <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-white/10">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-gray-50 dark:bg-[#1a1a1a]">
+              <th class="text-left px-4 py-3 font-semibold border-b border-gray-200 dark:border-white/10 min-w-[180px] dark:text-white" style="color:#111827">Feature</th>
+              <th class="px-4 py-3 font-bold text-[#5F61F2] dark:text-[#A5B4FC] border-b border-gray-200 dark:border-white/10 text-center">CalmER</th>
+              <th class="px-4 py-3 font-semibold border-b border-gray-200 dark:border-white/10 text-center dark:text-gray-400" style="color:#374151">Epic MyChart</th>
+              <th class="px-4 py-3 font-semibold border-b border-gray-200 dark:border-white/10 text-center dark:text-gray-400" style="color:#374151">Emergency Q</th>
+              <th class="px-4 py-3 font-semibold border-b border-gray-200 dark:border-white/10 text-center dark:text-gray-400" style="color:#374151">The Patient Wait</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray-100 dark:border-white/5">
+              <td class="px-4 py-3 dark:text-white" style="color:#111827">Live triage / queue status</td>
+              <td class="px-4 py-3 text-center font-bold text-[#5F61F2] dark:text-[#A5B4FC]">✓</td>
+              <td class="px-4 py-3 text-center text-gray-500 dark:text-gray-400">partial</td>
+              <td class="px-4 py-3 text-center font-bold text-gray-700 dark:text-gray-300">✓</td>
+              <td class="px-4 py-3 text-center font-bold text-gray-700 dark:text-gray-300">✓</td>
+            </tr>
+            <tr class="border-b border-gray-100 dark:border-white/5 bg-gray-50/50 dark:bg-white/[0.02]">
+              <td class="px-4 py-3 dark:text-white" style="color:#111827">Family status sharing</td>
+              <td class="px-4 py-3 text-center font-bold text-[#5F61F2] dark:text-[#A5B4FC]">✓</td>
+              <td class="px-4 py-3 text-center text-red-500">✗</td>
+              <td class="px-4 py-3 text-center text-red-500">✗</td>
+              <td class="px-4 py-3 text-center text-red-500">✗</td>
+            </tr>
+            <tr class="border-b border-gray-100 dark:border-white/5">
+              <td class="px-4 py-3 dark:text-white" style="color:#111827">One-tap family video call</td>
+              <td class="px-4 py-3 text-center font-bold text-[#5F61F2] dark:text-[#A5B4FC]">✓</td>
+              <td class="px-4 py-3 text-center text-red-500">✗</td>
+              <td class="px-4 py-3 text-center text-red-500">✗</td>
+              <td class="px-4 py-3 text-center text-red-500">✗</td>
+            </tr>
+            <tr class="border-b border-gray-100 dark:border-white/5 bg-gray-50/50 dark:bg-white/[0.02]">
+              <td class="px-4 py-3 dark:text-white" style="color:#111827">AI emotional companion</td>
+              <td class="px-4 py-3 text-center font-bold text-[#5F61F2] dark:text-[#A5B4FC]">✓</td>
+              <td class="px-4 py-3 text-center text-red-500">✗</td>
+              <td class="px-4 py-3 text-center text-red-500">✗</td>
+              <td class="px-4 py-3 text-center text-red-500">✗</td>
+            </tr>
+            <tr class="border-b border-gray-100 dark:border-white/5">
+              <td class="px-4 py-3 dark:text-white" style="color:#111827">Distress / "I need help" button</td>
+              <td class="px-4 py-3 text-center font-bold text-[#5F61F2] dark:text-[#A5B4FC]">✓</td>
+              <td class="px-4 py-3 text-center text-gray-500 dark:text-gray-400">partial</td>
+              <td class="px-4 py-3 text-center text-gray-500 dark:text-gray-400">partial</td>
+              <td class="px-4 py-3 text-center text-red-500">✗</td>
+            </tr>
+            <tr class="border-b border-gray-100 dark:border-white/5 bg-gray-50/50 dark:bg-white/[0.02]">
+              <td class="px-4 py-3 dark:text-white" style="color:#111827">Social worker access</td>
+              <td class="px-4 py-3 text-center font-bold text-[#5F61F2] dark:text-[#A5B4FC]">✓</td>
+              <td class="px-4 py-3 text-center text-red-500">✗</td>
+              <td class="px-4 py-3 text-center text-red-500">✗</td>
+              <td class="px-4 py-3 text-center text-red-500">✗</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 dark:text-white" style="color:#111827">Designed for seniors</td>
+              <td class="px-4 py-3 text-center font-bold text-[#5F61F2] dark:text-[#A5B4FC]">✓</td>
+              <td class="px-4 py-3 text-center text-red-500">✗</td>
+              <td class="px-4 py-3 text-center text-red-500">✗</td>
+              <td class="px-4 py-3 text-center text-red-500">✗</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-gray-500 dark:text-gray-400 mt-3 italic">Epic MyChart handles records but not emotional support. Emergency Q and The Patient Wait show queue position — but nothing else. None of them serve the family member waiting at home.</p>
     </div>
   </section>
 
@@ -305,66 +450,80 @@
   <!-- Features -->
   <section id="features" class="max-w-4xl mx-auto px-6 mb-16">
     <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ KEY FEATURES</p>
-    <h2 class="text-3xl font-bold mb-6">Four features, one goal: make waiting feel human</h2>
-    <div class="grid md:grid-cols-2 gap-4">
-      <div class="flex gap-4 p-5 bg-gray-50 dark:bg-[#1a1a1a] rounded-xl">
-        <div class="flex-shrink-0 w-9 h-9 bg-[#5F61F2] dark:bg-[#A5B4FC] rounded-lg flex items-center justify-center">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="stroke-white dark:stroke-[#0D0D0D]" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-        </div>
-        <div>
-          <p class="font-semibold mb-1 text-sm">AI Emotional Companion</p>
-          <p class="text-xs text-gray-600 dark:text-gray-300">Calming conversations, breathing guides, medical term explanations — voice or text.</p>
-          <p class="text-xs text-[#5F61F2] dark:text-[#A5B4FC] mt-2 italic">Empathy = Calmness</p>
-        </div>
-      </div>
-      <div class="flex gap-4 p-5 bg-gray-50 dark:bg-[#1a1a1a] rounded-xl">
-        <div class="flex-shrink-0 w-9 h-9 bg-[#5F61F2] dark:bg-[#A5B4FC] rounded-lg flex items-center justify-center">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="stroke-white dark:stroke-[#0D0D0D]" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-        </div>
-        <div>
-          <p class="font-semibold mb-1 text-sm">Smart Hospital Sync</p>
-          <p class="text-xs text-gray-600 dark:text-gray-300">Live triage updates, stage-based timeline, simple language explanations of what's next.</p>
-          <p class="text-xs text-[#5F61F2] dark:text-[#A5B4FC] mt-2 italic">Clarity = Calmness</p>
-        </div>
+    <h2 class="text-3xl font-bold mb-10">Five screens, one goal: make waiting feel human</h2>
+
+    <!-- Home Page -->
+    <div class="flex flex-col md:flex-row gap-8 items-start mb-14">
+      <figure class="md:w-1/2 flex-shrink-0">
+        <img src="../assets/calmer_home.png" alt="CalmER Home — triage stage, vitals, and wait status" class="w-full rounded-2xl shadow-md">
+      </figure>
+      <div class="md:w-1/2">
+        <p class="text-xs font-bold uppercase tracking-widest text-[#5F61F2] dark:text-[#A5B4FC] mb-2">Home</p>
+        <h3 class="text-xl font-bold mb-3">Everything Mary needs to know, without the overwhelm</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-4">Check-in confirmation, vitals, triage stage, and estimated wait — all in plain language, no countdown timer. A persistent "I Need Help" button and one-tap mental health hotline let Mary reach support without flagging down busy staff.</p>
+        <p class="text-xs text-[#5F61F2] dark:text-[#A5B4FC] font-semibold">Clarity principle → orientation replaces uncertainty</p>
       </div>
     </div>
 
-    <!-- Feature screens -->
-    <figure class="my-8">
-      <img src="../assets/calmer_ai.png" alt="CalmER AI Companion — voice and text emotional support" class="w-full rounded-xl shadow-sm">
-      <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 text-center italic">AI Companion — voice detection, breathing guide, and empathetic text conversation</figcaption>
-    </figure>
-
-    <div class="grid md:grid-cols-2 gap-4 mt-4">
-      <div class="flex gap-4 p-5 bg-gray-50 dark:bg-[#1a1a1a] rounded-xl">
-        <div class="flex-shrink-0 w-9 h-9 bg-[#5F61F2] dark:bg-[#A5B4FC] rounded-lg flex items-center justify-center">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="stroke-white dark:stroke-[#0D0D0D]" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-        </div>
-        <div>
-          <p class="font-semibold mb-1 text-sm">Instant Family Link</p>
-          <p class="text-xs text-gray-600 dark:text-gray-300">One-tap video call + automatic status sharing so remote family stays informed.</p>
-          <p class="text-xs text-[#5F61F2] dark:text-[#A5B4FC] mt-2 italic">Connection = Comfort</p>
-        </div>
+    <!-- AI Companion -->
+    <div class="flex flex-col md:flex-row-reverse gap-8 items-start mb-14">
+      <figure class="md:w-1/2 flex-shrink-0">
+        <img src="../assets/calmer_ai.png" alt="CalmER AI Companion — voice and text emotional support" class="w-full rounded-2xl shadow-md">
+      </figure>
+      <div class="md:w-1/2">
+        <p class="text-xs font-bold uppercase tracking-widest text-[#5F61F2] dark:text-[#A5B4FC] mb-2">AI Companion</p>
+        <h3 class="text-xl font-bold mb-3">Someone is always there — even at 2am</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-4">The companion detects emotional cues in voice tone — if Mary sounds tense, it proactively offers a breathing guide. Available via voice or text, it explains medical stages in plain language and is positioned explicitly as emotional support, never clinical advice.</p>
+        <p class="text-xs text-[#5F61F2] dark:text-[#A5B4FC] font-semibold">Calmness principle → empathy without overstepping</p>
       </div>
-      <div class="flex gap-4 p-5 bg-gray-50 dark:bg-[#1a1a1a] rounded-xl">
-        <div class="flex-shrink-0 w-9 h-9 bg-[#5F61F2] dark:bg-[#A5B4FC] rounded-lg flex items-center justify-center">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="stroke-white dark:stroke-[#0D0D0D]" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
-        </div>
-        <div>
-          <p class="font-semibold mb-1 text-sm">Resource Hub</p>
-          <p class="text-xs text-gray-600 dark:text-gray-300">Breathing exercises, ER FAQs, social worker access — turning wait time into grounding time.</p>
-          <p class="text-xs text-[#5F61F2] dark:text-[#A5B4FC] mt-2 italic">Support = Stability</p>
-        </div>
+    </div>
+
+    <!-- Family Call -->
+    <div class="flex flex-col md:flex-row gap-8 items-start mb-14">
+      <figure class="md:w-1/2 flex-shrink-0">
+        <img src="../assets/calmer_family.png" alt="CalmER Family Call — one-tap video call with Dynamic Island triage status" class="w-full rounded-2xl shadow-md">
+      </figure>
+      <div class="md:w-1/2">
+        <p class="text-xs font-bold uppercase tracking-widest text-[#5F61F2] dark:text-[#A5B4FC] mb-2">Family Call</p>
+        <h3 class="text-xl font-bold mb-3">A face is worth a hundred status updates</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-4">One tap connects Mary to David; during the call, he sees live triage progress through Dynamic Island — presence and information in a single interaction. Video over a shared dashboard: a familiar face reduces anxiety faster than any status card.</p>
+        <p class="text-xs text-[#5F61F2] dark:text-[#A5B4FC] font-semibold">Connection principle → presence beats information</p>
+      </div>
+    </div>
+
+    <!-- Resource Hub -->
+    <div class="flex flex-col md:flex-row-reverse gap-8 items-start mb-14">
+      <figure class="md:w-1/2 flex-shrink-0">
+        <img src="../assets/calmer_hub.png" alt="CalmER Resource Hub — breathing exercises, ER FAQs, social worker" class="w-full rounded-2xl shadow-md">
+      </figure>
+      <div class="md:w-1/2">
+        <p class="text-xs font-bold uppercase tracking-widest text-[#5F61F2] dark:text-[#A5B4FC] mb-2">Resource Hub</p>
+        <h3 class="text-xl font-bold mb-3">Turning idle time into grounding time</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-4">Breathing exercises, mindfulness tools, ER guides, and a "Find a Social Worker" button — all in one place. Instead of scrolling anxiously, Mary has structured, constructive options and a clear path to human support.</p>
+        <p class="text-xs text-[#5F61F2] dark:text-[#A5B4FC] font-semibold">Calmness principle → structure reduces helplessness</p>
+      </div>
+    </div>
+
+    <!-- Settings -->
+    <div class="flex flex-col md:flex-row gap-8 items-start mb-10">
+      <figure class="md:w-1/2 flex-shrink-0">
+        <img src="../assets/calmer_settings.png" alt="CalmER Settings — granular privacy permissions, accessibility, emergency contacts" class="w-full rounded-2xl shadow-md">
+      </figure>
+      <div class="md:w-1/2">
+        <p class="text-xs font-bold uppercase tracking-widest text-[#5F61F2] dark:text-[#A5B4FC] mb-2">Settings & Privacy</p>
+        <h3 class="text-xl font-bold mb-3">Mary decides who sees what — down to the test level</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-4">Mary controls exactly what David can see — vitals, completed tests, pending tests, and video calls each have their own toggle. Accessibility settings (text size, language, simplified mode) let the app adapt to her, not the other way around.</p>
+        <p class="text-xs text-[#5F61F2] dark:text-[#A5B4FC] font-semibold">Connection principle → privacy by design, control builds trust</p>
       </div>
     </div>
 
     <!-- Prototype CTA -->
-    <div class="mt-8 p-6 bg-gradient-to-r from-[#5F61F2]/10 to-[#A5B4FC]/10 dark:from-[#5F61F2]/20 dark:to-[#A5B4FC]/20 rounded-2xl border border-[#5F61F2]/20 dark:border-[#A5B4FC]/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="mt-4 p-6 bg-gradient-to-r from-[#5F61F2]/10 to-[#A5B4FC]/10 dark:from-[#5F61F2]/20 dark:to-[#A5B4FC]/20 rounded-2xl border border-[#5F61F2]/20 dark:border-[#A5B4FC]/20 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
         <p class="font-semibold mb-1">Try the Interactive Prototype</p>
         <p class="text-sm text-gray-600 dark:text-gray-300">Full emergency response flow in Figma</p>
       </div>
-      <a href="https://www.figma.com/proto/56lsCbgRCUS93PyLUA0nVx/TJteam22?page-id=38%3A382&node-id=109-567&viewport=-1485%2C343%2C0.16&t=lvJZ7u4zOnjhXc9U-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=132%3A2186&show-proto-sidebar=1" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-[#5F61F2] dark:bg-[#A5B4FC] text-white dark:text-[#0D0D0D] rounded-xl font-semibold text-sm hover:opacity-90 transition-opacity">
+      <a href="https://www.figma.com/proto/56lsCbgRCUS93PyLUA0nVx/TJteam22?page-id=38%3A382&node-id=109-567&viewport=-1485%2C343%2C0.16&t=lvJZ7u4zOnjhXc9U-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=132%3A2186&show-proto-sidebar=1" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm hover:opacity-90 transition-opacity" style="background-color:#5F61F2;color:white">
         View Prototype
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
       </a>
@@ -372,15 +531,25 @@
   </section>
 
   <!-- Design System -->
-  <section class="max-w-4xl mx-auto px-6 mb-16">
+  <section id="design-system" class="max-w-4xl mx-auto px-6 mb-16">
     <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ ACTIONS — DESIGN SYSTEM</p>
-    <h2 class="text-3xl font-bold mb-5">Building the visual foundation</h2>
+    <h2 class="text-3xl font-bold mb-5">Every visual decision had a reason</h2>
     <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-      I built the Figma component library from scratch — colour tokens, typography scale, button states, navigation bars, and list items — with accessibility-first decisions throughout. Large tap targets, high-contrast text, and minimal cognitive load were built in from the start, not added later.
+      I built the Figma component library from scratch — colour tokens, typography scale, button states, navigation bars, and list items. Every choice was grounded in how older adults actually perceive and interact with interfaces, not just aesthetic preference.
     </p>
+    <div class="grid md:grid-cols-2 gap-4 mb-8">
+      <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-xl p-5">
+        <p class="font-semibold text-sm mb-2">Blue as the primary colour</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">Research on colour perception in older adults consistently shows blue is associated with trust, calm, and reliability — the three things Mary needs to feel in a stressful ER environment. It wasn't a brand choice; it was a research-informed one.</p>
+      </div>
+      <div class="bg-gray-50 dark:bg-[#1a1a1a] rounded-xl p-5">
+        <p class="font-semibold text-sm mb-2">Typography scale for senior vision</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">The default type scale runs from 14px minimum to 28px maximum — larger than typical mobile apps. Users can also adjust font size in Settings, scaling up further. No text in the interface falls below what's legible for adults with mild vision decline.</p>
+      </div>
+    </div>
     <figure class="my-6">
       <img src="../assets/calmer_components.png" alt="CalmER design system — components, colour palette, typography" class="w-full rounded-xl shadow-sm">
-      <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 text-center italic">Design system: colour palette, typography, buttons, navigation, and list components</figcaption>
+      <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 text-center italic">Design system: colour palette, typography scale, buttons, navigation, and list components</figcaption>
     </figure>
   </section>
 
@@ -410,27 +579,43 @@
   <!-- Reflection -->
   <section id="reflection" class="max-w-4xl mx-auto px-6 mb-20">
     <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ REFLECTION</p>
-    <h2 class="text-3xl font-bold mb-5">What I learned</h2>
-    <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-      This project changed how I think about emotional design — it's not decoration, it's a functional requirement when users are scared or in pain. Three decisions stood out:
+    <h2 class="text-3xl font-bold mb-5">Decisions we made — and ones we didn't finish</h2>
+
+    <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
+      Emotional design isn't decoration — it's a functional requirement when users are scared or in pain. These are the decisions that shaped the final design, and the ones we would have pushed further with more time.
     </p>
-    <div class="space-y-4 mb-6">
+
+    <p class="text-xs font-bold uppercase tracking-widest text-[#5F61F2] dark:text-[#A5B4FC] mb-4">Decisions we made</p>
+    <div class="space-y-4 mb-10">
       <div class="border-l-4 border-[#5F61F2] dark:border-[#A5B4FC] pl-5">
         <p class="font-semibold mb-1">Stage-based timeline over countdown</p>
-        <p class="text-sm text-gray-600 dark:text-gray-300">"Triage Complete → Lab Results Pending" reduces anxiety more than "est. 2 hours" — predictable process beats unpredictable time.</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">"Triage Complete → Lab Pending" reduces anxiety more than "est. 2 hours" — predictable process beats unpredictable time.</p>
       </div>
       <div class="border-l-4 border-[#5F61F2] dark:border-[#A5B4FC] pl-5">
-        <p class="font-semibold mb-1">AI as companion, not doctor</p>
-        <p class="text-sm text-gray-600 dark:text-gray-300">Positioning the AI as emotional support rather than medical advisor maintained user trust while keeping us within safe, honest boundaries.</p>
+        <p class="font-semibold mb-1">Designing AI for seniors, not around them</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">We knew older adults can be reluctant to engage with AI, so the companion uses voice input, a gentle tone, and multiple-choice prompts instead of open text fields — lowering the cognitive barrier to entry without feeling patronizing.</p>
       </div>
       <div class="border-l-4 border-[#5F61F2] dark:border-[#A5B4FC] pl-5">
-        <p class="font-semibold mb-1">Video over messaging</p>
-        <p class="text-sm text-gray-600 dark:text-gray-300">Seeing a familiar face has disproportionate emotional impact compared to text updates — so we built one-tap video instead of a status dashboard.</p>
+        <p class="font-semibold mb-1">Video call as the status update</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">We debated a separate status dashboard for family. But pushing updates to a text thread added cognitive load — and didn't solve the real need. Instead, when Mary video calls David, he can see her triage progress in real time through Dynamic Island. Presence and information in one interaction.</p>
+      </div>
+      <div class="border-l-4 border-[#5F61F2] dark:border-[#A5B4FC] pl-5">
+        <p class="font-semibold mb-1">Scoping to Mary's view only</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">We only designed the patient-facing interface. Family and social worker views were acknowledged — Mary can reach both with one tap — but their own screens were out of scope for a 6-week sprint. A deliberate call, not an oversight.</p>
       </div>
     </div>
-    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-      Next step: usability testing with actual seniors in ER waiting rooms, and piloting the AI companion with real hospital system integration.
-    </p>
+
+    <p class="text-xs font-bold uppercase tracking-widest text-[#5F61F2] dark:text-[#A5B4FC] mb-4">If we had more time</p>
+    <div class="space-y-4">
+      <div class="border-l-4 border-gray-300 dark:border-gray-600 pl-5">
+        <p class="font-semibold mb-1">Social worker flow</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">The hub has a one-tap button to contact a social worker, but we never designed Karen's side. Ideally, the app would flag emotionally distressed patients automatically — letting Karen prioritize without needing to check in manually.</p>
+      </div>
+      <div class="border-l-4 border-gray-300 dark:border-gray-600 pl-5">
+        <p class="font-semibold mb-1">Usability testing with actual seniors</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">Our design decisions around cognitive load and AI trust are grounded in research — but they need validation with real older adults in ER settings, not just peer feedback in a sprint.</p>
+      </div>
+    </div>
   </section>
 
     </div><!-- End Main Content -->
