@@ -99,27 +99,9 @@
 </header>
 
 <main class="pt-40 pb-16">
-  <div class="flex gap-8 max-w-7xl mx-auto px-6">
-    <!-- Sticky Table of Contents (Desktop only) -->
-    <aside class="hidden lg:block w-64 flex-shrink-0">
-      <nav class="sticky top-24 space-y-2">
-        <p class="text-sm font-bold text-gray-900 dark:text-white mb-3">Contents</p>
-        <a href="#context" class="toc-link">Context</a>
-        <a href="#objective" class="toc-link">Objective</a>
-        <a href="#contributions" class="toc-link">My Contributions</a>
-        <a href="#methodology" class="toc-link">Methodology</a>
-        <a href="#insights" class="toc-link">Key Insights</a>
-        <a href="#opportunities" class="toc-link">Opportunities</a>
-        <a href="#outputs" class="toc-link">Outputs</a>
-        <a href="#reflection" class="toc-link">Reflection</a>
-        <a href="#next-steps" class="toc-link">Next Steps</a>
-      </nav>
-    </aside>
 
-    <!-- Main Content -->
-    <div class="flex-1 min-w-0">
-  <!-- Hero Section -->
-  <section class="max-w-6xl mx-auto px-6 mb-20">
+  <!-- Hero Section (full width, outside TOC layout) -->
+  <section class="max-w-4xl mx-auto px-6 mb-12">
     <div class="mb-8">
       <a href="../projects.html" class="text-sm text-gray-600 dark:text-gray-400 hover:text-[#5F61F2] dark:hover:text-[#A5B4FC] transition-colors inline-block mb-6">← BACK TO PROJECTS</a>
     </div>
@@ -159,25 +141,48 @@
     </div>
   </section>
 
-  <!-- Content Section -->
-  <section class="max-w-4xl mx-auto px-6 space-y-10">
+  <!-- TOC + Content layout -->
+  <div class="flex gap-8 max-w-7xl mx-auto px-6">
+    <!-- Sticky TOC (desktop only) -->
+    <aside class="hidden lg:block w-64 flex-shrink-0">
+      <nav class="sticky top-24 space-y-2">
+        <p class="text-sm font-bold text-gray-900 dark:text-white mb-3">Contents</p>
+        <a href="#context" class="toc-link">Context</a>
+        <a href="#objective" class="toc-link">Objective</a>
+        <a href="#contributions" class="toc-link">My Contributions</a>
+        <a href="#methodology" class="toc-link">Methodology</a>
+        <a href="#insights" class="toc-link">Key Insights</a>
+        <a href="#opportunities" class="toc-link">Opportunities</a>
+        <a href="#outputs" class="toc-link">Outputs</a>
+        <a href="#reflection" class="toc-link">Reflection</a>
+        <a href="#next-steps" class="toc-link">Next Steps</a>
+      </nav>
+    </aside>
+
+    <div class="flex-1 min-w-0">
+  <div class="max-w-4xl space-y-10">
 
     <hr class="my-10 border-gray-300 dark:border-gray-700">
 
+    <section id="context" class="mb-10">
     <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ SITUATION</p>
-    <h2 id="context" class="text-3xl font-bold mb-5 text-black dark:text-white">The digital divide is a policy problem, not just an infrastructure one</h2>
+    <h2 class="text-3xl font-bold mb-5 text-black dark:text-white">The digital divide is a policy problem, not just an infrastructure one</h2>
     <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
       Michigan will receive $362 million in federal broadband funding over the next decade — but the money reaching students depends on whether communities want it. In some districts, residents have actively resisted new infrastructure. Others lack the digital literacy to know what resources already exist. Students caught in between face real academic consequences: mobile-only students average half a GPA point lower and score 7 percentile points lower on standardised tests.
     </p>
+    </section>
 
+    <section id="objective" class="mb-10">
     <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ TASK</p>
-    <h2 id="objective" class="text-3xl font-bold mb-5 text-black dark:text-white">Understand the barriers, then make them communicable</h2>
+    <h2 class="text-3xl font-bold mb-5 text-black dark:text-white">Understand the barriers, then make them communicable</h2>
     <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
       Our goal wasn't to design an app — it was to understand how the digital access gap plays out on the ground, and to give NTCA practical communication tools that help communities understand why this matters and what they can do. My contributions spanned research, synthesis, and communication design.
     </p>
+    </section>
 
+    <section id="contributions" class="mb-10">
     <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ MY CONTRIBUTIONS</p>
-    <h2 id="contributions" class="text-3xl font-bold mb-5 text-black dark:text-white">My contributions</h2>
+    <h2 class="text-3xl font-bold mb-5 text-black dark:text-white">My contributions</h2>
     <div class="grid md:grid-cols-2 gap-3">
       <div class="rounded-xl p-4 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5">
         <p class="font-semibold text-sm mb-1">Interview protocol & facilitation</p>
@@ -196,15 +201,19 @@
         <p class="text-sm text-gray-500 dark:text-gray-400">Designed poster, pamphlet, and social content; co-presented findings to NTCA</p>
       </div>
     </div>
+    </section>
 
+    <section id="methodology" class="mb-10">
     <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ ACTIONS — METHODOLOGY</p>
-    <h2 id="methodology" class="text-3xl font-bold mb-5 text-black dark:text-white">Methodology</h2>
+    <h2 class="text-3xl font-bold mb-5 text-black dark:text-white">Methodology</h2>
     <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
       We combined <strong>secondary research</strong> on state and federal broadband policy with <strong>stakeholder interviews</strong> — three officials from the Michigan Department of Education, a science teacher at Rudyard High School, and a student from a rural Michigan district. Data was synthesized through affinity mapping to surface patterns across stakeholder groups.
     </p>
+    </section>
 
+    <section id="insights" class="mb-10">
     <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ ACTIONS — KEY INSIGHTS</p>
-    <h2 id="insights" class="text-3xl font-bold mb-5 text-black dark:text-white">What we found</h2>
+    <h2 class="text-3xl font-bold mb-5 text-black dark:text-white">What we found</h2>
     <div class="space-y-3">
       <div class="rounded-xl p-4 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5">
         <p class="font-semibold text-sm mb-1">Funding exists — community will doesn't always</p>
@@ -239,9 +248,11 @@
         <footer class="mt-2 text-sm text-gray-500 dark:text-gray-400">— David Judd, Director of Systems, Evaluation, and Technology, Michigan Department of Education</footer>
       </blockquote>
     </div>
+    </section>
 
+    <section id="opportunities" class="mb-10">
     <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ RESULTS — OPPORTUNITIES</p>
-    <h2 id="opportunities" class="text-3xl font-bold mb-5 text-black dark:text-white">What the findings pointed to</h2>
+    <h2 class="text-3xl font-bold mb-5 text-black dark:text-white">What the findings pointed to</h2>
     <div class="grid md:grid-cols-3 gap-4">
       <div class="rounded-xl p-5 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-100 dark:border-white/5">
         <p class="font-semibold text-sm mb-2">Speak their language</p>
@@ -256,9 +267,11 @@
         <p class="text-sm text-gray-500 dark:text-gray-400">Parents and educators need scripts and resource guides — they're the ones making connectivity decisions at home</p>
       </div>
     </div>
+    </section>
 
+    <section id="outputs" class="mb-10">
     <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ RESULTS — OUTPUTS</p>
-    <h2 id="outputs" class="text-3xl font-bold mb-5 text-black dark:text-white">What we delivered</h2>
+    <h2 class="text-3xl font-bold mb-5 text-black dark:text-white">What we delivered</h2>
     <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-8">Lightweight, repeatable resources for schools and community spaces:</p>
 
     <!-- Pamphlet -->
@@ -308,10 +321,11 @@
           <img src="../assets/ntca_poster.png" alt="NTCA community poster — Did You Know?" class="w-full rounded-xl shadow-sm">
         </figure>
       </div>
-    </div>
+    </section>
 
+    <section id="reflection" class="mb-10">
     <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ REFLECTION</p>
-    <h2 id="reflection" class="text-3xl font-bold mb-5 text-black dark:text-white">Reflection</h2>
+    <h2 class="text-3xl font-bold mb-5 text-black dark:text-white">Reflection</h2>
     <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
       This project was less about designing a product and more about translating research into action — an equally complex design challenge.
     </p>
@@ -330,8 +344,11 @@
       </div>
     </div>
 
+    </section>
+
+    <section id="next-steps" class="mb-10">
     <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ NEXT STEPS</p>
-    <h2 id="next-steps" class="text-3xl font-bold mb-5 text-black dark:text-white">Next Steps</h2>
+    <h2 class="text-3xl font-bold mb-5 text-black dark:text-white">Next Steps</h2>
     <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
       <li>Test materials with one rural high school</li>
       <li>Expand student interviews</li>
@@ -341,10 +358,11 @@
     <p class="text-sm text-gray-500 dark:text-gray-400 mt-8 italic">
       Materials available on request (interview protocol, synthesis notes, report, slides)
     </p>
-  </section>
+    </section>
 
-    </div><!-- End Main Content -->
-  </div><!-- End Flex Container -->
+  </div><!-- end content wrapper -->
+    </div><!-- end flex-1 -->
+  </div><!-- end flex layout -->
 
     <!-- Project Navigation -->
   <section class="max-w-4xl mx-auto px-6 mt-20 mb-8">

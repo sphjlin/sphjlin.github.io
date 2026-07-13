@@ -109,11 +109,11 @@
 
       <div class="space-y-6">
         <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed text-center">
-          I'm a product designer with a background in <span class="about-highlight">computer science</span>, with a Master's in <span class="about-highlight">UX Research & Design from the University of Michigan</span>. I care about building intuitive and inclusive digital experiences that support people in their everyday lives. My work often brings together <span class="about-highlight">interaction design</span>, <span class="about-highlight">accessibility</span>, and emerging tech to create solutions that feel both functional and human.
+          I'm a product designer with a background in <span class="about-highlight">computer science</span> and a Master's in <span class="about-highlight">UX Research & Design from the University of Michigan</span>. I care about building intuitive, inclusive digital experiences — work that brings together <span class="about-highlight">interaction design</span>, <span class="about-highlight">accessibility</span>, and a focus on clarity that makes technology feel effortless.
         </p>
 
         <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed text-center">
-          I'm especially interested in how design can <span class="about-highlight">reduce cognitive load</span> and help people feel confident when using technology. Whether it's simplifying a flow or rethinking how information is presented, I focus on <span class="about-highlight">clarity</span>, <span class="about-highlight">empathy</span>, and details that make a product feel effortless.
+          Outside of design, I love <span class="about-highlight">theater and musicals</span> — reading scripts, dissecting character motivations, and watching how a story lands. I've run light and sound boards for productions, and that energy of a whole team pulling toward the same moment isn't so different from great design work. The same curiosity I bring to understanding a character shows up in how I approach <span class="about-highlight">user research</span>.
         </p>
       </div>
 
@@ -128,6 +128,135 @@
         </a>
       </div>
     </div>
+  </section>
+
+  <!-- Photo Carousel Section -->
+  <section class="max-w-4xl mx-auto px-6 mb-32">
+    <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-4 text-center">✦ BEYOND THE SCREEN</p>
+    <h2 class="text-3xl font-bold mb-10 text-center">A little more about me</h2>
+    <div class="relative" style="overflow:hidden;">
+      <!-- Track: each slide is 60% wide, so prev/next peek at 20% each side -->
+      <div id="about-carousel-track" style="display:flex; transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); will-change:transform;">
+        <figure class="about-slide" style="min-width:60%; padding:0 8px; box-sizing:border-box; margin:0;">
+          <img src="assets/sophia_thuspoke_lightop.jpg" alt="Sophia operating the light board" class="w-full object-cover object-center rounded-2xl" style="height:380px;">
+        </figure>
+        <figure class="about-slide" style="min-width:60%; padding:0 8px; box-sizing:border-box; margin:0;">
+          <img src="assets/sophia_statue.jpg" alt="Sophia at Chicago Athenaeum International Sculpture Park" class="w-full object-cover object-center rounded-2xl" style="height:380px;">
+        </figure>
+        <figure class="about-slide" style="min-width:60%; padding:0 8px; box-sizing:border-box; margin:0;">
+          <img src="assets/sophia_museum.jpg" alt="Sophia mimicking artwork at a museum" class="w-full object-cover object-center rounded-2xl" style="height:380px;">
+        </figure>
+        <figure class="about-slide" style="min-width:60%; padding:0 8px; box-sizing:border-box; margin:0;">
+          <img src="assets/sophia_canada.jpg" alt="Sophia at Birch Cliff, Toronto" class="w-full object-cover object-center rounded-2xl" style="height:380px;">
+        </figure>
+        <figure class="about-slide" style="min-width:60%; padding:0 8px; box-sizing:border-box; margin:0;">
+          <img src="assets/sophia_artist.png" alt="Sophia in drawing studio" class="w-full object-cover object-center rounded-2xl" style="height:380px;">
+        </figure>
+        <figure class="about-slide" style="min-width:60%; padding:0 8px; box-sizing:border-box; margin:0;">
+          <img src="assets/ruby.jpg" alt="Ruby the cat" class="w-full object-cover object-center rounded-2xl" style="height:380px;">
+        </figure>
+        <figure class="about-slide" style="min-width:60%; padding:0 8px; box-sizing:border-box; margin:0;">
+          <img src="assets/sophia_portal.jpg" alt="Sophia making a sparkler portal" class="w-full object-cover object-center rounded-2xl" style="height:380px;">
+        </figure>
+        <figure class="about-slide" style="min-width:60%; padding:0 8px; box-sizing:border-box; margin:0;">
+          <img src="assets/sophia_graduation.jpg" alt="Sophia at MS graduation" class="w-full object-cover rounded-2xl" style="height:380px; object-position: center 80%;">
+        </figure>
+      </div>
+
+      <!-- Arrows overlaid on image -->
+      <button id="carousel-prev" aria-label="Previous photo" style="position:absolute; left:calc(20% + 16px); top:190px; transform:translateY(-50%); width:40px; height:40px; border-radius:50%; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.9); box-shadow:0 2px 12px rgba(0,0,0,0.15); color:#374151; z-index:10;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button id="carousel-next" aria-label="Next photo" style="position:absolute; right:calc(20% + 16px); top:190px; transform:translateY(-50%); width:40px; height:40px; border-radius:50%; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.9); box-shadow:0 2px 12px rgba(0,0,0,0.15); color:#374151; z-index:10;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+
+    <!-- Caption + dots below -->
+    <div style="margin-top:16px; text-align:center;">
+      <p id="carousel-caption" class="text-sm text-gray-500 dark:text-gray-400 mb-3">Light board operator — <em>Thus Spoke Ann Arbor Chinese Drama Club</em></p>
+      <div id="carousel-dots" style="display:flex; justify-content:center; gap:6px;">
+        <button class="carousel-dot active" data-index="0"></button>
+        <button class="carousel-dot" data-index="1"></button>
+        <button class="carousel-dot" data-index="2"></button>
+        <button class="carousel-dot" data-index="3"></button>
+        <button class="carousel-dot" data-index="4"></button>
+        <button class="carousel-dot" data-index="5"></button>
+        <button class="carousel-dot" data-index="6"></button>
+        <button class="carousel-dot" data-index="7"></button>
+      </div>
+    </div>
+
+    <script>
+      (function() {
+        const track = document.getElementById('about-carousel-track');
+        const dots = document.querySelectorAll('.carousel-dot');
+        const caption = document.getElementById('carousel-caption');
+        const captions = [
+          'Light board operator — <em>Thus Spoke Ann Arbor Chinese Drama Club</em>',
+          'Chicago Athenaeum International Sculpture Park',
+          'Museum visit — trying to become the art',
+          'Birch Cliff, Toronto',
+          'Drawing studio in Japan',
+          'Ruby, my cat 🐱',
+          'Attempting a Doctor Strange portal',
+          'MS graduation, UMich 2026'
+        ];
+        const total = 8;
+        const slideWidth = 60;
+
+        // Clone first and last slides for infinite loop
+        const slides = Array.from(track.children);
+        const firstClone = slides[0].cloneNode(true);
+        const lastClone = slides[slides.length - 1].cloneNode(true);
+        track.appendChild(firstClone);
+        track.insertBefore(lastClone, slides[0]);
+
+        // Real slides now start at index 1 in the track
+        let current = 0; // logical index (0–7)
+
+        function setPosition(index, animate) {
+          // track index = index + 1 (because of prepended clone)
+          const trackIndex = index + 1;
+          track.style.transition = animate ? 'transform 0.4s cubic-bezier(0.4,0,0.2,1)' : 'none';
+          track.style.transform = `translateX(calc(${-trackIndex * slideWidth}% + 20%))`;
+        }
+
+        function goTo(n, animate = true) {
+          current = n;
+          setPosition(current, animate);
+          const logical = ((current % total) + total) % total;
+          dots.forEach((d, i) => d.classList.toggle('active', i === logical));
+          caption.innerHTML = captions[logical];
+        }
+
+        // After transition ends, silently jump if on a clone
+        track.addEventListener('transitionend', () => {
+          if (current < 0) {
+            current = total - 1;
+            setPosition(current, false);
+          } else if (current >= total) {
+            current = 0;
+            setPosition(current, false);
+          }
+        });
+
+        // Init
+        goTo(0, false);
+
+        document.getElementById('carousel-prev').addEventListener('click', () => goTo(current - 1));
+        document.getElementById('carousel-next').addEventListener('click', () => goTo(current + 1));
+        dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.index)));
+
+        // Swipe support
+        let startX = 0;
+        track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
+        track.addEventListener('touchend', e => {
+          const dx = e.changedTouches[0].clientX - startX;
+          if (Math.abs(dx) > 40) goTo(current + (dx < 0 ? 1 : -1));
+        });
+      })();
+    </script>
   </section>
 
   <!-- Skills Section -->

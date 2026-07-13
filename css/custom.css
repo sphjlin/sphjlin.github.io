@@ -43,6 +43,14 @@ body > *{
   color:#A5B4FC;
 }
 
+/* Hero photo accent block */
+html:not(.dark) .html-not-dark-accent {
+  background: #5F61F2;
+}
+html.dark .dark-accent {
+  background: #3730a3;
+}
+
 /* Section label decorative styling */
 .text-sm.text-\[\#5F61F2\],
 .text-sm.dark\:text-\[\#A5B4FC\]{
@@ -1490,4 +1498,26 @@ main ol.text-gray-300 li {
 /* Slightly more breathing room between sections */
 main section {
   margin-bottom: 5rem;
+}
+
+/* About page carousel dots */
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: #d1d5db;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.carousel-dot.active {
+  background: #5F61F2;
+  transform: scale(1.25);
+}
+.dark .carousel-dot {
+  background: #4b5563;
+}
+.dark .carousel-dot.active {
+  background: #A5B4FC;
 }

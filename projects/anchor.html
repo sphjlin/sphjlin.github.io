@@ -112,25 +112,9 @@
 </header>
 
 <main class="pt-40 pb-16">
-  <div class="flex gap-8 max-w-7xl mx-auto px-6">
-    <!-- Sticky Table of Contents (Desktop only) -->
-    <aside class="hidden lg:block w-64 flex-shrink-0">
-      <nav class="sticky top-24 space-y-2">
-        <p class="text-sm font-bold text-gray-900 dark:text-white mb-3">Contents</p>
-        <a href="#situation" class="toc-link">Situation</a>
-        <a href="#task" class="toc-link">Task</a>
-        <a href="#research" class="toc-link">Research</a>
-        <a href="#actions" class="toc-link">Design Decisions</a>
-        <a href="#results" class="toc-link">Results</a>
-        <a href="#reflection" class="toc-link">Reflection</a>
-      </nav>
-    </aside>
 
-    <!-- Main Content -->
-    <div class="flex-1 min-w-0">
-
-      <!-- Hero Section -->
-      <section class="max-w-6xl mx-auto px-6 mb-20">
+  <!-- Hero Section (full width, outside TOC layout) -->
+  <section class="max-w-4xl mx-auto px-6 mb-12">
         <div class="mb-8">
           <a href="../projects.html" class="text-sm text-gray-600 dark:text-gray-400 hover:text-[#5F61F2] dark:hover:text-[#A5B4FC] transition-colors inline-block mb-6">← BACK TO PROJECTS</a>
         </div>
@@ -175,7 +159,24 @@
           <img src="../assets/anchor_hero.png" alt="Anchor app — pick up where you left off" class="w-full">
         </figure>
         -->
-      </section>
+  </section>
+
+  <!-- TOC + Content layout -->
+  <div class="flex gap-8 max-w-7xl mx-auto px-6">
+    <!-- Sticky TOC (desktop only) -->
+    <aside class="hidden lg:block w-64 flex-shrink-0">
+      <nav class="sticky top-24 space-y-2">
+        <p class="text-sm font-bold text-gray-900 dark:text-white mb-3">Contents</p>
+        <a href="#situation" class="toc-link">Situation</a>
+        <a href="#task" class="toc-link">Task</a>
+        <a href="#research" class="toc-link">Research</a>
+        <a href="#actions" class="toc-link">Design Decisions</a>
+        <a href="#results" class="toc-link">Results</a>
+        <a href="#reflection" class="toc-link">Reflection</a>
+      </nav>
+    </aside>
+
+    <div class="flex-1 min-w-0">
 
       <!-- Situation -->
       <section id="situation" class="max-w-4xl mx-auto px-6 mb-16">
@@ -436,8 +437,8 @@
         </p>
       </section>
 
-    </div><!-- End Main Content -->
-  </div><!-- End Flex Container -->
+    </div><!-- end flex-1 -->
+  </div><!-- end flex layout -->
 
   <!-- Project Navigation -->
   <section class="max-w-4xl mx-auto px-6 mt-20 mb-8">
