@@ -28,7 +28,9 @@
   <style type="text/tailwindcss">
     @layer utilities {
       .dark .dark\:bg-\[\#0D0D0D\] { background-color: #0D0D0D !important; }
+      .dark .dark\:bg-\[\#1a1a1a\] { background-color: #1a1a1a !important; }
       .dark .dark\:text-white { color: white !important; }
+      .dark .dark\:border-white\/5 { border-color: rgba(255, 255, 255, 0.05) !important; }
     }
     /* Force light mode colors */
     html:not(.dark) body { background-color: #f9fafb !important; color: #1f2937 !important; }
@@ -187,7 +189,7 @@
           </ul>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- Research -->
     <section id="research" class="mb-16">
@@ -257,8 +259,6 @@
       <div class="mt-4 rounded-xl p-4" style="background:rgba(95,97,242,0.04);border:1px solid rgba(95,97,242,0.12);">
         <p class="text-sm text-gray-600 dark:text-gray-300"><strong class="text-[#5F61F2] dark:text-[#A5B4FC]">The gap:</strong> No existing platform combines discovery, social coordination, visual seat preview, and cost splitting. Users currently switch between 3–4 tools to complete one booking.</p>
       </div>
-    </div>
-
     </section>
 
     <!-- Actions -->
@@ -266,7 +266,7 @@
       <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-3">✦ ACTIONS</p>
       <h2 class="text-3xl font-bold mb-6 text-black dark:text-white">Lo-fi to hi-fi through three rounds of feedback</h2>
 
-      <figure class="my-6">
+      <figure class="my-6 max-w-2xl mx-auto">
         <img src="../assets/sceneo_lofi.png" alt="Sceneo lo-fi wireframes" class="w-full rounded-xl shadow-sm">
         <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 text-center italic">Lo-fi wireframes — show browsing, event page with friend activity, and friends feed</figcaption>
       </figure>
@@ -286,7 +286,7 @@
         </div>
       </div>
 
-      <figure class="my-6">
+      <figure class="my-6 max-w-2xl mx-auto">
         <img src="../assets/sceneo_hifi.png" alt="Sceneo hi-fi prototype" class="w-full rounded-xl shadow-sm">
         <figcaption class="text-sm text-gray-500 dark:text-gray-400 mt-3 text-center italic">Hi-fi prototype — unified listings, visual seat preview, friend recommendations, and ticket splitting</figcaption>
       </figure>
@@ -338,6 +338,7 @@
         <p class="font-semibold mb-1">If I had more time</p>
         <p class="text-sm text-gray-600 dark:text-gray-300">I'd want to run usability testing on the group-booking flow specifically — coordinating multiple ticket holders is the most complex interaction in the app, and I have lower confidence in that flow than in the browsing and seat selection experiences. I'd also explore integrating with Apple Wallet or Eventbrite's API rather than building ticket management from scratch.</p>
       </div>
+    </div>
     </section>
 
     </div><!-- end flex-1 content -->
@@ -348,7 +349,7 @@
     <div class="flex flex-col md:flex-row justify-between items-stretch md:items-center gap-3">
       <a href="class-catalyst.html" class="btn-outline text-center md:text-left">← Class Catalyst</a>
       <a href="../projects.html" class="btn-outline text-center">All Projects</a>
-      <a href="anchor.html" class="btn-outline text-center md:text-right">Anchor →</a>
+      <a href="ntca-research.html" class="btn-outline text-center md:text-right">Digital Access →</a>
     </div>
   </section>
 </main>
