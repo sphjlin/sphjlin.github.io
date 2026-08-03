@@ -1500,24 +1500,61 @@ main section {
   margin-bottom: 5rem;
 }
 
-/* About page carousel dots */
-.carousel-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  border: none;
-  background: #d1d5db;
-  cursor: pointer;
-  padding: 0;
-  transition: background 0.2s ease, transform 0.2s ease;
+/* About page — compact "beyond the screen" photo strip.
+   Kept deliberately small: this is a personality accent, not a section —
+   the page's visual weight should stay on Skills/Timeline/Writing. */
+.beyond-strip {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  overflow-y: visible;
+  padding: 28px 2px 16px;
+  margin: 0 0 8px;
+  scrollbar-width: thin;
 }
-.carousel-dot.active {
-  background: #5F61F2;
-  transform: scale(1.25);
+.beyond-strip figure {
+  flex: 0 0 auto;
+  width: 124px;
+  margin: 0;
+  position: relative;
 }
-.dark .carousel-dot {
-  background: #4b5563;
+.beyond-strip img {
+  width: 100%;
+  height: 124px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transform-origin: center 40%;
+  position: relative;
 }
-.dark .carousel-dot.active {
-  background: #A5B4FC;
+.beyond-strip figure:hover img {
+  transform: scale(1.55);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+  z-index: 5;
+}
+.beyond-strip figcaption {
+  font-size: 0.72rem;
+  color: #9ca3af;
+  margin-top: 4px;
+  line-height: 1.3;
+  text-align: center;
+  position: relative;
+  transition: opacity 0.2s ease;
+}
+.beyond-strip figure:hover figcaption {
+  opacity: 0;
+}
+.dark .beyond-strip figcaption {
+  color: #6b7280;
+}
+
+@media (hover: none) {
+  .beyond-strip figure:hover img { transform: none; box-shadow: none; }
+  .beyond-strip figure:hover figcaption { opacity: 1; }
+}
+
+@media (max-width: 640px) {
+  .beyond-strip figure { width: 100px; }
+  .beyond-strip img { height: 100px; }
 }

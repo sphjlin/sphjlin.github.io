@@ -57,9 +57,15 @@
     /* Brand gallery layout */
     .brand-masonry {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 12px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
       align-items: start;
+    }
+    @media (min-width: 640px) {
+      .brand-masonry { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    }
+    @media (min-width: 1024px) {
+      .brand-masonry { grid-template-columns: repeat(5, 1fr); }
     }
     .poster-card {
       margin: 0;
@@ -88,10 +94,12 @@
     html.dark .poster-overlay {
       background: rgba(60, 50, 120, 0.85);
     }
-    .poster-card-inner:hover .poster-overlay {
+    .poster-card-inner:hover .poster-overlay,
+    .poster-card-inner.info-open .poster-overlay {
       opacity: 1;
     }
-    .poster-card-inner:hover img {
+    .poster-card-inner:hover img,
+    .poster-card-inner.info-open img {
       filter: brightness(0.55) saturate(0.3);
     }
     .poster-overlay-title {
@@ -114,6 +122,34 @@
       color: white;
       text-decoration: underline;
       text-underline-offset: 2px;
+    }
+    /* Touch devices: tap once to reveal info, tap the expand icon to open lightbox */
+    .poster-expand-btn {
+      display: none;
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.45);
+      color: white;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    .poster-card-inner.info-open .poster-expand-btn {
+      opacity: 1;
+    }
+    .touch-only-hint { display: none; }
+    @media (hover: none) {
+      .poster-expand-btn { display: flex; }
+      .poster-overlay-title { font-size: 0.85rem; }
+      .poster-overlay-body { font-size: 0.78rem; }
+      .hover-only-hint { display: none; }
+      .touch-only-hint { display: block; }
     }
   </style>
 
@@ -320,78 +356,40 @@
       <p class="text-sm text-[#5F61F2] dark:text-[#A5B4FC] mb-2">✦ VISUAL & BRAND DESIGN</p>
       <h2 class="text-2xl font-bold mb-2">Side Projects & Graphic Work</h2>
       <p class="text-gray-400 dark:text-gray-500 text-xs mb-3">Earlier explorations in visual design — posters, brand materials, and thumbnails made for community organizations and events.</p>
-      <p class="text-gray-500 dark:text-gray-400 text-sm mb-12">Feel free to click on the pictures for higher resolution!</p>
+      <p class="text-gray-500 dark:text-gray-400 text-sm mb-12 hover-only-hint">Feel free to click on the pictures for higher resolution!</p>
+      <p class="text-gray-500 dark:text-gray-400 text-sm mb-12 touch-only-hint">Tap a picture to see details, then tap it again for the full-resolution image.</p>
 
-      <!-- Brand work gallery (5-col grid) -->
+      <!-- Brand work gallery (5-col grid) — ordered light to dark -->
       <div class="brand-masonry">
 
-        <!-- Row 1: strongest pieces first -->
+        <!-- Row 1: lightest -->
         <figure class="poster-card">
-          <div class="poster-card-inner rounded-xl overflow-hidden cursor-pointer brand-lightbox-trigger" data-src="assets/brand/christmasshow.jpeg">
-            <img src="assets/brand/christmasshow.jpeg" alt="Christmas show illustration" class="w-full block">
+          <div class="poster-card-inner rounded-xl overflow-hidden cursor-pointer brand-lightbox-trigger" data-src="assets/brand/re_introoutro_v1.png">
+            <img src="assets/brand/re_introoutro_v1.png" alt="Remembering Emmy YouTube thumbnail" class="w-full block">
             <div class="poster-overlay">
-              <p class="poster-overlay-title">Commissioned Illustration</p>
-              <p class="poster-overlay-body"><em>相遇·奇异之旅 (A Wondrous Journey)</em> — immersive Christmas drama by AFC. Commissioned at $60/piece as part of the illustration design team</p>
-              <a href="https://www.youtube.com/watch?v=p2m5is4-Kf8" target="_blank" rel="noopener noreferrer" class="poster-overlay-link" onclick="event.stopPropagation()">Watch on YouTube ↗</a>
+              <p class="poster-overlay-title">YouTube Thumbnail</p>
+              <p class="poster-overlay-body">UPitt Theater's Zoom production of <em>Remembering Emmy</em> — a drama about mathematician Emmy Noether, performed entirely on Zoom during COVID-19</p>
+              <a href="https://www.youtube.com/watch?v=3uyV54ZYhRo" target="_blank" rel="noopener noreferrer" class="poster-overlay-link" onclick="event.stopPropagation()">Watch on YouTube ↗</a>
             </div>
           </div>
         </figure>
 
         <figure class="poster-card">
-          <div class="poster-card-inner rounded-xl overflow-hidden cursor-pointer brand-lightbox-trigger" data-src="assets/brand/未命名作品 5.png">
-            <img src="assets/brand/未命名作品 5.png" alt="单身万岁 event poster" class="w-full block">
+          <div class="poster-card-inner rounded-xl overflow-hidden cursor-pointer brand-lightbox-trigger" data-src="assets/brand/20220801.avif">
+            <img src="assets/brand/20220801.avif" alt="PCCO Pittsburgh new student airport pickup poster" class="w-full block">
+            <div class="poster-overlay">
+              <p class="poster-overlay-title">Outreach Poster</p>
+              <p class="poster-overlay-body">PCCO New Student Airport Pickup (匹兹堡新生接机) — illustrated poster for a free pickup service for incoming international students</p>
+            </div>
+          </div>
+        </figure>
+
+        <figure class="poster-card">
+          <div class="poster-card-inner rounded-xl overflow-hidden cursor-pointer brand-lightbox-trigger" data-src="assets/brand/20230519春季差传周英文.avif">
+            <img src="assets/brand/20230519春季差传周英文.avif" alt="PCCO Spring Missions Week poster" class="w-full block">
             <div class="poster-overlay">
               <p class="poster-overlay-title">Event Poster</p>
-              <p class="poster-overlay-body">PCCO 单身万岁 (Long Live Being Single) — talk event on relationships and singlehood. Original character illustration and full layout by me</p>
-            </div>
-          </div>
-        </figure>
-
-        <figure class="poster-card" style="grid-column: span 2;">
-          <div class="poster-card-inner rounded-xl overflow-hidden cursor-pointer" data-src="assets/brand/spatial_potion_classroom.png">
-            <img src="assets/brand/spatial_potion_classroom.png" alt="Spatial AR/VR Potion Classroom" class="w-full block">
-            <div class="poster-overlay">
-              <p class="poster-overlay-title">AR/VR Environment Design</p>
-              <p class="poster-overlay-body">Harry Potter-themed Potion Classroom built on Spatial.io — designed interactions including sitting, walking, teleporting, and object indicators</p>
-              <a href="https://www.spatial.io/s/Potion-Classroom-67df3864742c75f887eebd06?share=2816817107262694436" target="_blank" rel="noopener noreferrer" class="poster-overlay-link" onclick="event.stopPropagation()">View on Spatial.io ↗</a>
-            </div>
-          </div>
-        </figure>
-
-        <!-- Row 2 -->
-        <figure class="poster-card">
-          <div class="poster-card-inner rounded-xl overflow-hidden cursor-pointer brand-lightbox-trigger" data-src="assets/brand/pcco_fall_20231229.png">
-            <img src="assets/brand/pcco_fall_20231229.png" alt="PCCO fall gospel event poster" class="w-full block">
-            <div class="poster-overlay">
-              <p class="poster-overlay-title">Event Poster</p>
-              <p class="poster-overlay-body">PCCO Fall Gospel Night (秋季福音会) — layout and typography by me, illustrations by guest speaker Pastor Andrew Chai</p>
-            </div>
-          </div>
-        </figure>
-
-        <figure class="poster-card">
-          <div class="poster-card-inner rounded-xl overflow-hidden cursor-pointer brand-lightbox-trigger" data-src="assets/brand/compose.png">
-            <img src="assets/brand/compose.png" alt="COMPOSE Music Project recruitment poster" class="w-full block">
-            <div class="poster-overlay">
-              <p class="poster-overlay-title">Recruitment Poster</p>
-              <p class="poster-overlay-body">COMPOSE Original Music Club (原创音乐社) — Chinese Christian music community under AFC. Season 7 recruitment poster</p>
-            </div>
-          </div>
-        </figure>
-
-        <figure class="poster-card">
-          <div class="poster-card-inner rounded-xl overflow-hidden cursor-pointer brand-lightbox-trigger" data-src="assets/brand/20220909-1.avif">
-            <img src="assets/brand/20220909-1.avif" alt="PCCO Mid-Autumn Night Market poster (front)" class="w-full block">
-            <div class="poster-overlay">
-              <p class="poster-overlay-title">Event Poster — Front</p>
-              <p class="poster-overlay-body">PCCO Mid-Autumn Night Market (中秋夜市) — main event poster with venue, date, and community details</p>
-            </div>
-          </div>
-          <div class="poster-card-inner rounded-xl overflow-hidden cursor-pointer brand-lightbox-trigger mt-3" data-src="assets/brand/20220909-2.avif">
-            <img src="assets/brand/20220909-2.avif" alt="PCCO Mid-Autumn Night Market stamp card (back)" class="w-full block">
-            <div class="poster-overlay">
-              <p class="poster-overlay-title">Stamp Card — Back</p>
-              <p class="poster-overlay-body">Stamp card used at food stalls to track each attendee's dishes and snacks throughout the night</p>
+              <p class="poster-overlay-body">PCCO Spring Missions Week — English-language poster for cross-cultural outreach event</p>
             </div>
           </div>
         </figure>
@@ -413,7 +411,7 @@
           </div>
         </figure>
 
-        <!-- Row 3 -->
+        <!-- Row 2 -->
         <figure class="poster-card">
           <div class="poster-card-inner rounded-xl overflow-hidden cursor-pointer brand-lightbox-trigger" data-src="assets/brand/mug.jpg">
             <img src="assets/brand/mug.jpg" alt="PCCO mug — produced product" class="w-full block" style="height:180px; object-fit:cover;">
@@ -432,6 +430,47 @@
         </figure>
 
         <figure class="poster-card">
+          <div class="poster-card-inner rounded-xl overflow-hidden cursor-pointer brand-lightbox-trigger" data-src="assets/brand/未命名作品 5.png">
+            <img src="assets/brand/未命名作品 5.png" alt="单身万岁 event poster" class="w-full block">
+            <div class="poster-overlay">
+              <p class="poster-overlay-title">Event Poster</p>
+              <p class="poster-overlay-body">PCCO 单身万岁 (Long Live Being Single) — talk event on relationships and singlehood. Original character illustration and full layout by me</p>
+            </div>
+          </div>
+        </figure>
+
+        <figure class="poster-card">
+          <div class="poster-card-inner rounded-xl overflow-hidden cursor-pointer brand-lightbox-trigger" data-src="assets/brand/compose.png">
+            <img src="assets/brand/compose.png" alt="COMPOSE Music Project recruitment poster" class="w-full block">
+            <div class="poster-overlay">
+              <p class="poster-overlay-title">Recruitment Poster</p>
+              <p class="poster-overlay-body">COMPOSE Original Music Club (原创音乐社) — Chinese Christian music community under AFC. Season 7 recruitment poster</p>
+            </div>
+          </div>
+        </figure>
+
+        <figure class="poster-card">
+          <div class="poster-card-inner rounded-xl overflow-hidden cursor-pointer brand-lightbox-trigger" data-src="assets/brand/20211231-1.avif">
+            <img src="assets/brand/20211231-1.avif" alt="2022 PCCO Chinese church special event calendar" class="w-full block">
+            <div class="poster-overlay">
+              <p class="poster-overlay-title">Event Calendar</p>
+              <p class="poster-overlay-body">2022 PCCO Chinese Congregation Special Events (中文堂特会) — full-year schedule laid out as a grid poster</p>
+            </div>
+          </div>
+        </figure>
+
+        <!-- Row 3 -->
+        <figure class="poster-card">
+          <div class="poster-card-inner rounded-xl overflow-hidden cursor-pointer brand-lightbox-trigger" data-src="assets/brand/pcco_fall_20231229.png">
+            <img src="assets/brand/pcco_fall_20231229.png" alt="PCCO fall gospel event poster" class="w-full block">
+            <div class="poster-overlay">
+              <p class="poster-overlay-title">Event Poster</p>
+              <p class="poster-overlay-body">PCCO Fall Gospel Night (秋季福音会) — layout and typography by me, illustrations by guest speaker Pastor Andrew Chai</p>
+            </div>
+          </div>
+        </figure>
+
+        <figure class="poster-card">
           <div class="poster-card-inner rounded-xl overflow-hidden cursor-pointer brand-lightbox-trigger" data-src="assets/brand/保龄球1.png">
             <img src="assets/brand/保龄球1.png" alt="PCCO bowling event poster 1" class="w-full block">
             <div class="poster-overlay">
@@ -441,6 +480,24 @@
           </div>
         </figure>
 
+        <figure class="poster-card">
+          <div class="poster-card-inner rounded-xl overflow-hidden cursor-pointer brand-lightbox-trigger" data-src="assets/brand/20220909-1.avif">
+            <img src="assets/brand/20220909-1.avif" alt="PCCO Mid-Autumn Night Market poster (front)" class="w-full block">
+            <div class="poster-overlay">
+              <p class="poster-overlay-title">Event Poster — Front</p>
+              <p class="poster-overlay-body">PCCO Mid-Autumn Night Market (中秋夜市) — main event poster with venue, date, and community details</p>
+            </div>
+          </div>
+          <div class="poster-card-inner rounded-xl overflow-hidden cursor-pointer brand-lightbox-trigger mt-3" data-src="assets/brand/20220909-2.avif">
+            <img src="assets/brand/20220909-2.avif" alt="PCCO Mid-Autumn Night Market stamp card (back)" class="w-full block">
+            <div class="poster-overlay">
+              <p class="poster-overlay-title">Stamp Card — Back</p>
+              <p class="poster-overlay-body">Stamp card used at food stalls to track each attendee's dishes and snacks throughout the night</p>
+            </div>
+          </div>
+        </figure>
+
+        <!-- Row 4: darkest, closing with the largest piece -->
         <figure class="poster-card">
           <div class="poster-card-inner rounded-xl overflow-hidden cursor-pointer brand-lightbox-trigger" data-src="assets/brand/双泉宣传海报.png">
             <img src="assets/brand/双泉宣传海报.png" alt="Shuangquan promotional poster" class="w-full block">
@@ -452,43 +509,23 @@
         </figure>
 
         <figure class="poster-card">
-          <div class="poster-card-inner rounded-xl overflow-hidden cursor-pointer brand-lightbox-trigger" data-src="assets/brand/20230519春季差传周英文.avif">
-            <img src="assets/brand/20230519春季差传周英文.avif" alt="PCCO Spring Missions Week poster" class="w-full block">
+          <div class="poster-card-inner rounded-xl overflow-hidden cursor-pointer brand-lightbox-trigger" data-src="assets/brand/christmasshow.jpeg">
+            <img src="assets/brand/christmasshow.jpeg" alt="Christmas show illustration" class="w-full block">
             <div class="poster-overlay">
-              <p class="poster-overlay-title">Event Poster</p>
-              <p class="poster-overlay-body">PCCO Spring Missions Week — English-language poster for cross-cultural outreach event</p>
+              <p class="poster-overlay-title">Commissioned Illustration</p>
+              <p class="poster-overlay-body"><em>相遇·奇异之旅 (A Wondrous Journey)</em> — immersive Christmas drama by AFC. Commissioned at $60/piece as part of the illustration design team</p>
+              <a href="https://www.youtube.com/watch?v=p2m5is4-Kf8" target="_blank" rel="noopener noreferrer" class="poster-overlay-link" onclick="event.stopPropagation()">Watch on YouTube ↗</a>
             </div>
           </div>
         </figure>
 
-        <!-- Row 4 -->
-        <figure class="poster-card">
-          <div class="poster-card-inner rounded-xl overflow-hidden cursor-pointer brand-lightbox-trigger" data-src="assets/brand/20211231-1.avif">
-            <img src="assets/brand/20211231-1.avif" alt="2022 PCCO Chinese church special event calendar" class="w-full block">
+        <figure class="poster-card" style="grid-column: span 2;">
+          <div class="poster-card-inner rounded-xl overflow-hidden cursor-pointer brand-lightbox-trigger" data-src="assets/brand/spatial_potion_classroom.png">
+            <img src="assets/brand/spatial_potion_classroom.png" alt="Spatial AR/VR Potion Classroom" class="w-full block">
             <div class="poster-overlay">
-              <p class="poster-overlay-title">Event Calendar</p>
-              <p class="poster-overlay-body">2022 PCCO Chinese Congregation Special Events (中文堂特会) — full-year schedule laid out as a grid poster</p>
-            </div>
-          </div>
-        </figure>
-
-        <figure class="poster-card">
-          <div class="poster-card-inner rounded-xl overflow-hidden cursor-pointer brand-lightbox-trigger" data-src="assets/brand/20220801.avif">
-            <img src="assets/brand/20220801.avif" alt="PCCO Pittsburgh new student airport pickup poster" class="w-full block">
-            <div class="poster-overlay">
-              <p class="poster-overlay-title">Outreach Poster</p>
-              <p class="poster-overlay-body">PCCO New Student Airport Pickup (匹兹堡新生接机) — illustrated poster for a free pickup service for incoming international students</p>
-            </div>
-          </div>
-        </figure>
-
-        <figure class="poster-card">
-          <div class="poster-card-inner rounded-xl overflow-hidden cursor-pointer brand-lightbox-trigger" data-src="assets/brand/re_introoutro_v1.png">
-            <img src="assets/brand/re_introoutro_v1.png" alt="Remembering Emmy YouTube thumbnail" class="w-full block">
-            <div class="poster-overlay">
-              <p class="poster-overlay-title">YouTube Thumbnail</p>
-              <p class="poster-overlay-body">UPitt Theater's Zoom production of <em>Remembering Emmy</em> — a drama about mathematician Emmy Noether, performed entirely on Zoom during COVID-19</p>
-              <a href="https://www.youtube.com/watch?v=3uyV54ZYhRo" target="_blank" rel="noopener noreferrer" class="poster-overlay-link" onclick="event.stopPropagation()">Watch on YouTube ↗</a>
+              <p class="poster-overlay-title">AR/VR Environment Design</p>
+              <p class="poster-overlay-body">Harry Potter-themed Potion Classroom built on Spatial.io — designed interactions including sitting, walking, teleporting, and object indicators</p>
+              <a href="https://www.spatial.io/s/Potion-Classroom-67df3864742c75f887eebd06?share=2816817107262694436" target="_blank" rel="noopener noreferrer" class="poster-overlay-link" onclick="event.stopPropagation()">View on Spatial.io ↗</a>
             </div>
           </div>
         </figure>
@@ -506,6 +543,8 @@
         (function(){
           const lb = document.getElementById('brand-lightbox');
           const lbImg = document.getElementById('brand-lightbox-img');
+          const isTouch = window.matchMedia('(hover: none)').matches;
+
           function openLb(src, alt) {
             lbImg.src = src;
             lbImg.alt = alt;
@@ -516,9 +555,48 @@
             lb.close();
             document.body.style.overflow = '';
           }
-          document.querySelectorAll('.brand-lightbox-trigger').forEach(el => {
-            el.addEventListener('click', () => openLb(el.dataset.src, el.querySelector('img') ? el.querySelector('img').alt : el.alt));
+
+          // Give every card with an overlay an expand button so touch users
+          // have an explicit way to open the full image separate from the
+          // tap-to-reveal-info gesture.
+          document.querySelectorAll('.poster-card-inner').forEach(card => {
+            if (!card.classList.contains('brand-lightbox-trigger')) return;
+            const btn = document.createElement('button');
+            btn.className = 'poster-expand-btn';
+            btn.setAttribute('aria-label', 'View full image');
+            btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M9 21H3v-6"/><path d="M21 3l-7 7"/><path d="M3 21l7-7"/></svg>';
+            btn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              openLb(card.dataset.src, card.querySelector('img') ? card.querySelector('img').alt : '');
+            });
+            card.appendChild(btn);
           });
+
+          document.querySelectorAll('.brand-lightbox-trigger').forEach(el => {
+            el.addEventListener('click', (e) => {
+              if (isTouch && !el.classList.contains('info-open')) {
+                // First tap on touch devices reveals the info overlay instead
+                // of jumping straight to the lightbox.
+                e.preventDefault();
+                document.querySelectorAll('.poster-card-inner.info-open').forEach(other => {
+                  if (other !== el) other.classList.remove('info-open');
+                });
+                el.classList.add('info-open');
+                return;
+              }
+              openLb(el.dataset.src, el.querySelector('img') ? el.querySelector('img').alt : '');
+            });
+          });
+
+          // Tapping outside a card closes any open info overlay on touch devices.
+          if (isTouch) {
+            document.addEventListener('click', (e) => {
+              if (!e.target.closest('.poster-card-inner')) {
+                document.querySelectorAll('.poster-card-inner.info-open').forEach(el => el.classList.remove('info-open'));
+              }
+            });
+          }
+
           document.getElementById('brand-lightbox-close').addEventListener('click', closeLb);
           document.getElementById('brand-lightbox-backdrop').addEventListener('click', (e) => {
             if (e.target === e.currentTarget) closeLb();
